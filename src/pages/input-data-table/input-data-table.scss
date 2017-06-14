@@ -51,28 +51,30 @@ page-input-data-table {
   .imagenmenu {
     padding: 0 10px 0 0;
   }
+
+  .subimagenmenu {
+    padding: 5px 2px 0 0;
+  }
 	
   #select-crop {
-	padding-right: 25px;
-	float: right; 
+	padding-right: 80px;
   }
 	
   #data-inp {
-	padding-right: 25px;
-	float: right;
+	padding-right: 232px;
   }
 	
   #add-water {
-	padding-right: 25px;
-	float: right;
+	padding-right: 130px;
   }
 	
   #ferti-prog {
-	padding-right: 46px;
+	padding-right: 134px;
   }
 
   .backgroundSecondary{
     background-color: $background-secondary-color;
+	padding: 10px 0 0 25px;
     
   }
 
