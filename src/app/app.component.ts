@@ -17,6 +17,8 @@ import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
+import { InputData } from '../pages/input-data/input-data';
+import { InputDataTable } from '../pages/input-data-table/input-data-table';
 
 import { Settings } from '../providers/providers';
 
@@ -42,7 +44,7 @@ import { TranslateService } from '@ngx-translate/core'
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = FirstRunPage;
+  rootPage = InputDataTable;
 
   @ViewChild(Nav) nav: Nav;
 
@@ -58,7 +60,9 @@ export class MyApp {
     { title: 'Master Detail', component: ListMasterPage },
     { title: 'Menu', component: MenuPage },
     { title: 'Settings', component: SettingsPage },
-    { title: 'Search', component: SearchPage }
+    { title: 'Search', component: SearchPage },
+    { title: 'InputData', component: InputData },
+    { title: 'InputDataTable', component: InputDataTable }
   ]
 
   constructor(private translate: TranslateService, private platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {

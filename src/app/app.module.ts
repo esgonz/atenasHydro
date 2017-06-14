@@ -20,6 +20,8 @@ import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
+import { InputData } from '../pages/input-data/input-data';
+import { InputDataTable } from '../pages/input-data-table/input-data-table';
 
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
@@ -71,7 +73,9 @@ export function provideSettings(storage: Storage) {
     SignupPage,
     TabsPage,
     TutorialPage,
-    WelcomePage
+    WelcomePage,
+    InputData,
+    InputDataTable
   ],
   imports: [
     BrowserModule,
@@ -102,7 +106,9 @@ export function provideSettings(storage: Storage) {
     SignupPage,
     TabsPage,
     TutorialPage,
-    WelcomePage
+    WelcomePage,
+    InputData,
+    InputDataTable
   ],
   providers: [
     Api,
