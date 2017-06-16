@@ -1,19 +1,33 @@
 <ion-header>
-  <ion-navbar color="dark">
-    <ion-menu side="right" [content]="mycontent">...</ion-menu>
-    <ion-title>Input data</ion-title>
+	
+	<ion-navbar color="dark">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+
+    <ion-title>
+      Input data
+    </ion-title>
+		
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content scroll="false">
     <ion-grid>
       <ion-row>
+		<!-- primera columna -->
         <ion-col col-12 col-sm class="menu-lateral-movil backgroundSecondary">
           <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.svg" width="50px">Select crop and growth stage</button>
           <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/icon/inputdata.svg" width="50px">Input data</button>
           <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/addwateranalysis.svg" width="40px">Add water analysis</button>
           <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.svg" width="50px">Fertigation programme</button>
         </ion-col>
+		<!-- segunda columna -->
         <ion-col col-12 col-sm>
           <ion-title><h5>Enter E.C. value</h5></ion-title>
           <ion-row>
@@ -93,6 +107,7 @@
             </ion-col>
           </ion-row>
         </ion-col>
+		<!-- tercera columna -->
         <ion-col col-12 col-sm>
           <ion-title><h5>Chloride source of choice</h5></ion-title>
           <ion-item>
@@ -184,7 +199,7 @@
       </ion-row>
     </ion-grid>
 </ion-content>
-<ion-footer>
+<ion-footer no-border>
     <button ion-button full color="danger"><img class="subimagenmenu" src="../assets/icon/addmore-icon.svg" width="40px">ADD WATER ANALYSIS</button>
     <button ion-button full><img class="subimagenmenu" src="../assets/icon/addmore-icon.svg" width="40px">SEE FERTIGATION PROGRAMME</button>
 </ion-footer>
