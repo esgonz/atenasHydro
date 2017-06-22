@@ -19,6 +19,12 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { InputData } from '../pages/input-data/input-data';
 import { InputDataTable } from '../pages/input-data-table/input-data-table';
+import { InicioWelcome } from '../pages/inicio-welcome/inicio-welcome';
+import { Disclaimer } from '../pages/disclaimer/disclaimer';
+import { PreviousRecommendation } from '../pages/previous-recommendation/previous-recommendation';
+import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-recommendation';
+import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
+import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
 
 import { Settings } from '../providers/providers';
 
@@ -44,7 +50,7 @@ import { TranslateService } from '@ngx-translate/core'
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = InputDataTable;
+  rootPage = AddWaterAnalysis;
 
   @ViewChild(Nav) nav: Nav;
 
@@ -62,7 +68,13 @@ export class MyApp {
     { title: 'Settings', component: SettingsPage },
     { title: 'Search', component: SearchPage },
     { title: 'InputData', component: InputData },
-    { title: 'InputDataTable', component: InputDataTable }
+    { title: 'InputDataTable', component: InputDataTable },
+    { title: 'InicioWelcome', component: InicioWelcome },
+    { title: 'Disclaimer', component: Disclaimer },
+    { title: 'PreviousRecommendation', component: PreviousRecommendation },
+    { title: 'AddNewRecommendation', component: AddNewRecommendation },
+    { title: 'SelectCropGrowth', component: SelectCropGrowth },
+    { title: 'AddWaterAnalysis', component: AddWaterAnalysis },
   ]
 
   constructor(private translate: TranslateService, private platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {

@@ -22,6 +22,12 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { InputData } from '../pages/input-data/input-data';
 import { InputDataTable } from '../pages/input-data-table/input-data-table';
+import { InicioWelcome } from '../pages/inicio-welcome/inicio-welcome';
+import { Disclaimer } from '../pages/disclaimer/disclaimer';
+import { PreviousRecommendation } from '../pages/previous-recommendation/previous-recommendation';
+import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-recommendation';
+import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
+import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
 
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
@@ -75,7 +81,13 @@ export function provideSettings(storage: Storage) {
     TutorialPage,
     WelcomePage,
     InputData,
-    InputDataTable
+    InputDataTable,
+	InicioWelcome,
+	Disclaimer,
+	PreviousRecommendation,
+	AddNewRecommendation,
+	SelectCropGrowth,
+	AddWaterAnalysis
   ],
   imports: [
     BrowserModule,
@@ -108,7 +120,13 @@ export function provideSettings(storage: Storage) {
     TutorialPage,
     WelcomePage,
     InputData,
-    InputDataTable
+    InputDataTable,
+	InicioWelcome,
+	Disclaimer,
+	PreviousRecommendation,
+	AddNewRecommendation,
+	SelectCropGrowth,
+	AddWaterAnalysis
   ],
   providers: [
     Api,

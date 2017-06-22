@@ -1,0 +1,86 @@
+<ion-header>
+	
+	<ion-navbar color="dark">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+
+    <ion-title>
+      Add new recommendation
+    </ion-title>
+		
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content scroll="false" class="backgroundTerceary">
+    <ion-grid>
+      <ion-row justify-content-start>
+		<!-- segunda columna -->
+        <ion-col col-12 col-sm>
+          <ion-row>
+            <ion-col col-2>
+              <img class="iconos" src="../../assets/img/grower-icon.png">
+            </ion-col>
+            <ion-col col-10>
+              <ion-item color="dark">
+                <ion-label color="white" class="fontSecondary" stacked>Grower</ion-label>
+                <ion-input color="white" type="wanted" placeholder="Steve Johnson" ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-2>
+              <img class="iconos" src="../../assets/img/sector-icon.png">
+            </ion-col>
+            <ion-col col-10>
+              <ion-item color="dark">
+                <ion-label color="white" class="fontSecondary" stacked>Sector or Identifier</ion-label>
+                <ion-input color="white" type="wanted" placeholder="Sector or Identifier" ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-2>
+              <img class="iconos" src="../../assets/img/mail-icon.png">
+            </ion-col>
+            <ion-col col-10>
+              <ion-item color="dark">
+                <ion-label color="white" class="fontSecondary" stacked>Email</ion-label>
+                <ion-input color="white" type="wanted" placeholder="email" ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+		<!-- tercera columna -->
+        <ion-col col-12 col-sm>
+          <ion-row>
+            <ion-col col-2>
+              <img class="iconos" src="../../assets/img/business-icon.png">
+            </ion-col>
+            <ion-col col-10>
+              <ion-item color="dark">
+                <ion-label color="white" class="fontSecondary" stacked>Business</ion-label>
+                <ion-input color="white" type="wanted" placeholder="Business" ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-2>
+              <img class="iconos" src="../../assets/img/date-icon.png">
+            </ion-col>
+            <ion-col col-10>
+              <ion-item color="dark">
+                <ion-label color="white" class="fontSecondary" stacked>Date</ion-label>
+                <ion-input color="white" type="wanted" placeholder="12 may 2017" ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

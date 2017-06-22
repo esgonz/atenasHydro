@@ -1,0 +1,48 @@
+page-previous-recommendation {
+  .splash-bg {
+    position: relative;
+    background: url('../assets/img/splashbg.png') no-repeat transparent;
+    background-size: cover;
+    height: 45%;
+    z-index: 1;
+    background-repeat: repeat-x;
+    animation: animatedBackground 40s linear infinite;
+  }
+
+  @keyframes animatedBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+  }
+	
+	.margeninterno {
+		margin: 4rem 20rem;
+	}
+
+  $primaryGreen: #77BC1F;
+  $primaryGray: #95989A;
+  $fontSecondaryBold: bold;
+
+  h5{
+    color: $primaryGreen;
+	text-align: left;
+	margin-left: 1rem;
+	}
+  h4{
+	color: $primaryGray;
+	}
+	p.textodisclaimer{
+		color: $primaryGray;
+		font-size: 1.5rem;
+		text-align: justify;
+	}
+	
+  .fontSecondary{
+    font-weight:  $fontSecondaryBold;
+  }
+
+  @media only screen and (max-width: 540px){
+    .margeninterno{
+		margin: 2rem 2rem;
+    }
+  }
+}
