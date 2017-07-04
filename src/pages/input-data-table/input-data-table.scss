@@ -77,14 +77,18 @@ page-input-data-table {
     
   }
 
-  $primaryGreen: #77BC1F;
-  $primaryGray: #95989A;
-  $fontSecondaryBold: bold;
-
   h5{
-    color: $primaryGreen;
+	  color: color($colors,dark);
 	  text-align: left;
 	  margin-left: 1rem;
+	  font-weight:  $fontSecondaryBold;
+  }
+
+  h6{
+	  color: color($colors,dark);
+	  text-align: left;
+	  margin-left: 1rem;
+	  font-weight:  $fontSecondaryBold;
   }
 
   .fontSecondary{

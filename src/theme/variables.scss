@@ -36,13 +36,20 @@ $colors: (
   white:	  #ffffff,
 );
 
+$fontSecondaryBold: bold;
+
+
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
 
-
+/*h4{
+	  color: color($colors,dark);
+	  text-align: left;
+	  margin-left: 1rem;
+  }*/
 
 // App Material Design Variables
 // --------------------------------------------------

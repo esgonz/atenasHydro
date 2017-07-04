@@ -21,15 +21,15 @@
     <ion-grid>
       <ion-row justify-content-start>
 		<!-- primera columna -->
-        <ion-col col-12 col-sm class="menu-lateral-movil backgroundSecondary">
+        <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3 class="menu-lateral-movil backgroundSecondary">
           <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.svg" width="50px">Select crop and growth stage</button>
           <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/icon/inputdata.svg" width="50px">Input data</button>
           <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/addwateranalysis.svg" width="40px">Add water analysis</button>
           <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.svg" width="50px">Fertigation programme</button>
         </ion-col>
 		<!-- segunda columna -->
-        <ion-col col-12 col-sm>
-          <ion-title><h5>Enter E.C. value</h5></ion-title>
+        <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3>
+          <h6>Enter E.C. value</h6>
           <ion-row>
             <ion-col>
               <ion-item>
@@ -42,7 +42,7 @@
                 <ion-label color="secondary">1.5 mS/cm</ion-label>
             </ion-col>
           </ion-row>
-          <ion-title><h5>Tank System</h5></ion-title>
+          <h6>Tank System</h6>
           <ion-row>
             <ion-col>
               <ion-item>
@@ -57,22 +57,22 @@
               </ion-item>
             </ion-col>
           </ion-row>
-          <ion-title><h5>Substrate</h5></ion-title>
-          <ion-row>
+          <h6>Substrate</h6>
+          <ion-row radio-group [(ngModel)]="relationship">
             <ion-col>
               <ion-item>
                 <ion-label color="secondary" class="fontSecondary">Iner<br /><small>(Stone wool, perlite)</small></ion-label>
-                <ion-checkbox [(ngModel)]="Iner"></ion-checkbox>
+                <ion-radio value="Iner" checked></ion-radio>
               </ion-item>
             </ion-col>
             <ion-col>
               <ion-item>
                 <ion-label color="secondary" class="fontSecondary">Organic<br /><small>(Coco peat)</small></ion-label>
-                <ion-checkbox [(ngModel)]="Organic"></ion-checkbox>
+                <ion-radio value="secondary"></ion-radio>
               </ion-item>
             </ion-col>
           </ion-row>
-          <ion-title><h5>Select acid of choice</h5></ion-title>
+          <h6>Select acid of choice</h6>
           <ion-item>
             <ion-label color="secondary">Select acid of choice</ion-label>
             <ion-select [(ngModel)]="NitricAcid" multiple="true">
@@ -108,8 +108,8 @@
           </ion-row>
         </ion-col>
 		<!-- tercera columna -->
-        <ion-col col-12 col-sm>
-          <ion-title><h5>Chloride source of choice</h5></ion-title>
+        <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3>
+          <h6>Chloride source of choice</h6>
           <ion-item>
             <ion-label color="secondary">Chloride source of choice</ion-label>
             <ion-select [(ngModel)]="Chloride" multiple="true">
@@ -142,7 +142,7 @@
                 <ion-label color="secondary">N.A. mmol/l</ion-label>
             </ion-col>
           </ion-row>
-          <ion-title><h5>Calcium nitrate source of choice</h5></ion-title>
+          <h6>Calcium nitrate source of choice</h6>
           <ion-item>
             <ion-label color="secondary">Calcium nitrate source of choice</ion-label>
             <ion-select [(ngModel)]="toppings" multiple="true">
@@ -174,7 +174,7 @@
                 <ion-label color="secondary">N.A. mmol/l</ion-label>
             </ion-col>
           </ion-row>
-          <ion-title><h5>Iron chelate source of choice</h5></ion-title>
+          <h6>Iron chelate source of choice</h6>
           <ion-item>
             <ion-label color="secondary">Iron chelate source of choice</ion-label>
             <ion-select [(ngModel)]="Iron" multiple="true">

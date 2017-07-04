@@ -18,20 +18,16 @@ page-disclaimer {
 		margin: 4rem 20rem;
 	}
 
-  $primaryGreen: #77BC1F;
-  $primaryGray: #95989A;
-  $fontSecondaryBold: bold;
-
   h5{
-    color: $primaryGreen;
+    color: color($colors,light);
 	text-align: left;
 	margin-left: 1rem;
 	}
   h4{
-	color: $primaryGray;
+	color: color($colors,secondary);
 	}
 	p.textodisclaimer{
-		color: $primaryGray;
+		color: color($colors,secondary);
 		font-size: 1.5rem;
 		text-align: justify;
 	}

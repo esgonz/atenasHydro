@@ -106,13 +106,10 @@ page-select-crop-growth {
 		opacity: 0.8;
 	}
 
-
-  $primaryGreen: #77BC1F;
-  $primaryGray: #95989A;
   $fontSecondaryBold: bold;
 
-  h5{
-    color: $primaryGreen;
+  h4{
+	  color: color($colors,dark);
 	  text-align: left;
 	  margin-left: 1rem;
   }
@@ -122,7 +119,7 @@ page-select-crop-growth {
   }
 	
 	.textotarjetas {
-		color: #4A7628;
+		color: color($colors,dark);
 		font-weight: $fontSecondaryBold;
 		text-align: right;
 	}
