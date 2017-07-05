@@ -28,6 +28,7 @@ import { PreviousRecommendation } from '../pages/previous-recommendation/previou
 import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-recommendation';
 import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
 import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
+import { FertigationprogrameGrowerinfo } from '../pages/fertigationprograme-growerinfo/fertigationprograme-growerinfo';
 
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
@@ -87,7 +88,8 @@ export function provideSettings(storage: Storage) {
 	PreviousRecommendation,
 	AddNewRecommendation,
 	SelectCropGrowth,
-	AddWaterAnalysis
+	AddWaterAnalysis,
+	FertigationprogrameGrowerinfo
   ],
   imports: [
     BrowserModule,
@@ -126,7 +128,8 @@ export function provideSettings(storage: Storage) {
 	PreviousRecommendation,
 	AddNewRecommendation,
 	SelectCropGrowth,
-	AddWaterAnalysis
+	AddWaterAnalysis,
+	FertigationprogrameGrowerinfo
   ],
   providers: [
     Api,

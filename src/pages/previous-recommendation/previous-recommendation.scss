@@ -41,4 +41,10 @@ page-previous-recommendation {
 		margin: 2rem 2rem;
     }
   }
+
+  @media only screen and (max-width: 780px) and (orientation:portrait){
+    .menu-lateral-movil{
+      display: none;
+    }
+  }
 }

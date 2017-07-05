@@ -25,6 +25,7 @@ import { PreviousRecommendation } from '../pages/previous-recommendation/previou
 import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-recommendation';
 import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
 import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
+import { FertigationprogrameGrowerinfo } from '../pages/fertigationprograme-growerinfo/fertigationprograme-growerinfo';
 
 import { Settings } from '../providers/providers';
 
@@ -50,7 +51,7 @@ import { TranslateService } from '@ngx-translate/core'
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = AddWaterAnalysis;
+  rootPage = FertigationprogrameGrowerinfo;
 
   @ViewChild(Nav) nav: Nav;
 
@@ -75,6 +76,7 @@ export class MyApp {
     { title: 'AddNewRecommendation', component: AddNewRecommendation },
     { title: 'SelectCropGrowth', component: SelectCropGrowth },
     { title: 'AddWaterAnalysis', component: AddWaterAnalysis },
+    { title: 'FertigationprogrameGrowerinfo', component: FertigationprogrameGrowerinfo },
   ]
 
   constructor(private translate: TranslateService, private platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {

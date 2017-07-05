@@ -117,4 +117,10 @@ page-add-water-analysis {
       display: none;
     }
   }
+
+  @media only screen and (max-width: 780px) and (orientation:portrait){
+    .menu-lateral-movil{
+      display: none;
+    }
+  }
 }

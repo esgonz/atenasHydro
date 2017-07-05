@@ -100,4 +100,10 @@ page-input-data-table {
       display: none;
     }
   }
+
+  @media only screen and (max-width: 780px) and (orientation:portrait){
+    .menu-lateral-movil{
+      display: none;
+    }
+  }
 }
