@@ -16,7 +16,9 @@ import { SignupPage } from '../signup/signup';
 })
 export class SelectCropGrowth {
 
-  constructor(public navCtrl: NavController) { }
+
+  constructor(public navCtrl: NavController) { 
+  }
 
   login() {
     this.navCtrl.push(LoginPage);

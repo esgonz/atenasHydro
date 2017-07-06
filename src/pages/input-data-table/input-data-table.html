@@ -1,22 +1,3 @@
-<ion-header>
-	
-	<ion-navbar color="dark">
-    <button ion-button icon-only menuToggle>
-      <ion-icon name="arrow-back"></ion-icon>
-    </button>
-
-    <ion-title>
-      Input data
-    </ion-title>
-		
-    <ion-buttons end>
-      <button ion-button icon-only (click)="openModal()">
-        <ion-icon name="md-more"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
-
 <ion-content scroll="false">
     <ion-grid>
       <ion-row justify-content-start>
@@ -34,7 +15,7 @@
             <ion-col>
               <ion-item>
                 <ion-label color="secondary" class="fontSecondary" stacked>Wanted E.C. value</ion-label>
-                <ion-input type="wanted" placeholder="Wanted E.C. value"></ion-input>
+                <ion-input type="number" placeholder="1.5"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
@@ -47,13 +28,13 @@
             <ion-col>
               <ion-item>
                 <ion-label color="secondary" class="fontSecondary" stacked>Size tank (I)</ion-label>
-                <ion-input type="wanted" placeholder="Size tank (I)"></ion-input>
+                <ion-input type="number" placeholder="1000"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-6>
               <ion-item>
                 <ion-label color="secondary" class="fontSecondary" stacked>Dilution Factor</ion-label>
-                <ion-input type="standard" placeholder="Dilution Factor"></ion-input>
+                <ion-input type="standard" placeholder="1000"></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -85,8 +66,8 @@
           <ion-row>
             <ion-col>
               <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Concentration</ion-label>
-                <ion-input type="wanted" placeholder="Concentration"></ion-input>
+                <ion-label color="secondary" class="fontSecondary" stacked>Concentration %</ion-label>
+                <ion-input type="number" placeholder="38"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
@@ -98,7 +79,7 @@
             <ion-col>
               <ion-item>
                 <ion-label color="secondary" class="fontSecondary" stacked>Density (kg - liter)</ion-label>
-                <ion-input type="wanted" placeholder="Email Input"></ion-input>
+                <ion-input type="number" placeholder="1.235"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
@@ -122,7 +103,7 @@
             <ion-col>
               <ion-item>
                 <ion-label color="secondary" class="fontSecondary" stacked>% of CaO</ion-label>
-                <ion-input type="wanted" placeholder="Email Input"></ion-input>
+                <ion-input type="number" placeholder="63.9"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
@@ -134,7 +115,7 @@
             <ion-col>
               <ion-item>
                 <ion-label color="secondary" class="fontSecondary" stacked>Not applicable (N.A.)</ion-label>
-                <ion-input type="wanted" placeholder="Email Input"></ion-input>
+                <ion-input type="number" placeholder="N.A."></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
@@ -154,7 +135,7 @@
             <ion-col>
               <ion-item>
                 <ion-label color="secondary" class="fontSecondary" stacked>Concentration N%</ion-label>
-                <ion-input type="wanted" placeholder="Email Input"></ion-input>
+                <ion-input type="number" placeholder="N.A."></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
@@ -166,7 +147,7 @@
             <ion-col>
               <ion-item>
                 <ion-label color="secondary" class="fontSecondary" stacked>Density (kg/liter)</ion-label>
-                <ion-input type="wanted" placeholder="Email Input"></ion-input>
+                <ion-input type="number" placeholder="N.A."></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
@@ -187,7 +168,7 @@
             <ion-col>
               <ion-item>
                 <ion-label color="secondary" class="fontSecondary" stacked>Concentration N%</ion-label>
-                <ion-input type="wanted" placeholder="Email Input"></ion-input>
+                <ion-input type="number" placeholder="N.A."></ion-input>
               </ion-item>
             </ion-col>
             <ion-col col-4>
@@ -200,6 +181,6 @@
     </ion-grid>
 </ion-content>
 <ion-footer no-border>
-    <button ion-button full color="danger"><img class="subimagenmenu" src="../assets/icon/addmore-icon.svg" width="40px">ADD WATER ANALYSIS</button>
+    <button ion-button full color="danger" (click) = addWaterAnalysis()><img class="subimagenmenu" src="../assets/icon/addmore-icon.svg" width="40px">ADD WATER ANALYSIS</button>
     <button ion-button full><img class="subimagenmenu" src="../assets/icon/addmore-icon.svg" width="40px">SEE FERTIGATION PROGRAMME</button>
 </ion-footer>
