@@ -51,15 +51,22 @@ page-inicio-welcome {
       background-color: rgb(220, 220, 220);
     }
   }
+	@media only screen and (min-width: 550px) and (orientation:landscape){
+		.splash-bg3{
+		display: none;
+		}
+	}
 
-	@media only screen and (max-width: 540px){
+	@media only screen and (max-width: 780px) and (orientation:portrait){
     .splash-bg2{
-    background: url('../assets/img/splash-background-movil.png') no-repeat;
-    height: 197px;   
-    width: 95%;
+    background: url(../assets/img/splash-background-movil-2.jpg) no-repeat;
+    height: 100%;
+    width: 98%;
     z-index: 1;
-	position: fixed;
-	bottom: 0;
+    position: fixed;
+    bottom: 0%;
+    background-position-y: 100%;
+    background-size: contain;
     }
     .splash-bg{
     background: url('../assets/img/logo-sqm-img.jpg') no-repeat left;
@@ -74,9 +81,4 @@ page-inicio-welcome {
 		
     margin-top: -35px;}
   }
-	@media only screen and (min-width: 550px){
-		.splash-bg3{
-		display: none;
-		}
-	}
 }

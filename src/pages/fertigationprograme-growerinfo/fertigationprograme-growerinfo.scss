@@ -1,4 +1,4 @@
-page-select-crop-growth {
+page-fertigationprograme-growerinfo {
   .splash-bg {
     position: relative;
     background: url('../assets/img/splashbg.png') no-repeat transparent;
@@ -13,32 +13,6 @@ page-select-crop-growth {
     from { background-position: 0 0; }
     to { background-position: 100% 0; }
   }
-	
-	.card-background-page {
-
-	  ion-card {
-		position: relative;
-		text-align: center;
-	  }
-
-	  .card-title {
-		position: absolute;
-		top: 36%;
-		font-size: 2.0em;
-		width: 100%;
-		font-weight: bold;
-		color: #fff;
-	  }
-
-	  .card-subtitle {
-		font-size: 1.0em;
-		position: absolute;
-		top: 52%;
-		width: 100%;
-		color: #fff;
-	  }
-
-	}
 
   .splash-info {
     position: relative;
@@ -102,27 +76,24 @@ page-select-crop-growth {
     background-color: $background-secondary-color;
     
   }
-	.tarjetas {
-		opacity: 0.8;
-	}
 
-  $fontSecondaryBold: bold;
-
-  h4{
+  h5{
 	  color: color($colors,dark);
 	  text-align: left;
 	  margin-left: 1rem;
+	  font-weight:  $fontSecondaryBold;
+  }
+
+  h6{
+	  color: color($colors,dark);
+	  text-align: left;
+	  margin-left: 1rem;
+	  font-weight:  $fontSecondaryBold;
   }
 
   .fontSecondary{
     font-weight:  $fontSecondaryBold;
   }
-	
-	.textotarjetas {
-		color: color($colors,dark);
-		font-weight: $fontSecondaryBold;
-		text-align: right;
-	}
 
   @media only screen and (max-width: 540px){
     .menu-lateral-movil{
