@@ -83,13 +83,13 @@ export function provideSettings(storage: Storage) {
     WelcomePage,
     InputData,
     InputDataTable,
-	InicioWelcome,
-	Disclaimer,
-	PreviousRecommendation,
-	AddNewRecommendation,
-	SelectCropGrowth,
-	AddWaterAnalysis,
-	FertigationprogrameGrowerinfo
+  InicioWelcome,
+  Disclaimer,
+  PreviousRecommendation,
+  AddNewRecommendation,
+  SelectCropGrowth,
+  AddWaterAnalysis,
+  FertigationprogrameGrowerinfo
   ],
   imports: [
     BrowserModule,
@@ -123,13 +123,13 @@ export function provideSettings(storage: Storage) {
     WelcomePage,
     InputData,
     InputDataTable,
-	InicioWelcome,
-	Disclaimer,
-	PreviousRecommendation,
-	AddNewRecommendation,
-	SelectCropGrowth,
-	AddWaterAnalysis,
-	FertigationprogrameGrowerinfo
+  InicioWelcome,
+  Disclaimer,
+  PreviousRecommendation,
+  AddNewRecommendation,
+  SelectCropGrowth,
+  AddWaterAnalysis,
+  FertigationprogrameGrowerinfo
   ],
   providers: [
     Api,

@@ -32,23 +32,7 @@ import { Settings } from '../providers/providers';
 import { TranslateService } from '@ngx-translate/core'
 
 @Component({
-  template: `<ion-menu [content]="content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Pages</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content>
-      <ion-list>
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          {{p.title}}
-        </button>
-      </ion-list>
-    </ion-content>
-
-  </ion-menu>
-  <ion-nav #content [root]="rootPage"></ion-nav>`
+  templateUrl:'app.html'
 })
 export class MyApp {
   rootPage = FertigationprogrameGrowerinfo;
@@ -56,27 +40,9 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Tutorial', component: TutorialPage },
-    { title: 'Welcome', component: WelcomePage },
-    { title: 'Tabs', component: TabsPage },
-    { title: 'Cards', component: CardsPage },
-    { title: 'Content', component: ContentPage },
-    { title: 'Login', component: LoginPage },
-    { title: 'Signup', component: SignupPage },
-    { title: 'Map', component: MapPage },
-    { title: 'Master Detail', component: ListMasterPage },
-    { title: 'Menu', component: MenuPage },
-    { title: 'Settings', component: SettingsPage },
-    { title: 'Search', component: SearchPage },
-    { title: 'InputData', component: InputData },
-    { title: 'InputDataTable', component: InputDataTable },
-    { title: 'InicioWelcome', component: InicioWelcome },
-    { title: 'Disclaimer', component: Disclaimer },
-    { title: 'PreviousRecommendation', component: PreviousRecommendation },
-    { title: 'AddNewRecommendation', component: AddNewRecommendation },
-    { title: 'SelectCropGrowth', component: SelectCropGrowth },
-    { title: 'AddWaterAnalysis', component: AddWaterAnalysis },
-    { title: 'FertigationprogrameGrowerinfo', component: FertigationprogrameGrowerinfo },
+    { title: 'Input Data Table', component: InputDataTable },
+    { title: 'Add Water Analysis', component: AddWaterAnalysis }
+
   ]
 
   constructor(private translate: TranslateService, private platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {

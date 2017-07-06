@@ -1,308 +1,304 @@
-<ion-header>
-	
-	<ion-navbar color="dark">
-    <button ion-button icon-only menuToggle>
-      <ion-icon name="arrow-back"></ion-icon>
-    </button>
-
-    <ion-title>
-      Add water analysis
-    </ion-title>
-		
-    <ion-buttons end>
-      <button ion-button icon-only (click)="openModal()">
-        <ion-icon name="md-more"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
-
 <ion-content scroll="false">
-    <ion-grid>
-      <ion-row justify-content-start>
-		<!-- primera columna -->
-        <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3 class="menu-lateral-movil backgroundSecondary">
-          <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.svg" width="50px">Select crop and growth stage</button>
-          <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/icon/inputdata.svg" width="50px">Input data</button>
-          <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/addwateranalysis.svg" width="40px">Add water analysis</button>
-          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.svg" width="50px">Fertigation programme</button>
-        </ion-col>
-		<!-- segunda columna --> 
-		  <ion-col col-12 col-sm-9 col-md-12 col-lg-8 col-xl-3>
-		  	<ion-row>
-				<h6>Water analysis data &amp; molar calculation</h6>
-			</ion-row>
-			<ion-row>
-			<ion-col col-12 col-sm-9 col-md-6 col-lg-6 col-xl-3>
-          <h6>Select analysis concentration expression</h6>
-          <ion-row radio-group [(ngModel)]="relationship">
-            <ion-col>
-              <ion-item>
-                <ion-radio value="mg/l" checked></ion-radio>
-                <ion-label color="secondary" class="fontSecondary">mg/l</ion-label>
-              </ion-item>
-            </ion-col>
-            <ion-col>
-              <ion-item>
-                <ion-radio value="mmol/l" checked></ion-radio>
-                <ion-label color="secondary" class="fontSecondary">mmol/l</ion-label>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <h6 class="marginline">Insert N-NH4</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>N-NH4</ion-label>
-                <ion-input type="wanted" placeholder="35.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">2.5 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert N-NO3</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>N-NO3</ion-label>
-                <ion-input type="wanted" placeholder="35.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.1 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert P</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>P</ion-label>
-                <ion-input type="wanted" placeholder="55.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">1.8 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert K</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>K</ion-label>
-                <ion-input type="wanted" placeholder="3.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">2.2 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert Ca</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Ca</ion-label>
-                <ion-input type="wanted" placeholder="3.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">2.2 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert Mg</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Mg</ion-label>
-                <ion-input type="wanted" placeholder="46.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">1.9 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert Na</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Na</ion-label>
-                <ion-input type="wanted" placeholder="23.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">1.0 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert Cl</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Cl</ion-label>
-                <ion-input type="wanted" placeholder="33.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.9 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert S-SO4</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>S-SO4</ion-label>
-                <ion-input type="wanted" placeholder="70.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">2.2 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-        </ion-col>
-		<!-- tercera columna -->
-        <ion-col col-12 col-sm-9 col-md-6 col-lg-6 col-xl-3>
-			<h6>Check +/- balance</h6>
-          <ion-row>
-            <ion-col class="checkbalance">
-				2.986
-            </ion-col>
-            <ion-col col-4 class="checkbalancenumber">
+  <ion-grid>
+    <ion-row justify-content-start>
+      <!-- primera columna -->
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 class="menu-lateral-movil backgroundSecondary">
+        <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.svg" width="50px">Select crop and growth stage</button>
+        <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/icon/inputdata.svg" width="50px">Input data</button>
+        <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/addwateranalysis.svg" width="40px">Add water analysis</button>
+        <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.svg" width="50px">Fertigation programme</button>
+      </ion-col>
+      <!-- segunda columna --> 
+      <ion-col col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9>
+        <ion-row>
+          <h6>Water analysis data &amp; molar calculation</h6>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+
+
+            <h6>Select analysis concentration expression</h6>
+            <ion-row radio-group [(ngModel)]="relationship">
+              <ion-col>
+                <ion-item>
+                  <ion-radio value="mg/l" checked></ion-radio>
+                  <ion-label color="secondary" class="fontSecondary">mg/l</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  <ion-radio value="mmol/l" checked></ion-radio>
+                  <ion-label color="secondary" class="fontSecondary">mmol/l</ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+          </ion-col>
+
+          <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+            <h6>Check +/- balance</h6>
+            <ion-row>
+              <ion-col class="checkbalance">
+                00.00
+              </ion-col>
+              <ion-col col-4 class="checkbalancenumber">
                 mmol/l
-            </ion-col>
-          </ion-row>
-          <h6>Insert Fe</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Fe</ion-label>
-                <ion-input type="wanted" placeholder="23.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+
+            <h6>Insert N-NH<sub>4</sub></h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>N-NH<sub>4</sub></ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">411.8 µmol</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert Mn</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Mn</ion-label>
-                <ion-input type="wanted" placeholder="443.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
+                <ion-label color="secondary">0.00 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert N-NO<sub>3</sub></h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>N-NO<sub>3</sub></ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">8063.3 µmol</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert Zn</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Zn</ion-label>
-                <ion-input type="wanted" placeholder="57.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
+                <ion-label color="secondary">0.00 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert P</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>P</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">871.7 µmol</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert Cu</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Cu</ion-label>
-                <ion-input type="wanted" placeholder="32.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
+                <ion-label color="secondary">0.00 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert K</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>K</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">503.5 µmol</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert B</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>B</ion-label>
-                <ion-input type="wanted" placeholder="44.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
+                <ion-label color="secondary">0.00 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert Ca</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Ca</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">4070.3 µmol</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert Mo</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Mo</ion-label>
-                <ion-input type="wanted" placeholder="70.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
+                <ion-label color="secondary">0.00 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert Mg</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Mg</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">687.9 µmol</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert HCO3-</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>HCO3-</ion-label>
-                <ion-input type="wanted" placeholder="70.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
+                <ion-label color="secondary">0.00 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert Na</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Na</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">1.6 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Insert pH Water</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>pH Water</ion-label>
-                <ion-input type="wanted" placeholder="11.0"></ion-input>
-              </ion-item>
-            </ion-col>
-            <!--<ion-col col-4>
+                <ion-label color="secondary">0.00 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert Cl</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Cl</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">2.2 mmol/l</ion-label>
-            </ion-col>-->
-          </ion-row>
-          <h6>Insert E.C. Water</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>E.C. Water</ion-label>
-                <ion-input type="wanted" placeholder="2.0"></ion-input>
-              </ion-item>
+                <ion-label color="secondary">0.00 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert S-SO4</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>S-SO4</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                <ion-label color="secondary">Equivalent to</ion-label>
+                <ion-label color="secondary">0.00 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+          <!-- tercera columna -->
+          <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+
+            <h6>Insert Fe</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Fe</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                <ion-label color="secondary">Equivalent to</ion-label>
+                <ion-label color="secondary">0.00 µmol</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert Mn</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Mn</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                <ion-label color="secondary">Equivalent to</ion-label>
+                <ion-label color="secondary">0.00 µmol</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert Zn</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Zn</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                <ion-label color="secondary">Equivalent to</ion-label>
+                <ion-label color="secondary">0.00 µmol</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert Cu</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Cu</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                <ion-label color="secondary">Equivalent to</ion-label>
+                <ion-label color="secondary">0.00 µmol</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert B</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>B</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                <ion-label color="secondary">Equivalent to</ion-label>
+                <ion-label color="secondary">0.00 µmol</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert Mo</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Mo</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                <ion-label color="secondary">Equivalent to</ion-label>
+                <ion-label color="secondary">0.00 µmol</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert HCO<sub>3</sub>-</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>HCO<sub>3</sub>-</ion-label>
+                  <ion-input type="number" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                <ion-label color="secondary">Equivalent to</ion-label>
+                <ion-label color="secondary">0.00 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Insert pH Water</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>pH Water</ion-label>
+                  <ion-input type="numer" placeholder="0.00"></ion-input>
+                </ion-item>
+              </ion-col>
+              <!--<ion-col col-4>
+                  <ion-label color="secondary">Equivalent to</ion-label>
+                  <ion-label color="secondary">2.2 mmol/l</ion-label>
+                </ion-col>-->
+              </ion-row>
+              <h6>Insert E.C. Water</h6>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label color="secondary" class="fontSecondary" stacked>E.C. Water</ion-label>
+                    <ion-input type="number" placeholder="0.00"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col col-4>
+                  <ion-label color="secondary"></ion-label>
+                  <ion-label color="secondary"> mS/cm</ion-label>
+                </ion-col>
+              </ion-row>
             </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary"></ion-label>
-                <ion-label color="secondary"> mS/cm</ion-label>
-            </ion-col>
           </ion-row>
+          
         </ion-col>
-			</ion-row>
-			  
-		  </ion-col>
         
-      </ion-row>
-    </ion-grid>
-</ion-content>
-<ion-footer no-border>
+    </ion-row>
+  </ion-grid>
+  </ion-content>
+  <ion-footer no-border>
     <button ion-button full><img class="subimagenmenu" src="../assets/icon/addmore-icon.svg" width="40px">SEE FERTIGATION PROGRAMME</button>
-</ion-footer>
+  </ion-footer>
