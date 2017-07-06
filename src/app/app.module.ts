@@ -54,13 +54,13 @@ export function provideSettings(storage: Storage) {
   declarations: [
     MyApp,
     InputDataTable,
-  InicioWelcome,
-  Disclaimer,
-  PreviousRecommendation,
-  AddNewRecommendation,
-  SelectCropGrowth,
-  AddWaterAnalysis,
-  FertigationprogrameGrowerinfo
+    InicioWelcome,
+    Disclaimer,
+    PreviousRecommendation,
+    AddNewRecommendation,
+    SelectCropGrowth,
+    AddWaterAnalysis,
+    FertigationprogrameGrowerinfo
   ],
   imports: [
     BrowserModule,
@@ -79,13 +79,13 @@ export function provideSettings(storage: Storage) {
   entryComponents: [
     MyApp,
     InputDataTable,
-  InicioWelcome,
-  Disclaimer,
-  PreviousRecommendation,
-  AddNewRecommendation,
-  SelectCropGrowth,
-  AddWaterAnalysis,
-  FertigationprogrameGrowerinfo
+    InicioWelcome,
+    Disclaimer,
+    PreviousRecommendation,
+    AddNewRecommendation,
+    SelectCropGrowth,
+    AddWaterAnalysis,
+    FertigationprogrameGrowerinfo
   ],
   providers: [
     Api,

@@ -2,14 +2,17 @@
   <ion-grid>
     <ion-row justify-content-start>
       <!-- primera columna -->
-      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 class="menu-lateral-movil backgroundSecondary">
-        <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.svg" width="50px">Select crop and growth stage</button>
-        <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/icon/inputdata.svg" width="50px">Input data</button>
-        <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/addwateranalysis.svg" width="40px">Add water analysis</button>
-        <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.svg" width="50px">Fertigation programme</button>
+      <ion-col col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 class="menu-lateral-movil backgroundSecondary" showWhen="landscape">
+        
+        <div class="menuLateralList">
+          <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.svg" width="50px">Select crop and growth stage</button>
+          <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/icon/inputdata.svg" width="50px">Input data</button>
+          <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/addwateranalysis.svg" width="40px">Add water analysis</button>
+          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.svg" width="50px">Fertigation programme</button>
+        </div>
       </ion-col>
       <!-- segunda columna --> 
-      <ion-col col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9>
+      <ion-col col-12 col-sm-12 col-md-9>
         <ion-row>
           <h6>Water analysis data &amp; molar calculation</h6>
         </ion-row>
