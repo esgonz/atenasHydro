@@ -2,181 +2,191 @@
     <ion-grid>
       <ion-row justify-content-start>
     <!-- primera columna -->
-        <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3 class="menu-lateral-movil backgroundSecondary">
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 class="menu-lateral-movil backgroundSecondary" showWhen="landscape">
           <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.svg" width="50px">Select crop and growth stage</button>
           <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/icon/inputdata.svg" width="50px">Input data</button>
           <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/addwateranalysis.svg" width="40px">Add water analysis</button>
           <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.svg" width="50px">Fertigation programme</button>
-        </ion-col>
-    <!-- segunda columna -->
-        <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3>
-          <h6>Enter E.C. value</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Wanted E.C. value</ion-label>
-                <ion-input type="number" placeholder="1.5"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary" stacked>Standard E.C. value</ion-label>
-                <ion-label color="secondary">1.5 mS/cm</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Tank System</h6>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Size tank (I)</ion-label>
-                <ion-input type="number" placeholder="1000"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-6>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Dilution Factor</ion-label>
-                <ion-input type="standard" placeholder="1000"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <h6>Substrate</h6>
-          <ion-row radio-group [(ngModel)]="relationship">
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary">Iner<br /><small>(Stone wool, perlite)</small></ion-label>
-                <ion-radio value="Iner" checked></ion-radio>
-              </ion-item>
-            </ion-col>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary">Organic<br /><small>(Coco peat)</small></ion-label>
-                <ion-radio value="secondary"></ion-radio>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <h6>Select acid of choice</h6>
-          <ion-item>
-            <ion-label color="secondary">Select One..</ion-label>
-            <ion-select [(ngModel)]="NitricAcid" multiple="false">
-              <ion-option color="secondary">Nitric Acid - X%</ion-option>
-              <ion-option color="secondary">Nitric Acid - 38%</ion-option>
-              <ion-option color="secondary">Nitric Acid - 53%</ion-option>
-              <ion-option color="secondary">Nitric Acid - 60%</ion-option>
-            </ion-select>
-          </ion-item>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Concentration %</ion-label>
-                <ion-input type="number" placeholder="38"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Suggestion</ion-label>
-                <ion-label color="secondary">38 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Density (kg - liter)</ion-label>
-                <ion-input type="number" placeholder="1.235"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Suggestion</ion-label>
-                <ion-label color="secondary">1.235 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-        </ion-col>
-    <!-- tercera columna -->
-        <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3>
-          <h6>Chloride source of choice</h6>
-          <ion-item>
-            <ion-label color="secondary">Select One..</ion-label>
-            <ion-select [(ngModel)]="Chloride" multiple="false">
-              <ion-option>Calcium chloride (liquid)</ion-option>
-              <ion-option>Calcium chloride anhydrous (solid)</ion-option>
-              <ion-option>Calcium chloride dihydrate (solid)</ion-option>
-            </ion-select>
-          </ion-item>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>% of CaO</ion-label>
-                <ion-input type="number" placeholder="63.9"></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Suggestion</ion-label>
-                <ion-label color="secondary">63.9 mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Not applicable (N.A.)</ion-label>
-                <ion-input type="number" placeholder="N.A."></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Suggestion</ion-label>
-                <ion-label color="secondary">N.A. mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Calcium nitrate source of choice</h6>
-          <ion-item>
-             <ion-label color="secondary">Select One..</ion-label>
-            <ion-select [(ngModel)]="toppings" multiple="false">
-              <ion-option>Ultrasol&reg; Calcium (15.5% N-26% CaO)</ion-option>
-              <ion-option>Liquid Calcium Nitrate</ion-option>
-            </ion-select>
-          </ion-item>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Concentration N%</ion-label>
-                <ion-input type="number" placeholder="N.A."></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Suggestion</ion-label>
-                <ion-label color="secondary">N.A. mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Density (kg/liter)</ion-label>
-                <ion-input type="number" placeholder="N.A."></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Suggestion</ion-label>
-                <ion-label color="secondary">N.A. mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-          <h6>Iron chelate source of choice</h6>
-          <ion-item>
-             <ion-label color="secondary">Select One..</ion-label>
-            <ion-select [(ngModel)]="Iron" multiple="false">
-              <ion-option>Ultrasol&reg; micro Rexene&reg; FeE13</ion-option>
-              <ion-option>Ultrasol&reg; micro Rexene&reg; FeD12</ion-option>
-              <ion-option>Ultrasol&reg; micro Rexene&reg; FeQ48</ion-option>
-            </ion-select>
-          </ion-item>
-          <ion-row>
-            <ion-col>
-              <ion-item>
-                <ion-label color="secondary" class="fontSecondary" stacked>Concentration N%</ion-label>
-                <ion-input type="number" placeholder="N.A."></ion-input>
-              </ion-item>
-            </ion-col>
-            <ion-col col-4>
-                <ion-label color="secondary">Suggestion</ion-label>
-                <ion-label color="secondary">N.A. mmol/l</ion-label>
-            </ion-col>
-          </ion-row>
-        </ion-col>
+      </ion-col>
+    <!-- segunda columna --> 
+      <ion-col col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9>
+        <ion-row>
+          <h6>Input Data</h6>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+            <h6>Enter E.C. value</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Wanted E.C. value</ion-label>
+                  <ion-input type="number" placeholder="1.5"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                  <ion-label color="secondary" stacked>Standard E.C. value</ion-label>
+                  <ion-label color="secondary">1.5 mS/cm</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Tank System</h6>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Size tank (I)</ion-label>
+                  <ion-input type="number" placeholder="1000"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-6>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Dilution Factor</ion-label>
+                  <ion-input type="standard" placeholder="1000"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <h6>Substrate</h6>
+            <ion-row radio-group [(ngModel)]="relationship">
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary">Iner<br /><small>(Stone wool, perlite)</small></ion-label>
+                  <ion-radio value="Iner" checked></ion-radio>
+                </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary">Organic<br /><small>(Coco peat)</small></ion-label>
+                  <ion-radio value="secondary"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <h6>Select acid of choice</h6>
+            <ion-item>
+              <ion-label color="secondary">Select One..</ion-label>
+              <ion-select [(ngModel)]="NitricAcid" multiple="false">
+                <ion-option color="secondary">Nitric Acid - X%</ion-option>
+                <ion-option color="secondary">Nitric Acid - 38%</ion-option>
+                <ion-option color="secondary">Nitric Acid - 53%</ion-option>
+                <ion-option color="secondary">Nitric Acid - 60%</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Concentration %</ion-label>
+                  <ion-input type="number" placeholder="38"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                  <ion-label color="secondary">Suggestion</ion-label>
+                  <ion-label color="secondary">38 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Density (kg - liter)</ion-label>
+                  <ion-input type="number" placeholder="1.235"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                  <ion-label color="secondary">Suggestion</ion-label>
+                  <ion-label color="secondary">1.235 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+      <!-- tercera columna -->
+          <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+            <h6>Chloride source of choice</h6>
+            <ion-item>
+              <ion-label color="secondary">Select One..</ion-label>
+              <ion-select [(ngModel)]="Chloride" multiple="false">
+                <ion-option>Calcium 3 (liquid)</ion-option>
+                <ion-option>Calcium chloride anhydrous (solid)</ion-option>
+                <ion-option>Calcium chloride dihydrate (solid)</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>% of CaO</ion-label>
+                  <ion-input type="number" placeholder="63.9"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                  <ion-label color="secondary">Suggestion</ion-label>
+                  <ion-label color="secondary">63.9 mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Not applicable (N.A.)</ion-label>
+                  <ion-input type="number" placeholder="N.A."></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                  <ion-label color="secondary">Suggestion</ion-label>
+                  <ion-label color="secondary">N.A. mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Calcium nitrate source of choice</h6>
+            <ion-item>
+               <ion-label color="secondary">Select One..</ion-label>
+              <ion-select [(ngModel)]="toppings" multiple="false">
+                <ion-option>Ultrasol&reg; Calcium (15.5% N-26% CaO)</ion-option>
+                <ion-option>Liquid Calcium Nitrate</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Concentration N%</ion-label>
+                  <ion-input type="number" placeholder="N.A."></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                  <ion-label color="secondary">Suggestion</ion-label>
+                  <ion-label color="secondary">N.A. mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Density (kg/liter)</ion-label>
+                  <ion-input type="number" placeholder="N.A."></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                  <ion-label color="secondary">Suggestion</ion-label>
+                  <ion-label color="secondary">N.A. mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+            <h6>Iron chelate source of choice</h6>
+            <ion-item>
+               <ion-label color="secondary">Select One..</ion-label>
+              <ion-select [(ngModel)]="Iron" multiple="false">
+                <ion-option>Ultrasol&reg; micro Rexene&reg; FeE13</ion-option>
+                <ion-option>Ultrasol&reg; micro Rexene&reg; FeD12</ion-option>
+                <ion-option>Ultrasol&reg; micro Rexene&reg; FeQ48</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label color="secondary" class="fontSecondary" stacked>Concentration N%</ion-label>
+                  <ion-input type="number" placeholder="N.A."></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-4>
+                  <ion-label color="secondary">Suggestion</ion-label>
+                  <ion-label color="secondary">N.A. mmol/l</ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+       </ion-col>
+
+
       </ion-row>
     </ion-grid>
 </ion-content>
