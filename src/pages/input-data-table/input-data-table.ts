@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
-
+import { LoginPage } from '../login/login';
+import { SignupPage } from '../signup/signup';
 
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -16,12 +16,13 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
 })
 export class InputDataTable {
 
-  constructor(public navCtrl: NavController) { 
+  constructor(public navCtrl: NavController) { }
 
+  login() {
+    this.navCtrl.push(LoginPage);
   }
 
-  addWaterAnalysis() {
-    this.navCtrl.push(AddWaterAnalysis);
+  signup() {
+    this.navCtrl.push(SignupPage);
   }
-
 }
