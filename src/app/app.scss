@@ -16,5 +16,24 @@
 // automatically applied to the <body> element in the app.
 
 .grid{
-	padding-top:60px;
+	padding-top:55px;
 }
+
+.menuLateralList{
+	position: fixed;
+    top: 60px;
+    width: 24%;
+}
+
+  @media only screen and (max-width: 767px){
+    .menu-lateral-movil{
+      display: none;
+    }
+  }
+
+
+  /*@media only screen and (max-width: 780px) and (orientation:portrait){
+    .menu-lateral-movil{
+      display: none;
+    }
+  }*/

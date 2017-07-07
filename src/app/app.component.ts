@@ -1,44 +1,24 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav, Config } from 'ionic-angular';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { CardsPage } from '../pages/cards/cards';
-import { ContentPage } from '../pages/content/content';
-import { FirstRunPage } from '../pages/pages';
-import { ListMasterPage } from '../pages/list-master/list-master';
-import { LoginPage } from '../pages/login/login';
-import { MapPage } from '../pages/map/map';
-import { MenuPage } from '../pages/menu/menu';
-import { SearchPage } from '../pages/search/search';
-import { SettingsPage } from '../pages/settings/settings';
-import { SignupPage } from '../pages/signup/signup';
-import { TabsPage } from '../pages/tabs/tabs';
-import { TutorialPage } from '../pages/tutorial/tutorial';
-import { WelcomePage } from '../pages/welcome/welcome';
-import { InputData } from '../pages/input-data/input-data';
-import { InputDataTable } from '../pages/input-data-table/input-data-table';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { InicioWelcome } from '../pages/inicio-welcome/inicio-welcome';
 import { Disclaimer } from '../pages/disclaimer/disclaimer';
+import { FertigationprogrameGrowerinfo } from '../pages/fertigationprograme-growerinfo/fertigationprograme-growerinfo';
 import { PreviousRecommendation } from '../pages/previous-recommendation/previous-recommendation';
 import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-recommendation';
 import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
+import { InputDataTable } from '../pages/input-data-table/input-data-table';
 import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
-import { FertigationprogrameGrowerinfo } from '../pages/fertigationprograme-growerinfo/fertigationprograme-growerinfo';
-import { ResultOfWaterAnalysis } from '../pages/result-of-water-analysis/result-of-water-analysis';
-import { ResultOfFertigationSolution } from '../pages/result-of-fertigation-solution/result-of-fertigation-solution';
-import { ResultOfFertigationScheme } from '../pages/result-of-fertigation-scheme/result-of-fertigation-scheme';
-
 import { Settings } from '../providers/providers';
-
 import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   templateUrl:'app.html'
 })
 export class MyApp {
-  rootPage = TabsPage;
+  rootPage = InputDataTable;
 
   @ViewChild(Nav) nav: Nav;
 
@@ -48,7 +28,8 @@ export class MyApp {
 
   ]
 
-  constructor(private translate: TranslateService, private platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
+  constructor(private translate: TranslateService, private platform: Platform, settings: Settings, 
+            private config: Config, private splashScreen: SplashScreen) {
     this.initTranslate();
   }
 
@@ -56,7 +37,6 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
