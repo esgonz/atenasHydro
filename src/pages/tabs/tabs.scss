@@ -1,3 +1,83 @@
 page-tabs {
 
+	.ion-ios-customicon,
+	.ion-md-customicon {
+		content: url('../../assets/icon/grower-info-buttom.png');
+		width: 40px;
+		height: 40px !important;
+	}
+
+
+	.ion-ios-customicon-outline,
+	.ion-md-customicon-outline{
+		content: url('../../assets/icon/grower-info-buttom.png');
+		width: 40px;
+		height: 40px !important;
+		opacity: .4;
+	}
+
+	.ion-ios-customicon2,
+	.ion-md-customicon2 {
+		content: url('../../assets/icon/water-analysis-buttom.png');
+		width: 40px;
+		height: 40px !important;
+	}
+
+
+	.ion-ios-customicon2-outline,
+	.ion-md-customicon2-outline{
+		content: url('../../assets/icon/water-analysis-buttom.png');
+		width: 40px;
+		height: 40px !important;
+		opacity: .4;
+	}
+
+
+	.ion-ios-customicon3,
+	.ion-md-customicon3 {
+		content: url('../../assets/icon/fertigation-solution-buttom.png');
+		width: 40px;
+		height: 40px !important;
+	}
+
+
+	.ion-ios-customicon3-outline,
+	.ion-md-customicon3-outline{
+		content: url('../../assets/icon/fertigation-solution-buttom.png');
+		width: 40px;
+		height: 40px !important;
+		opacity: .4;
+	}
+
+	.ion-ios-customicon4,
+	.ion-md-customicon4 {
+		content: url('../../assets/icon/fertigation-scheme-buttom.png');
+		width: 40px;
+		height: 40px !important;
+	}
+
+
+	.ion-ios-customicon4-outline,
+	.ion-md-customicon4-outline{
+		content: url('../../assets/icon/fertigation-scheme-buttom.png');
+		width: 40px;
+		height: 40px !important;
+		opacity: .4;
+	}
+
+	.ion-ios-customicon5,
+	.ion-md-customicon5 {
+		content: url('../../assets/icon/send-recommendation-buttom.png');
+		width: 40px;
+		height: 40px !important;
+	}
+
+
+	.ion-ios-customicon5-outline,
+	.ion-md-customicon5-outline{
+		content: url('../../assets/icon/send-recommendation-buttom.png');
+		width: 40px;
+		height: 40px !important;
+		opacity: .4;
+	}
 }

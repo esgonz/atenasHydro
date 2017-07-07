@@ -29,6 +29,9 @@ import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-re
 import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
 import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
 import { FertigationprogrameGrowerinfo } from '../pages/fertigationprograme-growerinfo/fertigationprograme-growerinfo';
+import { ResultOfWaterAnalysis } from '../pages/result-of-water-analysis/result-of-water-analysis';
+import { ResultOfFertigationSolution } from '../pages/result-of-fertigation-solution/result-of-fertigation-solution';
+import { ResultOfFertigationScheme } from '../pages/result-of-fertigation-scheme/result-of-fertigation-scheme';
 
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
@@ -89,7 +92,10 @@ export function provideSettings(storage: Storage) {
   AddNewRecommendation,
   SelectCropGrowth,
   AddWaterAnalysis,
-  FertigationprogrameGrowerinfo
+  FertigationprogrameGrowerinfo,
+  ResultOfWaterAnalysis,
+  ResultOfFertigationSolution,
+  ResultOfFertigationScheme
   ],
   imports: [
     BrowserModule,
@@ -129,7 +135,10 @@ export function provideSettings(storage: Storage) {
   AddNewRecommendation,
   SelectCropGrowth,
   AddWaterAnalysis,
-  FertigationprogrameGrowerinfo
+  FertigationprogrameGrowerinfo,
+  ResultOfWaterAnalysis,
+  ResultOfFertigationSolution,
+  ResultOfFertigationScheme
   ],
   providers: [
     Api,

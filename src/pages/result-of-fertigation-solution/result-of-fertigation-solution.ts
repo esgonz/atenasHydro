@@ -7,10 +7,10 @@ import { Tab2Root } from '../pages';
 import { Tab3Root } from '../pages';
 
 @Component({
-  selector: 'page-fertigationprograme-growerinfo',
-  templateUrl: 'fertigationprograme-growerinfo.html'
+  selector: 'page-result-of-fertigation-solution',
+  templateUrl: 'result-of-fertigation-solution.html'
 })
-export class FertigationprogrameGrowerinfo {
+export class ResultOfFertigationSolution {
   tab1Root: any = Tab1Root;
   tab2Root: any = Tab2Root;
   tab3Root: any = Tab3Root;

@@ -26,6 +26,9 @@ import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-re
 import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
 import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
 import { FertigationprogrameGrowerinfo } from '../pages/fertigationprograme-growerinfo/fertigationprograme-growerinfo';
+import { ResultOfWaterAnalysis } from '../pages/result-of-water-analysis/result-of-water-analysis';
+import { ResultOfFertigationSolution } from '../pages/result-of-fertigation-solution/result-of-fertigation-solution';
+import { ResultOfFertigationScheme } from '../pages/result-of-fertigation-scheme/result-of-fertigation-scheme';
 
 import { Settings } from '../providers/providers';
 
@@ -35,7 +38,7 @@ import { TranslateService } from '@ngx-translate/core'
   templateUrl:'app.html'
 })
 export class MyApp {
-  rootPage = FertigationprogrameGrowerinfo;
+  rootPage = TabsPage;
 
   @ViewChild(Nav) nav: Nav;
 
