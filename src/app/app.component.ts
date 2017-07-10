@@ -11,6 +11,14 @@ import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-re
 import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
 import { InputDataTable } from '../pages/input-data-table/input-data-table';
 import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
+
+
+import {ResultOfFertigationScheme} from '../pages/result-of-fertigation-scheme/result-of-fertigation-scheme';
+import {ResultOfFertigationSolution} from '../pages/result-of-fertigation-solution/result-of-fertigation-solution';
+import {ResultOfWaterAnalysis} from '../pages/result-of-water-analysis/result-of-water-analysis';
+
+import {TabsPage} from '../pages/tabs/tabs';
+
 import { Settings } from '../providers/providers';
 import { TranslateService } from '@ngx-translate/core'
 

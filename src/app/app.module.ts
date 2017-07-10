@@ -17,6 +17,13 @@ import { InputDataTable } from '../pages/input-data-table/input-data-table';
 import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
 
 
+import {ResultOfFertigationScheme} from '../pages/result-of-fertigation-scheme/result-of-fertigation-scheme';
+import {ResultOfFertigationSolution} from '../pages/result-of-fertigation-solution/result-of-fertigation-solution';
+import {ResultOfWaterAnalysis} from '../pages/result-of-water-analysis/result-of-water-analysis';
+
+import {TabsPage} from '../pages/tabs/tabs';
+
+
 
 
 import { Api } from '../providers/api';
@@ -60,7 +67,11 @@ export function provideSettings(storage: Storage) {
     AddNewRecommendation,
     SelectCropGrowth,
     AddWaterAnalysis,
-    FertigationprogrameGrowerinfo
+    FertigationprogrameGrowerinfo,
+    ResultOfFertigationScheme,
+    ResultOfFertigationSolution,
+    ResultOfWaterAnalysis,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -85,7 +96,11 @@ export function provideSettings(storage: Storage) {
     AddNewRecommendation,
     SelectCropGrowth,
     AddWaterAnalysis,
-    FertigationprogrameGrowerinfo
+    FertigationprogrameGrowerinfo,    
+    ResultOfFertigationScheme,
+    ResultOfFertigationSolution,
+    ResultOfWaterAnalysis,
+    TabsPage
   ],
   providers: [
     Api,
