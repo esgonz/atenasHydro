@@ -1,15 +1,38 @@
+<!-- HEADER BAR-->
+<ion-header>
+
+  <ion-navbar color="dark">
+
+    <button ion-button menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title>
+      Input Data
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header> 
+
+<!-- APP CONTENT --> 
+
 <ion-content scroll="false">
   <ion-grid>
     <ion-row justify-content-start>
       <!-- primera columna / contenido izquierdo-->
-      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 class="menu-lateral-movil backgroundSecondary" showWhen="landscape" hideWhen="portrait">
+      <ion-col   class="menu-lateral-movil backgroundSecondary" showWhen="landscape" hideWhen="portrait">
         <!--menu lateral landscape-->
         <div class="menuLateralList">
-          <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/icon/inputdata.svg" width="50px">Input data</button>
+          <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><!--<img class="imagenmenu" src="../assets/icon/inputdata.png" width="50px">-->Input data</button>
 
-          <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/addwateranalysis.svg" width="40px">Add water analysis</button>
+          <button  (click)='addWaterAnalysis()' ion-button full clear color="black" id="add-water" ><!--<img class="imagenmenu" src="../assets/icon/addwateranalysis.png" width="40px">-->Add water analysis</button>
 
-          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.svg" width="50px">Fertigation programme</button>
+          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><!--<img class="imagenmenu" src="../assets/icon/fertigationprogramme.png" width="50px">-->Fertigation programme</button>
         </div>
       </ion-col>
       
@@ -201,6 +224,6 @@
   </ion-grid>
 </ion-content>
 <ion-footer no-border>
-  <button ion-button full color="danger" (click)='addWaterAnalysis()'><img class="subimagenmenu" src="../assets/icon/addmore-icon.svg" width="40px">ADD WATER ANALYSIS</button>
-  <button ion-button full><img class="subimagenmenu" src="../assets/icon/addmore-icon.svg" width="40px">SEE FERTIGATION PROGRAMME</button>
+  <button ion-button full color="danger" (click)='addWaterAnalysis()'><!--<img class="subimagenmenu" src="../assets/icon/addmore-icon.png" width="40px">-->ADD WATER ANALYSIS</button>
+  <button ion-button full><!--<img class="subimagenmenu" src="../assets/icon/addmore-icon.png" width="40px">-->SEE FERTIGATION PROGRAMME</button>
 </ion-footer>

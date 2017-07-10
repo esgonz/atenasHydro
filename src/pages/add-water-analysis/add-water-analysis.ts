@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { LoginPage } from '../login/login';
-import { SignupPage } from '../signup/signup';
+import { InputDataTable } from '../input-data-table/input-data-table';
+
 
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -171,13 +171,15 @@ import { SignupPage } from '../signup/signup';
  	}
  	constructor(public navCtrl: NavController) { }
 
- 	login() {
- 		this.navCtrl.push(LoginPage);
+
+ 	goToInputData() {
+ 		this.navCtrl.push(InputDataTable);
+ 	}
+ 	goToWaterAnalysis() {
+ 		this.navCtrl.push(AddWaterAnalysis);
  	}
 
- 	signup() {
- 		this.navCtrl.push(SignupPage);
- 	}
+
 
  	changeEquivalents(){
  		console.log("changeEquivalents");
@@ -214,9 +216,9 @@ import { SignupPage } from '../signup/signup';
  		if (this.inputs.nnh4 != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.nnh4.mgl 		= this.inputs.nnh4 ;
- 				this.data.nnh4.mmoll 	= Number(((this.inputs.nnh4 )/14));
+ 				this.data.nnh4.mmoll 	= Number(((this.inputs.nnh4 )/14).toFixed(6));
  			}else{
- 				this.data.nnh4.mgl 		= Number(((this.inputs.nnh4 )*14)); 
+ 				this.data.nnh4.mgl 		= Number(((this.inputs.nnh4 )*14).toFixed(6)); 
  				this.data.nnh4.mmoll 	= this.inputs.nnh4 ;
  			}
  			this.checkBalance();
@@ -227,9 +229,9 @@ import { SignupPage } from '../signup/signup';
  		if (this.inputs.nno3 != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.nno3.mgl 		= this.inputs.nno3 ;
- 				this.data.nno3.mmoll 	= Number(((this.inputs.nno3 )/14));
+ 				this.data.nno3.mmoll 	= Number(((this.inputs.nno3 )/14).toFixed(6));
  			}else{
- 				this.data.nno3.mgl 		= Number(((this.inputs.nno3 )*14)); 
+ 				this.data.nno3.mgl 		= Number(((this.inputs.nno3 )*14).toFixed(6)); 
  				this.data.nno3.mmoll 	= this.inputs.nno3 ;
  			}
  			this.checkBalance();
@@ -240,9 +242,9 @@ import { SignupPage } from '../signup/signup';
  		if (this.inputs.p != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.p.mgl 		= this.inputs.p ;
- 				this.data.p.mmoll 	= Number(((this.inputs.p )/30.97));
+ 				this.data.p.mmoll 	= Number(((this.inputs.p )/30.97).toFixed(6));
  			}else{
- 				this.data.p.mgl 		= Number(((this.inputs.p )*30.97)); 
+ 				this.data.p.mgl 		= Number(((this.inputs.p )*30.97).toFixed(6)); 
  				this.data.p.mmoll 	= this.inputs.p ;
  			}
  			this.checkBalance();
@@ -253,9 +255,9 @@ import { SignupPage } from '../signup/signup';
  		if (this.inputs.k != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.k.mgl 		= this.inputs.k ;
- 				this.data.k.mmoll 	= Number(((this.inputs.k )/39.098));
+ 				this.data.k.mmoll 	= Number(((this.inputs.k )/39.098).toFixed(6));
  			}else{
- 				this.data.k.mgl 		= Number(((this.inputs.k )*39.098)); 
+ 				this.data.k.mgl 		= Number(((this.inputs.k )*39.098).toFixed(6)); 
  				this.data.k.mmoll 	= this.inputs.k ;
  			}
  			this.checkBalance();
@@ -266,9 +268,9 @@ import { SignupPage } from '../signup/signup';
  		if (this.inputs.ca != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.ca.mgl 		= this.inputs.ca ;
- 				this.data.ca.mmoll 	= Number(((this.inputs.ca )/40.08));
+ 				this.data.ca.mmoll 	= Number(((this.inputs.ca )/40.08).toFixed(6));
  			}else{
- 				this.data.ca.mgl 		= Number(((this.inputs.ca )*40.08)); 
+ 				this.data.ca.mgl 		= Number(((this.inputs.ca )*40.08).toFixed(6)); 
  				this.data.ca.mmoll 	= this.inputs.ca ;
  			}
  			this.checkBalance();
@@ -279,9 +281,9 @@ import { SignupPage } from '../signup/signup';
  		if (this.inputs.mg != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.mg.mgl 		= this.inputs.mg ;
- 				this.data.mg.mmoll 	= Number(((this.inputs.mg )/24.305));
+ 				this.data.mg.mmoll 	= Number(((this.inputs.mg )/24.305).toFixed(6));
  			}else{
- 				this.data.mg.mgl 		= Number(((this.inputs.mg )*24.305)); 
+ 				this.data.mg.mgl 		= Number(((this.inputs.mg )*24.305).toFixed(6)); 
  				this.data.mg.mmoll 	= this.inputs.mg ;
  			}
  			this.checkBalance();
@@ -292,9 +294,9 @@ import { SignupPage } from '../signup/signup';
  		if (this.inputs.na != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.na.mgl 		= this.inputs.na ;
- 				this.data.na.mmoll 	= Number(((this.inputs.na )/22.99));
+ 				this.data.na.mmoll 	= Number(((this.inputs.na )/22.99).toFixed(6));
  			}else{
- 				this.data.na.mgl 		= Number(((this.inputs.na )*22.99)); 
+ 				this.data.na.mgl 		= Number(((this.inputs.na )*22.99).toFixed(6)); 
  				this.data.na.mmoll 	= this.inputs.na ;
  			}
 
@@ -308,7 +310,7 @@ import { SignupPage } from '../signup/signup';
  			if (this.data.na.mmoll > 1.5) {
  			this.inputsAlerts.na = " High";
  			}
- 			
+
  			this.checkBalance();
  		}
  	};
@@ -317,9 +319,9 @@ import { SignupPage } from '../signup/signup';
  		if (this.inputs.cl != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.cl.mgl 		= this.inputs.cl ;
- 				this.data.cl.mmoll 	= Number(((this.inputs.cl )/35.453));
+ 				this.data.cl.mmoll 	= Number(((this.inputs.cl )/35.453).toFixed(6));
  			}else{
- 				this.data.cl.mgl 		= Number(((this.inputs.cl )*35.453)); 
+ 				this.data.cl.mgl 		= Number(((this.inputs.cl )*35.453).toFixed(6)); 
  				this.data.cl.mmoll 	= this.inputs.cl ;
  			}
 
@@ -341,9 +343,9 @@ import { SignupPage } from '../signup/signup';
  		if (this.inputs.sso4 != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.sso4.mgl 		= this.inputs.sso4 ;
- 				this.data.sso4.mmoll 	= Number(((this.inputs.sso4 )/ 32.06));
+ 				this.data.sso4.mmoll 	= Number(((this.inputs.sso4 )/ 32.06).toFixed(6));
  			}else{
- 				this.data.sso4.mgl 		= Number(((this.inputs.sso4 )* 32.06)); 
+ 				this.data.sso4.mgl 		= Number(((this.inputs.sso4 )* 32.06).toFixed(6)); 
  				this.data.sso4.mmoll 	= this.inputs.sso4 ;
  			}
  			if (this.data.sso4.mmoll < 2) {
@@ -364,8 +366,8 @@ import { SignupPage } from '../signup/signup';
 
  			if (this.data.unit == "mgl") {
  				dataWithumoll.mgl 		= this.inputs.fe;
- 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/55.85));
- 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/55.85));
+ 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/55.85).toFixed(6));
+ 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/55.85).toFixed(6));
  			}else{
  				dataWithumoll.mmoll 	= this.inputs.fe;
  				dataWithumoll.umoll 	= dataWithumoll.mmoll;
@@ -391,8 +393,8 @@ import { SignupPage } from '../signup/signup';
 
  			if (this.data.unit == "mgl") {
  				dataWithumoll.mgl 		= this.inputs.mn;
- 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/54.94));
- 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/54.94));
+ 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/54.94).toFixed(6));
+ 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/54.94).toFixed(6));
  			}else{
  				dataWithumoll.mmoll 	= this.inputs.mn;
  				dataWithumoll.umoll 	= dataWithumoll.mmoll;
@@ -417,8 +419,8 @@ import { SignupPage } from '../signup/signup';
  			};
  			if (this.data.unit == "mgl") {
  				dataWithumoll.mgl 		= this.inputs.zn;
- 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/65.39));
- 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/65.39));
+ 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/65.39).toFixed(6));
+ 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/65.39).toFixed(6));
  			}else{
  				dataWithumoll.mmoll 	= this.inputs.zn;
  				dataWithumoll.umoll 	= dataWithumoll.mmoll;
@@ -444,8 +446,8 @@ import { SignupPage } from '../signup/signup';
 
  			if (this.data.unit == "mgl") {
  				dataWithumoll.mgl 		= this.inputs.cu;
- 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/63.55));
- 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/63.55));
+ 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/63.55).toFixed(6));
+ 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/63.55).toFixed(6));
  			}else{
  				dataWithumoll.mmoll 	= this.inputs.cu;
  				dataWithumoll.umoll 	= dataWithumoll.mmoll;
@@ -471,8 +473,8 @@ import { SignupPage } from '../signup/signup';
 
  			if (this.data.unit == "mgl") {
  				dataWithumoll.mgl 		= this.inputs.b;
- 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/10.81));
- 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/10.81));
+ 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/10.81).toFixed(6));
+ 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/10.81).toFixed(6));
  			}else{
  				dataWithumoll.mmoll 	= this.inputs.b;
  				dataWithumoll.umoll 	= dataWithumoll.mmoll;
@@ -497,8 +499,8 @@ import { SignupPage } from '../signup/signup';
  			};
  			if (this.data.unit == "mgl") {
  				dataWithumoll.mgl 		= this.inputs.mo;
- 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/95.94));
- 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/95.94));
+ 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/95.94).toFixed(6));
+ 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/95.94).toFixed(6));
  			}else{
  				dataWithumoll.mmoll 	= this.inputs.mo;
  				dataWithumoll.umoll 	= dataWithumoll.mmoll;
@@ -513,9 +515,9 @@ import { SignupPage } from '../signup/signup';
  		if (this.inputs.hco3 != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.hco3.mgl 		= this.inputs.hco3 ;
- 				this.data.hco3.mmoll 	= Number(((this.inputs.hco3 )/ 61.02));
+ 				this.data.hco3.mmoll 	= Number(((this.inputs.hco3 )/ 61.02).toFixed(6));
  			}else{
- 				this.data.hco3.mgl 		= Number(((this.inputs.hco3 )* 61.02)); 
+ 				this.data.hco3.mgl 		= Number(((this.inputs.hco3 )* 61.02).toFixed(6)); 
  				this.data.hco3.mmoll 	= this.inputs.hco3 ;
  			}
  		}
@@ -567,5 +569,11 @@ import { SignupPage } from '../signup/signup';
 		console.log(this.data);
 		console.log("BALANCE: " + balance);
 		this.data.balance = balance;
+ 	}
+
+ 	getEquivalent(elementId){
+ 		var equiVal = Number(this.data[elementId][this.inputsEquivalUnits[elementId].id]).toFixed(2);
+ 		console.log(elementId+ "  equiVal: "+ equiVal);
+ 		return equiVal;
  	}
  }

@@ -1,3 +1,26 @@
+<!-- HEADER BAR-->
+<ion-header>
+
+  <ion-navbar color="dark">
+
+    <button ion-button menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title>
+      Add water analysis
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header> 
+
+<!-- APP CONTENT --> 
+
 <ion-content scroll="false">
   <ion-grid>
     <ion-row justify-content-start>
@@ -5,13 +28,13 @@
       <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 class="menu-lateral-movil backgroundSecondary" showWhen="landscape" hideWhen="portrait">
         <!--menu lateral landscape-->
         <div class="menuLateralList">
-          <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.png" width="50px">Select crop and growth stage</button>
+          <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><!--<img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.png" width="50px"> -->Select crop and growth stage</button>
 			
-          <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/icon/inputdata.png" width="50px">Input data</button>
+          <button   (click)='goToInputData()' ion-button full clear color="black" class="buttonmenu" id="data-inp"><!--<img class="imagenmenu" src="../assets/icon/inputdata.png" width="50px">-->Input data</button>
 			
-          <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/addwateranalysis.png" width="40px">Add water analysis</button>
+          <button ion-button full clear color="black" id="add-water"><!--<img class="imagenmenu" src="../assets/icon/addwateranalysis.png" width="40px">-->Add water analysis</button>
 			
-          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.png" width="50px">Fertigation programme</button>
+          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><!--<img class="imagenmenu" src="../assets/icon/fertigationprogramme.png" width="50px">-->Fertigation programme</button>
         </div>
       </ion-col>
       <!-- segunda columna --> 
@@ -42,7 +65,7 @@
             <h6>Check +/- balance</h6>
             <ion-row>
               <ion-col class="checkbalance">
-                {{data.balance}}
+                {{data.balance.toFixed(3)}}
               </ion-col>
               <ion-col col-4 class="checkbalancenumber">
                 meq
@@ -65,7 +88,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.nnh4[inputsEquivalUnits.nnh4.id] }} {{inputsEquivalUnits.nnh4.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('nnh4') }} {{inputsEquivalUnits.nnh4.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert N-NO<sub>3</sub></h6>
@@ -78,7 +101,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.nno3[inputsEquivalUnits.nno3.id]}} {{inputsEquivalUnits.nno3.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('nno3') }} {{inputsEquivalUnits.nno3.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert P</h6>
@@ -91,7 +114,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.p[inputsEquivalUnits.p.id]}} {{inputsEquivalUnits.p.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('p') }}{{inputsEquivalUnits.p.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert K</h6>
@@ -104,7 +127,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.k[inputsEquivalUnits.k.id]}} {{inputsEquivalUnits.k.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('k') }}{{inputsEquivalUnits.k.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Ca</h6>
@@ -117,7 +140,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.ca[inputsEquivalUnits.ca.id]}} {{inputsEquivalUnits.ca.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('ca') }}{{inputsEquivalUnits.ca.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Mg</h6>
@@ -130,7 +153,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.mg[inputsEquivalUnits.mg.id]}} {{inputsEquivalUnits.mg.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('mg') }}{{inputsEquivalUnits.mg.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Na</h6>
@@ -144,7 +167,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.na[inputsEquivalUnits.na.id]}} {{inputsEquivalUnits.na.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('na') }}{{inputsEquivalUnits.na.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Cl</h6>
@@ -158,7 +181,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.cl[inputsEquivalUnits.cl.id]}} {{inputsEquivalUnits.cl.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('cl') }}{{inputsEquivalUnits.cl.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert S-SO<sup>4</sup></h6>
@@ -172,7 +195,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.sso4[inputsEquivalUnits.sso4.id]}} {{inputsEquivalUnits.sso4.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('sso4') }}{{inputsEquivalUnits.sso4.text}}</ion-label>
               </ion-col>
             </ion-row>
           </ion-col>
@@ -190,7 +213,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.fe[inputsEquivalUnits.fe.id]}} {{inputsEquivalUnits.fe.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('fe') }}{{inputsEquivalUnits.fe.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Mn</h6>
@@ -204,7 +227,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.mn[inputsEquivalUnits.mn.id]}} {{inputsEquivalUnits.mn.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('mn') }}{{inputsEquivalUnits.mn.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Zn</h6>
@@ -218,7 +241,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.zn[inputsEquivalUnits.zn.id]}} {{inputsEquivalUnits.zn.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('zn') }} {{inputsEquivalUnits.zn.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Cu</h6>
@@ -232,7 +255,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.cu[inputsEquivalUnits.cu.id]}} {{inputsEquivalUnits.cu.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('cu') }} {{inputsEquivalUnits.cu.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert B</h6>
@@ -246,7 +269,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.b[inputsEquivalUnits.b.id]}} {{inputsEquivalUnits.b.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('b') }}{{inputsEquivalUnits.b.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Mo</h6>
@@ -259,7 +282,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.mo[inputsEquivalUnits.mo.id]}} {{inputsEquivalUnits.mo.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('mo') }} {{inputsEquivalUnits.mo.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert HCO<sub>3</sub>-</h6>
@@ -272,7 +295,7 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{data.hco3[inputsEquivalUnits.hco3.id]}} {{inputsEquivalUnits.hco3.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('hco3') }} {{inputsEquivalUnits.hco3.text}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert pH Water</h6>
@@ -314,3 +337,7 @@
     </ion-row>
   </ion-grid>
   </ion-content>
+  <ion-footer no-border>
+
+  <button ion-button full><!--<img class="subimagenmenu" src="../assets/icon/addmore-icon.png" width="40px">-->SEE FERTIGATION PROGRAMME</button>
+</ion-footer>
