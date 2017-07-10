@@ -78,14 +78,15 @@ page-fertigationprograme-growerinfo {
   }
 
   h5{
-	  color: color($colors,dark);
+	  color: color($colors,secondary);
 	  text-align: left;
 	  margin-left: 1rem;
 	  font-weight:  $fontSecondaryBold;
   }
 
   h6{
-	  color: color($colors,dark);
+	  color: color($colors,secondary);
+	  opacity: .6;
 	  text-align: left;
 	  margin-left: 1rem;
 	  font-weight:  $fontSecondaryBold;

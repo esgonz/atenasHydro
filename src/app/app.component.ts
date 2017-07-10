@@ -26,7 +26,7 @@ import { TranslateService } from '@ngx-translate/core'
   templateUrl:'app.html'
 })
 export class MyApp {
-  rootPage = InputDataTable;
+  rootPage = TabsPage;
 
   @ViewChild(Nav) nav: Nav;
 

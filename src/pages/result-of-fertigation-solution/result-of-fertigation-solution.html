@@ -1,8 +1,10 @@
 <ion-content scroll="false">
-    <ion-grid>
-      <ion-row justify-content-start>
-        <!-- primera columna -->
-        <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3 class="menu-lateral-movil backgroundSecondary">
+  <ion-grid>
+    <ion-row justify-content-start>
+      <!-- primera columna / contenido izquierdo-->
+      <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 class="menu-lateral-movil backgroundSecondary" showWhen="landscape" hideWhen="portrait">
+        <!--menu lateral landscape-->
+        <div class="menuLateralList">
           <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.png" width="50px">Select crop and growth stage</button>
           <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/icon/inputdata.png" width="50px">Input data</button>
           <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.png" width="50px">Fertigation programme</button>
@@ -12,9 +14,10 @@
           <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/resultoffertigationsolution.png" width="40px">Result of fertigation solution</button>
           <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/resultoffertigationscheme.png" width="40px">Result of fertigation scheme</button>
             </div>
+		  </div>
         </ion-col>
         <!-- segunda columna -->
-        <ion-col col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9>
+        <ion-col col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8>
               <ion-row class="backtablegrey">
                 <ion-col>
                   Element

@@ -1,14 +1,17 @@
 <ion-content scroll="false">
   <ion-grid>
     <ion-row justify-content-start>
-      <!-- primera columna -->
-      <ion-col col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 class="menu-lateral-movil backgroundSecondary" showWhen="landscape">
-        
+      <!-- primera columna / contenido izquierdo-->
+      <ion-col col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 class="menu-lateral-movil backgroundSecondary" showWhen="landscape" hideWhen="portrait">
+        <!--menu lateral landscape-->
         <div class="menuLateralList">
-          <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.svg" width="50px">Select crop and growth stage</button>
-          <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/icon/inputdata.svg" width="50px">Input data</button>
-          <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/addwateranalysis.svg" width="40px">Add water analysis</button>
-          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.svg" width="50px">Fertigation programme</button>
+          <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.png" width="50px">Select crop and growth stage</button>
+			
+          <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/icon/inputdata.png" width="50px">Input data</button>
+			
+          <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/addwateranalysis.png" width="40px">Add water analysis</button>
+			
+          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.png" width="50px">Fertigation programme</button>
         </div>
       </ion-col>
       <!-- segunda columna --> 
@@ -292,12 +295,8 @@
               </ion-row>
             </ion-col>
           </ion-row>
-          
         </ion-col>
         
     </ion-row>
   </ion-grid>
   </ion-content>
-  <ion-footer no-border>
-    <button ion-button full><img class="subimagenmenu" src="../assets/icon/addmore-icon.svg" width="40px">SEE FERTIGATION PROGRAMME</button>
-  </ion-footer>
