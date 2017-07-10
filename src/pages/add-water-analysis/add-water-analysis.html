@@ -22,19 +22,15 @@
 
 
             <h6>Select analysis concentration expression</h6>
-            <ion-row radio-group [(ngModel)]="relationship">
-              <ion-col>
+
+            <ion-row (ionChange)='changeEquivalents()' radio-group [(ngModel)]="data.unit" name="unit">
+              <ion-col *ngFor="let unit of units">
                 <ion-item>
-                  <ion-radio value="mg/l" checked></ion-radio>
-                  <ion-label color="secondary" class="fontSecondary">mg/l</ion-label>
+                  <ion-radio value="{{unit.id}}"></ion-radio>
+                  <ion-label color="secondary" class="fontSecondary">{{unit.name}}</ion-label>
                 </ion-item>
               </ion-col>
-              <ion-col>
-                <ion-item>
-                  <ion-radio value="mmol/l" checked></ion-radio>
-                  <ion-label color="secondary" class="fontSecondary">mmol/l</ion-label>
-                </ion-item>
-              </ion-col>
+              
             </ion-row>
 
           </ion-col>
@@ -61,12 +57,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>N-NH<sub>4</sub></ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input (change)='changeNnh4()' type="number" [(ngModel)]="inputs.nnh4" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 mmol/l</ion-label>
+                <ion-label color="secondary">{{data.nnh4[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert N-NO<sub>3</sub></h6>
@@ -74,12 +70,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>N-NO<sub>3</sub></ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input   (change)='changeNno3()' [(ngModel)]="inputs.nno3" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 mmol/l</ion-label>
+                <ion-label color="secondary">{{data.nno3[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert P</h6>
@@ -87,12 +83,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>P</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input  (change)='changeP()' [(ngModel)]="inputs.p" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 mmol/l</ion-label>
+                <ion-label color="secondary">{{data.p[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert K</h6>
@@ -100,12 +96,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>K</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input (change)='changeK()' [(ngModel)]="inputs.k" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 mmol/l</ion-label>
+                <ion-label color="secondary">{{data.k[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Ca</h6>
@@ -113,12 +109,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Ca</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input (change)='changeCa()' [(ngModel)]="inputs.ca"  type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 mmol/l</ion-label>
+                <ion-label color="secondary">{{data.ca[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Mg</h6>
@@ -126,12 +122,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Mg</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input (change)='changeMg()' [(ngModel)]="inputs.mg"  type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 mmol/l</ion-label>
+                <ion-label color="secondary">{{data.mg[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Na</h6>
@@ -139,12 +135,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Na</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input  (change)='changeNa()' [(ngModel)]="inputs.na"  type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 mmol/l</ion-label>
+                <ion-label color="secondary">{{data.na[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Cl</h6>
@@ -152,12 +148,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Cl</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input  (change)='changeCl()' [(ngModel)]="inputs.cl" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 mmol/l</ion-label>
+                <ion-label color="secondary">{{data.cl[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert S-SO4</h6>
@@ -165,12 +161,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>S-SO4</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input  (change)='changeSso4()' [(ngModel)]="inputs.sso4" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 mmol/l</ion-label>
+                <ion-label color="secondary">{{data.sso4[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
           </ion-col>
@@ -182,12 +178,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Fe</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input  (change)='changeFe()' [(ngModel)]="inputs.fe" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 µmol</ion-label>
+                <ion-label color="secondary">{{data.fe[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Mn</h6>
@@ -195,12 +191,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Mn</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input  (change)='changeMn()' [(ngModel)]="inputs.mn" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 µmol</ion-label>
+                <ion-label color="secondary">{{data.mn[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Zn</h6>
@@ -208,12 +204,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Zn</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input  (change)='changeZn()' [(ngModel)]="inputs.zn" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 µmol</ion-label>
+                <ion-label color="secondary">{{data.zn[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Cu</h6>
@@ -221,12 +217,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Cu</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input  (change)='changeCu()' [(ngModel)]="inputs.cu" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 µmol</ion-label>
+                <ion-label color="secondary">{{data.cu[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert B</h6>
@@ -234,12 +230,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>B</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input  (change)='changeB()' [(ngModel)]="inputs.b" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 µmol</ion-label>
+                <ion-label color="secondary">{{data.b[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert Mo</h6>
@@ -247,12 +243,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Mo</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input (change)='changeMo()' [(ngModel)]="inputs.mo" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 µmol</ion-label>
+                <ion-label color="secondary">{{data.mo[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert HCO<sub>3</sub>-</h6>
@@ -260,12 +256,12 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>HCO<sub>3</sub>-</ion-label>
-                  <ion-input type="number" placeholder="0.00"></ion-input>
+                  <ion-input  (change)='changeHco3()' [(ngModel)]="inputs.hco3" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">0.00 mmol/l</ion-label>
+                <ion-label color="secondary">{{data.hco3[equivalents.id]}} {{equivalents.verbose}}</ion-label>
               </ion-col>
             </ion-row>
             <h6>Insert pH Water</h6>
@@ -273,7 +269,7 @@
               <ion-col>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>pH Water</ion-label>
-                  <ion-input type="numer" placeholder="0.00"></ion-input>
+                  <ion-input  [(ngModel)]="data.ph" type="numer" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
               <!--<ion-col col-4>
@@ -286,7 +282,7 @@
                 <ion-col>
                   <ion-item>
                     <ion-label color="secondary" class="fontSecondary" stacked>E.C. Water</ion-label>
-                    <ion-input type="number" placeholder="0.00"></ion-input>
+                    <ion-input  [(ngModel)]="data.ec" type="number" placeholder="0.00"></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col col-4>

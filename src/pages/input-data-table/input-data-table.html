@@ -72,12 +72,6 @@
               <h6>Select acid of choice</h6>
               <ion-item>
                 <ion-label color="secondary" floating >Nitric Acid</ion-label>
-                <!--<ion-select name="acidChoise" [(ngModel)]="data.acidChoise" multiple="false">
-                  <ion-option color="secondary" value="x">Nitric Acid - X%</ion-option>
-                  <ion-option color="secondary" value="38">Nitric Acid - 38%</ion-option>
-                  <ion-option color="secondary" value="53">Nitric Acid - 53%</ion-option>
-                  <ion-option color="secondary" value="60">Nitric Acid - 60%</ion-option>
-                </ion-select>-->
                 <ion-select (ionChange)='changeAcid(acidChoise)' [(ngModel)]="acidChoise"  name="acidChoise" multiple="false">
                     <ion-option color="secondary" *ngFor="let acid of acids" value="{{acid.id}}">{{ acid.name }}</ion-option>
                 </ion-select> 
@@ -87,24 +81,24 @@
                 <ion-col>
                   <ion-item>
                     <ion-label color="secondary" class="fontSecondary" stacked>Concentration %</ion-label>
-                    <ion-input name="acidConcentration" type="number" placeholder="38" [(ngModel)]="data.acidConcentration"></ion-input>
+                    <ion-input name="acidConcentration" type="number" placeholder="38" [(ngModel)]="data.acidSource.concentration"></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col col-4>
                   <ion-label color="secondary">Suggestion</ion-label>
-                  <ion-label color="secondary">38 mmol/l</ion-label>
+                  <ion-label color="secondary">{{acidSuggestion.concentration}} mmol/l</ion-label>
                 </ion-col>
               </ion-row>
               <ion-row>
                 <ion-col>
                   <ion-item>
                     <ion-label color="secondary" class="fontSecondary" stacked>Density (kg - liter)</ion-label>
-                    <ion-input name="acidDensity" type="number" placeholder="1.235" [(ngModel)]="data.acidDensity"></ion-input>
+                    <ion-input name="acidDensity" type="number" placeholder="1.235" [(ngModel)]="data.acidSource.density"></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col col-4>
                   <ion-label color="secondary">Suggestion</ion-label>
-                  <ion-label color="secondary">1.235 mmol/l</ion-label>
+                  <ion-label color="secondary">{{acidSuggestion.density}} mmol/l</ion-label>
                 </ion-col>
               </ion-row>
             </ion-col>
@@ -114,11 +108,6 @@
               <h6>Chloride source of choice</h6>
               <ion-item>
                 <ion-label color="secondary"  floating>Chloride source</ion-label>
-                <!--<ion-select name="calciumChlorideSource" [(ngModel)]="data.calciumChlorideSource" multiple="false">
-                  <ion-option  value="liquid" >Calcium 3 (liquid)</ion-option>
-                  <ion-option  value="anhydrous" >Calcium chloride anhydrous (solid)</ion-option>
-                  <ion-option  value="dihydrate" >Calcium chloride dihydrate (solid)</ion-option>
-                </ion-select>-->
                  <ion-select (ionChange)='changeCalciumChloride(calciumChlorideChoise)' [(ngModel)]="calciumChlorideChoise"  name="calciumChlorideChoise" multiple="false">
                     <ion-option color="secondary" *ngFor="let calciumCl of calciumChlorides" value="{{calciumCl.id}}">{{ calciumCl.name }}</ion-option>
                 </ion-select> 
@@ -128,79 +117,80 @@
                 <ion-col>
                   <ion-item>
                     <ion-label color="secondary" class="fontSecondary" stacked>% of CaO</ion-label>
-                    <ion-input name="calciumChlorideConcentration" type="number" placeholder="63.9" [(ngModel)]="data.calciumChlorideConcentration"></ion-input>
+                    <ion-input name="calciumChlorideConcentration" type="number" placeholder="63.9" [(ngModel)]="data.calciumChlorideSource.concentration"></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col col-4>
                   <ion-label color="secondary">Suggestion</ion-label>
-                  <ion-label color="secondary">63.9 mmol/l</ion-label>
+                  <ion-label color="secondary">{{calciumChlorideSuggestion.concentration}} mmol/l</ion-label>
                 </ion-col>
               </ion-row>
               <ion-row>
                 <ion-col>
                   <ion-item>
                     <ion-label color="secondary" class="fontSecondary" stacked>Density (kg/liter)</ion-label>
-                    <ion-input name="calciumChlorideDensity" type="number" placeholder="N.A." [(ngModel)]="data.calciumChlorideDensity"></ion-input>
+                    <ion-input name="calciumChlorideDensity" type="number" placeholder="N.A." [(ngModel)]="data.calciumChlorideSource.density"></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col col-4>
                   <ion-label color="secondary">Suggestion</ion-label>
-                  <ion-label color="secondary">N.A. mmol/l</ion-label>
+                  <ion-label color="secondary">{{calciumChlorideSuggestion.density}} mmol/l</ion-label>
                 </ion-col>
               </ion-row>
               <!--CALCIUM -->
               <h6>Calcium nitrate source of choice</h6>
               <ion-item>
                 <ion-label color="secondary"  floating>Calcium nitrate source</ion-label>
-                <ion-select (ionChange)='f(data.calciumNitrateSource)' name="calciumNitrateSource" [(ngModel)]="data.calciumNitrateSource" multiple="false">
-                  <ion-option value="ultrasol calcium" >Ultrasol&reg; Calcium (15.5% N-26% CaO)</ion-option>
-                  <ion-option value="liquid calclium nitrate">Liquid Calcium Nitrate</ion-option>
-                </ion-select>
+
+                <ion-select (ionChange)='changeCalciumNitatre()' [(ngModel)]="calciumNitrateChoise"  name="calciumNitrateChoise" multiple="false">
+                    <ion-option color="secondary" *ngFor="let calciumNitrate of calciumNitrates" value="{{calciumNitrate.id}}">{{ calciumNitrate.name }}</ion-option>
+                </ion-select> 
+
               </ion-item>
               <ion-row>
                 <ion-col>
                   <ion-item>
                     <ion-label color="secondary" class="fontSecondary" stacked>Concentration N%</ion-label>
-                    <ion-input name="calciumNitrateConcentration" type="number" placeholder="N.A." [(ngModel)]="data.calciumNitrateConcentration"></ion-input>
+                    <ion-input name="calciumNitrateConcentration" type="number" placeholder="N.A." [(ngModel)]="data.calciumNitrateSource.concentration"></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col col-4>
                   <ion-label color="secondary">Suggestion</ion-label>
-                  <ion-label color="secondary">N.A. mmol/l</ion-label>
+                  <ion-label color="secondary">{{calciumNitrateSuggestion.concentration}} mmol/l</ion-label>
                 </ion-col>
               </ion-row>
               <ion-row>
                 <ion-col>
                   <ion-item>
                     <ion-label color="secondary" class="fontSecondary" stacked>Density (kg/liter)</ion-label>
-                    <ion-input name="calciumNitrateDensity" type="number" placeholder="N.A." [(ngModel)]="data.calciumNitrateDensity"></ion-input>
+                    <ion-input name="calciumNitrateDensity" type="number" placeholder="N.A." [(ngModel)]="data.calciumNitrateSource.density"></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col col-4>
                   <ion-label color="secondary">Suggestion</ion-label>
-                  <ion-label color="secondary">N.A. mmol/l</ion-label>
+                  <ion-label color="secondary">{{calciumNitrateSuggestion.density}} mmol/l</ion-label>
                 </ion-col>
               </ion-row>
               <!--IRON CHELATE -->
               <h6>Iron chelate source of choice</h6>
               <ion-item>
                 <ion-label color="secondary"  floating>Iron chelate source</ion-label>
-                <ion-select name="ironChelateSource" [(ngModel)]="data.ironChelateSource" multiple="false">
-                  <ion-option value="ultrasol micro rexene fee13">Ultrasol&reg; micro Rexene&reg; FeE13</ion-option>
-                  <ion-option value="ultrasol micro rexene fed12">Ultrasol&reg; micro Rexene&reg; FeD12</ion-option>
-                  <ion-option value="ultrasol micro rexene feq48">Ultrasol&reg; micro Rexene&reg; FeQ48</ion-option>
-                </ion-select>
+                <ion-select (ionChange)='changeIronChelate()' [(ngModel)]="ironChelateChoise"  name="ironChelateChoise" multiple="false">
+                    <ion-option color="secondary" *ngFor="let iron of ironChelates" value="{{iron.id}}">{{ iron.name }}</ion-option>
+                </ion-select> 
+
+
               </ion-item>
               <ion-row>
                 <ion-col>
                   <ion-item>
                     <ion-label color="secondary" class="fontSecondary" stacked>Concentration N%</ion-label>
-                    <ion-input name="ironChelateConcentration" type="number" placeholder="N.A." [(ngModel)]="data.ironChelateConcentration" ></ion-input>
+                    <ion-input name="ironChelateConcentration" type="number" placeholder="N.A." [(ngModel)]="data.ironChelateSource.concentration" ></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col col-4>
                   <ion-label color="secondary">Suggestion</ion-label>
-                  <ion-label color="secondary">N.A. mmol/l</ion-label>
+                  <ion-label color="secondary">{{ironChelateSuggestion.concentration}} mmol/l</ion-label>
                 </ion-col>
               </ion-row>
             </ion-col>
