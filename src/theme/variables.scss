@@ -141,6 +141,56 @@ $font-path: "../assets/fonts";
     	background-position: 0px;
 	}
 
+	.iconaddgrower{
+    	display: block;
+    	background: url('../assets/img/addgrower.svg');
+		width: 50px;
+		height: 50px;
+		margin: 5px;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
+	.iconaddsector{
+    	display: block;
+    	background: url('../assets/img/addsector.svg');
+		width: 50px;
+		height: 50px;
+		margin: 5px;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
+	.iconaddemail{
+    	display: block;
+    	background: url('../assets/img/addemail.svg');
+		width: 50px;
+		height: 50px;
+		margin: 5px;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
+	.iconaddbusiness{
+    	display: block;
+    	background: url('../assets/img/addbusiness.svg');
+		width: 50px;
+		height: 50px;
+		margin: 5px;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
+	.iconadddate{
+    	display: block;
+    	background: url('../assets/img/adddate.svg');
+		width: 50px;
+		height: 50px;
+		margin: 5px;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
