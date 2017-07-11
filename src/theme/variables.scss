@@ -101,6 +101,46 @@ $font-path: "../assets/fonts";
     	background-position: 0px;
 	}
 
+	.icongrower{
+    	display: block;
+    	background: url('../assets/img/growerinfo.svg');
+		width: 25px;
+		height: 25px;
+		margin: 0 5px 0 0;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
+	.iconwaterresult{
+    	display: block;
+    	background: url('../assets/img/resultofwateranaly.svg');
+		width: 25px;
+		height: 25px;
+		margin: 0 5px 0 0;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
+	.iconfertisol{
+    	display: block;
+    	background: url('../assets/img/resultoffertisolution.svg');
+		width: 25px;
+		height: 25px;
+		margin: 0 5px 0 0;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
+	.iconfertische{
+    	display: block;
+    	background: url('../assets/img/resultoffertische.svg');
+		width: 25px;
+		height: 25px;
+		margin: 0 5px 0 0;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

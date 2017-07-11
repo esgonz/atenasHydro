@@ -19,6 +19,8 @@ import {ResultOfWaterAnalysis} from '../pages/result-of-water-analysis/result-of
 
 import {TabsPage} from '../pages/tabs/tabs';
 
+import {TabsPrev} from '../pages/tabsprev/tabsprev';
+
 import { Settings } from '../providers/providers';
 import { TranslateService } from '@ngx-translate/core'
 
@@ -26,7 +28,7 @@ import { TranslateService } from '@ngx-translate/core'
   templateUrl:'app.html'
 })
 export class MyApp {
-  rootPage = InputDataTable;
+  rootPage = TabsPage;
 
   @ViewChild(Nav) nav: Nav;
 

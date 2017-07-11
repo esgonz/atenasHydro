@@ -1,3 +1,26 @@
+<!-- HEADER BAR-->
+<ion-header>
+
+  <ion-navbar color="dark">
+
+    <button ion-button menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title>
+      Previous recommendation
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header> 
+
+<!-- APP CONTENT --> 
+
 <ion-content scroll="false">
 	<ion-searchbar
 	  [(ngModel)]="myInput"
@@ -29,7 +52,7 @@
 </ion-content>
 
 <ion-footer no-border>
-    <button ion-button full><img class="subimagenmenu" src="../assets/icon/addmore-icon.svg" width="40px">ADD NEW RECOMMENDATION</button>
+    <button ion-button full><span class="iconaddmore"></span>ADD NEW RECOMMENDATION</button>
 </ion-footer>
 
 

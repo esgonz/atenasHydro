@@ -1,3 +1,26 @@
+<!-- HEADER BAR-->
+<ion-header>
+
+  <ion-navbar color="dark">
+
+    <button ion-button menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title>
+      Previous recommendation / Grower info
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header> 
+
+<!-- APP CONTENT --> 
+
 <ion-content scroll="false">
   <ion-grid>
     <ion-row justify-content-start>
@@ -5,12 +28,15 @@
       <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 class="menu-lateral-movil backgroundSecondary" showWhen="landscape" hideWhen="portrait">
         <!--menu lateral landscape-->
         <div class="menuLateralList">
-          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/icon/fertigationprogramme.png" width="50px">Previous recommendation</button>
+          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><span class="iconprogramme"></span>Previous recommendation</button>
             <div>
-          <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/growerinfo.png" width="40px">Grower info</button>
-          <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/resultofwateranalysis.png" width="40px">Result of water analysis</button>
-          <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/resultoffertigationsolution.png" width="40px">Result of fertigation solution</button>
-          <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/icon/resultoffertigationscheme.png" width="40px">Result of fertigation scheme</button>
+          <button ion-button full clear color="black" id="add-water"><span class="icongrower"></span>Grower info</button>
+			
+          <button ion-button full clear color="black" id="add-water"><span class="iconwaterresult"></span>Result of water analysis</button>
+			
+          <button ion-button full clear color="black" id="add-water"><span class="iconfertisol"></span>Result of fertigation solution</button>
+			
+          <button ion-button full clear color="black" id="add-water"><span class="iconfertische"></span>Result of fertigation scheme</button>
 			</div>
 		  </div>
         </ion-col>
