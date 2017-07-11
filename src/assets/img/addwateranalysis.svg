@@ -1,13 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="1417 -6892.863 23.864 23.863">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #412413;
-      }
-    </style>
-  </defs>
-  <g id="Group_2797" data-name="Group 2797" transform="translate(102 2774.137)">
-    <path id="Path_5158" data-name="Path 5158" class="cls-1" d="M11.932,23.863A11.932,11.932,0,1,1,23.863,11.932,11.9,11.9,0,0,1,11.932,23.863Zm0-21.557a9.626,9.626,0,1,0,9.626,9.626A9.628,9.628,0,0,0,11.932,2.306Z" transform="translate(1315 -9667)"/>
-    <path id="Union_42" data-name="Union 42" class="cls-1" d="M-97.035-1836.69v-4.965H-102v-5.517h4.965v-4.965h5.516v4.965h4.965v5.517h-4.965v4.965Z" transform="translate(1421.277 -7810.223)"/>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#412413;}
+</style>
+<g id="Group_2797" transform="translate(102 2774.137)">
+	<path id="Path_5158" class="st0" d="M-82.1-2734.3c-11,0-19.9-8.9-19.9-19.9c0-11,8.9-19.9,19.9-19.9c11,0,19.9,8.9,19.9,19.9
+		c0,0,0,0,0,0c0,10.9-8.8,19.8-19.8,19.9C-82-2734.3-82-2734.3-82.1-2734.3z M-82.1-2770.2c-8.9,0-16,7.2-16,16s7.2,16,16,16
+		s16-7.2,16-16C-66-2763-73.2-2770.2-82.1-2770.2z"/>
+	<path id="Union_42" class="st0" d="M-86.5-2740.6v-8.3h-8.3v-9.2h8.3v-8.3h9.2v8.3h8.3v9.2h-8.3v8.3H-86.5z"/>
+</g>
 </svg>
