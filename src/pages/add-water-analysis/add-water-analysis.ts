@@ -213,147 +213,196 @@ import { InputDataTable } from '../input-data-table/input-data-table';
 
  	changeNnh4(){
  		console.log("changeNnh4");
+ 		
  		if (this.inputs.nnh4 != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.nnh4.mgl 		= this.inputs.nnh4 ;
+ 				this.data.nnh4.mgl 		= Number(this.inputs.nnh4 );
  				this.data.nnh4.mmoll 	= Number(((this.inputs.nnh4 )/14).toFixed(6));
  			}else{
  				this.data.nnh4.mgl 		= Number(((this.inputs.nnh4 )*14).toFixed(6)); 
- 				this.data.nnh4.mmoll 	= this.inputs.nnh4 ;
+ 				this.data.nnh4.mmoll 	= Number(this.inputs.nnh4 );
  			}
- 			this.checkBalance();
+ 			
+ 			
+ 		}else{
+ 			this.data.nnh4.mgl 		= 0.000;
+ 			this.data.nnh4.mmoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeNno3(){
  		console.log("changeNno3");
+ 		
  		if (this.inputs.nno3 != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.nno3.mgl 		= this.inputs.nno3 ;
+ 				this.data.nno3.mgl 		= Number(this.inputs.nno3 );
  				this.data.nno3.mmoll 	= Number(((this.inputs.nno3 )/14).toFixed(6));
  			}else{
  				this.data.nno3.mgl 		= Number(((this.inputs.nno3 )*14).toFixed(6)); 
- 				this.data.nno3.mmoll 	= this.inputs.nno3 ;
+ 				this.data.nno3.mmoll 	= Number(this.inputs.nno3 );
  			}
- 			this.checkBalance();
+ 		}else{
+ 			this.data.nno3.mgl 		= 0.000;
+ 			this.data.nno3.mmoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeP(){
  		console.log("changeP");
+ 		
  		if (this.inputs.p != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.p.mgl 		= this.inputs.p ;
+ 				this.data.p.mgl 	= Number(this.inputs.p );
  				this.data.p.mmoll 	= Number(((this.inputs.p )/30.97).toFixed(6));
  			}else{
- 				this.data.p.mgl 		= Number(((this.inputs.p )*30.97).toFixed(6)); 
- 				this.data.p.mmoll 	= this.inputs.p ;
+ 				this.data.p.mgl 	= Number(((this.inputs.p )*30.97).toFixed(6)); 
+ 				this.data.p.mmoll 	= Number(this.inputs.p );
  			}
- 			this.checkBalance();
+ 		}else{
+ 			this.data.p.mgl 		= 0.000;
+ 			this.data.p.mmoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeK(){
  		console.log("changeK");
  		if (this.inputs.k != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.k.mgl 		= this.inputs.k ;
+ 				this.data.k.mgl 	= Number(this.inputs.k );
  				this.data.k.mmoll 	= Number(((this.inputs.k )/39.098).toFixed(6));
  			}else{
- 				this.data.k.mgl 		= Number(((this.inputs.k )*39.098).toFixed(6)); 
- 				this.data.k.mmoll 	= this.inputs.k ;
+ 				this.data.k.mgl 	= Number(((this.inputs.k )*39.098).toFixed(6)); 
+ 				this.data.k.mmoll 	= Number(this.inputs.k) ;
  			}
- 			this.checkBalance();
+ 		}else{
+ 			this.data.k.mgl 	= 0.000;
+ 			this.data.k.mmoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeCa(){
  		console.log("changeCa");
+ 		
  		if (this.inputs.ca != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.ca.mgl 		= this.inputs.ca ;
+ 				this.data.ca.mgl 	= Number(this.inputs.ca );
  				this.data.ca.mmoll 	= Number(((this.inputs.ca )/40.08).toFixed(6));
  			}else{
- 				this.data.ca.mgl 		= Number(((this.inputs.ca )*40.08).toFixed(6)); 
- 				this.data.ca.mmoll 	= this.inputs.ca ;
+ 				this.data.ca.mgl 	= Number(((this.inputs.ca )*40.08).toFixed(6)); 
+ 				this.data.ca.mmoll 	= Number(this.inputs.ca );
  			}
- 			this.checkBalance();
+ 		}else{
+ 			this.data.ca.mgl 		= 0.000;
+ 			this.data.ca.mmoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeMg(){
  		console.log("changeMg");
+ 		
  		if (this.inputs.mg != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.mg.mgl 		= this.inputs.mg ;
+ 				this.data.mg.mgl 	= Number(this.inputs.mg );
  				this.data.mg.mmoll 	= Number(((this.inputs.mg )/24.305).toFixed(6));
  			}else{
- 				this.data.mg.mgl 		= Number(((this.inputs.mg )*24.305).toFixed(6)); 
- 				this.data.mg.mmoll 	= this.inputs.mg ;
+ 				this.data.mg.mgl 	= Number(((this.inputs.mg )*24.305).toFixed(6)); 
+ 				this.data.mg.mmoll 	= Number(this.inputs.mg );
  			}
- 			this.checkBalance();
+ 		}else{
+ 			this.data.mg.mgl 		= 0.000;
+ 			this.data.mg.mmoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeNa(){
  		console.log("changeNa");
  		if (this.inputs.na != 0) {
+ 			
  			if (this.data.unit == "mgl") {
- 				this.data.na.mgl 		= this.inputs.na ;
+ 				this.data.na.mgl 	= Number(this.inputs.na );
  				this.data.na.mmoll 	= Number(((this.inputs.na )/22.99).toFixed(6));
  			}else{
- 				this.data.na.mgl 		= Number(((this.inputs.na )*22.99).toFixed(6)); 
- 				this.data.na.mmoll 	= this.inputs.na ;
+ 				this.data.na.mgl 	= Number(((this.inputs.na )*22.99).toFixed(6)); 
+ 				this.data.na.mmoll 	= Number(this.inputs.na );
  			}
+
 
  			if (this.data.na.mmoll > 4.5) {
- 			this.inputsAlerts.na = "Too High";
+ 				this.inputsAlerts.na = "Too High";
+
+ 			}else if (this.data.na.mmoll > 3) {
+ 				this.inputsAlerts.na = "Very High";
+
+ 			}
+ 			else if (this.data.na.mmoll > 1.5) {
+ 				this.inputsAlerts.na = " High"; 			
+ 			}
+ 			else{
+ 				this.inputsAlerts.na = ""; 
  			}
 
- 			if (this.data.na.mmoll > 3) {
- 			this.inputsAlerts.na = "Very High";
- 			}
- 			if (this.data.na.mmoll > 1.5) {
- 			this.inputsAlerts.na = " High";
- 			}
-
- 			this.checkBalance();
+ 		}else{
+ 			this.data.na.mgl 		= 0.000;
+ 			this.data.na.mmoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeCl(){
  		console.log("changeCl");
  		if (this.inputs.cl != 0) {
+ 			
  			if (this.data.unit == "mgl") {
- 				this.data.cl.mgl 		= this.inputs.cl ;
+ 				this.data.cl.mgl 	= Number(this.inputs.cl );
  				this.data.cl.mmoll 	= Number(((this.inputs.cl )/35.453).toFixed(6));
  			}else{
- 				this.data.cl.mgl 		= Number(((this.inputs.cl )*35.453).toFixed(6)); 
- 				this.data.cl.mmoll 	= this.inputs.cl ;
+ 				this.data.cl.mgl 	= Number(((this.inputs.cl )*35.453).toFixed(6)); 
+ 				this.data.cl.mmoll 	= Number(this.inputs.cl );
  			}
 
  			if (this.data.cl.mmoll > 4.5) {
- 			this.inputsAlerts.cl = "Too High";
+ 				this.inputsAlerts.cl = "Too High";
  			}
- 			if (this.data.cl.mmoll > 3) {
- 			this.inputsAlerts.cl = "Very High";
+ 			else if (this.data.cl.mmoll > 3) {
+ 				this.inputsAlerts.cl = "Very High";
  			}
- 			if (this.data.cl.mmoll > 1.5) {
- 			this.inputsAlerts.cl = " High";
+ 			else if (this.data.cl.mmoll > 1.5) {
+ 				this.inputsAlerts.cl = " High";
+ 			}
+ 			else{
+ 				this.inputsAlerts.cl = ""; 
  			}
 
- 			this.checkBalance();
+ 		}else{
+ 			this.data.cl.mgl 		= 0.000;
+ 			this.data.cl.mmoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeSso4(){
  		console.log("changeSso4");
  		if (this.inputs.sso4 != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.sso4.mgl 		= this.inputs.sso4 ;
+
+ 				this.data.sso4.mgl 		= Number(this.inputs.sso4 );
  				this.data.sso4.mmoll 	= Number(((this.inputs.sso4 )/ 32.06).toFixed(6));
+
  			}else{
+
  				this.data.sso4.mgl 		= Number(((this.inputs.sso4 )* 32.06).toFixed(6)); 
- 				this.data.sso4.mmoll 	= this.inputs.sso4 ;
+ 				this.data.sso4.mmoll 	= Number(this.inputs.sso4 );
  			}
- 			if (this.data.sso4.mmoll < 2) {
- 			this.inputsAlerts.sso4 = "Too High";
+ 			
+ 			if (this.data.sso4.mmoll > 2) {
+ 				this.inputsAlerts.sso4 = "Too High";
+ 			}else{
+ 				this.inputsAlerts.sso4 = "";
  			}
 
- 			this.checkBalance();
+ 		}else{
+ 			this.data.sso4.mgl 		= 0.000;
+ 			this.data.sso4.mmoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeFe(){
  		console.log("changeFe");
@@ -375,12 +424,17 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.fe = dataWithumoll;
 
  			if (this.data.fe.mmoll > 25) {
- 			this.inputsAlerts.fe = "Too High";
+ 				this.inputsAlerts.fe = "Too High";
+ 			}else {
+ 				this.inputsAlerts.fe = "";
  			}
 
- 			this.checkBalance();
-
+ 		}else{
+ 			this.data.fe.mgl 	= 0.000;
+ 			this.data.fe.mmoll 	= 0.000;
+ 			this.data.fe.umoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeMn(){
  		console.log("changeMn");
@@ -402,12 +456,17 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.mn = dataWithumoll;
 
  			if (this.data.mn.mmoll > 10) {
- 			this.inputsAlerts.mn = "Too High";
+ 				this.inputsAlerts.mn = "Too High";
+ 			}else{
+ 				this.inputsAlerts.mn = "";
  			}
 
- 			this.checkBalance();
-
+ 		}else{
+ 			this.data.mn.mgl 	= 0.000;
+ 			this.data.mn.mmoll 	= 0.000;
+ 			this.data.mn.umoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeZn(){
  		console.log("changeZn");
@@ -418,22 +477,27 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  				umoll: 	0
  			};
  			if (this.data.unit == "mgl") {
- 				dataWithumoll.mgl 		= this.inputs.zn;
+ 				dataWithumoll.mgl 		= Number(this.inputs.zn);
  				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/65.39).toFixed(6));
  				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/65.39).toFixed(6));
  			}else{
- 				dataWithumoll.mmoll 	= this.inputs.zn;
+ 				dataWithumoll.mmoll 	= Number(this.inputs.zn);
  				dataWithumoll.umoll 	= dataWithumoll.mmoll;
  			}
  			this.data.zn = dataWithumoll;
 
  			if (this.data.zn.mmoll > 10) {
- 			this.inputsAlerts.zn = "Too High";
+ 				this.inputsAlerts.zn = "Too High";
+ 			}else{
+ 				this.inputsAlerts.zn = "";
  			}
 
- 			this.checkBalance();
-
+ 		}else{
+ 			this.data.zn.mgl 	= 0.000;
+ 			this.data.zn.mmoll 	= 0.000;
+ 			this.data.zn.umoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeCu(){
  		console.log("changeCu");
@@ -445,22 +509,27 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			};
 
  			if (this.data.unit == "mgl") {
- 				dataWithumoll.mgl 		= this.inputs.cu;
+ 				dataWithumoll.mgl 		= Number(this.inputs.cu);
  				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/63.55).toFixed(6));
  				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/63.55).toFixed(6));
  			}else{
- 				dataWithumoll.mmoll 	= this.inputs.cu;
+ 				dataWithumoll.mmoll 	= Number(this.inputs.cu);
  				dataWithumoll.umoll 	= dataWithumoll.mmoll;
  			}
  			this.data.cu = dataWithumoll;
  			
  			if (this.data.cu.mmoll > 3) {
- 			this.inputsAlerts.cu = "Too High";
+ 				this.inputsAlerts.cu = "Too High";
+ 			}else{
+ 				this.inputsAlerts.cu = "";
  			}
 
- 			this.checkBalance();
-
+ 		}else{
+ 			this.data.cu.mgl 	= 0.000;
+ 			this.data.cu.mmoll 	= 0.000;
+ 			this.data.cu.umoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeB(){
  		console.log("changeB");
@@ -472,22 +541,27 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			};
 
  			if (this.data.unit == "mgl") {
- 				dataWithumoll.mgl 		= this.inputs.b;
+ 				dataWithumoll.mgl 		= Number(this.inputs.b);
  				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/10.81).toFixed(6));
  				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/10.81).toFixed(6));
  			}else{
- 				dataWithumoll.mmoll 	= this.inputs.b;
+ 				dataWithumoll.mmoll 	= Number(this.inputs.b);
  				dataWithumoll.umoll 	= dataWithumoll.mmoll;
  			}
  			this.data.b = dataWithumoll;
 
  			if (this.data.b.mmoll > 50) {
- 			this.inputsAlerts.b = "Too High";
+ 				this.inputsAlerts.b = "Too High";
+ 			}else{
+ 				this.inputsAlerts.b = "";
  			}
 
- 			this.checkBalance();
-
+ 		}else{
+ 			this.data.b.mgl 	= 0.000;
+ 			this.data.b.mmoll 	= 0.000;
+ 			this.data.b.umoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeMo(){
  		console.log("changeMo");
@@ -498,39 +572,48 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  				umoll: 	0
  			};
  			if (this.data.unit == "mgl") {
- 				dataWithumoll.mgl 		= this.inputs.mo;
+ 				dataWithumoll.mgl 		= Number(this.inputs.mo);
  				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/95.94).toFixed(6));
  				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/95.94).toFixed(6));
  			}else{
- 				dataWithumoll.mmoll 	= this.inputs.mo;
+ 				dataWithumoll.mmoll 	= Number(this.inputs.mo);
  				dataWithumoll.umoll 	= dataWithumoll.mmoll;
  			}
  			this.data.mo = dataWithumoll;
- 			this.checkBalance();
-
+ 		}else{
+ 			this.data.mo.mgl 	= 0.000;
+ 			this.data.mo.mmoll 	= 0.000;
+ 			this.data.mo.umoll 	= 0.000;
  		}
+ 		this.checkBalance();
  	};
  	changeHco3(){
  		console.log("changeHco3");
  		if (this.inputs.hco3 != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.hco3.mgl 		= this.inputs.hco3 ;
+ 				this.data.hco3.mgl 		= Number(this.inputs.hco3 );
  				this.data.hco3.mmoll 	= Number(((this.inputs.hco3 )/ 61.02).toFixed(6));
  			}else{
  				this.data.hco3.mgl 		= Number(((this.inputs.hco3 )* 61.02).toFixed(6)); 
- 				this.data.hco3.mmoll 	= this.inputs.hco3 ;
+ 				this.data.hco3.mmoll 	= Number(this.inputs.hco3 );
  			}
+ 		}else{
+ 			this.data.hco3.mgl 		= 0.000;
+ 			this.data.hco3.mmoll 	= 0.000;
  		}
  		this.checkBalance();
- 	
+
 
  	};
 
  	changePh(){
  		if (this.inputs.ph!= 0) {
  			this.data.ph = this.inputs.ph;
+ 			
  			if (this.data.ph < 5.5) {
- 			this.inputsAlerts.ph = "Too Low";
+ 				this.inputsAlerts.ph = "Too Low";
+ 			}else{
+ 				this.inputsAlerts.ph = "";
  			}
  		}
  	}
@@ -540,40 +623,42 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.ec = this.inputs.ec;
  			
  			if (this.data.ec > 1.5) {
- 			this.inputsAlerts.ec = "Too High";
+ 				this.inputsAlerts.ec = "Too High";
  			}
-
- 			if (this.data.ec > 1) {
- 			this.inputsAlerts.ec = "Very High";
+ 			else if (this.data.ec > 1) {
+ 				this.inputsAlerts.ec = "Very High";
  			}
- 			if (this.data.ec > 0.5) {
- 			this.inputsAlerts.ec = "High";
+ 			else if (this.data.ec > 0.5) {
+ 				this.inputsAlerts.ec = "High";
+ 			}else{
+ 				this.inputsAlerts.ec = "";
  			}
 
  		}
  	}
 
  	checkBalance(){
+ 		this.data.balance = 0.0000;
  		var balance =
- 		this.data.nnh4.mmoll 		-
-		this.data.nno3.mmoll 		-
-		this.data.p.mmoll 			+
-		this.data.k.mmoll 			+
-		(this.data.ca.mmoll * 2)	+
-		(this.data.mg.mmoll * 2)	+
-		this.data.na.mmoll 			-
-		this.data.cl.mmoll 			-
-		(this.data.sso4.mmoll * 2) 	-
-		this.data.hco3.mmoll;
-		console.log("data: ");
-		console.log(this.data);
-		console.log("BALANCE: " + balance);
-		this.data.balance = balance;
+	 		 this.data.nnh4.mmoll 		-
+	 		 this.data.nno3.mmoll 		-
+	 		 this.data.p.mmoll 			+
+	 		 this.data.k.mmoll 			+
+	 		(this.data.ca.mmoll * 2)	+
+	 		(this.data.mg.mmoll * 2)	+
+	 		 this.data.na.mmoll 			-
+	 		 this.data.cl.mmoll 			-
+	 		(this.data.sso4.mmoll * 2) 	-
+	 		 this.data.hco3.mmoll;
+	 	console.log("data: ");
+	 	console.log(this.data);
+	 	console.log("BALANCE: " + balance);
+ 		this.data.balance = balance;
  	}
 
  	getEquivalent(elementId){
  		var equiVal = Number(this.data[elementId][this.inputsEquivalUnits[elementId].id]).toFixed(2);
- 		console.log(elementId+ "  equiVal: "+ equiVal);
+ 		//console.log(elementId+ "  equiVal: "+ equiVal);
  		return equiVal;
  	}
  }

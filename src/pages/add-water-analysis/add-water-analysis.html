@@ -28,13 +28,13 @@
       <ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 class="menu-lateral-movil backgroundSecondary" showWhen="landscape" hideWhen="portrait">
         <!--menu lateral landscape-->
         <div class="menuLateralList">
-          <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><!--<img class="imagenmenu" src="../assets/icon/selectcropandgrowthstage.png" width="50px"> -->Select crop and growth stage</button>
+          <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><img class="imagenmenu" src="../assets/img/selectcropandgrowthstage.png" width="50px"> elect crop and growth stage</button>
 			
-          <button   (click)='goToInputData()' ion-button full clear color="black" class="buttonmenu" id="data-inp"><!--<img class="imagenmenu" src="../assets/icon/inputdata.png" width="50px">-->Input data</button>
+          <button   (click)='goToInputData()' ion-button full clear color="black" class="buttonmenu" id="data-inp"><img class="imagenmenu" src="../assets/img/inputdata.png" width="50px">Input data</button>
 			
-          <button ion-button full clear color="black" id="add-water"><!--<img class="imagenmenu" src="../assets/icon/addwateranalysis.png" width="40px">-->Add water analysis</button>
+          <button ion-button full clear color="black" id="add-water"><img class="imagenmenu" src="../assets/img/addwateranalysis.png" width="40px">Add water analysis</button>
 			
-          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><!--<img class="imagenmenu" src="../assets/icon/fertigationprogramme.png" width="50px">-->Fertigation programme</button>
+          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><img class="imagenmenu" src="../assets/img/fertigationprogramme.png" width="50px">Fertigation programme</button>
         </div>
       </ion-col>
       <!-- segunda columna --> 
@@ -184,11 +184,11 @@
                 <ion-label color="secondary">{{getEquivalent('cl') }}{{inputsEquivalUnits.cl.text}}</ion-label>
               </ion-col>
             </ion-row>
-            <h6>Insert S-SO<sup>4</sup></h6>
+            <h6>Insert S-SO<sub>4</sub></h6>
             <ion-row>
               <ion-col>
                 <ion-item>
-                  <ion-label color="secondary" class="fontSecondary" stacked>S-SO4</ion-label>
+                  <ion-label color="secondary" class="fontSecondary" stacked>S-SO<sub>4</sub></ion-label>
                   <ion-input  (change)='changeSso4()' [(ngModel)]="inputs.sso4" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
                 <ion-input  [(ngModel)]="inputsAlerts.sso4" type="text" class="inputAlert" disabled></ion-input>
@@ -339,5 +339,5 @@
   </ion-content>
   <ion-footer no-border>
 
-  <button ion-button full><!--<img class="subimagenmenu" src="../assets/icon/addmore-icon.png" width="40px">-->SEE FERTIGATION PROGRAMME</button>
+  <button ion-button full><img class="subimagenmenu" src="../assets/img/addmore-icon.png" width="40px">SEE FERTIGATION PROGRAMME</button>
 </ion-footer>

@@ -75,14 +75,14 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  	{
  		id: 				"ultrasol calcium",
  		name: 				"Ultrasol Calcium (15.5% N-26% CaO)",
- 		concentration: 	111,
- 		density: 		1.11
+ 		concentration: 		"N.A.",
+ 		density: 			"N.A."
  	},
  	{
  		id:					"liquid calclium nitrate",
  		name:				"Liquid Calcium Nitrate",
- 		concentration: 	222,
- 		density:		2.22
+ 		concentration: 		9,
+ 		density:			1.465
  	}
  	];
  	calciumNitrateChoise = "";
@@ -94,17 +94,17 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  	{
  		id: 				"fee13",
  		name: 				"Ultrasol micro Rexene FeE13",
- 		concentration: 	1313
+ 		concentration: 	13
  	},
  	{
  		id:					"fed12",
  		name:				"Ultrasol micro Rexene FeD12",
- 		concentration: 	1212
+ 		concentration: 	12
  	},
  	{
  		id:					"feq48",
  		name:				"Ultrasol micro Rexene FeQ48",
- 		concentration: 	4848
+ 		concentration: 	6
  	}
  	];
  	ironChelateChoise = "";
@@ -133,7 +133,7 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  		calciumNitrateSource: {
  			id: 			"",
  			name:			"",
- 			concentration: 	0.0,
+ 			concentration: 	null,
  			density: 		null
  		},
  		ironChelateSource:    {
