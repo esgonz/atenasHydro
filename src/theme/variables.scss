@@ -59,6 +59,7 @@ $font-path: "../assets/fonts";
 		margin: 0 5px 0 0;
 		background-repeat: no-repeat;
 		background-position: 0px;
+		justify-content: flex-start !important;
 	}
 
 	.iconinput{
@@ -189,6 +190,19 @@ $font-path: "../assets/fonts";
 		margin: 5px;
     	background-repeat: no-repeat;
     	background-position: 0px;
+	}
+
+	/*.button-inner{
+		justify-content: flex-start !important;
+	}*/
+	
+	.buttonmenu > span {
+		justify-content: flex-start;
+	}
+	
+	.buttonmenu2 > span {
+		justify-content: flex-start;
+		margin-left: 30px;
 	}
 
 @media only screen and (max-width: 767px){

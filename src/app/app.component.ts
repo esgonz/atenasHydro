@@ -28,14 +28,13 @@ import { TranslateService } from '@ngx-translate/core'
   templateUrl:'app.html'
 })
 export class MyApp {
-  rootPage = TabsPage;
+  rootPage = TabsPrev;
 
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
     { title: 'Input Data Table', component: InputDataTable },
     { title: 'Add Water Analysis', component: AddWaterAnalysis }
-
   ]
 
   constructor(private translate: TranslateService, private platform: Platform, settings: Settings, 
