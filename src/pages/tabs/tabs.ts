@@ -33,9 +33,9 @@ export class TabsPage {
     }); */
 	
 	  this.tab1Title = "Grower Info";
-    this.tab2Title = "Result of water analysis";
-    this.tab3Title = "Result of fertigation solution";
-    this.tab4Title = "Result of fertigation scheme";
+    this.tab2Title = "Water analysis";
+    this.tab3Title = "Fertigation solution";
+    this.tab4Title = "Fertigation scheme";
     this.tab5Title = "Send recommendation";
   }
 }
