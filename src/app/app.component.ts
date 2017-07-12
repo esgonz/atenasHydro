@@ -28,7 +28,7 @@ import { TranslateService } from '@ngx-translate/core'
   templateUrl:'app.html'
 })
 export class MyApp {
-  rootPage = AddNewRecommendation;
+  rootPage = TabsPage;
 
   @ViewChild(Nav) nav: Nav;
 
