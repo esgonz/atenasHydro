@@ -197,6 +197,27 @@ $font-path: "../assets/fonts";
 	}
 }
 
+@media only screen and (max-width: 540px){
+	.menu-lateral-movil{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 780px) and (orientation:portrait){
+	.menu-lateral-movil{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 540px){
+	.margeninterno{
+		margin: 2rem 2rem;
+	}
+	.iconos {
+		margin: 5px;
+	}
+}
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

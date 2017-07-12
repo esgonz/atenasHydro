@@ -1,18 +1,4 @@
 page-select-crop-growth {
-	.splash-bg {
-		position: relative;
-		background: url('../assets/img/splashbg.png') no-repeat transparent;
-		background-size: cover;
-		height: 45%;
-		z-index: 1;
-		background-repeat: repeat-x;
-		animation: animatedBackground 40s linear infinite;
-	}
-	
-	@keyframes animatedBackground {
-		from { background-position: 0 0; }
-		to { background-position: 100% 0; }
-	}
 	
 	.card-background-page {
 		ion-card {
@@ -107,8 +93,6 @@ page-select-crop-growth {
 		opacity: 0.8;
 	}
 	
-	$fontSecondaryBold: bold;
-	
 	h4{
 		text-align: left;
 		margin-left: 1rem;
@@ -122,17 +106,5 @@ page-select-crop-growth {
 		color: color($colors,dark);
 		font-weight: $fontSecondaryBold;
 		text-align: right;
-	}
-	
-	@media only screen and (max-width: 540px){
-		.menu-lateral-movil{
-			display: none;
-		}
-	}
-	
-	@media only screen and (max-width: 780px) and (orientation:portrait){
-		.menu-lateral-movil{
-			display: none;
-		}
 	}
 }
