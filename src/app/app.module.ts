@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, Http } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Storage, IonicStorageModule } from '@ionic/storage';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 import { MyApp } from './app.component';
 
@@ -34,7 +35,7 @@ import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/settings';
 import { User } from '../providers/user';
-
+import {FormulaSqlStorage} from '../providers/formulas';
 
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -121,6 +122,9 @@ export function provideSettings(storage: Storage) {
     Items,
     User,
     SplashScreen,
+    SQLite,
+    SQLiteObject,
+    FormulaSqlStorage,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }

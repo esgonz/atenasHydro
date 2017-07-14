@@ -1,7 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav, Config } from 'ionic-angular';
+import { Platform, Nav, Config} from 'ionic-angular';
+import {FormulaSqlStorage} from '../providers/formulas';
 
 
+
+/*Import pages*/
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InicioWelcome } from '../pages/inicio-welcome/inicio-welcome';
 import { Disclaimer } from '../pages/disclaimer/disclaimer';
@@ -21,6 +24,7 @@ import {TabsPage} from '../pages/tabs/tabs';
 
 import {TabsPrev} from '../pages/tabsprev/tabsprev';
 
+/*imports providers y usefuls classs*/
 import { Settings } from '../providers/providers';
 import { TranslateService } from '@ngx-translate/core'
 
@@ -28,7 +32,7 @@ import { TranslateService } from '@ngx-translate/core'
   templateUrl:'app.html'
 })
 export class MyApp {
-  rootPage = TabsPage;
+  rootPage = InputDataTable;
 
   @ViewChild(Nav) nav: Nav;
 
@@ -39,7 +43,7 @@ export class MyApp {
   ]
 
   constructor(private translate: TranslateService, private platform: Platform, settings: Settings, 
-            private config: Config, private splashScreen: SplashScreen) {
+            private config: Config, private splashScreen: SplashScreen, public FormulaSqlStorage: FormulaSqlStorage) {
     this.initTranslate();
   }
 
