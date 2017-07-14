@@ -13,6 +13,8 @@ import { InputDataTable } from '../pages/input-data-table/input-data-table';
 import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
 
 
+
+import {PrevFertigationprogrameGrowerinfo} from '../pages/prev-fertigationprograme-growerinfo/prev-fertigationprograme-growerinfo';
 import {ResultOfFertigationScheme} from '../pages/result-of-fertigation-scheme/result-of-fertigation-scheme';
 import {ResultOfFertigationSolution} from '../pages/result-of-fertigation-solution/result-of-fertigation-solution';
 import {ResultOfWaterAnalysis} from '../pages/result-of-water-analysis/result-of-water-analysis';
