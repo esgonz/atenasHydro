@@ -21,24 +21,23 @@
 
 .menuLateralList{
 	position: fixed;
-    top: 60px;
+	top: 60px;
 }
 
-  @media only screen and (max-width: 767px){
-    .menu-lateral-movil{
-      display: none;
-    }
-  }
+@media only screen and (max-width: 767px){
+	.menu-lateral-movil{
+		display: none;
+	}
+}
 
-
-  /*@media only screen and (max-width: 780px) and (orientation:portrait){
+ /*@media only screen and (max-width: 780px) and (orientation:portrait){
     .menu-lateral-movil{
       display: none;
     }
   }*/
 
 .inputAlert{
-    opacity: 1;
+	opacity: 1;
     font-weight: bold;
     color: red;
 }  

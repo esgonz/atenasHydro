@@ -52,43 +52,59 @@ $font-path: "../assets/fonts";
 	}
 
 	.icongrow{
-		display: block;
+		display: inline-block;
 		background: url('../assets/img/selectcropandgrowthstage.svg');
 		width: 40px;
 		height: 40px;
 		margin: 0 5px 0 0;
 		background-repeat: no-repeat;
 		background-position: 0px;
+		justify-content: flex-start !important;
+    	vertical-align: middle;
 	}
 
 	.iconinput{
-    	display: block;
+    	display: inline-block;
     	background: url('../assets/img/inputdata.svg');
 		width: 40px;
 		height: 40px;
 		margin: 0 5px 0 0;
     	background-repeat: no-repeat;
     	background-position: 0px;
+    	vertical-align: middle;
 	}
 
 	.iconwatter{
-    	display: block;
+		display: inline-block;
     	background: url('../assets/img/addwateranalysis.svg');
 		width: 30px;
 		height: 30px;
 		margin: 0 5px 0 0;
     	background-repeat: no-repeat;
     	background-position: 0px;
+    	vertical-align: middle;
 	}
 
 	.iconprogramme{
-    	display: block;
+    	display: inline-block;
     	background: url('../assets/img/fertigationprogramme.svg');
 		width: 40px;
 		height: 40px;
 		margin: 0 5px 0 0;
     	background-repeat: no-repeat;
     	background-position: 0px;
+    	vertical-align: middle;
+	}
+
+	.iconprevrecom{
+    	display: inline-block;
+    	background: url('../assets/img/prevrec.svg');
+		width: 40px;
+		height: 40px;
+		margin: 0 5px 0 0;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+    	vertical-align: middle;
 	}
 
 	.iconaddmore{
@@ -102,44 +118,154 @@ $font-path: "../assets/fonts";
 	}
 
 	.icongrower{
-    	display: block;
+    	display: inline-block;
     	background: url('../assets/img/growerinfo.svg');
 		width: 25px;
 		height: 25px;
 		margin: 0 5px 0 0;
     	background-repeat: no-repeat;
     	background-position: 0px;
+    	vertical-align: middle;
 	}
 
 	.iconwaterresult{
-    	display: block;
+    	display: inline-block;
     	background: url('../assets/img/resultofwateranaly.svg');
 		width: 25px;
 		height: 25px;
 		margin: 0 5px 0 0;
     	background-repeat: no-repeat;
     	background-position: 0px;
+    	vertical-align: middle;
 	}
 
 	.iconfertisol{
-    	display: block;
+    	display: inline-block;
     	background: url('../assets/img/resultoffertisolution.svg');
 		width: 25px;
 		height: 25px;
 		margin: 0 5px 0 0;
     	background-repeat: no-repeat;
     	background-position: 0px;
+    	vertical-align: middle;
 	}
 
 	.iconfertische{
-    	display: block;
+    	display: inline-block;
     	background: url('../assets/img/resultoffertische.svg');
 		width: 25px;
 		height: 25px;
 		margin: 0 5px 0 0;
     	background-repeat: no-repeat;
     	background-position: 0px;
+    	vertical-align: middle;
 	}
+
+	.iconaddgrower{
+    	display: block;
+    	background: url('../assets/img/addgrower.svg');
+		width: 50px;
+		height: 50px;
+		margin: 5px;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
+	.iconaddsector{
+    	display: block;
+    	background: url('../assets/img/addsector.svg');
+		width: 50px;
+		height: 50px;
+		margin: 5px;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
+	.iconaddemail{
+    	display: block;
+    	background: url('../assets/img/addemail.svg');
+		width: 50px;
+		height: 50px;
+		margin: 5px;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
+	.iconaddbusiness{
+    	display: block;
+    	background: url('../assets/img/addbusiness.svg');
+		width: 50px;
+		height: 50px;
+		margin: 5px;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
+	.iconadddate{
+    	display: block;
+    	background: url('../assets/img/adddate.svg');
+		width: 50px;
+		height: 50px;
+		margin: 5px;
+    	background-repeat: no-repeat;
+    	background-position: 0px;
+	}
+
+	.list-header-ios {
+		text-transform: initial !important;
+	}
+
+	/*.button-inner{
+		justify-content: flex-start !important;
+	}*/
+	
+	/*.buttonmenu > span {
+		justify-content: flex-start;
+	}
+	
+	.buttonmenu2 > span {
+		justify-content: flex-start;
+		margin-left: 30px;
+	}*/
+
+	.paddingmenu {
+		margin-left: 10px !important;
+	}
+
+	.menudesplegable{
+		background-color: #EEEEEE !important;
+	}
+	
+	.grid {
+		padding: 0px !important;
+	}
+
+@media only screen and (max-width: 767px){
+	.toolbar-title-md{
+		font-size: 1.8rem !important;
+	}
+}
+
+@media only screen and (max-width: 540px){
+	.menu-lateral-movil{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 780px) and (orientation:portrait){
+	.menu-lateral-movil{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 540px){
+	.margeninterno{
+		margin: 2rem 2rem;
+	}
+	.iconos {
+		margin: 5px;
+	}
+}
 
 // App iOS Variables
 // --------------------------------------------------
