@@ -1,50 +1,41 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav, Config} from 'ionic-angular';
-import {FormulaSqlStorage} from '../providers/formulas';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 
 
 /*Import pages*/
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { InicioWelcome } from '../pages/inicio-welcome/inicio-welcome';
-import { Disclaimer } from '../pages/disclaimer/disclaimer';
-import { FertigationprogrameGrowerinfo } from '../pages/fertigationprograme-growerinfo/fertigationprograme-growerinfo';
-import { PreviousRecommendation } from '../pages/previous-recommendation/previous-recommendation';
-import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-recommendation';
-import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
 import { InputDataTable } from '../pages/input-data-table/input-data-table';
 import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
-
-
-import {ResultOfFertigationScheme} from '../pages/result-of-fertigation-scheme/result-of-fertigation-scheme';
-import {ResultOfFertigationSolution} from '../pages/result-of-fertigation-solution/result-of-fertigation-solution';
-import {ResultOfWaterAnalysis} from '../pages/result-of-water-analysis/result-of-water-analysis';
-
-import {TabsPage} from '../pages/tabs/tabs';
-
-import {TabsPrev} from '../pages/tabsprev/tabsprev';
+import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-recommendation';
+import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
 
 /*imports providers y usefuls classs*/
 import { Settings } from '../providers/providers';
-import { TranslateService } from '@ngx-translate/core'
+import { TranslateService } from '@ngx-translate/core';
+import { Crops } from '../providers/crops';
 
 @Component({
   templateUrl:'app.html'
 })
 export class MyApp {
-  rootPage = InputDataTable;
+  rootPage = AddNewRecommendation;
 
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Input Data Table', component: InputDataTable },
-    { title: 'Add Water Analysis', component: AddWaterAnalysis }
+    { title: 'Add new recommendation', component: AddNewRecommendation, iconClass: 'icongrower' },
+    { title: 'Select crop and growth stage', component: SelectCropGrowth, iconClass: 'icongrow'  },
+    { title: 'Input Data Table', component: InputDataTable,  iconClass: 'iconinput'  },
+    { title: 'Add Water Analysis', component: AddWaterAnalysis, iconClass: 'iconwatter'   }  
 
   ]
 
   constructor(private translate: TranslateService, private platform: Platform, settings: Settings, 
-            private config: Config, private splashScreen: SplashScreen, public FormulaSqlStorage: FormulaSqlStorage) {
+            private config: Config, private splashScreen: SplashScreen) {
     this.initTranslate();
+
   }
 
   ionViewDidLoad() {
@@ -52,6 +43,7 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.splashScreen.hide();
+      this.nav.setRoot(this.rootPage);
     });
   }
 
@@ -62,7 +54,7 @@ export class MyApp {
     if (this.translate.getBrowserLang() !== undefined) {
       this.translate.use(this.translate.getBrowserLang());
     } else {
-      this.translate.use('en'); // Set your language here
+      this.translate.use('es'); // Set your language here
     }
 
     this.translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
@@ -73,6 +65,8 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    //this.nav.setRoot(page.component);
+    
+    this.nav.push(page.component);
   }
 }

@@ -424,7 +424,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.fe = dataWithumoll;
 
  			if (this.data.fe.mmoll > 25) {
- 				this.inputsAlerts.fe = "Too High";
+ 				this.inputsAlerts.fe = "Too High. Install a sandfilter";
  			}else {
  				this.inputsAlerts.fe = "";
  			}
@@ -456,7 +456,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.mn = dataWithumoll;
 
  			if (this.data.mn.mmoll > 10) {
- 				this.inputsAlerts.mn = "Too High";
+ 				this.inputsAlerts.mn = "Too High. Water not suitable for standard NPK use.";
  			}else{
  				this.inputsAlerts.mn = "";
  			}
@@ -487,7 +487,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.zn = dataWithumoll;
 
  			if (this.data.zn.mmoll > 10) {
- 				this.inputsAlerts.zn = "Too High";
+ 				this.inputsAlerts.zn = "Too High. Water not suitable for standard NPK use.";
  			}else{
  				this.inputsAlerts.zn = "";
  			}
@@ -519,7 +519,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.cu = dataWithumoll;
  			
  			if (this.data.cu.mmoll > 3) {
- 				this.inputsAlerts.cu = "Too High";
+ 				this.inputsAlerts.cu = "Too High. Water not suitable for standard NPK use.";
  			}else{
  				this.inputsAlerts.cu = "";
  			}
@@ -551,7 +551,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.b = dataWithumoll;
 
  			if (this.data.b.mmoll > 50) {
- 				this.inputsAlerts.b = "Too High";
+ 				this.inputsAlerts.b = "Too High. Water not suitable for standard NPK use.";
  			}else{
  				this.inputsAlerts.b = "";
  			}

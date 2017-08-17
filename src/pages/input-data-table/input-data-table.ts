@@ -19,8 +19,8 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  	{
  		id: 			"x",
  		name: 			"Nitric Acid - X%",
- 		concentration: 		0,
- 		density: 		 	0
+ 		concentration: 		null,
+ 		density: 		 	null
  	},
  	{
  		id: 			"38",
@@ -166,15 +166,21 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  				console.log("true");
  				this.data.acidSource = this.acids[i];
  				console.log(this.data.acidSource);
- 				this.acidSuggestion.concentration = this.acids[i].concentration.toString();
- 				this.acidSuggestion.density = this.acids[i].density.toString();
- 				return;
+ 				if(this.acids[i].concentration != null ){
+ 					this.acidSuggestion.concentration = this.acids[i].concentration.toString();	
+ 				}
+ 				if(this.acids[i].density != null ){
+ 					this.acidSuggestion.density = this.acids[i].density.toString();	
+ 				} 				
+				return;
  			}
  		}
  	}
 
  	changeCalciumChloride(){
  		console.log("calciumChlorideChoise: " + this.calciumChlorideChoise);
+ 		this.calciumChlorideSuggestion.concentration = "";
+ 		this.calciumChlorideSuggestion.density 	     = "";
 
  		for (var i = 0; i< this.calciumChlorides.length; i++) {
  			console.log("acid ID: " + this.calciumChlorides[i].id);
@@ -183,7 +189,7 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  				this.data.calciumChlorideSource = this.calciumChlorides[i];
  				console.log(this.data.calciumChlorideSource);
  				this.calciumChlorideSuggestion.concentration = this.calciumChlorides[i].concentration.toString();
- 				this.calciumChlorideSuggestion.density = this.calciumChlorides[i].density.toString();
+ 				this.calciumChlorideSuggestion.density 	     = this.calciumChlorides[i].density.toString();
  				return;
  			}
  		}

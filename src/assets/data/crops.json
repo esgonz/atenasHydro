@@ -1,0 +1,1034 @@
+[{
+		"id": "1",
+		"name": "Cucumber",
+		"stages": [{
+				"id": "11",
+				"name": "Filling of mats",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": -0.375,
+					"k": -2.4,
+					"ca": 0.975,
+					"mg": 0.4125
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "12",
+				"name": "First 4 to 8 weeks",
+				"macroelements": {
+					"no3": 0.1,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0.1,
+					"k": -1,
+					"ca": 0.5,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 10,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "13",
+				"name": "Standard",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "14",
+				"name": "Harvest",
+				"macroelements": {
+					"no3": -0.05,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": -0.05,
+					"k": 0.5,
+					"ca": -0.25,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			}
+		]
+	},
+	{
+		"id": "2",
+		"name": "Eggplant",
+		"stages": [{
+				"id": "21",
+				"name": "Filling of mats",
+				"macroelements": {
+					"no3": 0.15,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": -0.35,
+					"k": -2,
+					"ca": 0.75,
+					"mg": 0.5
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "22",
+				"name": "First 4 weeks",
+				"macroelements": {
+					"no3": 0.1,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0.1,
+					"k": -1,
+					"ca": 0.5,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 10,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "23",
+				"name": "Standard",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "24",
+				"name": "Heavy fruit load",
+				"macroelements": {
+					"no3": 2,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 2,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			}
+		]
+	},
+	{
+		"id": "3",
+		"name": "Gerbera",
+		"stages": [{
+				"id": "31",
+				"name": "Filling of mats",
+				"macroelements": {
+					"no3": 0.15,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": -0.35,
+					"k": -2.5,
+					"ca": 0.75,
+					"mg": 0.75
+				},
+				"tracelements": {
+					"fe": 5,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "32",
+				"name": "Start (first 2 months)",
+				"macroelements": {
+					"no3": 0.1,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0.1,
+					"k": -1,
+					"ca": 0.5,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 10,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "33",
+				"name": "Standard",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "34",
+				"name": "Flowering",
+				"macroelements": {
+					"no3": 1,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 1,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			}
+		]
+	},
+	{
+		"id": "4",
+		"name": "Lettuce",
+		"stages": [{
+			"id": "41",
+			"name": "Standard",
+			"macroelements": {
+				"no3": 0,
+				"h2po4": 0,
+				"so4": 0,
+				"nh4": 0,
+				"k": 0,
+				"ca": 0,
+				"mg": 0
+			},
+			"tracelements": {
+				"fe": 0,
+				"b": 0,
+				"mn": 0,
+				"zn": 0,
+				"cu": 0,
+				"mo": 0
+			}
+		}]
+	},
+	{
+		"id": "5",
+		"name": "Melon",
+		"stages": [{
+				"id": "51",
+				"name": "Standard",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "52",
+				"name": "Start",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": -1,
+					"k": -1,
+					"ca": 0.5,
+					"mg": 0.5
+				},
+				"tracelements": {
+					"fe": 10,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "53",
+				"name": "Fruiting stage",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 1,
+					"ca": -0.5,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			}
+		]
+	},
+	{
+		"id": "6",
+		"name": "Roses",
+		"stages": [{
+				"id": "61",
+				"name": "Filling of mats",
+				"macroelements": {
+					"no3": 0.15,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": -0.35,
+					"k": -2.5,
+					"ca": 0.75,
+					"mg": 0.75
+				},
+				"tracelements": {
+					"fe": 5,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "62",
+				"name": "First 3 months (vegetative)",
+				"macroelements": {
+					"no3": 0.1,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0.1,
+					"k": -1,
+					"ca": 0.5,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 10,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "63",
+				"name": "Standard",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "64",
+				"name": "Flowering",
+				"macroelements": {
+					"no3": 1,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 1,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			}
+		]
+	},
+	{
+		"id": "7",
+		"name": "Strawberry",
+		"stages": [{
+				"id": "71",
+				"name": "First 2 months",
+				"macroelements": {
+					"no3": 0.05,
+					"h2po4": -0.05,
+					"so4": 0,
+					"nh4": 0.2,
+					"k": -0.6,
+					"ca": 0.25,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 10,
+					"b": 10,
+					"mn": 5,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "72",
+				"name": "Standard",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "73",
+				"name": "Fruiting stage",
+				"macroelements": {
+					"no3": -0.14,
+					"h2po4": 0.1,
+					"so4": 0,
+					"nh4": -0.04,
+					"k": 0.4,
+					"ca": -0.2,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			}
+		]
+	},
+	{
+		"id": "8",
+		"name": "Sweet Pepper",
+		"stages": [{
+				"id": "81",
+				"name": "Filling of mats",
+				"macroelements": {
+					"no3": 1.15,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0.15,
+					"k": -2,
+					"ca": 1,
+					"mg": 0.5
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 16,
+					"mn": 0,
+					"zn": 0,
+					"cu": 16,
+					"mo": 16
+				}
+			},
+			{
+				"id": "82",
+				"name": "First 3 weeks",
+				"macroelements": {
+					"no3": -0.15,
+					"h2po4": 0.25,
+					"so4": 0,
+					"nh4": 0.1,
+					"k": -1,
+					"ca": 0.5,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 10,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "83",
+				"name": "Till harvest first fruit",
+				"macroelements": {
+					"no3": -0.25,
+					"h2po4": 0.25,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "84",
+				"name": "Heavy fruit load",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 1,
+					"ca": -0.5,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			}
+		]
+	},
+	{
+		"id": "9",
+		"name": "Tomatoes",
+		"stages": [{
+				"id": "91",
+				"name": "Filling of mats",
+				"macroelements": {
+					"no3": 0.3,
+					"h2po4": -0.5,
+					"so4": 0.25,
+					"nh4": -0.9,
+					"k": -3.8,
+					"ca": 1.5,
+					"mg": 1
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "92",
+				"name": "Start till flowering 3th cluster",
+				"macroelements": {
+					"no3": 1.1,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0.1,
+					"k": -1,
+					"ca": 0.5,
+					"mg": 0.5
+				},
+				"tracelements": {
+					"fe": 10,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "93",
+				"name": "Flowering 3th to 5th cluster",
+				"macroelements": {
+					"no3": -0.025,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": -0.025,
+					"k": 0.5,
+					"ca": -0.125,
+					"mg": -0.125
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "94",
+				"name": "Flowering 5th to 10th cluster",
+				"macroelements": {
+					"no3": -0.125,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": -0.125,
+					"k": 1.75,
+					"ca": -0.625,
+					"mg": -0.25
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "95",
+				"name": "Till end harvest",
+				"macroelements": {
+					"no3": -0.025,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": -0.025,
+					"k": 0.5,
+					"ca": -0.125,
+					"mg": -0.125
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			}
+		]
+	},
+	{
+		"id": "10",
+		"name": "Young Plants",
+		"stages": [{
+			"id": "101",
+			"name": "Standard",
+			"macroelements": {
+				"no3": 0,
+				"h2po4": 0,
+				"so4": 0,
+				"nh4": 0,
+				"k": 0,
+				"ca": 0,
+				"mg": 0
+			},
+			"tracelements": {
+				"fe": 0,
+				"b": 0,
+				"mn": 0,
+				"zn": 0,
+				"cu": 0,
+				"mo": 0
+			}
+		}]
+	},
+	{
+		"id": "11",
+		"name": "Z1 Azalea",
+		"stages": [{
+				"id": "111",
+				"name": "Start (first 1-2 months)",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "112",
+				"name": "Standard",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "113",
+				"name": "Flowerinduction",
+				"macroelements": {
+					"no3": 2,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 2,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			}
+		]
+	},
+	{
+		"id": "12",
+		"name": "Z2 Carnation",
+		"stages": [{
+				"id": "121",
+				"name": "Filling of mats",
+				"macroelements": {
+					"no3": 0.15,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": -0.35,
+					"k": -2.5,
+					"ca": 0.75,
+					"mg": 0.75
+				},
+				"tracelements": {
+					"fe": 5,
+					"b": 10,
+					"mn": 0,
+					"zn": 0,
+					"cu": 10,
+					"mo": 10
+				}
+			},
+			{
+				"id": "122",
+				"name": "Start (first 2-4 months)",
+				"macroelements": {
+					"no3": 0.1,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0.1,
+					"k": -1,
+					"ca": 0.5,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 5,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "123",
+				"name": "Standard",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "124",
+				"name": "Flowering",
+				"macroelements": {
+					"no3": 2,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 2,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			}
+		]
+	}, {
+		"id": "13",
+		"name": "Z3 Chrysanthemum",
+		"stages": [{
+				"id": "131",
+				"name": "Start (first 1-2 months)",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "132",
+				"name": "Standard",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "133",
+				"name": "Flowering",
+				"macroelements": {
+					"no3": -0.175,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": -0.175,
+					"k": 1.75,
+					"ca": -0.875,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			}
+		]
+	},
+	{
+		"id": "14",
+		"name": "Z4 Freesia",
+		"stages": [{
+				"id": "141",
+				"name": "Standard",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 0,
+					"k": 0,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "142",
+				"name": "Vegetative",
+				"macroelements": {
+					"no3": 1.84,
+					"h2po4": -0.1,
+					"so4": 0.75,
+					"nh4": 0.24,
+					"k": 0,
+					"ca": 1.2,
+					"mg": 0.3
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			},
+			{
+				"id": "143",
+				"name": "Flowering",
+				"macroelements": {
+					"no3": 0,
+					"h2po4": 0,
+					"so4": 0,
+					"nh4": 1,
+					"k": -1,
+					"ca": 0,
+					"mg": 0
+				},
+				"tracelements": {
+					"fe": 0,
+					"b": 0,
+					"mn": 0,
+					"zn": 0,
+					"cu": 0,
+					"mo": 0
+				}
+			}
+		]
+	}
+]

@@ -33,8 +33,9 @@
             <ion-col col-10>
               <ion-item color="dark">
                 <ion-label color="white" class="fontSecondary" stacked>Grower</ion-label>
-                <ion-input color="white" type="wanted" placeholder="Steve Johnson" ></ion-input>
+                <ion-input color="white" type="text" (blur)="changeName()" [(ngModel)]="data.name"  placeholder="Steve Johnson" ></ion-input>
               </ion-item>
+              <ion-input  [(ngModel)]="inputsAlerts.name" type="text" class="inputAlert-white" disabled></ion-input>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -44,8 +45,9 @@
             <ion-col col-10>
               <ion-item color="dark">
                 <ion-label color="white" class="fontSecondary" stacked>Sector or Identifier</ion-label>
-                <ion-input color="white" type="wanted" placeholder="Sector or Identifier" ></ion-input>
+                <ion-input color="white" type="text" (blur)="changeSectorId()" [(ngModel)]="data.sectorId" placeholder="Sector or Identifier" ></ion-input>
               </ion-item>
+              <ion-input  [(ngModel)]="inputsAlerts.sectorId" type="text" class="inputAlert-white" disabled></ion-input>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -55,8 +57,9 @@
             <ion-col col-10>
               <ion-item color="dark">
                 <ion-label color="white" class="fontSecondary" stacked>Email</ion-label>
-                <ion-input color="white" type="wanted" placeholder="email" ></ion-input>
+                <ion-input color="white" type="email" (blur)="changeEmail()" [(ngModel)]="data.email" placeholder="email" ></ion-input>
               </ion-item>
+              <ion-input  [(ngModel)]="inputsAlerts.email" type="text" class="inputAlert-white" disabled></ion-input>
             </ion-col>
           </ion-row>
         </ion-col>
@@ -69,8 +72,9 @@
             <ion-col col-10>
               <ion-item color="dark">
                 <ion-label color="white" class="fontSecondary" stacked>Business</ion-label>
-                <ion-input color="white" type="wanted" placeholder="Business" ></ion-input>
+                <ion-input color="white" type="text" (blur)="changeBusiness()" [(ngModel)]="data.business" placeholder="Business" ></ion-input>
               </ion-item>
+              <ion-input  [(ngModel)]="inputsAlerts.business" type="text" class="inputAlert-white" disabled></ion-input>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -80,11 +84,16 @@
             <ion-col col-10>
               <ion-item color="dark">
                 <ion-label color="white" class="fontSecondary" stacked>Date</ion-label>
-                <ion-input color="white" type="wanted" placeholder="12 may 2017" ></ion-input>
+                <ion-input color="white" type="date" (blur)="changeDate()" [(ngModel)]="data.date" placeholder="12 may 2017" ></ion-input>
               </ion-item>
+              <ion-input  [(ngModel)]="inputsAlerts.date" type="text" class="inputAlert-white" disabled></ion-input>
             </ion-col>
           </ion-row>
         </ion-col>
       </ion-row>
     </ion-grid>
 </ion-content>
+<ion-footer no-border>
+  <button ion-button full color="danger" (click)='selectCrop()'><span class=""></span>NEXT &raquo;</button>
+</ion-footer>
+

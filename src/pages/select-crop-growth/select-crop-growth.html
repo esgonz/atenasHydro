@@ -42,25 +42,22 @@
 					<ion-list>
 					  <ion-item>
 						<ion-label class="textotarjetas">SELECT ONE CROP</ion-label>
-						<ion-select [(ngModel)]="selectcrop">
-						  <ion-option value="cucumber">Cucumber</ion-option>
-						  <ion-option value="eggplant">Eggplant</ion-option>
-						  <ion-option value="gerbera">Gerbera</ion-option>
-						  <ion-option value="lettuce">Lettuce</ion-option>
-						  <ion-option value="melon">Melon</ion-option>
-						  <ion-option value="roses">Roses</ion-option>
-						  <ion-option value="strawberry">Strawberry</ion-option>
-						  <ion-option value="sweetpepper">Sweet Pepper</ion-option>
-						  <ion-option value="tomatoes">Tomatoes</ion-option>
-						  <ion-option value="youngplants">Young Plants</ion-option>
-						  <ion-option value="azalea">Azalea</ion-option>
-						  <ion-option value="carnation">Carnation</ion-option>
-						  <ion-option value="chysanthemum">Chysanthemum</ion-option>
-						  <ion-option value="freesia">Freesia</ion-option>
-						  <ion-option value="poinsettia">Poinsettia</ion-option>
+						<ion-select  (ionChange)='selectCrop()' [(ngModel)]="selectedCropId"  name="selectedCropId" multiple="false">
+						    <ion-option *ngFor="let item of CropsService.data" value="{{item.id}}">
+						    	{{item.name}}
+						    </ion-option>
 						</ion-select>
 					  </ion-item>
 					</ion-list>
+					
+					<!--<ion-list inset>
+					  <button ion-item *ngFor="let item of auxCrop">
+					    {{ item.name }}
+					  </button> 
+					</ion-list>-->
+
+
+
 				  </div>
 				<img src="../assets/img/selectcrop.png"/>
 				<!--<div class="card-title">SELECT ONE CROP</div>
@@ -72,13 +69,12 @@
 					<ion-list>
 					  <ion-item>
 						<ion-label class="textotarjetas">SELECT ONE GROWTH STAGE</ion-label>
-						<ion-select [(ngModel)]="gaming">
-						  <ion-option value="nes">NES</ion-option>
-						  <ion-option value="n64">Nintendo64</ion-option>
-						  <ion-option value="ps">PlayStation</ion-option>
-						  <ion-option value="genesis">Sega Genesis</ion-option>
-						  <ion-option value="saturn">Sega Saturn</ion-option>
-						  <ion-option value="snes">SNES</ion-option>
+						<ion-select  (ionChange)='selectStage()' [(ngModel)]="selectedStageId"  name="selectedCropId" multiple="false">
+							<ion-option *ngFor="let item of selectedCrop.stages" value="{{item.id}}">
+						    
+						    	{{item.name}}
+						    
+							</ion-option>
 						</ion-select>
 					  </ion-item>
 					</ion-list>

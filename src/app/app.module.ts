@@ -7,39 +7,25 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 import { MyApp } from './app.component';
 
+/*Import pages*/
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { InicioWelcome } from '../pages/inicio-welcome/inicio-welcome';
-import { Disclaimer } from '../pages/disclaimer/disclaimer';
-import { FertigationprogrameGrowerinfo } from '../pages/fertigationprograme-growerinfo/fertigationprograme-growerinfo';
-import { PreviousRecommendation } from '../pages/previous-recommendation/previous-recommendation';
-import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-recommendation';
-import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
 import { InputDataTable } from '../pages/input-data-table/input-data-table';
 import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
-
-import {ResultOfFertigationScheme} from '../pages/result-of-fertigation-scheme/result-of-fertigation-scheme';
-import {ResultOfFertigationSolution} from '../pages/result-of-fertigation-solution/result-of-fertigation-solution';
-import {ResultOfWaterAnalysis} from '../pages/result-of-water-analysis/result-of-water-analysis';
-
-import {TabsPage} from '../pages/tabs/tabs';
-
-import {TabsPrev} from '../pages/tabsprev/tabsprev';
-
-import {PrevResultOfFertigationScheme} from '../pages/prev-result-of-fertigation-scheme/prev-result-of-fertigation-scheme';
-import {PrevResultOfFertigationSolution} from '../pages/prev-result-of-fertigation-solution/prev-result-of-fertigation-solution';
-import {PrevResultOfWaterAnalysis} from '../pages/prev-result-of-water-analysis/prev-result-of-water-analysis';
-import { PrevFertigationprogrameGrowerinfo } from '../pages/prev-fertigationprograme-growerinfo/prev-fertigationprograme-growerinfo';
+import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-recommendation';
+import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
 
 
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/settings';
 import { User } from '../providers/user';
-import {FormulaSqlStorage} from '../providers/formulas';
-
+import { FormulasProvider } from '../providers/formulas/formulas';
+import { Crops } from '../providers/crops';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -66,22 +52,9 @@ export function provideSettings(storage: Storage) {
   declarations: [
     MyApp,
     InputDataTable,
-    InicioWelcome,
-    Disclaimer,
-    PreviousRecommendation,
     AddNewRecommendation,
     SelectCropGrowth,
-    AddWaterAnalysis,
-    FertigationprogrameGrowerinfo,
-    ResultOfFertigationScheme,
-    ResultOfFertigationSolution,
-    ResultOfWaterAnalysis,
-    TabsPage,
-    TabsPrev,
-    PrevFertigationprogrameGrowerinfo,
-    PrevResultOfFertigationScheme,
-    PrevResultOfFertigationSolution,
-    PrevResultOfWaterAnalysis
+    AddWaterAnalysis
   ],
   imports: [
     BrowserModule,
@@ -100,34 +73,20 @@ export function provideSettings(storage: Storage) {
   entryComponents: [
     MyApp,
     InputDataTable,
-    InicioWelcome,
-    Disclaimer,
-    PreviousRecommendation,
     AddNewRecommendation,
     SelectCropGrowth,
-    AddWaterAnalysis,
-    FertigationprogrameGrowerinfo,    
-    ResultOfFertigationScheme,
-    ResultOfFertigationSolution,
-    ResultOfWaterAnalysis,
-    TabsPage,
-    TabsPrev,
-    PrevFertigationprogrameGrowerinfo,
-    PrevResultOfFertigationScheme,
-    PrevResultOfFertigationSolution,
-    PrevResultOfWaterAnalysis
+    AddWaterAnalysis
+  
   ],
   providers: [
     Api,
-    Items,
-    User,
     SplashScreen,
     SQLite,
-    SQLiteObject,
-    FormulaSqlStorage,
+    FormulasProvider,
+    Crops,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
   ]
 })
 export class AppModule { }
