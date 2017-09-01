@@ -43,7 +43,7 @@
 					  <ion-item>
 						<ion-label class="textotarjetas">SELECT ONE CROP</ion-label>
 						<ion-select  (ionChange)='selectCrop()' [(ngModel)]="selectedCropId"  name="selectedCropId" multiple="false">
-						    <ion-option *ngFor="let item of CropsService.data" value="{{item.id}}">
+						    <ion-option *ngFor="let item of CropsService.data" value="{{item.id}}" [selected]="selectedCropId == item.id" >
 						    	{{item.name}}
 						    </ion-option>
 						</ion-select>
@@ -59,7 +59,7 @@
 
 
 				  </div>
-				<img src="../assets/img/selectcrop.png"/>
+				<img src="assets/img/selectcrop.png"/>
 				<!--<div class="card-title">SELECT ONE CROP</div>
 				<div class="card-subtitle">41 Listings</div>-->
 			  </ion-card>
@@ -70,7 +70,7 @@
 					  <ion-item>
 						<ion-label class="textotarjetas">SELECT ONE GROWTH STAGE</ion-label>
 						<ion-select  (ionChange)='selectStage()' [(ngModel)]="selectedStageId"  name="selectedCropId" multiple="false">
-							<ion-option *ngFor="let item of selectedCrop.stages" value="{{item.id}}">
+							<ion-option *ngFor="let item of selectedCrop.stages" value="{{item.id}}" [selected]="selectedStageId == item.id" >
 						    
 						    	{{item.name}}
 						    
@@ -79,7 +79,7 @@
 					  </ion-item>
 					</ion-list>
 				  </div>
-				<img src="../assets/img/selectstage.png"/>
+				<img src="assets/img/selectstage.png"/>
 				<!--<div class="card-title">SELECT ONE GROWTH STAGE</div>
 				<div class="card-subtitle">64 Listings</div>-->
 			  </ion-card>

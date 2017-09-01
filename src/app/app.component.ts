@@ -6,36 +6,39 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 /*Import pages*/
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { InputDataTable } from '../pages/input-data-table/input-data-table';
-import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
-import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-recommendation';
-import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
+import { NewAnalysisInformation } from '../pages/new-analysis-information/new-analysis-information';
+import { NewWaterAnalysis } from '../pages/new-water-analysis/new-water-analysis';
+import { NewBasicInformation } from '../pages/new-basic-information/new-basic-information';
+import { NewCropSelect } from '../pages/new-crop-select/new-crop-select';
+
+import { FertigationprogrameGrowerinfo } from '../pages/fertigationprograme-growerinfo/fertigationprograme-growerinfo';
+
 
 /*imports providers y usefuls classs*/
 import { Settings } from '../providers/providers';
 import { TranslateService } from '@ngx-translate/core';
-import { Crops } from '../providers/crops';
+import { CropsStages } from '../providers/cropsStages';
+import { ProgramProvider } from '../providers/programs';
 
 @Component({
   templateUrl:'app.html'
 })
 export class MyApp {
-  rootPage = AddNewRecommendation;
+  rootPage = NewBasicInformation;
 
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Add new recommendation', component: AddNewRecommendation, iconClass: 'icongrower' },
-    { title: 'Select crop and growth stage', component: SelectCropGrowth, iconClass: 'icongrow'  },
-    { title: 'Input Data Table', component: InputDataTable,  iconClass: 'iconinput'  },
-    { title: 'Add Water Analysis', component: AddWaterAnalysis, iconClass: 'iconwatter'   }  
-
+    { title: 'Add new recommendation', component: NewBasicInformation, iconClass: 'icongrower' },
+    { title: 'Select crop and growth stage', component: NewCropSelect, iconClass: 'icongrow'  },
+    { title: 'Input Data Table', component: NewAnalysisInformation,  iconClass: 'iconinput'  },
+    { title: 'Add Water Analysis', component: NewWaterAnalysis, iconClass: 'iconwatter'   }
   ]
 
   constructor(private translate: TranslateService, private platform: Platform, settings: Settings, 
-            private config: Config, private splashScreen: SplashScreen) {
+            private config: Config, private splashScreen: SplashScreen, private programProvider: ProgramProvider) {
     this.initTranslate();
-
+    this.initProgramProvider();
   }
 
   ionViewDidLoad() {
@@ -47,6 +50,10 @@ export class MyApp {
     });
   }
 
+
+  initProgramProvider(){
+    this.programProvider.init();
+  }
   initTranslate() {
     // Set the default language for translation strings, and the current language.
     this.translate.setDefaultLang('en');
@@ -64,9 +71,9 @@ export class MyApp {
 
   openPage(page) {
     // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    //this.nav.setRoot(page.component);
     
+    // we wouldn't want the back button to show in this scenario
+    //this.nav.setRoot(page.component);    
     this.nav.push(page.component);
   }
 }

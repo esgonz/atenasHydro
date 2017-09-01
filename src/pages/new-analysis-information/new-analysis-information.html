@@ -60,7 +60,7 @@
                 </ion-col>
               </ion-row>
               <!--TANK SYSTEM -->
-              <h6>Tank System</h6>
+              <h6>Tank system</h6>
               <ion-row>
                 <ion-col>
                   <ion-item>
@@ -77,26 +77,23 @@
               </ion-row>
               <!--SUBSTRATE -->
               <h6>Substrate</h6>
-              <ion-row radio-group name="substrate" [(ngModel)]="data.substrate">
-                <ion-col>
-                  <ion-item>
-                    <ion-label color="secondary" class="fontSecondary">Inert<br /><small>(Stone wool, perlite)</small></ion-label>
-                    <ion-radio value="Inert" checked></ion-radio>
-                  </ion-item>
-                </ion-col>
-                <ion-col>
-                  <ion-item>
-                    <ion-label color="secondary" class="fontSecondary">Organic<br /><small>(Coco peat)</small></ion-label>
-                    <ion-radio value="secondary"></ion-radio>
-                  </ion-item>
-                </ion-col>
+
+              <ion-row radio-group name="substrate" [(ngModel)]="data.substrate" (ionChange)="changeSubstrate()">
+                <ion-col >
+                  <ion-list>
+                    <ion-item *ngFor="let subst of substrates">
+                      <ion-label color="secondary" class="fontSecondary">{{subst.label1}}<br /><small>{{subst.label2}}</small></ion-label>
+                      <ion-radio value="{{subst.id}}" [checked]="data.substrate == subst.id " ></ion-radio>
+                    </ion-item>
+                  </ion-list>
+                </ion-col>                
               </ion-row>
               <!--ACID -->
-              <h6>Select acid of choice</h6>
+              <h6>Select nitric acid of choice</h6>
               <ion-item>
-                <ion-label color="secondary" floating >Nitric Acid</ion-label>
+                <ion-label color="secondary" floating >Nitric acid</ion-label>
                 <ion-select (ionChange)='changeAcid(acidChoise)' [(ngModel)]="acidChoise"  name="acidChoise" multiple="false">
-                    <ion-option color="secondary" *ngFor="let acid of acids" value="{{acid.id}}">{{ acid.name }}</ion-option>
+                    <ion-option color="secondary" *ngFor="let acid of acids" value="{{acid.id}}" [selected]="data.acidSource.id == acid.id" > {{ acid.name }}</ion-option>
                 </ion-select> 
               </ion-item>
 
@@ -115,7 +112,7 @@
               <ion-row>
                 <ion-col>
                   <ion-item>
-                    <ion-label color="secondary" class="fontSecondary" stacked>Density (kg - liter)</ion-label>
+                    <ion-label color="secondary" class="fontSecondary" stacked>Density (kg/l)</ion-label>
                     <ion-input name="acidDensity" type="number" placeholder="1.235" [(ngModel)]="data.acidSource.density"></ion-input>
                   </ion-item>
                 </ion-col>
@@ -128,11 +125,11 @@
             <!-- tercera columna -->
             <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
               <!--CHLORIDE -->
-              <h6>Chloride source of choice</h6>
+              <h6>Calcium chloride source of choice</h6>
               <ion-item>
                 <ion-label color="secondary"  floating>Chloride source</ion-label>
                  <ion-select (ionChange)='changeCalciumChloride(calciumChlorideChoise)' [(ngModel)]="calciumChlorideChoise"  name="calciumChlorideChoise" multiple="false">
-                    <ion-option color="secondary" *ngFor="let calciumCl of calciumChlorides" value="{{calciumCl.id}}">{{ calciumCl.name }}</ion-option>
+                    <ion-option color="secondary" *ngFor="let calciumCl of calciumChlorides" value="{{calciumCl.id}}" [selected]="data.calciumChlorideSource.id == calciumCl.id" >{{ calciumCl.name }}</ion-option>
                 </ion-select> 
 
               </ion-item>
@@ -151,13 +148,13 @@
               <ion-row>
                 <ion-col>
                   <ion-item>
-                    <ion-label color="secondary" class="fontSecondary" stacked>Density (kg/liter)</ion-label>
+                    <ion-label color="secondary" class="fontSecondary" stacked>Density (kg/l)</ion-label>
                     <ion-input name="calciumChlorideDensity" type="number" placeholder="N.A." [(ngModel)]="data.calciumChlorideSource.density"></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col col-4>
                   <ion-label color="secondary">Suggestion</ion-label>
-                  <ion-label color="secondary">{{calciumChlorideSuggestion.density}} mmol/l</ion-label>
+                  <ion-label color="secondary">{{calciumChlorideSuggestion.density}} kg/l</ion-label>
                 </ion-col>
               </ion-row>
               <!--CALCIUM -->
@@ -166,7 +163,7 @@
                 <ion-label color="secondary"  floating>Calcium nitrate source</ion-label>
 
                 <ion-select (ionChange)='changeCalciumNitatre()' [(ngModel)]="calciumNitrateChoise"  name="calciumNitrateChoise" multiple="false">
-                    <ion-option color="secondary" *ngFor="let calciumNitrate of calciumNitrates" value="{{calciumNitrate.id}}">{{ calciumNitrate.name }}</ion-option>
+                    <ion-option color="secondary" *ngFor="let calciumNitrate of calciumNitrates" value="{{calciumNitrate.id}}" [selected]="data.calciumNitrateSource.id == calciumNitrate.id" >{{ calciumNitrate.name }}</ion-option>
                 </ion-select> 
 
               </ion-item>
@@ -185,13 +182,13 @@
               <ion-row>
                 <ion-col>
                   <ion-item>
-                    <ion-label color="secondary" class="fontSecondary" stacked>Density (kg/liter)</ion-label>
+                    <ion-label color="secondary" class="fontSecondary" stacked>Density (kg/l)</ion-label>
                     <ion-input name="calciumNitrateDensity" type="number" placeholder="N.A." [(ngModel)]="data.calciumNitrateSource.density"></ion-input>
                   </ion-item>
                 </ion-col>
                 <ion-col col-4>
                   <ion-label color="secondary">Suggestion</ion-label>
-                  <ion-label color="secondary">{{calciumNitrateSuggestion.density}} mmol/l</ion-label>
+                  <ion-label color="secondary">{{calciumNitrateSuggestion.density}} kg/l</ion-label>
                 </ion-col>
               </ion-row>
               <!--IRON CHELATE -->
@@ -204,10 +201,21 @@
 
 
               </ion-item>
+
+              <!-- custom iron chelate source -->
+              <ion-row  *ngIf="data.ironChelateSource.id=='-1'" >
+                <ion-col>
+                  <ion-item>
+                    <ion-label color="secondary" class="fontSecondary" stacked>Iron chelate</ion-label>
+                    <ion-input name="ironChelatename" type="text" placeholder="N.A." [(ngModel)]="data.ironChelateSource.name" ></ion-input>
+                  </ion-item>
+                </ion-col>                
+              </ion-row>
+              <!-- custom iron chelate source -->
               <ion-row>
                 <ion-col>
                   <ion-item>
-                    <ion-label color="secondary" class="fontSecondary" stacked>Concentration N%</ion-label>
+                    <ion-label color="secondary" class="fontSecondary" stacked>Concentration Fe%</ion-label>
                     <ion-input name="ironChelateConcentration" type="number" placeholder="N.A." [(ngModel)]="data.ironChelateSource.concentration" ></ion-input>
                   </ion-item>
                 </ion-col>
@@ -225,5 +233,5 @@
 </ion-content>
 <ion-footer no-border>
   <button ion-button full color="danger" (click)='addWaterAnalysis()'><span class="iconaddmore"></span>ADD WATER ANALYSIS</button>
-  <button ion-button full><span class="iconaddmore"></span>SEE FERTIGATION PROGRAMME</button>
+  <button ion-button full (click)='goToFertigationProgram()'><span class="iconaddmore"></span>SEE FERTIGATION PROGRAMME</button>
 </ion-footer>

@@ -7,9 +7,9 @@
  * The Items service manages creating instances of Item, so go ahead and rename
  * that something that fits your app as well.
  */
-export class Crop {
-	id 			= "";
-	name 		= "";
+export class CropStage {
+	id 			  = "";
+	name 		  = "";
 	stages 		= [];
 
   constructor(private fields: any) {

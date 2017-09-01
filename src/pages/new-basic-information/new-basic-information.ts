@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { SelectCropGrowth } from '../../pages/select-crop-growth/select-crop-growth';
+import { NewCropSelect } from '../../pages/new-crop-select/new-crop-select';
+import { ProgramProvider } from '../../providers/programs';
 /**
  * The Welcome Page is a splash page that quickly describes the app,
  * and then directs the user to create an account or log in.
@@ -8,13 +9,13 @@ import { SelectCropGrowth } from '../../pages/select-crop-growth/select-crop-gro
  * we recommend not using the Welcome page.
  */
  @Component({
- 	selector: 'page-add-new-recommendation',
- 	templateUrl: 'add-new-recommendation.html'
+ 	selector: 'page-new-basic-information',
+ 	templateUrl: 'new-basic-information.html'
  })
- export class AddNewRecommendation {
+ export class NewBasicInformation {
  	data = { 	
 	 	name 		: "",
-	 	business 	: "",
+	 	company 	: "",
 	 	sectorId 	: "",
 	 	date 		: "",
 	 	email 		: ""
@@ -22,21 +23,16 @@ import { SelectCropGrowth } from '../../pages/select-crop-growth/select-crop-gro
 
  	inputsAlerts = {
 	 	name 		: "",
-	 	business 	: "",
+	 	company 	: "",
 	 	sectorId 	: "",
 	 	date 		: "",
 	 	email 		: "" 		
  	}
  	validate = false;
- 	constructor(public navCtrl: NavController) { }
-
- 	login() {
- 		//this.navCtrl.push(LoginPage);
+ 	constructor(public navCtrl: NavController, public programProvider : ProgramProvider) { 
+ 		this.data = programProvider.getInstance().basicInformation;
  	}
 
- 	signup() {
- 		//this.navCtrl.push(SignupPage);
- 	}
 
  	changeName(){
  		console.log("changeName");
@@ -50,15 +46,15 @@ import { SelectCropGrowth } from '../../pages/select-crop-growth/select-crop-gro
  			this.validate = true;
  		}
  	}
- 	changeBusiness(){
- 		console.log("changeBusiness");
- 		if (this.data.business == "") {
- 			console.log("Business empty");
- 			this.inputsAlerts.business = "Please enter a Business.";
+ 	changeCompany(){
+ 		console.log("changeCompany");
+ 		if (this.data.company == "") {
+ 			console.log("company empty");
+ 			this.inputsAlerts.company = "Please enter a company.";
  			this.validate = false;
  		}else
  		{
- 			this.inputsAlerts.business = "";
+ 			this.inputsAlerts.company = "";
  			this.validate = true;
  		}
  	}
@@ -83,8 +79,17 @@ import { SelectCropGrowth } from '../../pages/select-crop-growth/select-crop-gro
  			this.validate = false;
  		}else
  		{
- 			this.inputsAlerts.date = "";
- 			this.validate = true;
+
+ 			console.log("date not empty");
+ 			if (this.validateDate(this.data.date)) {
+				console.log("date valid - ok");
+				this.inputsAlerts.date = "";
+ 				this.validate = true;
+			} else {
+				console.log("date not valid - alert");
+			  	this.inputsAlerts.date = "Please enter a valid format date (day-month-year).";
+			  	this.validate = false;
+			} 			
  		}
  	}
  	changeEmail(){
@@ -109,21 +114,32 @@ import { SelectCropGrowth } from '../../pages/select-crop-growth/select-crop-gro
  		}
  	}
 
+ 	validateDate(date){
+ 		console.log("validateDate");
+ 		var re = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/;
+ 		return re.test(date);
+ 	}
  	validateEmail(email) {
  		console.log("validateEmail");
     	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    	return re.test(email);
+        return re.test(email);
 	}
 
 	selectCrop(){
 		if (this.validate)
 		{
 			console.log("validate", this.validate);
-			this.navCtrl.push(SelectCropGrowth);
+			this.updateProgramInformation();
+			this.navCtrl.push(NewCropSelect);
 		}
 		else{
 			alert ("Before continue, please enter valid information.");
 		}		
+	}
+
+	updateProgramInformation (){
+		console.log("updateProgramInformation");
+		this.programProvider.getInstance().basicInformation = this.data;
 	}
 
  }

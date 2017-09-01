@@ -73,23 +73,33 @@
 
         <ion-row>
           <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
-
-            <h6>Insert N-NH<sub>4</sub></h6>
+            
+           <!-- nnh4 element -->
             <ion-row>
-              <ion-col>
-                <ion-item>
-                  <ion-label color="secondary" class="fontSecondary" stacked>N-NH<sub>4</sub></ion-label>
-                  <ion-input (change)='changeNnh4()' type="number" [(ngModel)]="inputs.nnh4" placeholder="0.00"></ion-input>
-                </ion-item>
+              <ion-col col-12>
+               <h6>Insert N-NH<sub>4</sub></h6>
               </ion-col>
-              <ion-col col-4>
-                <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{getEquivalent('nnh4') }} {{inputsEquivalUnits.nnh4.text}}</ion-label>
-              </ion-col>
+                <ion-col col-8>
+                  <ion-item>
+                    <ion-label color="secondary" class="fontSecondary" stacked>N-NH<sub>4</sub></ion-label>
+                    <ion-input (change)='changeNnh4()' type="number" [(ngModel)]="inputs.nnh4" placeholder="0.00"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col col-4>
+                  <ion-label color="secondary">Equivalent to</ion-label>
+                  <ion-label color="secondary">{{getEquivalent('nnh4') }} {{inputsEquivalUnits.nnh4.text}}</ion-label>
+                </ion-col>
             </ion-row>
-            <h6>Insert N-NO<sub>3</sub></h6>
+            <!-- /nnh4 element -->
+
+
+
+            <!-- nno3 element -->            
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert N-NO<sub>3</sub></h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>N-NO<sub>3</sub></ion-label>
                   <ion-input   (change)='changeNno3()' [(ngModel)]="inputs.nno3" type="number" placeholder="0.00"></ion-input>
@@ -100,9 +110,14 @@
                 <ion-label color="secondary">{{getEquivalent('nno3') }} {{inputsEquivalUnits.nno3.text}}</ion-label>
               </ion-col>
             </ion-row>
-            <h6>Insert P</h6>
+            <!-- /nno3 element --> 
+
+            <!-- p element -->             
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert P</h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>P</ion-label>
                   <ion-input  (change)='changeP()' [(ngModel)]="inputs.p" type="number" placeholder="0.00"></ion-input>
@@ -110,12 +125,17 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{getEquivalent('p') }}{{inputsEquivalUnits.p.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('p') }} {{inputsEquivalUnits.p.text}}</ion-label>
               </ion-col>
             </ion-row>
-            <h6>Insert K</h6>
+            <!-- /p element --> 
+
+            <!-- k element -->             
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert K</h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>K</ion-label>
                   <ion-input (change)='changeK()' [(ngModel)]="inputs.k" type="number" placeholder="0.00"></ion-input>
@@ -123,25 +143,43 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{getEquivalent('k') }}{{inputsEquivalUnits.k.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('k') }} {{inputsEquivalUnits.k.text}}</ion-label>
               </ion-col>
             </ion-row>
-            <h6>Insert Ca</h6>
+            <!-- /k element --> 
+
+
+            <!-- ca element --> 
+           
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert Ca</h6>
+              </ion-col>
+
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Ca</ion-label>
                   <ion-input (change)='changeCa()' [(ngModel)]="inputs.ca"  type="number" placeholder="0.00"></ion-input>
                 </ion-item>
               </ion-col>
+
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{getEquivalent('ca') }}{{inputsEquivalUnits.ca.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('ca') }} {{inputsEquivalUnits.ca.text}}</ion-label>
               </ion-col>
             </ion-row>
-            <h6>Insert Mg</h6>
+            <!-- /ca element -->
+
+
+
+            <!-- Mg element -->
+            
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert Mg</h6>
+              </ion-col>
+
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Mg</ion-label>
                   <ion-input (change)='changeMg()' [(ngModel)]="inputs.mg"  type="number" placeholder="0.00"></ion-input>
@@ -149,125 +187,187 @@
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{getEquivalent('mg') }}{{inputsEquivalUnits.mg.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('mg') }} {{inputsEquivalUnits.mg.text}}</ion-label>
               </ion-col>
             </ion-row>
-            <h6>Insert Na</h6>
+            <!-- /Mg element -->
+
+            <!-- na element -->
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+               <h6>Insert Na</h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Na</ion-label>
                   <ion-input  (change)='changeNa()' [(ngModel)]="inputs.na"  type="number" placeholder="0.00"></ion-input>
                 </ion-item>
 
-                <ion-label class="inputAlert"> {{inputsAlerts.na}} </ion-label>
+                
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{getEquivalent('na') }}{{inputsEquivalUnits.na.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('na') }} {{inputsEquivalUnits.na.text}}</ion-label>
+              </ion-col>
+              <ion-col col-12>
+                <ion-label class="inputAlert"> {{inputsAlerts.na}} </ion-label>
               </ion-col>
             </ion-row>
-            <h6>Insert Cl</h6>
+            <!-- na element -->
+
+            <!-- cl element -->
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert Cl</h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Cl</ion-label>
                   <ion-input  (change)='changeCl()' [(ngModel)]="inputs.cl" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
 
-                <ion-label class="inputAlert"> {{inputsAlerts.cl}} </ion-label>
+                
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{getEquivalent('cl') }}{{inputsEquivalUnits.cl.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('cl') }} {{inputsEquivalUnits.cl.text}}</ion-label>
+              </ion-col>
+              <ion-col col-12>
+                <ion-label class="inputAlert"> {{inputsAlerts.cl}} </ion-label>
               </ion-col>
             </ion-row>
-            <h6>Insert S-SO<sub>4</sub></h6>
+            <!--/ cl element -->
+
+
+            <!-- sso4 element -->            
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert S-SO<sub>4</sub></h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>S-SO<sub>4</sub></ion-label>
                   <ion-input  (change)='changeSso4()' [(ngModel)]="inputs.sso4" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
 
-                <ion-label class="inputAlert"> {{inputsAlerts.sso4}} </ion-label>
+                
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{getEquivalent('sso4') }}{{inputsEquivalUnits.sso4.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('sso4') }} {{inputsEquivalUnits.sso4.text}}</ion-label>
+              </ion-col>
+              <ion-col col-12>
+              <ion-label class="inputAlert"> {{inputsAlerts.sso4}} </ion-label>
               </ion-col>
             </ion-row>
+
+
           </ion-col>
           <!-- tercera columna -->
           <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
-            <h6>Insert B</h6>
+            
+            <!-- b element --> 
+            
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert B</h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>B</ion-label>
                   <ion-input  (change)='changeB()' [(ngModel)]="inputs.b" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
-                <ion-label class="inputAlert"> {{inputsAlerts.b}} </ion-label>
+                
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{getEquivalent('b') }}{{inputsEquivalUnits.b.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('b') }} {{inputsEquivalUnits.b.text}}</ion-label>
+              </ion-col>
+              <ion-col col-12>
+                <ion-label class="inputAlert"> {{inputsAlerts.b}} </ion-label>
               </ion-col>
             </ion-row>
-            
-            <h6>Insert Cu</h6>
+            <!-- /b element --> 
+
+
+
+            <!-- cu element -->             
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert Cu</h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Cu</ion-label>
                   <ion-input  (change)='changeCu()' [(ngModel)]="inputs.cu" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
 
-                <ion-label class="inputAlert"> {{inputsAlerts.cu}} </ion-label>
+                
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
                 <ion-label color="secondary">{{getEquivalent('cu') }} {{inputsEquivalUnits.cu.text}}</ion-label>
               </ion-col>
+              <ion-col col-12>
+                <ion-label class="inputAlert"> {{inputsAlerts.cu}} </ion-label>
+              </ion-col>
             </ion-row>
+            <!--/cu element --> 
+            
 
-            <h6>Insert Fe</h6>
+            <!--fe element -->            
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert Fe</h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Fe</ion-label>
                   <ion-input  (change)='changeFe()' [(ngModel)]="inputs.fe" type="number" placeholder="0.00"></ion-input>
                 </ion-item>               
-                <ion-label class="inputAlert"> {{inputsAlerts.fe}} </ion-label>
+                
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{getEquivalent('fe') }}{{inputsEquivalUnits.fe.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('fe') }} {{inputsEquivalUnits.fe.text}}</ion-label>
+              </ion-col>
+              <ion-col col-12>
+                <ion-label class="inputAlert"> {{inputsAlerts.fe}} </ion-label>
               </ion-col>
             </ion-row>
+            <!--/ fe element -->  
+            
 
-
-            <h6>Insert Mn</h6>
+            <!-- mn element -->            
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert Mn</h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Mn</ion-label>
                   <ion-input  (change)='changeMn()' [(ngModel)]="inputs.mn" type="number" placeholder="0.00"></ion-input>
-                </ion-item>
-
-                <ion-label class="inputAlert"> {{inputsAlerts.mn}} </ion-label>
+                </ion-item>                
               </ion-col>
+
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
-                <ion-label color="secondary">{{getEquivalent('mn') }}{{inputsEquivalUnits.mn.text}}</ion-label>
+                <ion-label color="secondary">{{getEquivalent('mn') }} {{inputsEquivalUnits.mn.text}}</ion-label>
+              </ion-col>
+              <ion-col col-12>
+                <ion-label class="inputAlert"> {{inputsAlerts.mn}} </ion-label>
               </ion-col>
             </ion-row>
+            <!--/ mn element -->
             
             
             
-            <h6>Insert Mo</h6>
+            <!-- mo element -->
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert Mo</h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Mo</ion-label>
                   <ion-input (change)='changeMo()' [(ngModel)]="inputs.mo" type="number" placeholder="0.00"></ion-input>
@@ -278,25 +378,39 @@
                 <ion-label color="secondary">{{getEquivalent('mo') }} {{inputsEquivalUnits.mo.text}}</ion-label>
               </ion-col>
             </ion-row>
+            <!--/ mo element -->
 
-            <h6>Insert Zn</h6>
+            
+            <!--Zn element -->
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert Zn</h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>Zn</ion-label>
                   <ion-input  (change)='changeZn()' [(ngModel)]="inputs.zn" type="number" placeholder="0.00"></ion-input>
                 </ion-item>
-               <ion-label class="inputAlert"> {{inputsAlerts.zn}} </ion-label>
+               
               </ion-col>
               <ion-col col-4>
                 <ion-label color="secondary">Equivalent to</ion-label>
                 <ion-label color="secondary">{{getEquivalent('zn') }} {{inputsEquivalUnits.zn.text}}</ion-label>
               </ion-col>
+              <ion-col col-12>
+                <ion-label class="inputAlert"> {{inputsAlerts.zn}} </ion-label>
+              </ion-col>
             </ion-row>
+            <!--/ Zn element -->
 
-            <h6>Insert HCO<sub>3</sub>-</h6>
+
+            <!-- hco3 element -->
+            
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert HCO<sub>3</sub>-</h6>
+              </ion-col>
+              <ion-col col-8>
                 <ion-item>
                   <ion-label color="secondary" class="fontSecondary" stacked>HCO<sub>3</sub>-</ion-label>
                   <ion-input  (change)='changeHco3()' [(ngModel)]="inputs.hco3" type="number" placeholder="0.00"></ion-input>
@@ -307,25 +421,43 @@
                 <ion-label color="secondary">{{getEquivalent('hco3') }} {{inputsEquivalUnits.hco3.text}}</ion-label>
               </ion-col>
             </ion-row>
-            <h6>Insert pH Water</h6>
+            <!--/ hco3 element -->
+
+
+
+
+            <!-- ph element -->
             <ion-row>
-              <ion-col>
+              <ion-col col-12>
+                <h6>Insert pH water</h6>
+              </ion-col>
+              <ion-col col-12>
                 <ion-item>
-                  <ion-label color="secondary" class="fontSecondary" stacked>pH Water</ion-label>
+                  <ion-label color="secondary" class="fontSecondary" stacked>pH water</ion-label>
                   <ion-input   (change)='changePh()' [(ngModel)]="inputs.ph" type="numer" placeholder="0.00"></ion-input>
                 </ion-item>
-                <ion-label class="inputAlert"> {{inputsAlerts.ph}} </ion-label>
+                
               </ion-col>
               <!--<ion-col col-4>
                   <ion-label color="secondary">Equivalent to</ion-label>
                   <ion-label color="secondary">2.2 mmol/l</ion-label>
                 </ion-col>-->
-              </ion-row>
-              <h6>Insert E.C. Water</h6>
+              <ion-col col-12>
+                <ion-label class="inputAlert"> {{inputsAlerts.ph}} </ion-label>
+                </ion-col>
+            </ion-row>
+            <!--/ ph element -->
+
+
+
+              <!-- ec element -->              
               <ion-row>
-                <ion-col>
+                <ion-col col-12>
+                  <h6>Insert E.C. water</h6>
+                </ion-col>
+                <ion-col col-8>
                   <ion-item>
-                    <ion-label color="secondary" class="fontSecondary" stacked>E.C. Water</ion-label>
+                    <ion-label color="secondary" class="fontSecondary" stacked>E.C. water</ion-label>
                     <ion-input (change)='changeEc()' [(ngModel)]="inputs.ec"  type="number" placeholder="0.00"></ion-input>
 
                   </ion-item>
@@ -334,12 +466,15 @@
                   <ion-label color="secondary"></ion-label>
                   <ion-label color="secondary"> mS/cm</ion-label>
                 </ion-col>
-                
-                  
+                <ion-col col-123>
+                  <ion-label class="inputAlert"> {{inputsAlerts.ec}} </ion-label>
+                </ion-col>
               </ion-row>
-              <ion-label class="inputAlert"> {{inputsAlerts.ec}} </ion-label>
-            </ion-col>
+               <!--/ ec element -->
 
+              
+            </ion-col>
+            
           </ion-row>
         </ion-col>
         
@@ -348,5 +483,5 @@
   </ion-content>
   <ion-footer no-border>
 
-  <button ion-button full><span class="iconaddmore"></span>SEE FERTIGATION PROGRAMME</button>
+  <button ion-button full  (click)='goToFertigationProgram()'><span class="iconaddmore"></span>SEE FERTIGATION PROGRAMME</button>
 </ion-footer>

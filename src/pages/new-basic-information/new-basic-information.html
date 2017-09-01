@@ -27,68 +27,84 @@
 		<!-- segunda columna -->
         <ion-col col-12 col-sm>
           <ion-row>
-            <ion-col col-2>
+            <ion-col col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2>
 			<span class="iconaddgrower"></span>
             </ion-col>
-            <ion-col col-10>
+            <ion-col col-12 col-sm-8 col-md-9 col-lg-10 col-xl-10>
               <ion-item color="dark">
                 <ion-label color="white" class="fontSecondary" stacked>Grower</ion-label>
                 <ion-input color="white" type="text" (blur)="changeName()" [(ngModel)]="data.name"  placeholder="Steve Johnson" ></ion-input>
               </ion-item>
-              <ion-input  [(ngModel)]="inputsAlerts.name" type="text" class="inputAlert-white" disabled></ion-input>
+              <ion-label class="inputAlert-green">
+                {{inputsAlerts.name}}
+              </ion-label>
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col col-2>
+           <ion-col col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2>
 			<span class="iconaddsector"></span>
             </ion-col>
-            <ion-col col-10>
+            <ion-col col-12 col-sm-8 col-md-9 col-lg-10 col-xl-10>
               <ion-item color="dark">
                 <ion-label color="white" class="fontSecondary" stacked>Sector or Identifier</ion-label>
                 <ion-input color="white" type="text" (blur)="changeSectorId()" [(ngModel)]="data.sectorId" placeholder="Sector or Identifier" ></ion-input>
               </ion-item>
-              <ion-input  [(ngModel)]="inputsAlerts.sectorId" type="text" class="inputAlert-white" disabled></ion-input>
+              <ion-label class="inputAlert-green">
+                {{inputsAlerts.sectorId}}
+              </ion-label>
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col col-2>
+            <ion-col col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2>
 			<span class="iconaddemail"></span>
             </ion-col>
-            <ion-col col-10>
+            <ion-col col-12 col-sm-8 col-md-9 col-lg-10 col-xl-10>
               <ion-item color="dark">
                 <ion-label color="white" class="fontSecondary" stacked>Email</ion-label>
                 <ion-input color="white" type="email" (blur)="changeEmail()" [(ngModel)]="data.email" placeholder="email" ></ion-input>
               </ion-item>
-              <ion-input  [(ngModel)]="inputsAlerts.email" type="text" class="inputAlert-white" disabled></ion-input>
+              <ion-label class="inputAlert-green">
+                {{inputsAlerts.email}}
+              </ion-label>
             </ion-col>
           </ion-row>
         </ion-col>
 		<!-- tercera columna -->
         <ion-col col-12 col-sm>
           <ion-row>
-            <ion-col col-2>
+            <ion-col col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2>
 			<span class="iconaddbusiness"></span>
             </ion-col>
-            <ion-col col-10>
+            <ion-col col-12 col-sm-8 col-md-9 col-lg-10 col-xl-10>
               <ion-item color="dark">
-                <ion-label color="white" class="fontSecondary" stacked>Business</ion-label>
-                <ion-input color="white" type="text" (blur)="changeBusiness()" [(ngModel)]="data.business" placeholder="Business" ></ion-input>
+                <ion-label color="white" class="fontSecondary" stacked>Company name</ion-label>
+                <ion-input color="white" type="text" (blur)="changeCompany()" [(ngModel)]="data.company" placeholder="Company" ></ion-input>
               </ion-item>
-              <ion-input  [(ngModel)]="inputsAlerts.business" type="text" class="inputAlert-white" disabled></ion-input>
+              <ion-label class="inputAlert-green">
+                {{inputsAlerts.company}}
+              </ion-label>
             </ion-col>
           </ion-row>
+          
+
           <ion-row>
-            <ion-col col-2>
-			<span class="iconadddate"></span>
+           <ion-col col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2>
+			
+
+              <span class="iconadddate"></span>
             </ion-col>
-            <ion-col col-10>
+            <ion-col col-12 col-sm-8 col-md-9 col-lg-10 col-xl-10>
               <ion-item color="dark">
                 <ion-label color="white" class="fontSecondary" stacked>Date</ion-label>
-                <ion-input color="white" type="date" (blur)="changeDate()" [(ngModel)]="data.date" placeholder="12 may 2017" ></ion-input>
+                <ion-input color="white" type="text" (blur)="changeDate()" [(ngModel)]="data.date" placeholder="31-12-2017" ></ion-input>
               </ion-item>
-              <ion-input  [(ngModel)]="inputsAlerts.date" type="text" class="inputAlert-white" disabled></ion-input>
+              <ion-label class="inputAlert-green">
+                {{inputsAlerts.date}}
+              </ion-label>
             </ion-col>
           </ion-row>
+
+
         </ion-col>
       </ion-row>
     </ion-grid>

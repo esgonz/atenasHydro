@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { InputDataTable } from '../input-data-table/input-data-table';
-
+import { NewAnalysisInformation } from '../new-analysis-information/new-analysis-information';
+import { ProgramProvider } from '../../providers/programs';
 
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -11,10 +11,10 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  * we recommend not using the Welcome page.
  */
  @Component({
- 	selector: 'page-add-water-analysis',
- 	templateUrl: 'add-water-analysis.html'
+ 	selector: 'page-new-water-analysis',
+ 	templateUrl: 'new-water-analysis.html'
  })
- export class AddWaterAnalysis {
+ export class NewWaterAnalysis {
  	units = [
  	{
  		id: "mgl",
@@ -169,14 +169,29 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  		ph: 0.00,
  		ec: 0.00
  	}
- 	constructor(public navCtrl: NavController) { }
+ 	constructor(public navCtrl: NavController, 
+                public programProvider : ProgramProvider) { 
+         this.data = programProvider.getInstance().waterAnalysisInformation;
+         for (let f in this.data) {
+         	for (let j in this.inputs) {
+         		if (f == j) {
+         			if (this.data.unit =="mgl") {
+         				this.inputs[j]= this.data[f].mgl;
+         			}else{
+         				this.inputs[j]= this.data[f].mmoll;
+         			}
+         			
+         		}
+         	}
+	     }
+     }
 
 
  	goToInputData() {
- 		this.navCtrl.push(InputDataTable);
+ 		this.navCtrl.push(NewAnalysisInformation);
  	}
  	goToWaterAnalysis() {
- 		this.navCtrl.push(AddWaterAnalysis);
+ 		this.navCtrl.push(NewWaterAnalysis);
  	}
 
 
@@ -209,6 +224,8 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  		this.changeP();
  		this.changeSso4();
  		this.changeZn();
+
+ 		
  	}
 
  	changeNnh4(){
@@ -229,6 +246,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.nnh4.mmoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeNno3(){
  		console.log("changeNno3");
@@ -246,6 +264,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.nno3.mmoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeP(){
  		console.log("changeP");
@@ -263,6 +282,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.p.mmoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeK(){
  		console.log("changeK");
@@ -279,6 +299,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.k.mmoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeCa(){
  		console.log("changeCa");
@@ -296,6 +317,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.ca.mmoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeMg(){
  		console.log("changeMg");
@@ -313,6 +335,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.mg.mmoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeNa(){
  		console.log("changeNa");
@@ -346,6 +369,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.na.mmoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeCl(){
  		console.log("changeCl");
@@ -377,6 +401,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.cl.mmoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeSso4(){
  		console.log("changeSso4");
@@ -403,6 +428,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.sso4.mmoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeFe(){
  		console.log("changeFe");
@@ -435,6 +461,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.fe.umoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeMn(){
  		console.log("changeMn");
@@ -467,6 +494,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.mn.umoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeZn(){
  		console.log("changeZn");
@@ -497,7 +525,9 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.zn.mmoll 	= 0.000;
  			this.data.zn.umoll 	= 0.000;
  		}
+
  		this.checkBalance();
+ 		
  	};
  	changeCu(){
  		console.log("changeCu");
@@ -530,6 +560,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.cu.umoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeB(){
  		console.log("changeB");
@@ -562,6 +593,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.b.umoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeMo(){
  		console.log("changeMo");
@@ -586,6 +618,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			this.data.mo.umoll 	= 0.000;
  		}
  		this.checkBalance();
+ 		
  	};
  	changeHco3(){
  		console.log("changeHco3");
@@ -604,6 +637,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  		this.checkBalance();
 
 
+
  	};
 
  	changePh(){
@@ -615,6 +649,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  			}else{
  				this.inputsAlerts.ph = "";
  			}
+ 			
  		}
  	}
 
@@ -654,6 +689,7 @@ import { InputDataTable } from '../input-data-table/input-data-table';
 	 	console.log(this.data);
 	 	console.log("BALANCE: " + balance);
  		this.data.balance = balance;
+ 		
  	}
 
  	getEquivalent(elementId){
@@ -661,4 +697,14 @@ import { InputDataTable } from '../input-data-table/input-data-table';
  		//console.log(elementId+ "  equiVal: "+ equiVal);
  		return equiVal;
  	}
+
+ 	updateProgramInformation (){
+        console.log("updateProgramInformation");
+        this.programProvider.getInstance().waterAnalysisInformation = this.data;
+    }
+
+    goToFertigationProgram(){
+    	console.log("goToFertigationProgram");
+    	this.updateProgramInformation();
+    }
  }

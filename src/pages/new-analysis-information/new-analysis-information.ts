@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
-
+import { NewWaterAnalysis } from '../new-water-analysis/new-water-analysis';
+import { ProgramProvider } from '../../providers/programs';
 
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -11,10 +11,10 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  * we recommend not using the Welcome page.
  */
  @Component({
- 	selector: 'page-input-data-table',
- 	templateUrl: 'input-data-table.html'
+ 	selector: 'page-new-analysis-information',
+ 	templateUrl: 'new-analysis-information.html'
  })
- export class InputDataTable {
+ export class NewAnalysisInformation {
  	acids =[
  	{
  		id: 			"x",
@@ -46,21 +46,34 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  		concentration: 	"",
  		density: 		""
  	};
+
+ 	substrates = [
+ 		{
+ 			id : "inert",
+ 			label1: "Inert",
+ 			label2: "(Stone wool, perlite)"
+ 		},
+ 		{
+ 			id : "Organic",
+ 			label1: "organic",
+ 			label2: "(Coco peat)"
+ 		}
+ 	];
  	calciumChlorides =[
  	{
- 		id: 						"liquid",
+ 		id: 					"liquid",
  		name: 					"liquid",
  		concentration: 	35,
  		density: 		 		1.33
  	},
  	{
- 		id: 						"anhydrous",
+ 		id: 					"anhydrous",
  		name: 					"Calcium chloride anhydrous (solid)",
  		concentration: 	63.9,
  		density: 		 		"N.A."
  	},
  	{
- 		id: 						"dihydrate",
+ 		id: 					"dihydrate",
  		name: 					"Calcium chloride dihydrate (solid)",
  		concentration: 	48.3,
  		density: 		 		"N.A."
@@ -105,7 +118,12 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  		id:					"feq48",
  		name:				"Ultrasol micro Rexene FeQ48",
  		concentration: 	6
- 	}
+ 	},
+     {
+         id:                    "-1",
+         name:                "Other",
+         concentration:     0
+     }
  	];
  	ironChelateChoise = "";
  	ironChelateSuggestion = {
@@ -114,10 +132,10 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  	};
 
  	data = {
- 		ECValue: 				1.5,
- 		sizeTank: 				1000,
- 		dilutionFactor: 		100,
- 		substrate: 				"",
+ 		ECValue: 			1.5,
+ 		sizeTank: 			1000,
+ 		dilutionFactor: 	100,
+ 		substrate: 			"",
  		acidSource: 			{
  			id: 			"",
  			name: 			"",
@@ -143,20 +161,42 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  		},
  	};
 
- 	constructor(public navCtrl: NavController) {
+ 	constructor(public navCtrl: NavController, 
+                public programProvider : ProgramProvider) { 
+         this.data = programProvider.getInstance().analysisInformation;
 
-
+        if (this.data.acidSource.id!="") {
+            this.acidChoise = this.data.acidSource.id;            
+        }
+        if (this.data.calciumChlorideSource.id!="") {
+            this.calciumChlorideChoise = this.data.calciumChlorideSource.id;            
+        }
+        if (this.data.calciumNitrateSource.id!="") {
+            this.calciumNitrateChoise = this.data.calciumNitrateSource.id;            
+        }
+        if (this.data.ironChelateSource.id!="") {
+            this.ironChelateChoise = this.data.ironChelateSource.id;            
+        }
+         
+         
  	}
 
  	addWaterAnalysis() {
- 		this.navCtrl.push(AddWaterAnalysis);
+ 		this.updateProgramInformation();
+ 		this.navCtrl.push(NewWaterAnalysis);
  	}
 
  	logForm() {
+ 		this.updateProgramInformation();
  		console.log(this.data);
  	}
 
 
+
+ 	changeSubstrate(){
+ 		console.log("changeSubstrate");
+ 		console.log(this.data.substrate);
+ 	}
  	changeAcid(){
  		console.log("acidChoise: " + this.acidChoise);
 
@@ -175,6 +215,7 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
 				return;
  			}
  		}
+ 		this.updateProgramInformation();
  	}
 
  	changeCalciumChloride(){
@@ -193,6 +234,7 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  				return;
  			}
  		}
+ 		this.updateProgramInformation();
  	}
  	changeCalciumNitatre(){
  		console.log("calciumNitrateChoise: " + this.calciumNitrateChoise);
@@ -208,11 +250,11 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  				return;
  			}
  		}
+ 		this.updateProgramInformation();
  	}
 
  	changeIronChelate(){
  		console.log("ironChelateChoise: " + this.ironChelateChoise);
-
  		for (var i = 0; i< this.ironChelates.length; i++) {
  			console.log("iron ID: " + this.ironChelates[i].id);
  			if (this.ironChelates[i].id == this.ironChelateChoise.toString()){
@@ -223,6 +265,18 @@ import { AddWaterAnalysis } from '../add-water-analysis/add-water-analysis';
  				return;
  			}
  		}
+ 		this.updateProgramInformation();
  	}
+
+ 	updateProgramInformation (){
+        console.log("updateProgramInformation");
+        this.programProvider.getInstance().analysisInformation = this.data;
+    }
+
+    goToFertigationProgram(){
+    	console.log("goToFertigationProgram");
+    	this.updateProgramInformation();//foo
+    }
+
 
  }

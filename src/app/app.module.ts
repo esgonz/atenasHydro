@@ -9,10 +9,10 @@ import { MyApp } from './app.component';
 
 /*Import pages*/
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { InputDataTable } from '../pages/input-data-table/input-data-table';
-import { AddWaterAnalysis } from '../pages/add-water-analysis/add-water-analysis';
-import { AddNewRecommendation } from '../pages/add-new-recommendation/add-new-recommendation';
-import { SelectCropGrowth } from '../pages/select-crop-growth/select-crop-growth';
+import { NewAnalysisInformation } from '../pages/new-analysis-information/new-analysis-information';
+import { NewWaterAnalysis } from '../pages/new-water-analysis/new-water-analysis';
+import { NewBasicInformation } from '../pages/new-basic-information/new-basic-information';
+import { NewCropSelect } from '../pages/new-crop-select/new-crop-select';
 
 
 import { Api } from '../providers/api';
@@ -20,7 +20,8 @@ import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/settings';
 import { User } from '../providers/user';
 import { FormulasProvider } from '../providers/formulas/formulas';
-import { Crops } from '../providers/crops';
+import { CropsStages } from '../providers/cropsStages';
+import { ProgramProvider } from '../providers/programs';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -51,10 +52,10 @@ export function provideSettings(storage: Storage) {
 @NgModule({
   declarations: [
     MyApp,
-    InputDataTable,
-    AddNewRecommendation,
-    SelectCropGrowth,
-    AddWaterAnalysis
+    NewAnalysisInformation,
+    NewBasicInformation,
+    NewCropSelect,
+    NewWaterAnalysis
   ],
   imports: [
     BrowserModule,
@@ -72,10 +73,10 @@ export function provideSettings(storage: Storage) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    InputDataTable,
-    AddNewRecommendation,
-    SelectCropGrowth,
-    AddWaterAnalysis
+    NewAnalysisInformation,
+    NewBasicInformation,
+    NewCropSelect,
+    NewWaterAnalysis
   
   ],
   providers: [
@@ -83,7 +84,8 @@ export function provideSettings(storage: Storage) {
     SplashScreen,
     SQLite,
     FormulasProvider,
-    Crops,
+    CropsStages,
+    ProgramProvider,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
