@@ -8,11 +8,29 @@
  * that something that fits your app as well.
  */
 export class CropStage {
-	id 			  = "";
-	name 		  = "";
-	stages 		= [];
+	id 			    = "";
+	name 		    = "";
+	corrections     = {
+        macroElements: {
+            no3: 0,
+            h2po4: 0,
+            sso4: 0,
+            nh4: 0,
+            k: 0,
+            ca: 0,
+            mg: 0
+        },
+        traceElements: {
+            fe: 0,
+            b:  0,
+            mn: 0,
+            zn: 0,
+            cu: 0,
+            mo: 0
+        }
+  };
 
-  constructor(private fields: any) {
+  constructor(fields: any) {
     // Quick and dirty extend/assign fields to this model
     for (let f in fields) {
       this[f] = fields[f];
@@ -30,8 +48,10 @@ export class CropStage {
   }
 
   poblateTable(){
-
   }
+
+
+
 
 
 

@@ -1,0 +1,112 @@
+<!-- HEADER BAR-->
+<ion-header>
+
+  <ion-navbar color="dark">
+
+    <button ion-button menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title>
+      Grower info
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="md-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header> 
+
+<!-- APP CONTENT -->
+
+<ion-content scroll="false">
+  <ion-grid>
+    <ion-row justify-content-start>
+      <!-- primera columna / contenido izquierdo-->
+      <!--<ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 class="menu-lateral-movil backgroundSecondary" showWhen="landscape" hideWhen="portrait">
+        <div class="menuLateralList">
+          <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><span class="icongrow"></span>Select crop and growth stage</button>
+			
+          <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><span class="iconinput"></span>Input data</button>
+			
+          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><span class="iconprogramme"></span>Fertigation programme</button>
+			
+        <div>
+          <button ion-button full clear color="black" id="add-water" class="buttonmenu2"><span class="icongrower"></span>Grower info</button>
+			
+          <button ion-button full clear color="black" id="add-water" class="buttonmenu2"><span class="iconwaterresult"></span>Result of water analysis</button>
+			
+          <button ion-button full clear color="black" id="add-water" class="buttonmenu2"><span class="iconfertisol"></span>Result of fertigation solution</button>
+			
+          <button ion-button full clear color="black" id="add-water" class="buttonmenu2"><span class="iconfertische"></span>Result of fertigation scheme</button>
+		</div>
+		  </div>
+        </ion-col>-->
+        <!-- segunda columna -->
+        <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12>
+            <!--<ion-row>
+              <h6>Water analysis data &amp; molar calculation</h6>
+            </ion-row>-->
+        <ion-row>
+          <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+          <ion-row>
+            <ion-col>
+              <h6><small>Name</small></h6>
+              <h5>{{this.programProvider.getDataBasicResult().basic.name}}</h5>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h6><small>Stage</small></h6>
+              <h5>{{this.programProvider.getDataBasicResult().cropSelected.stage}}</h5>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h6><small>E.C. (mS/cm)</small></h6>
+              <h5>{{this.programProvider.getDataBasicResult().analysis.ECValue}}</h5>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h6><small>Size Tank</small></h6>
+              <h5>{{this.programProvider.getDataBasicResult().analysis.sizeTank}}</h5>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <!-- tercera columna -->
+        <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+          <ion-row>
+            <ion-col>
+              <h6><small>Crop</small></h6>
+              <h5>{{this.programProvider.getDataBasicResult().cropSelected.crop}}</h5>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h6><small>Substrate</small></h6>
+              <h5>{{this.programProvider.getDataBasicResult().analysis.substrate}}</h5>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h6><small>Recommended pH of fertigation solution</small></h6>
+              <h5> {{this.programProvider.getDataBasicResult().analysis.recommendedPh}} </h5>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <h6><small>Dilution factor</small></h6>
+              <h5>{{this.programProvider.getDataBasicResult().analysis.dilutionFactor}}</h5>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+          </ion-row>
+          
+        </ion-col>
+        
+    </ion-row>
+  </ion-grid>
+ </ion-content>

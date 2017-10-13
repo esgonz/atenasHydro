@@ -130,15 +130,15 @@ export class Formula {
 	}
 
 	elementRelation = {
-		no3: {
+		no3n: {
 			concentration: 	"no3n",
 			molecular: 		"no3"
 		},
-		h2po4: {
+		p2o5: {
 			concentration: 	"p2o5",
 			molecular: 		"h2po4"
 		},
-		so4: {
+		s: {
 			concentration: 	"s",
 			molecular: 		"so4"
 		},
@@ -146,19 +146,19 @@ export class Formula {
 			concentration: 	"cl",
 			molecular: 		"cl"
 		},
-		nh4: {
+		nh4n: {
 			concentration: 	"nh4n",
 			molecular: 		"nh4"
 		},
-		k: {
+		k2o: {
 			concentration: 	"k2o",
 			molecular: 		"k"
 		},
-		ca: {
+		cao: {
 			concentration: 	"cao",
 			molecular: 		"ca"
 		},
-		mg: {
+		mgo: {
 			concentration: 	"mgo",
 			molecular: 		"mg"
 		},
@@ -188,44 +188,74 @@ export class Formula {
 		}
 	}
 
-  constructor(private fields: any) {
+  constructor(fields: any) {
     // Quick and dirty extend/assign fields to this model
     for (let f in fields) {
       this[f] = fields[f];
     }
 
 
+    
+
   }
 
+  setNpkInMmoll(){
+  	for (var element in this.macroElementsConcentration)
+    {
+    	this.calculateNpkMacroElement(element);
+    }
+	
+    for (var element in this.traceElementsContentration)
+    {
+    	this.calculateNpkTraceElement(element);
+    }
+  }
   calculateNpkMacroElement(element){
-  	var elementConcentration 	= this.macroElementsConcentration[this.elementRelation[element].concentration];
-  	var molecularObj 			= this.molecularWeight[this.elementRelation[element].molecular];
+  	console.log("calculate Macro mmoll");
+  	console.log("element", element);
+
+  	var keyConcentration 		= this.elementRelation[element].concentration;
+
+  	var elementConcentration 	= this.macroElementsConcentration[keyConcentration];
+  	console.log("elementConcentration", elementConcentration);
+
+
+
+  	var keyMolecular 			= this.elementRelation[element].molecular;
+
+  	var molecularObj 			= this.molecularWeight[keyMolecular];
+  	console.log("molecularObj", molecularObj);
+
   	
   	if (elementConcentration != 0 || elementConcentration != null) {
-
+  		console.log("it's > 0");
   		//Mol. Wt. Element (g/mol) * factor 
   		var molFactor 						= molecularObj.element * molecularObj.factor ;
-  		this.macroElementsMmoll[element] 	= elementConcentration * 10 /(molFactor);
+  		console.log("molFactor", molFactor);
+  		this.macroElementsMmoll[keyMolecular] 	= elementConcentration * 10 /(molFactor);
+  		console.log("this.macroElementsMmoll."+keyMolecular, this.macroElementsMmoll[keyMolecular]);
   	}else{
 
-  		this.macroElementsMmoll[element] 	= 0 ;
+  		this.macroElementsMmoll[keyMolecular] 	= 0 ;
   	}
 
   }
 
     calculateNpkTraceElement(element){
-  	var elementConcentration 	= this.traceElementsContentration[this.elementRelation[element].concentration];
-  	var molecularObj 			= this.molecularWeight[this.elementRelation[element].molecular];
-  	
-  	if (elementConcentration != 0 || elementConcentration != null) {
+	    console.log("calculate trace mmoll");
+		  	console.log("element", element);
+		  	var elementConcentration 	= this.traceElementsContentration[this.elementRelation[element].concentration];
+		  	var molecularObj 			= this.molecularWeight[this.elementRelation[element].molecular];
+		  	
+		  	if (elementConcentration != 0 || elementConcentration != null) {
 
-  		//Mol. Wt. Element (g/mol) * factor 
-  		var molFactor 						= molecularObj.element * molecularObj.factor ;
-  		this.traceElementsMmoll[element] 	= elementConcentration * 10 /(molFactor);
-  	}else{
+		  		//Mol. Wt. Element (g/mol) * factor 
+		  		var molFactor 						= molecularObj.element * molecularObj.factor ;
+		  		this.traceElementsMmoll[element] 	= elementConcentration * 10 /(molFactor);
+		  	}else{
 
-  		this.traceElementsMmoll[element] 	= 0 ;
-  	}
+		  		this.traceElementsMmoll[element] 	= 0 ;
+		  	}
 
   }
 

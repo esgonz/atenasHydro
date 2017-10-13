@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NewCropSelect } from '../../pages/new-crop-select/new-crop-select';
 import { ProgramProvider } from '../../providers/programs';
+import { PagesProvider } from '../../providers/pages';
 /**
  * The Welcome Page is a splash page that quickly describes the app,
  * and then directs the user to create an account or log in.
@@ -29,8 +30,19 @@ import { ProgramProvider } from '../../providers/programs';
 	 	email 		: "" 		
  	}
  	validate = false;
- 	constructor(public navCtrl: NavController, public programProvider : ProgramProvider) { 
+ 	constructor(public navCtrl: NavController, public programProvider : ProgramProvider,
+ 		private pagesProvider: PagesProvider) { 
  		this.data = programProvider.getInstance().basicInformation;
+ 		if (this.data.date == "" ) {
+ 			this.data.date =  new Date(Date.now()).toISOString();
+ 		}
+ 		this.validate = true;
+ 		for (var key in this.data) {
+ 			if(this.data[key] == ""){
+ 				this.validate = false;
+ 			}
+ 		}
+
  	}
 
 
@@ -130,6 +142,9 @@ import { ProgramProvider } from '../../providers/programs';
 		{
 			console.log("validate", this.validate);
 			this.updateProgramInformation();
+			var ncropPage ={ title: 'Select crop and growth stage', component: NewCropSelect, iconClass: 'icongrow'  };
+			this.pagesProvider.add(ncropPage);
+			this.pagesProvider.setActivePage(ncropPage); 
 			this.navCtrl.push(NewCropSelect);
 		}
 		else{

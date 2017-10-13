@@ -19,9 +19,16 @@
 	/*padding-top:55px;*/
 }
 
-.menuLateralList{
-	position: fixed;
-	top: 60px;
+
+.lateralMenu{
+	background-color: $background-secondary-color;
+}
+.laterMenuPageItem{
+	background-color: $background-secondary-color;
+}
+.activeHighlight{
+	background-color: #fff;
+    box-shadow: 0.2em 0.2em 1em #adadad;
 }
 
 @media only screen and (max-width: 767px){

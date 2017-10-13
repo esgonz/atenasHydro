@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import { TabsResultPage } from '../../pages/tabs-results/tabs-results';
 import { NewWaterAnalysis } from '../new-water-analysis/new-water-analysis';
 import { ProgramProvider } from '../../providers/programs';
-
+import { PagesProvider } from '../../providers/pages';
 /**
  * The Welcome Page is a splash page that quickly describes the app,
  * and then directs the user to create an account or log in.
@@ -54,8 +54,8 @@ import { ProgramProvider } from '../../providers/programs';
  			label2: "(Stone wool, perlite)"
  		},
  		{
- 			id : "Organic",
- 			label1: "organic",
+ 			id : "organic",
+ 			label1: "Organic",
  			label2: "(Coco peat)"
  		}
  	];
@@ -162,7 +162,8 @@ import { ProgramProvider } from '../../providers/programs';
  	};
 
  	constructor(public navCtrl: NavController, 
-                public programProvider : ProgramProvider) { 
+                public programProvider : ProgramProvider,
+                private pagesProvider: PagesProvider) { 
          this.data = programProvider.getInstance().analysisInformation;
 
         if (this.data.acidSource.id!="") {
@@ -181,15 +182,8 @@ import { ProgramProvider } from '../../providers/programs';
          
  	}
 
- 	addWaterAnalysis() {
- 		this.updateProgramInformation();
- 		this.navCtrl.push(NewWaterAnalysis);
- 	}
 
- 	logForm() {
- 		this.updateProgramInformation();
- 		console.log(this.data);
- 	}
+
 
 
 
@@ -273,9 +267,18 @@ import { ProgramProvider } from '../../providers/programs';
         this.programProvider.getInstance().analysisInformation = this.data;
     }
 
+     addWaterAnalysis() {
+         this.updateProgramInformation();
+         this.pagesProvider.setActivePage(NewWaterAnalysis); 
+         this.navCtrl.push(NewWaterAnalysis);
+     }
+
     goToFertigationProgram(){
-    	console.log("goToFertigationProgram");
-    	this.updateProgramInformation();//foo
+    	this.updateProgramInformation();
+        var resultPage = { title: 'Fertigation Programe.', component: TabsResultPage, iconClass: 'iconprogramme'   };
+        this.pagesProvider.add(resultPage);
+        this.pagesProvider.setActivePage(resultPage); 
+        this.navCtrl.push(resultPage.component);
     }
 
 

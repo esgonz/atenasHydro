@@ -43,7 +43,7 @@
 					  <ion-item>
 						<ion-label class="textotarjetas">SELECT ONE CROP</ion-label>
 						<ion-select  (ionChange)='selectCrop()' [(ngModel)]="selectedCropId"  name="selectedCropId" multiple="false">
-						    <ion-option *ngFor="let item of CropsService.data" value="{{item.id}}" [selected]="selectedCropId == item.id" >
+						    <ion-option *ngFor="let item of CropsProvider.getAllCrops()" value="{{item.id}}" [selected]="selectedCropId == item.id" >
 						    	{{item.name}}
 						    </ion-option>
 						</ion-select>

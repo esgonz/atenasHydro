@@ -94,10 +94,14 @@
               <span class="iconadddate"></span>
             </ion-col>
             <ion-col col-12 col-sm-8 col-md-9 col-lg-10 col-xl-10>
-              <ion-item color="dark">
+             
+
+              <ion-item  color="dark">
                 <ion-label color="white" class="fontSecondary" stacked>Date</ion-label>
-                <ion-input color="white" type="text" (blur)="changeDate()" [(ngModel)]="data.date" placeholder="31-12-2017" ></ion-input>
+                <ion-datetime displayFormat="DD/MM/YYYY" (blur)="changeDate()"  [(ngModel)]="data.date"></ion-datetime>
               </ion-item>
+
+
               <ion-label class="inputAlert-green">
                 {{inputsAlerts.date}}
               </ion-label>

@@ -2,18 +2,18 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 
-/*import { Tab1Root } from '../pages';
-import { Tab2Root } from '../pages';
-import { Tab3Root } from '../pages';*/
+import { TabResultBasic } from '../pages';
+import { TabResultWater } from '../pages';
+import { TabResultSolution } from '../pages';
 
 @Component({
-  selector: 'page-prev-result-of-fertigation-solution',
-  templateUrl: 'prev-result-of-fertigation-solution.html'
+  selector: 'tab-result-scheme',
+  templateUrl: 'result-of-fertigation-scheme.html'
 })
-export class PrevResultOfFertigationSolution {
-  /*tab1Root: any = Tab1Root;
-  tab2Root: any = Tab2Root;
-  tab3Root: any = Tab3Root;*/
+export class ResultScheme {
+  tab1Root: any = TabResultBasic;
+  tab2Root: any = TabResultWater;
+  tab3Root: any = TabResultSolution;
 
   tab1Title = " ";
   tab2Title = " ";

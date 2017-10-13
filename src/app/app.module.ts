@@ -14,14 +14,19 @@ import { NewWaterAnalysis } from '../pages/new-water-analysis/new-water-analysis
 import { NewBasicInformation } from '../pages/new-basic-information/new-basic-information';
 import { NewCropSelect } from '../pages/new-crop-select/new-crop-select';
 
+/*Import tab page*/
+import { TabsResultPage } from '../pages/tabs-results/tabs-results';
+import { ResultBasic } from '../pages/result-basic/result-basic';
+import { ResultWaterAnalysis } from '../pages/result-water-analysis/result-water-analysis';
 
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/settings';
 import { User } from '../providers/user';
-import { FormulasProvider } from '../providers/formulas/formulas';
-import { CropsStages } from '../providers/cropsStages';
+import { FormulasProvider } from '../providers/formulas';
+import { CropsProvider} from '../providers/crops';
 import { ProgramProvider } from '../providers/programs';
+import { PagesProvider } from '../providers/pages';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -55,7 +60,10 @@ export function provideSettings(storage: Storage) {
     NewAnalysisInformation,
     NewBasicInformation,
     NewCropSelect,
-    NewWaterAnalysis
+    NewWaterAnalysis,    
+    ResultBasic,
+    ResultWaterAnalysis,
+    TabsResultPage,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +84,10 @@ export function provideSettings(storage: Storage) {
     NewAnalysisInformation,
     NewBasicInformation,
     NewCropSelect,
-    NewWaterAnalysis
+    NewWaterAnalysis,   
+    ResultBasic,
+    ResultWaterAnalysis,
+    TabsResultPage
   
   ],
   providers: [
@@ -84,8 +95,9 @@ export function provideSettings(storage: Storage) {
     SplashScreen,
     SQLite,
     FormulasProvider,
-    CropsStages,
+    CropsProvider,
     ProgramProvider,
+    PagesProvider,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },

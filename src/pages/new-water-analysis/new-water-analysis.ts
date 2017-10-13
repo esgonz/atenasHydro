@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import { TabsResultPage } from '../../pages/tabs-results/tabs-results';
 import { NewAnalysisInformation } from '../new-analysis-information/new-analysis-information';
 import { ProgramProvider } from '../../providers/programs';
-
+import { PagesProvider } from '../../providers/pages';
 /**
  * The Welcome Page is a splash page that quickly describes the app,
  * and then directs the user to create an account or log in.
@@ -94,83 +94,108 @@ import { ProgramProvider } from '../../providers/programs';
 
  	data = {
  		unit: "mgl",
- 		balance: 0.00,
- 		nnh4: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00
- 		},
- 		nno3: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00
- 		},
- 		p: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00
- 		},
- 		k: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00
- 		},
- 		ca: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00
- 		},
- 		mg: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00
- 		},
- 		na: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00
- 		},
- 		cl: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00
- 		},
- 		sso4: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00
- 		},
- 		fe: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00,
- 			umoll: 0.00
- 		},
- 		mn: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00,
- 			umoll: 0.00
- 		},
- 		zn: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00,
- 			umoll: 0.00
- 		},
- 		cu: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00,
- 			umoll: 0.00
- 		},
- 		b: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00,
- 			umoll: 0.00
- 		},
- 		mo: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00,
- 			umoll: 0.00
- 		},
- 		hco3: {
- 			mgl: 	0.00,
- 			mmoll: 	0.00
+        balance: 0.00,
+        nnh4: {
+            mgl:     0.00,
+            mmoll:     0.00
+        },
+        nno3: {
+            mgl:     0.00,
+            mmoll:     0.00
+        },
+        p: {
+            mgl:     0.00,
+            mmoll:     0.00
+        },
+        k: {
+            mgl:     0.00,
+            mmoll:     0.00
+        },
+        ca: {
+            mgl:     0.00,
+            mmoll:     0.00
+        },
+        mg: {
+            mgl:     0.00,
+            mmoll:     0.00
+        },
+        na: {
+            mgl:     0.00,
+            mmoll:     0.00,
+            status: "normal",
+            alert: ""
+        },
+        cl: {
+            mgl:     0.00,
+            mmoll:     0.00,
+            status: "normal",
+            alert: ""
+        },
+        sso4: {
+            mgl:     0.00,
+            mmoll:     0.00,
+            status: "normal",
+            alert: ""
+        },
+        fe: {
+            mgl:     0.00,
+            mmoll:     0.00,
+            umoll: 0.00,
+            status: "normal",
+            alert: ""
+        },
+        mn: {
+            mgl:     0.00,
+            mmoll:     0.00,
+            umoll: 0.00,
+            status: "normal",
+            alert: ""
+        },
+        zn: {
+            mgl:     0.00,
+            mmoll:     0.00,
+            umoll: 0.00,
+            status: "normal",
+            alert: ""
+        },
+        cu: {
+            mgl:     0.00,
+            mmoll:     0.00,
+            umoll: 0.00,
+            status: "normal",
+            alert: ""
+        },
+        b: {
+            mgl:     0.00,
+            mmoll:     0.00,
+            umoll: 0.00,
+            status: "normal",
+            alert: ""
+        },
+        mo: {
+            mgl:     0.00,
+            mmoll:     0.00,
+            umoll: 0.00
+        },
+        hco3: {
+            mgl:     0.00,
+            mmoll:     0.00
 
- 		},
- 		ph: 0.00,
- 		ec: 0.00
+        },
+        ph: {
+            value: 0.00,
+            status: "normal",
+            alert: ""
+        },
+        ec: {
+            value: 0.00,
+            status: "normal",
+            alert: ""
+        }
  	}
  	constructor(public navCtrl: NavController, 
-                public programProvider : ProgramProvider) { 
+                public programProvider : ProgramProvider,
+                private pagesProvider: PagesProvider) { 
          this.data = programProvider.getInstance().waterAnalysisInformation;
          for (let f in this.data) {
          	for (let j in this.inputs) {
@@ -187,12 +212,7 @@ import { ProgramProvider } from '../../providers/programs';
      }
 
 
- 	goToInputData() {
- 		this.navCtrl.push(NewAnalysisInformation);
- 	}
- 	goToWaterAnalysis() {
- 		this.navCtrl.push(NewWaterAnalysis);
- 	}
+
 
 
 
@@ -332,7 +352,7 @@ import { ProgramProvider } from '../../providers/programs';
  			}
  		}else{
  			this.data.mg.mgl 		= 0.000;
- 			this.data.mg.mmoll 	= 0.000;
+ 			this.data.mg.mmoll 	    = 0.000;
  		}
  		this.checkBalance();
  		
@@ -349,23 +369,12 @@ import { ProgramProvider } from '../../providers/programs';
  				this.data.na.mmoll 	= Number(this.inputs.na );
  			}
 
-
- 			if (this.data.na.mmoll > 4.5) {
- 				this.inputsAlerts.na = "Too High";
-
- 			}else if (this.data.na.mmoll > 3) {
- 				this.inputsAlerts.na = "Very High";
-
- 			}
- 			else if (this.data.na.mmoll > 1.5) {
- 				this.inputsAlerts.na = " High"; 			
- 			}
- 			else{
- 				this.inputsAlerts.na = ""; 
- 			}
+             this.updateProgramInformation();
+             this.programProvider.getInstance().verifyNaValue();
+             this.inputsAlerts.na = this.programProvider.getInstance().waterAnalysisInformation.na.alert;
 
  		}else{
- 			this.data.na.mgl 		= 0.000;
+ 			this.data.na.mgl 	= 0.000;
  			this.data.na.mmoll 	= 0.000;
  		}
  		this.checkBalance();
@@ -383,21 +392,13 @@ import { ProgramProvider } from '../../providers/programs';
  				this.data.cl.mmoll 	= Number(this.inputs.cl );
  			}
 
- 			if (this.data.cl.mmoll > 4.5) {
- 				this.inputsAlerts.cl = "Too High";
- 			}
- 			else if (this.data.cl.mmoll > 3) {
- 				this.inputsAlerts.cl = "Very High";
- 			}
- 			else if (this.data.cl.mmoll > 1.5) {
- 				this.inputsAlerts.cl = " High";
- 			}
- 			else{
- 				this.inputsAlerts.cl = ""; 
- 			}
+ 			this.updateProgramInformation();
+            this.programProvider.getInstance().verifyClValue();
+           
+            this.inputsAlerts.cl = this.programProvider.getInstance().waterAnalysisInformation.cl.alert;
 
  		}else{
- 			this.data.cl.mgl 		= 0.000;
+ 			this.data.cl.mgl 	= 0.000;
  			this.data.cl.mmoll 	= 0.000;
  		}
  		this.checkBalance();
@@ -417,11 +418,9 @@ import { ProgramProvider } from '../../providers/programs';
  				this.data.sso4.mmoll 	= Number(this.inputs.sso4 );
  			}
  			
- 			if (this.data.sso4.mmoll > 2) {
- 				this.inputsAlerts.sso4 = "Too High";
- 			}else{
- 				this.inputsAlerts.sso4 = "";
- 			}
+ 			this.updateProgramInformation();
+            this.programProvider.getInstance().verifySso4Value();
+            this.inputsAlerts.sso4 = this.programProvider.getInstance().waterAnalysisInformation.sso4.alert;
 
  		}else{
  			this.data.sso4.mgl 		= 0.000;
@@ -433,27 +432,20 @@ import { ProgramProvider } from '../../providers/programs';
  	changeFe(){
  		console.log("changeFe");
  		if (this.inputs.fe != 0) {
- 			var dataWithumoll = {
- 				mgl: 	0,
- 				mmoll: 	0,
- 				umoll: 	0
- 			};
+
 
  			if (this.data.unit == "mgl") {
- 				dataWithumoll.mgl 		= this.inputs.fe;
- 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/55.85).toFixed(6));
- 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/55.85).toFixed(6));
+ 				this.data.fe.mgl 		= this.inputs.fe;
+ 				this.data.fe.umoll 	= Number(((this.data.fe.mgl *1000)/55.85).toFixed(6));
+ 				this.data.fe.mmoll 	= Number(((this.data.fe.mgl *1000)/55.85).toFixed(6));
  			}else{
- 				dataWithumoll.mmoll 	= this.inputs.fe;
- 				dataWithumoll.umoll 	= dataWithumoll.mmoll;
+ 				this.data.fe.mmoll 	= this.inputs.fe;
+ 				this.data.fe.umoll 	= this.data.fe.mmoll;
  			}
- 			this.data.fe = dataWithumoll;
 
- 			if (this.data.fe.mmoll > 25) {
- 				this.inputsAlerts.fe = "Too High. Install a sandfilter";
- 			}else {
- 				this.inputsAlerts.fe = "";
- 			}
+ 			this.updateProgramInformation();
+            this.programProvider.getInstance().verifyFeValue();
+            this.inputsAlerts.fe = this.programProvider.getInstance().waterAnalysisInformation.fe.alert;
 
  		}else{
  			this.data.fe.mgl 	= 0.000;
@@ -466,27 +458,20 @@ import { ProgramProvider } from '../../providers/programs';
  	changeMn(){
  		console.log("changeMn");
  		if (this.inputs.mn != 0) {
- 			var dataWithumoll = {
- 				mgl: 	0,
- 				mmoll: 	0,
- 				umoll: 	0
- 			};
+
 
  			if (this.data.unit == "mgl") {
- 				dataWithumoll.mgl 		= this.inputs.mn;
- 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/54.94).toFixed(6));
- 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/54.94).toFixed(6));
+ 				this.data.mn.mgl 		= this.inputs.mn;
+ 				this.data.mn.umoll 	= Number(((this.data.mn.mgl *1000)/54.94).toFixed(6));
+ 				this.data.mn.mmoll 	= Number(((this.data.mn.mgl *1000)/54.94).toFixed(6));
  			}else{
- 				dataWithumoll.mmoll 	= this.inputs.mn;
- 				dataWithumoll.umoll 	= dataWithumoll.mmoll;
+ 				this.data.mn.mmoll 	= this.inputs.mn;
+ 				this.data.mn.umoll 	= this.data.mn.mmoll;
  			}
- 			this.data.mn = dataWithumoll;
 
- 			if (this.data.mn.mmoll > 10) {
- 				this.inputsAlerts.mn = "Too High. Water not suitable for standard NPK use.";
- 			}else{
- 				this.inputsAlerts.mn = "";
- 			}
+ 			this.updateProgramInformation();
+            this.programProvider.getInstance().verifyMnValue();
+            this.inputsAlerts.mn = this.programProvider.getInstance().waterAnalysisInformation.mn.alert;
 
  		}else{
  			this.data.mn.mgl 	= 0.000;
@@ -499,26 +484,20 @@ import { ProgramProvider } from '../../providers/programs';
  	changeZn(){
  		console.log("changeZn");
  		if (this.inputs.zn != 0) {
- 			var dataWithumoll = {
- 				mgl: 	0,
- 				mmoll: 	0,
- 				umoll: 	0
- 			};
- 			if (this.data.unit == "mgl") {
- 				dataWithumoll.mgl 		= Number(this.inputs.zn);
- 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/65.39).toFixed(6));
- 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/65.39).toFixed(6));
- 			}else{
- 				dataWithumoll.mmoll 	= Number(this.inputs.zn);
- 				dataWithumoll.umoll 	= dataWithumoll.mmoll;
- 			}
- 			this.data.zn = dataWithumoll;
 
- 			if (this.data.zn.mmoll > 10) {
- 				this.inputsAlerts.zn = "Too High. Water not suitable for standard NPK use.";
+ 			if (this.data.unit == "mgl") {
+ 				this.data.zn.mgl 		= Number(this.inputs.zn);
+ 				this.data.zn.umoll 	= Number(((this.data.zn.mgl *1000)/65.39).toFixed(6));
+ 				this.data.zn.mmoll 	= Number(((this.data.zn.mgl *1000)/65.39).toFixed(6));
  			}else{
- 				this.inputsAlerts.zn = "";
+ 				this.data.zn.mmoll 	= Number(this.inputs.zn);
+ 				this.data.zn.umoll 	= this.data.zn.mmoll;
  			}
+
+
+ 			this.updateProgramInformation();
+            this.programProvider.getInstance().verifyZnValue();
+            this.inputsAlerts.zn = this.programProvider.getInstance().waterAnalysisInformation.zn.alert;
 
  		}else{
  			this.data.zn.mgl 	= 0.000;
@@ -532,27 +511,20 @@ import { ProgramProvider } from '../../providers/programs';
  	changeCu(){
  		console.log("changeCu");
  		if (this.inputs.cu != 0) {
- 			var dataWithumoll = {
- 				mgl: 	0,
- 				mmoll: 	0,
- 				umoll: 	0
- 			};
 
  			if (this.data.unit == "mgl") {
- 				dataWithumoll.mgl 		= Number(this.inputs.cu);
- 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/63.55).toFixed(6));
- 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/63.55).toFixed(6));
+ 				this.data.cu.mgl 		= Number(this.inputs.cu);
+ 				this.data.cu.umoll 	= Number(((this.data.cu.mgl *1000)/63.55).toFixed(6));
+ 				this.data.cu.mmoll 	= Number(((this.data.cu.mgl *1000)/63.55).toFixed(6));
  			}else{
- 				dataWithumoll.mmoll 	= Number(this.inputs.cu);
- 				dataWithumoll.umoll 	= dataWithumoll.mmoll;
+ 				this.data.cu.mmoll 	= Number(this.inputs.cu);
+ 				this.data.cu.umoll 	= this.data.cu.mmoll;
  			}
- 			this.data.cu = dataWithumoll;
+
  			
- 			if (this.data.cu.mmoll > 3) {
- 				this.inputsAlerts.cu = "Too High. Water not suitable for standard NPK use.";
- 			}else{
- 				this.inputsAlerts.cu = "";
- 			}
+ 			this.updateProgramInformation();
+            this.programProvider.getInstance().verifyCuValue();
+            this.inputsAlerts.cu = this.programProvider.getInstance().waterAnalysisInformation.cu.alert;
 
  		}else{
  			this.data.cu.mgl 	= 0.000;
@@ -565,27 +537,21 @@ import { ProgramProvider } from '../../providers/programs';
  	changeB(){
  		console.log("changeB");
  		if (this.inputs.b != 0) {
- 			var dataWithumoll = {
- 				mgl: 	0,
- 				mmoll: 	0,
- 				umoll: 	0
- 			};
+
 
  			if (this.data.unit == "mgl") {
- 				dataWithumoll.mgl 		= Number(this.inputs.b);
- 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/10.81).toFixed(6));
- 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/10.81).toFixed(6));
+ 				this.data.b.mgl 		= Number(this.inputs.b);
+ 				this.data.b.umoll 	= Number(((this.data.b.mgl *1000)/10.81).toFixed(6));
+ 				this.data.b.mmoll 	= Number(((this.data.b.mgl *1000)/10.81).toFixed(6));
  			}else{
- 				dataWithumoll.mmoll 	= Number(this.inputs.b);
- 				dataWithumoll.umoll 	= dataWithumoll.mmoll;
+ 				this.data.b.mmoll 	= Number(this.inputs.b);
+ 				this.data.b.umoll 	= this.data.b.mmoll;
  			}
- 			this.data.b = dataWithumoll;
 
- 			if (this.data.b.mmoll > 50) {
- 				this.inputsAlerts.b = "Too High. Water not suitable for standard NPK use.";
- 			}else{
- 				this.inputsAlerts.b = "";
- 			}
+
+ 			this.updateProgramInformation();
+            this.programProvider.getInstance().verifyBValue();
+            this.inputsAlerts.b = this.programProvider.getInstance().waterAnalysisInformation.b.alert;
 
  		}else{
  			this.data.b.mgl 	= 0.000;
@@ -598,20 +564,16 @@ import { ProgramProvider } from '../../providers/programs';
  	changeMo(){
  		console.log("changeMo");
  		if (this.inputs.mo != 0) {
- 			var dataWithumoll = {
- 				mgl: 	0,
- 				mmoll: 	0,
- 				umoll: 	0
- 			};
+
  			if (this.data.unit == "mgl") {
- 				dataWithumoll.mgl 		= Number(this.inputs.mo);
- 				dataWithumoll.umoll 	= Number(((dataWithumoll.mgl *1000)/95.94).toFixed(6));
- 				dataWithumoll.mmoll 	= Number(((dataWithumoll.mgl *1000)/95.94).toFixed(6));
+ 				this.data.mo.mgl 		= Number(this.inputs.mo);
+ 				this.data.mo.umoll 	= Number(((this.data.mo.mgl *1000)/95.94).toFixed(6));
+ 				this.data.mo.mmoll 	= Number(((this.data.mo.mgl *1000)/95.94).toFixed(6));
  			}else{
- 				dataWithumoll.mmoll 	= Number(this.inputs.mo);
- 				dataWithumoll.umoll 	= dataWithumoll.mmoll;
+ 				this.data.mo.mmoll 	= Number(this.inputs.mo);
+ 				this.data.mo.umoll 	= this.data.mo.mmoll;
  			}
- 			this.data.mo = dataWithumoll;
+
  		}else{
  			this.data.mo.mgl 	= 0.000;
  			this.data.mo.mmoll 	= 0.000;
@@ -642,32 +604,23 @@ import { ProgramProvider } from '../../providers/programs';
 
  	changePh(){
  		if (this.inputs.ph!= 0) {
- 			this.data.ph = this.inputs.ph;
+ 			this.data.ph.value = this.inputs.ph;
  			
- 			if (this.data.ph < 5.5) {
- 				this.inputsAlerts.ph = "Too Low";
- 			}else{
- 				this.inputsAlerts.ph = "";
- 			}
+            this.updateProgramInformation();
+            this.programProvider.getInstance().verifyPhValue();
+            this.inputsAlerts.ph = this.programProvider.getInstance().waterAnalysisInformation.ph.alert;
+ 			
  			
  		}
  	}
 
  	changeEc(){
  		if (this.inputs.ec!= 0) {
- 			this.data.ec = this.inputs.ec;
+ 			this.data.ec.value = this.inputs.ec;
  			
- 			if (this.data.ec > 1.5) {
- 				this.inputsAlerts.ec = "Too High";
- 			}
- 			else if (this.data.ec > 1) {
- 				this.inputsAlerts.ec = "Very High";
- 			}
- 			else if (this.data.ec > 0.5) {
- 				this.inputsAlerts.ec = "High";
- 			}else{
- 				this.inputsAlerts.ec = "";
- 			}
+ 			this.updateProgramInformation();
+            this.programProvider.getInstance().verifyECValue();
+            this.inputsAlerts.ec = this.programProvider.getInstance().waterAnalysisInformation.ec.alert;
 
  		}
  	}
@@ -706,5 +659,15 @@ import { ProgramProvider } from '../../providers/programs';
     goToFertigationProgram(){
     	console.log("goToFertigationProgram");
     	this.updateProgramInformation();
+        var resultPage = { title: 'Fertigation Programe.', component: TabsResultPage, iconClass: 'iconprogramme'   };
+        this.pagesProvider.add(resultPage);
+        this.pagesProvider.setActivePage(resultPage); 
+        this.navCtrl.push(TabsResultPage);
+    }    
+
+    goToInputData() {
+        console.log("goToFertigationProgram");
+        this.navCtrl.pop(NewAnalysisInformation);
     }
+
  }

@@ -9,10 +9,10 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="outer-content">
+    <ion-content class="outer-content lateralMenu">
 
-      <ion-list class="paddingmenu">
-        <button ion-item (click)="openPage(p)" *ngFor="let p of pages">
+      <ion-list >
+        <button ion-item [class.activeHighlight]="pagesProvider.checkActivePage(p)" class="laterMenuPageItem" (click)="openPage(p)" *ngFor="let p of pages">
           <span class="{{p.iconClass}}"></span> {{p.title}}
         </button>
       </ion-list>
