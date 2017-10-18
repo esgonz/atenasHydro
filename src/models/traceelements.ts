@@ -8,12 +8,12 @@
  * that something that fits your app as well.
  */
 export class TraceElements {
-		public fe = null;
-		public b = null;
-		public mn = null;
-		public zn = null;
-		public cu = null;
-		public mo = null;
+		public fe = 0;
+		public b = 0;
+		public mn = 0;
+		public zn = 0;
+		public cu = 0;
+		public mo = 0;
 
 
 
@@ -25,23 +25,25 @@ export class TraceElements {
   }
 
   setFe(fe){
-    this.fe = fe;
+    this.fe = parseFloat(fe.toFixed(2));
   }
   setB(b){
-     this.b = b;
+     this.b = parseFloat(b.toFixed(2));
   }
   setMn(mn){
-     this.mn = mn;
+     this.mn = parseFloat(mn.toFixed(2));
   }
   setZn(zn){
-     this.zn = zn;
+     this.zn = parseFloat(zn.toFixed(2));
   }
   setCu(cu){
-     this.cu = cu;
+     this.cu = parseFloat(cu.toFixed(2));
   }
   setMo(mo){
-     this.mo = mo;
+     this.mo = parseFloat(mo.toFixed(2));
   }
-
+  setElement(element, value){
+    this[element] = parseFloat(value.toFixed(2));
+  }
 
 }

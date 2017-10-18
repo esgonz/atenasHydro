@@ -86,13 +86,13 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	calciumNitrates =[
  	{
- 		id: 				"ultrasol calcium",
+ 		id: 				"ultrasolcalcium",
  		name: 				"Ultrasol Calcium (15.5% N-26% CaO)",
  		concentration: 		"N.A.",
  		density: 			"N.A."
  	},
  	{
- 		id:					"liquid calclium nitrate",
+ 		id:					"liquidcalclium",
  		name:				"Liquid Calcium Nitrate",
  		concentration: 		9,
  		density:			1.465

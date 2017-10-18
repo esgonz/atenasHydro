@@ -14,5 +14,6 @@ export class ResultWaterAnalysis {
 		public programProvider : ProgramProvider, public formulasProvider : FormulasProvider ){
    		
    		programProvider.setCalculationsValues(formulasProvider);
+   		
   }
 }

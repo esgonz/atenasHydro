@@ -1,3 +1,6 @@
+import { MacroElements } from '../models/macroelements';
+import { TraceElements } from '../models/traceelements';
+
 /**
  * A generic model that our Master-Detail pages list, create, and delete.
  *
@@ -11,25 +14,9 @@ export class Formula {
 	id 			= "";
 	name 		= "";
 	ultrasol 			= "";
-	macroElementsMmoll 	= {
-		no3 : 	0.00,
-		h2po4 : 0.00,
-		so4 : 	0.00,
-		cl : 	0.00,
-		nh4 : 	0.00,
-		k : 	0.00,
-		ca : 	0.00,
-		mg : 	0.00
-	};
+	macroElementsMmoll 	= new MacroElements({});
 
-	traceElementsMmoll = {
-		fe : 	0.00,
-		b : 	0.00,
-		mn : 	0.00,
-		zn : 	0.00,
-		cu : 	0.00,
-		mo : 	0.00
-	};
+	traceElementsMmoll = new TraceElements({});
 
 	macroElementsConcentration = {
 		no3n : 	0.00,
@@ -193,10 +180,6 @@ export class Formula {
     for (let f in fields) {
       this[f] = fields[f];
     }
-
-
-    
-
   }
 
   setNpkInMmoll(){
@@ -217,26 +200,24 @@ export class Formula {
   	var keyConcentration 		= this.elementRelation[element].concentration;
 
   	var elementConcentration 	= this.macroElementsConcentration[keyConcentration];
-  	console.log("elementConcentration", elementConcentration);
-
 
 
   	var keyMolecular 			= this.elementRelation[element].molecular;
 
   	var molecularObj 			= this.molecularWeight[keyMolecular];
-  	console.log("molecularObj", molecularObj);
+ 
 
   	
   	if (elementConcentration != 0 || elementConcentration != null) {
-  		console.log("it's > 0");
+  		
   		//Mol. Wt. Element (g/mol) * factor 
   		var molFactor 						= molecularObj.element * molecularObj.factor ;
-  		console.log("molFactor", molFactor);
-  		this.macroElementsMmoll[keyMolecular] 	= elementConcentration * 10 /(molFactor);
-  		console.log("this.macroElementsMmoll."+keyMolecular, this.macroElementsMmoll[keyMolecular]);
+  		
+  		this.macroElementsMmoll.setElement(keyMolecular, (elementConcentration * 10 /(molFactor)));
+  		
   	}else{
 
-  		this.macroElementsMmoll[keyMolecular] 	= 0 ;
+  		this.macroElementsMmoll.setElement(keyMolecular,0) ;
   	}
 
   }
@@ -251,10 +232,10 @@ export class Formula {
 
 		  		//Mol. Wt. Element (g/mol) * factor 
 		  		var molFactor 						= molecularObj.element * molecularObj.factor ;
-		  		this.traceElementsMmoll[element] 	= elementConcentration * 10 /(molFactor);
+		  		this.traceElementsMmoll.setElement(element, (elementConcentration * 10 /(molFactor)));
 		  	}else{
 
-		  		this.traceElementsMmoll[element] 	= 0 ;
+		  		this.traceElementsMmoll.setElement(element,0);
 		  	}
 
   }
