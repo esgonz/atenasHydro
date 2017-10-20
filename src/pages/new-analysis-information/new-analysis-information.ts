@@ -92,7 +92,7 @@ import { PagesProvider } from '../../providers/pages';
  		density: 			"N.A."
  	},
  	{
- 		id:					"liquidcalclium",
+ 		id:					"liquidcalcium",
  		name:				"Liquid Calcium Nitrate",
  		concentration: 		9,
  		density:			1.465

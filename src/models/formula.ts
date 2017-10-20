@@ -224,7 +224,6 @@ export class Formula {
 
     calculateNpkTraceElement(element){
 	    console.log("calculate trace mmoll");
-		  	console.log("element", element);
 		  	var elementConcentration 	= this.traceElementsContentration[this.elementRelation[element].concentration];
 		  	var molecularObj 			= this.molecularWeight[this.elementRelation[element].molecular];
 		  	

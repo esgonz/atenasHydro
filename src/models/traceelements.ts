@@ -25,25 +25,48 @@ export class TraceElements {
   }
 
   setFe(fe){
-    this.fe = parseFloat(fe.toFixed(2));
+    this.fe = parseFloat(fe.toFixed(10));
   }
   setB(b){
-     this.b = parseFloat(b.toFixed(2));
+     this.b = parseFloat(b.toFixed(10));
   }
   setMn(mn){
-     this.mn = parseFloat(mn.toFixed(2));
+     this.mn = parseFloat(mn.toFixed(10));
   }
   setZn(zn){
-     this.zn = parseFloat(zn.toFixed(2));
+     this.zn = parseFloat(zn.toFixed(10));
   }
   setCu(cu){
-     this.cu = parseFloat(cu.toFixed(2));
+     this.cu = parseFloat(cu.toFixed(10));
   }
   setMo(mo){
-     this.mo = parseFloat(mo.toFixed(2));
+     this.mo = parseFloat(mo.toFixed(10));
   }
   setElement(element, value){
-    this[element] = parseFloat(value.toFixed(2));
+    this[element] = parseFloat(value.toFixed(10));
   }
 
+
+
+  getFe(fe){
+    return parseFloat(this.fe.toFixed(10));
+  }
+  getB(b){
+     return parseFloat(this.b.toFixed(10));
+  }
+  getMn(mn){
+     return parseFloat(this.mn.toFixed(10));
+  }
+  getZn(zn){
+     return parseFloat(this.zn.toFixed(10));
+  }
+  getCu(cu){
+     return parseFloat(this.cu.toFixed(10));
+  }
+  getMo(mo){
+     return parseFloat(this.mo.toFixed(10));
+  }
+  getElement(element, value){
+    return parseFloat(this[element].toFixed(10));
+  }
 }
