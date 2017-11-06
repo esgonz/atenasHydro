@@ -2,28 +2,18 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 
-import { TabResultBasic } from '../pages';
-import { TabResultWater } from '../pages';
-import { TabResultSolution } from '../pages';
+import { ProgramProvider } from '../../providers/programs';
 
 @Component({
   selector: 'tab-result-solution',
   templateUrl: 'result-solution.html'
 })
 export class ResultSolution {
-  tab1Root: any = TabResultBasic;
-  tab2Root: any = TabResultWater;
-  tab3Root: any = TabResultSolution;
+  constructor( public navCtrl: NavController, 
+    public programProvider : ProgramProvider) { 
+    
+  }
 
-  tab1Title = " ";
-  tab2Title = " ";
-  tab3Title = " ";
-
-  constructor(public navCtrl: NavController, public translateService: TranslateService) {
-    translateService.get(['TAB1_TITLE', 'TAB2_TITLE', 'TAB3_TITLE']).subscribe(values => {
-      this.tab1Title = values['TAB1_TITLE'];
-      this.tab2Title = values['TAB2_TITLE'];
-      this.tab3Title = values['TAB3_TITLE'];
-    });
+  ngOnInit(){
   }
 }

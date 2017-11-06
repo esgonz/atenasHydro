@@ -254,9 +254,9 @@ import { PagesProvider } from '../../providers/pages';
  		if (this.inputs.nnh4 != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.nnh4.mgl 		= Number(this.inputs.nnh4 );
- 				this.data.nnh4.mmoll 	= Number(((this.inputs.nnh4 )/14).toFixed(6));
+ 				this.data.nnh4.mmoll 	= Number(((this.inputs.nnh4 )/14).toFixed(10));
  			}else{
- 				this.data.nnh4.mgl 		= Number(((this.inputs.nnh4 )*14).toFixed(6)); 
+ 				this.data.nnh4.mgl 		= Number(((this.inputs.nnh4 )*14).toFixed(10)); 
  				this.data.nnh4.mmoll 	= Number(this.inputs.nnh4 );
  			}
  			
@@ -274,9 +274,9 @@ import { PagesProvider } from '../../providers/pages';
  		if (this.inputs.nno3 != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.nno3.mgl 		= Number(this.inputs.nno3 );
- 				this.data.nno3.mmoll 	= Number(((this.inputs.nno3 )/14).toFixed(6));
+ 				this.data.nno3.mmoll 	= Number(((this.inputs.nno3 )/14).toFixed(10));
  			}else{
- 				this.data.nno3.mgl 		= Number(((this.inputs.nno3 )*14).toFixed(6)); 
+ 				this.data.nno3.mgl 		= Number(((this.inputs.nno3 )*14).toFixed(10)); 
  				this.data.nno3.mmoll 	= Number(this.inputs.nno3 );
  			}
  		}else{
@@ -292,9 +292,9 @@ import { PagesProvider } from '../../providers/pages';
  		if (this.inputs.p != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.p.mgl 	= Number(this.inputs.p );
- 				this.data.p.mmoll 	= Number(((this.inputs.p )/30.97).toFixed(6));
+ 				this.data.p.mmoll 	= Number(((this.inputs.p )/30.97).toFixed(10));
  			}else{
- 				this.data.p.mgl 	= Number(((this.inputs.p )*30.97).toFixed(6)); 
+ 				this.data.p.mgl 	= Number(((this.inputs.p )*30.97).toFixed(10)); 
  				this.data.p.mmoll 	= Number(this.inputs.p );
  			}
  		}else{
@@ -309,9 +309,9 @@ import { PagesProvider } from '../../providers/pages';
  		if (this.inputs.k != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.k.mgl 	= Number(this.inputs.k );
- 				this.data.k.mmoll 	= Number(((this.inputs.k )/39.098).toFixed(6));
+ 				this.data.k.mmoll 	= Number(((this.inputs.k )/39.098).toFixed(10));
  			}else{
- 				this.data.k.mgl 	= Number(((this.inputs.k )*39.098).toFixed(6)); 
+ 				this.data.k.mgl 	= Number(((this.inputs.k )*39.098).toFixed(10)); 
  				this.data.k.mmoll 	= Number(this.inputs.k) ;
  			}
  		}else{
@@ -327,9 +327,9 @@ import { PagesProvider } from '../../providers/pages';
  		if (this.inputs.ca != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.ca.mgl 	= Number(this.inputs.ca );
- 				this.data.ca.mmoll 	= Number(((this.inputs.ca )/40.08).toFixed(6));
+ 				this.data.ca.mmoll 	= Number(((this.inputs.ca )/40.08).toFixed(10));
  			}else{
- 				this.data.ca.mgl 	= Number(((this.inputs.ca )*40.08).toFixed(6)); 
+ 				this.data.ca.mgl 	= Number(((this.inputs.ca )*40.08).toFixed(10)); 
  				this.data.ca.mmoll 	= Number(this.inputs.ca );
  			}
  		}else{
@@ -345,9 +345,9 @@ import { PagesProvider } from '../../providers/pages';
  		if (this.inputs.mg != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.mg.mgl 	= Number(this.inputs.mg );
- 				this.data.mg.mmoll 	= Number(((this.inputs.mg )/24.305).toFixed(6));
+ 				this.data.mg.mmoll 	= Number(((this.inputs.mg )/24.305).toFixed(10));
  			}else{
- 				this.data.mg.mgl 	= Number(((this.inputs.mg )*24.305).toFixed(6)); 
+ 				this.data.mg.mgl 	= Number(((this.inputs.mg )*24.305).toFixed(10)); 
  				this.data.mg.mmoll 	= Number(this.inputs.mg );
  			}
  		}else{
@@ -363,9 +363,9 @@ import { PagesProvider } from '../../providers/pages';
  			
  			if (this.data.unit == "mgl") {
  				this.data.na.mgl 	= Number(this.inputs.na );
- 				this.data.na.mmoll 	= Number(((this.inputs.na )/22.99).toFixed(6));
+ 				this.data.na.mmoll 	= Number(((this.inputs.na )/22.99).toFixed(10));
  			}else{
- 				this.data.na.mgl 	= Number(((this.inputs.na )*22.99).toFixed(6)); 
+ 				this.data.na.mgl 	= Number(((this.inputs.na )*22.99).toFixed(10)); 
  				this.data.na.mmoll 	= Number(this.inputs.na );
  			}
 
@@ -386,9 +386,9 @@ import { PagesProvider } from '../../providers/pages';
  			
  			if (this.data.unit == "mgl") {
  				this.data.cl.mgl 	= Number(this.inputs.cl );
- 				this.data.cl.mmoll 	= Number(((this.inputs.cl )/35.453).toFixed(6));
+ 				this.data.cl.mmoll 	= Number(((this.inputs.cl )/35.453).toFixed(10));
  			}else{
- 				this.data.cl.mgl 	= Number(((this.inputs.cl )*35.453).toFixed(6)); 
+ 				this.data.cl.mgl 	= Number(((this.inputs.cl )*35.453).toFixed(10)); 
  				this.data.cl.mmoll 	= Number(this.inputs.cl );
  			}
 
@@ -410,11 +410,11 @@ import { PagesProvider } from '../../providers/pages';
  			if (this.data.unit == "mgl") {
 
  				this.data.sso4.mgl 		= Number(this.inputs.sso4 );
- 				this.data.sso4.mmoll 	= Number(((this.inputs.sso4 )/ 32.06).toFixed(6));
+ 				this.data.sso4.mmoll 	= Number(((this.inputs.sso4 )/ 32.06).toFixed(10));
 
  			}else{
 
- 				this.data.sso4.mgl 		= Number(((this.inputs.sso4 )* 32.06).toFixed(6)); 
+ 				this.data.sso4.mgl 		= Number(((this.inputs.sso4 )* 32.06).toFixed(10)); 
  				this.data.sso4.mmoll 	= Number(this.inputs.sso4 );
  			}
  			
@@ -436,11 +436,11 @@ import { PagesProvider } from '../../providers/pages';
 
  			if (this.data.unit == "mgl") {
  				this.data.fe.mgl 		= this.inputs.fe;
- 				this.data.fe.umoll 	= Number(((this.data.fe.mgl *1000)/55.85).toFixed(6));
- 				this.data.fe.mmoll 	= Number(((this.data.fe.mgl *1000)/55.85).toFixed(6));
+ 				this.data.fe.umoll 	= Number(((this.data.fe.mgl *1000)/55.85).toFixed(10));
+ 				this.data.fe.mmoll 	= Number(((this.data.fe.mgl *1000)/55.85).toFixed(10));
  			}else{
- 				this.data.fe.mmoll 	= this.inputs.fe;
- 				this.data.fe.umoll 	= this.data.fe.mmoll;
+ 				this.data.fe.mmoll 	= Number(this.inputs.fe);
+ 				this.data.fe.umoll 	= Number(this.data.fe.mmoll);
  			}
 
  			this.updateProgramInformation();
@@ -462,11 +462,11 @@ import { PagesProvider } from '../../providers/pages';
 
  			if (this.data.unit == "mgl") {
  				this.data.mn.mgl 		= this.inputs.mn;
- 				this.data.mn.umoll 	= Number(((this.data.mn.mgl *1000)/54.94).toFixed(6));
- 				this.data.mn.mmoll 	= Number(((this.data.mn.mgl *1000)/54.94).toFixed(6));
+ 				this.data.mn.umoll 	= Number(((this.data.mn.mgl *1000)/54.94).toFixed(10));
+ 				this.data.mn.mmoll 	= Number(((this.data.mn.mgl *1000)/54.94).toFixed(10));
  			}else{
- 				this.data.mn.mmoll 	= this.inputs.mn;
- 				this.data.mn.umoll 	= this.data.mn.mmoll;
+ 				this.data.mn.mmoll 	= Number(this.inputs.mn);
+ 				this.data.mn.umoll 	= Number(this.data.mn.mmoll);
  			}
 
  			this.updateProgramInformation();
@@ -487,11 +487,11 @@ import { PagesProvider } from '../../providers/pages';
 
  			if (this.data.unit == "mgl") {
  				this.data.zn.mgl 		= Number(this.inputs.zn);
- 				this.data.zn.umoll 	= Number(((this.data.zn.mgl *1000)/65.39).toFixed(6));
- 				this.data.zn.mmoll 	= Number(((this.data.zn.mgl *1000)/65.39).toFixed(6));
+ 				this.data.zn.umoll 	= Number(((this.data.zn.mgl *1000)/65.39).toFixed(10));
+ 				this.data.zn.mmoll 	= Number(((this.data.zn.mgl *1000)/65.39).toFixed(10));
  			}else{
  				this.data.zn.mmoll 	= Number(this.inputs.zn);
- 				this.data.zn.umoll 	= this.data.zn.mmoll;
+ 				this.data.zn.umoll 	= Number(this.data.zn.mmoll);
  			}
 
 
@@ -514,11 +514,11 @@ import { PagesProvider } from '../../providers/pages';
 
  			if (this.data.unit == "mgl") {
  				this.data.cu.mgl 		= Number(this.inputs.cu);
- 				this.data.cu.umoll 	= Number(((this.data.cu.mgl *1000)/63.55).toFixed(6));
- 				this.data.cu.mmoll 	= Number(((this.data.cu.mgl *1000)/63.55).toFixed(6));
+ 				this.data.cu.umoll 	= Number(((this.data.cu.mgl *1000)/63.55).toFixed(10));
+ 				this.data.cu.mmoll 	= Number(((this.data.cu.mgl *1000)/63.55).toFixed(10));
  			}else{
  				this.data.cu.mmoll 	= Number(this.inputs.cu);
- 				this.data.cu.umoll 	= this.data.cu.mmoll;
+ 				this.data.cu.umoll 	= Number(this.data.cu.mmoll);
  			}
 
  			
@@ -541,11 +541,11 @@ import { PagesProvider } from '../../providers/pages';
 
  			if (this.data.unit == "mgl") {
  				this.data.b.mgl 		= Number(this.inputs.b);
- 				this.data.b.umoll 	= Number(((this.data.b.mgl *1000)/10.81).toFixed(6));
- 				this.data.b.mmoll 	= Number(((this.data.b.mgl *1000)/10.81).toFixed(6));
+ 				this.data.b.umoll 	= Number(((this.data.b.mgl *1000)/10.81).toFixed(10));
+ 				this.data.b.mmoll 	= Number(((this.data.b.mgl *1000)/10.81).toFixed(10));
  			}else{
  				this.data.b.mmoll 	= Number(this.inputs.b);
- 				this.data.b.umoll 	= this.data.b.mmoll;
+ 				this.data.b.umoll 	= Number(this.data.b.mmoll);
  			}
 
 
@@ -567,11 +567,11 @@ import { PagesProvider } from '../../providers/pages';
 
  			if (this.data.unit == "mgl") {
  				this.data.mo.mgl 		= Number(this.inputs.mo);
- 				this.data.mo.umoll 	= Number(((this.data.mo.mgl *1000)/95.94).toFixed(6));
- 				this.data.mo.mmoll 	= Number(((this.data.mo.mgl *1000)/95.94).toFixed(6));
+ 				this.data.mo.umoll 	= Number(((this.data.mo.mgl *1000)/95.94).toFixed(10));
+ 				this.data.mo.mmoll 	= Number(((this.data.mo.mgl *1000)/95.94).toFixed(10));
  			}else{
  				this.data.mo.mmoll 	= Number(this.inputs.mo);
- 				this.data.mo.umoll 	= this.data.mo.mmoll;
+ 				this.data.mo.umoll 	= Number(this.data.mo.mmoll);
  			}
 
  		}else{
@@ -587,9 +587,9 @@ import { PagesProvider } from '../../providers/pages';
  		if (this.inputs.hco3 != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.hco3.mgl 		= Number(this.inputs.hco3 );
- 				this.data.hco3.mmoll 	= Number(((this.inputs.hco3 )/ 61.02).toFixed(6));
+ 				this.data.hco3.mmoll 	= Number(((this.inputs.hco3 )/ 61.02).toFixed(10));
  			}else{
- 				this.data.hco3.mgl 		= Number(((this.inputs.hco3 )* 61.02).toFixed(6)); 
+ 				this.data.hco3.mgl 		= Number(((this.inputs.hco3 )* 61.02).toFixed(10)); 
  				this.data.hco3.mmoll 	= Number(this.inputs.hco3 );
  			}
  		}else{
@@ -604,7 +604,7 @@ import { PagesProvider } from '../../providers/pages';
 
  	changePh(){
  		if (this.inputs.ph!= 0) {
- 			this.data.ph.value = this.inputs.ph;
+ 			this.data.ph.value = Number(this.inputs.ph);
  			
             this.updateProgramInformation();
             this.programProvider.getInstance().verifyPhValue();
@@ -616,7 +616,7 @@ import { PagesProvider } from '../../providers/pages';
 
  	changeEc(){
  		if (this.inputs.ec!= 0) {
- 			this.data.ec.value = this.inputs.ec;
+ 			this.data.ec.value = Number(this.inputs.ec);
  			
  			this.updateProgramInformation();
             this.programProvider.getInstance().verifyECValue();

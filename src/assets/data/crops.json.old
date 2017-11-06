@@ -1,0 +1,4548 @@
+ [
+
+    {
+        "id": "1",
+        "name": "Cucumber",
+        "solutions": {
+            "hydro": {
+                "formulaId": "1",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 16,
+                        "max": 21.3333333333333
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.66666666666667
+                    },
+                    "so4": {
+                        "value": 1.375,
+                        "max": 1.76785714285714
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 1.25,
+                        "max": 1.25
+                    },
+                    "k": {
+                        "value": 8,
+                        "max": 10
+                    },
+                    "ca": {
+                        "value": 4,
+                        "max": 4.92307692307692
+                    },
+                    "mg": {
+                        "value": 1.375,
+                        "max": 1.83333333333333
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 7.03125,
+                            "ok": 10.546875
+                        },
+                        "normal": {
+                            "value": 15
+                        },
+                        "max": {
+                            "ok": 17.578125,
+                            "warning": 21.09375
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 11.71875,
+                            "ok": 17.578125
+                        },
+                        "normal": {
+                            "value": 25
+                        },
+                        "max": {
+                            "ok": 29.296875,
+                            "warning": 35.15625
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.3515625,
+                            "ok": 0.52734375
+                        },
+                        "normal": {
+                            "value": 0.75
+                        },
+                        "max": {
+                            "ok": 0.9140625,
+                            "warning": 1.0546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            },
+            "organic": {
+                "formulaId": "1",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 16.75,
+                        "max": 22.3333333333333
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.66666666666667
+                    },
+                    "so4": {
+                        "value": 1.5,
+                        "max": 1.92857142857143
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 1,
+                        "max": 1.25
+                    },
+                    "k": {
+                        "value": 8,
+                        "max": 10
+                    },
+                    "ca": {
+                        "value": 4.5,
+                        "max": 5.53846153846154
+                    },
+                    "mg": {
+                        "value": 1.5,
+                        "max": 2
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 14.0625,
+                            "ok": 21.09375
+                        },
+                        "normal": {
+                            "value": 30
+                        },
+                        "max": {
+                            "ok": 35.15625,
+                            "warning": 42.1875
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 11.71875,
+                            "ok": 17.578125
+                        },
+                        "normal": {
+                            "value": 25
+                        },
+                        "max": {
+                            "ok": 29.296875,
+                            "warning": 35.15625
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.3515625,
+                            "ok": 0.52734375
+                        },
+                        "normal": {
+                            "value": 0.75
+                        },
+                        "max": {
+                            "ok": 0.9140625,
+                            "warning": 1.0546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            }
+        },
+
+
+        "stages": [{
+                "id": "11",
+                "name": "Filling of mats",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": -0.375,
+                        "k": -2.4,
+                        "ca": 0.975,
+                        "mg": 0.4125
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 10,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "12",
+                "name": "First 4 to 8 weeks",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0.1,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0.1,
+                        "k": -1,
+                        "ca": 0.5,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 10,
+                        "b": 10,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "13",
+                "name": "Standard",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0,
+                        "k": 0,
+                        "ca": 0,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "14",
+                "name": "Harvest",
+                "corrections": {
+                    "macroElements": {
+                        "no3": -0.05,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": -0.05,
+                        "k": 0.5,
+                        "ca": -0.25,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Eggplant",
+        "solutions": {
+            "hydro": {
+                "formulaId": "1",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 15.5,
+                        "max": 19.375
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.66666666666667
+                    },
+                    "so4": {
+                        "value": 1.5,
+                        "max": 2
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 1.5,
+                        "max": 1.5
+                    },
+                    "k": {
+                        "value": 6.75,
+                        "max": 8.70967741935484
+                    },
+                    "ca": {
+                        "value": 3.25,
+                        "max": 3.93145161290323
+                    },
+                    "mg": {
+                        "value": 2.5,
+                        "max": 3.05555555555556
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 7.03125,
+                            "ok": 10.546875
+                        },
+                        "normal": {
+                            "value": 15
+                        },
+                        "max": {
+                            "ok": 17.578125,
+                            "warning": 21.09375
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 16.40625,
+                            "ok": 24.609375
+                        },
+                        "normal": {
+                            "value": 35
+                        },
+                        "max": {
+                            "ok": 41.015625,
+                            "warning": 49.21875
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.3515625,
+                            "ok": 0.52734375
+                        },
+                        "normal": {
+                            "value": 0.75
+                        },
+                        "max": {
+                            "ok": 0.9140625,
+                            "warning": 1.0546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            },
+            "organic": {
+                "formulaId": "1",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 15.5,
+                        "max": 19.375
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.66666666666667
+                    },
+                    "so4": {
+                        "value": 1.5,
+                        "max": 2
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 0.75,
+                        "max": 1.5
+                    },
+                    "k": {
+                        "value": 6,
+                        "max": 7.74193548387097
+                    },
+                    "ca": {
+                        "value": 3.75,
+                        "max": 4.53629032258065
+                    },
+                    "mg": {
+                        "value": 2.75,
+                        "max": 3.36111111111111
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 7.03125,
+                            "ok": 10.546875
+                        },
+                        "normal": {
+                            "value": 15
+                        },
+                        "max": {
+                            "ok": 17.578125,
+                            "warning": 21.09375
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 16.40625,
+                            "ok": 24.609375
+                        },
+                        "normal": {
+                            "value": 35
+                        },
+                        "max": {
+                            "ok": 41.015625,
+                            "warning": 49.21875
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.3515625,
+                            "ok": 0.52734375
+                        },
+                        "normal": {
+                            "value": 0.75
+                        },
+                        "max": {
+                            "ok": 0.9140625,
+                            "warning": 1.0546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            }
+        },
+        "stages": [{
+                "id": "21",
+                "name": "Filling of mats",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0.15,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": -0.35,
+                        "k": -2,
+                        "ca": 0.75,
+                        "mg": 0.5
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 10,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "22",
+                "name": "First 4 weeks",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0.1,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0.1,
+                        "k": -1,
+                        "ca": 0.5,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 10,
+                        "b": 10,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "23",
+                "name": "Standard",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0,
+                        "k": 0,
+                        "ca": 0,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "24",
+                "name": "Heavy fruit load",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 2,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0,
+                        "k": 2,
+                        "ca": 0,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Gerbera",
+        "solutions": {
+            "hydro": {
+                "formulaId": "2",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 10.25,
+                        "max": 13.8461538461538
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.625
+                    },
+                    "so4": {
+                        "value": 1.25,
+                        "max": 1.75
+                    },
+                    "cl": {
+                        "value": 1,
+                        "max": 1.5
+                    },
+                    "nh4": {
+                        "value": 1.5,
+                        "max": 1.5
+                    },
+                    "k": {
+                        "value": 5.5,
+                        "max": 8.25
+                    },
+                    "ca": {
+                        "value": 3,
+                        "max": 4.5
+                    },
+                    "mg": {
+                        "value": 1,
+                        "max": 1.5
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 16.40625,
+                            "ok": 24.609375
+                        },
+                        "normal": {
+                            "value": 35
+                        },
+                        "max": {
+                            "ok": 41.015625,
+                            "warning": 49.21875
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 14.0625,
+                            "ok": 21.09375
+                        },
+                        "normal": {
+                            "value": 30
+                        },
+                        "max": {
+                            "ok": 35.15625,
+                            "warning": 42.1875
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 1.875,
+                            "ok": 2.8125
+                        },
+                        "normal": {
+                            "value": 4
+                        },
+                        "max": {
+                            "ok": 4.6875,
+                            "warning": 5.625
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.3515625,
+                            "ok": 0.52734375
+                        },
+                        "normal": {
+                            "value": 0.75
+                        },
+                        "max": {
+                            "ok": 0.9140625,
+                            "warning": 1.0546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            },
+            "organic": {
+                "formulaId": "2",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 10,
+                        "max": 13.8461538461538
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.625
+                    },
+                    "so4": {
+                        "value": 1.5,
+                        "max": 2.1
+                    },
+                    "cl": {
+                        "value": 0.5,
+                        "max": 1.5
+                    },
+                    "nh4": {
+                        "value": 0.75,
+                        "max": 1.5
+                    },
+                    "k": {
+                        "value": 5,
+                        "max": 7.5
+                    },
+                    "ca": {
+                        "value": 3.25,
+                        "max": 4.875
+                    },
+                    "mg": {
+                        "value": 1.25,
+                        "max": 1.875
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 16.40625,
+                            "ok": 24.609375
+                        },
+                        "normal": {
+                            "value": 35
+                        },
+                        "max": {
+                            "ok": 41.015625,
+                            "warning": 49.21875
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 14.0625,
+                            "ok": 21.09375
+                        },
+                        "normal": {
+                            "value": 30
+                        },
+                        "max": {
+                            "ok": 35.15625,
+                            "warning": 42.1875
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 1.875,
+                            "ok": 2.8125
+                        },
+                        "normal": {
+                            "value": 4
+                        },
+                        "max": {
+                            "ok": 4.6875,
+                            "warning": 5.625
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.3515625,
+                            "ok": 0.52734375
+                        },
+                        "normal": {
+                            "value": 0.75
+                        },
+                        "max": {
+                            "ok": 0.9140625,
+                            "warning": 1.0546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            }
+        },
+        "stages": [{
+                "id": "31",
+                "name": "Filling of mats",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0.15,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": -0.35,
+                        "k": -2.5,
+                        "ca": 0.75,
+                        "mg": 0.75
+                    },
+                    "traceElements": {
+                        "fe": 5,
+                        "b": 10,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "32",
+                "name": "Start (first 2 months)",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0.1,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0.1,
+                        "k": -1,
+                        "ca": 0.5,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 10,
+                        "b": 10,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "33",
+                "name": "Standard",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0,
+                        "k": 0,
+                        "ca": 0,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "34",
+                "name": "Flowering",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 1,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0,
+                        "k": 1,
+                        "ca": 0,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Lettuce",
+        "solutions": {
+            "hydro": {
+                "formulaId": "4",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 16,
+                        "max": 23
+                    },
+                    "h2po4": {
+                        "value": 1.5,
+                        "max": 3.5
+                    },
+                    "so4": {
+                        "value": 2,
+                        "max": 1.5
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 1,
+                        "max": 1.25
+                    },
+                    "k": {
+                        "value": 9.5,
+                        "max": 14
+                    },
+                    "ca": {
+                        "value": 4.5,
+                        "max": 5.5
+                    },
+                    "mg": {
+                        "value": 1,
+                        "max": 1.5
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 18.75,
+                            "ok": 28.125
+                        },
+                        "normal": {
+                            "value": 40
+                        },
+                        "max": {
+                            "ok": 46.875,
+                            "warning": 56.25
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 18.75,
+                            "ok": 28.125
+                        },
+                        "normal": {
+                            "value": 40
+                        },
+                        "max": {
+                            "ok": 46.875,
+                            "warning": 56.25
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 3.28125,
+                            "ok": 4.921875
+                        },
+                        "normal": {
+                            "value": 7
+                        },
+                        "max": {
+                            "ok": 8.203125,
+                            "warning": 9.84375
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 3.28125,
+                            "ok": 4.921875
+                        },
+                        "normal": {
+                            "value": 7
+                        },
+                        "max": {
+                            "ok": 8.203125,
+                            "warning": 9.84375
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.46875,
+                            "ok": 0.703125
+                        },
+                        "normal": {
+                            "value": 1
+                        },
+                        "max": {
+                            "ok": 1.21875,
+                            "warning": 1.40625
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.46875,
+                            "ok": 0.703125
+                        },
+                        "normal": {
+                            "value": 1
+                        },
+                        "max": {
+                            "ok": 1.171875,
+                            "warning": 1.40625
+                        }
+                    }
+                }
+            },
+            "organic": {
+                "formulaId": "4",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 16,
+                        "max": 23
+                    },
+                    "h2po4": {
+                        "value": 1.5,
+                        "max": 3.5
+                    },
+                    "so4": {
+                        "value": 2,
+                        "max": 1.5
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 1,
+                        "max": 1.25
+                    },
+                    "k": {
+                        "value": 9.5,
+                        "max": 14
+                    },
+                    "ca": {
+                        "value": 4.5,
+                        "max": 5.5
+                    },
+                    "mg": {
+                        "value": 1,
+                        "max": 1.5
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 18.75,
+                            "ok": 28.125
+                        },
+                        "normal": {
+                            "value": 40
+                        },
+                        "max": {
+                            "ok": 46.875,
+                            "warning": 56.25
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 18.75,
+                            "ok": 28.125
+                        },
+                        "normal": {
+                            "value": 40
+                        },
+                        "max": {
+                            "ok": 46.875,
+                            "warning": 56.25
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 3.28125,
+                            "ok": 4.921875
+                        },
+                        "normal": {
+                            "value": 7
+                        },
+                        "max": {
+                            "ok": 8.203125,
+                            "warning": 9.84375
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 3.28125,
+                            "ok": 4.921875
+                        },
+                        "normal": {
+                            "value": 7
+                        },
+                        "max": {
+                            "ok": 8.203125,
+                            "warning": 9.84375
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.46875,
+                            "ok": 0.703125
+                        },
+                        "normal": {
+                            "value": 1
+                        },
+                        "max": {
+                            "ok": 1.21875,
+                            "warning": 1.40625
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.46875,
+                            "ok": 0.703125
+                        },
+                        "normal": {
+                            "value": 1
+                        },
+                        "max": {
+                            "ok": 1.171875,
+                            "warning": 1.40625
+                        }
+                    }
+                }
+            }
+        },
+        "stages": [{
+            "id": "41",
+            "name": "Standard",
+            "corrections": {
+                "macroElements": {
+                    "no3": 0,
+                    "h2po4": 0,
+                    "so4": 0,
+                    "nh4": 0,
+                    "k": 0,
+                    "ca": 0,
+                    "mg": 0
+                },
+                "traceElements": {
+                    "fe": 0,
+                    "b": 0,
+                    "mn": 0,
+                    "zn": 0,
+                    "cu": 0,
+                    "mo": 0
+                }
+            },
+            "ph": [5.6, 6.2],
+            "alerts": {
+                "ec": {
+                    "high": "Sufficient flushing with water necessary.",
+                    "tooHigh": "Not suitable for greenhouse cultivation.",
+                    "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                },
+                "na": {
+                    "high": "Sufficient flushing with water necessary.",
+                    "tooHigh": "Not suitable for greenhouse cultivation.",
+                    "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                },
+                "cl": {
+                    "high": "Sufficient flushing with water necessary.",
+                    "tooHigh": "Not suitable for greenhouse cultivation.",
+                    "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                },
+                "so4": {
+                    "high": "Be careful with spraying on leaves.",
+                    "tooHigh": "",
+                    "veryHigh": ""
+                },
+                "ph": {
+                    "tooLow": "Increase pH."
+                },
+                "fe": {
+                    "tooHigh": "Install a sandfilter."
+                },
+                "b": {
+                    "tooHigh": "Water not suitable for standard NPK use."
+                },
+                "zn": {
+                    "tooHigh": "Water not suitable for standard NPK use."
+                },
+                "mn": {
+                    "tooHigh": "Water not suitable for standard NPK use."
+                },
+                "cu": {
+                    "tooHigh": "Water not suitable for standard NPK use."
+                }
+            }
+        }]
+    },
+    {
+        "id": "5",
+        "name": "Melon",
+        "solutions": {
+            "hydro": {
+                "formulaId": "1",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 16,
+                        "max": 21.3333333333333
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.66666666666667
+                    },
+                    "so4": {
+                        "value": 1.375,
+                        "max": 1.76785714285714
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 1.25,
+                        "max": 1.25
+                    },
+                    "k": {
+                        "value": 8,
+                        "max": 10
+                    },
+                    "ca": {
+                        "value": 4,
+                        "max": 4.92307692307692
+                    },
+                    "mg": {
+                        "value": 1.375,
+                        "max": 1.83333333333333
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 7.03125,
+                            "ok": 10.546875
+                        },
+                        "normal": {
+                            "value": 15
+                        },
+                        "max": {
+                            "ok": 17.578125,
+                            "warning": 21.09375
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 11.71875,
+                            "ok": 17.578125
+                        },
+                        "normal": {
+                            "value": 25
+                        },
+                        "max": {
+                            "ok": 29.296875,
+                            "warning": 35.15625
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.3515625,
+                            "ok": 0.52734375
+                        },
+                        "normal": {
+                            "value": 0.75
+                        },
+                        "max": {
+                            "ok": 0.9140625,
+                            "warning": 1.0546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            },
+            "organic": {
+                "formulaId": "1",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 16.25,
+                        "max": 21.6666666666667
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.66666666666667
+                    },
+                    "so4": {
+                        "value": 1.5,
+                        "max": 1.92857142857143
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 1,
+                        "max": 1.25
+                    },
+                    "k": {
+                        "value": 7.5,
+                        "max": 9.375
+                    },
+                    "ca": {
+                        "value": 4.75,
+                        "max": 5.84615384615385
+                    },
+                    "mg": {
+                        "value": 1.25,
+                        "max": 1.66666666666667
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 7.03125,
+                            "ok": 10.546875
+                        },
+                        "normal": {
+                            "value": 15
+                        },
+                        "max": {
+                            "ok": 17.578125,
+                            "warning": 21.09375
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 11.71875,
+                            "ok": 17.578125
+                        },
+                        "normal": {
+                            "value": 25
+                        },
+                        "max": {
+                            "ok": 29.296875,
+                            "warning": 35.15625
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.3515625,
+                            "ok": 0.52734375
+                        },
+                        "normal": {
+                            "value": 0.75
+                        },
+                        "max": {
+                            "ok": 0.9140625,
+                            "warning": 1.0546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            }
+        },
+        "stages": [{
+                "id": "51",
+                "name": "Standard",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0,
+                        "k": 0,
+                        "ca": 0,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "na": {
+                        "high": "",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "cl": {
+                        "high": "",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "so4": {
+                        "high": "",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": ""
+                    },
+                    "fe": {
+                        "tooHigh": ""
+                    },
+                    "b": {
+                        "tooHigh": ""
+                    },
+                    "zn": {
+                        "tooHigh": ""
+                    },
+                    "mn": {
+                        "tooHigh": ""
+                    },
+                    "cu": {
+                        "tooHigh": ""
+                    }
+                }
+            },
+            {
+                "id": "52",
+                "name": "Start",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": -1,
+                        "k": -1,
+                        "ca": 0.5,
+                        "mg": 0.5
+                    },
+                    "traceElements": {
+                        "fe": 10,
+                        "b": 10,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "na": {
+                        "high": "",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "cl": {
+                        "high": "",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "so4": {
+                        "high": "",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": ""
+                    },
+                    "fe": {
+                        "tooHigh": ""
+                    },
+                    "b": {
+                        "tooHigh": ""
+                    },
+                    "zn": {
+                        "tooHigh": ""
+                    },
+                    "mn": {
+                        "tooHigh": ""
+                    },
+                    "cu": {
+                        "tooHigh": ""
+                    }
+                }
+            },
+            {
+                "id": "53",
+                "name": "Fruiting stage",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0,
+                        "k": 1,
+                        "ca": -0.5,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "na": {
+                        "high": "",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "cl": {
+                        "high": "",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "so4": {
+                        "high": "",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": ""
+                    },
+                    "fe": {
+                        "tooHigh": ""
+                    },
+                    "b": {
+                        "tooHigh": ""
+                    },
+                    "zn": {
+                        "tooHigh": ""
+                    },
+                    "mn": {
+                        "tooHigh": ""
+                    },
+                    "cu": {
+                        "tooHigh": ""
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "name": "Rose",
+        "solutions": {
+            "hydro": {
+                "formulaId": "2",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 10.75,
+                        "max": 13.76
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.66666666666667
+                    },
+                    "so4": {
+                        "value": 1.6,
+                        "max": 2.56
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 0.7,
+                        "max": 1.4
+                    },
+                    "k": {
+                        "value": 4.5,
+                        "max": 6.3
+                    },
+                    "ca": {
+                        "value": 3.4,
+                        "max": 4.76
+                    },
+                    "mg": {
+                        "value": 1.6,
+                        "max": 2.56
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 16.40625,
+                            "ok": 24.609375
+                        },
+                        "normal": {
+                            "value": 35
+                        },
+                        "max": {
+                            "ok": 41.015625,
+                            "warning": 49.21875
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 16.40625,
+                            "ok": 24.609375
+                        },
+                        "normal": {
+                            "value": 35
+                        },
+                        "max": {
+                            "ok": 41.015625,
+                            "warning": 49.21875
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 3.28125,
+                            "ok": 4.921875
+                        },
+                        "normal": {
+                            "value": 7
+                        },
+                        "max": {
+                            "ok": 8.203125,
+                            "warning": 9.84375
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 1.640625,
+                            "ok": 2.4609375
+                        },
+                        "normal": {
+                            "value": 3.5
+                        },
+                        "max": {
+                            "ok": 4.1015625,
+                            "warning": 4.921875
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.515625,
+                            "ok": 0.7734375
+                        },
+                        "normal": {
+                            "value": 1.1
+                        },
+                        "max": {
+                            "ok": 1.340625,
+                            "warning": 1.546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.46875,
+                            "ok": 0.703125
+                        },
+                        "normal": {
+                            "value": 1
+                        },
+                        "max": {
+                            "ok": 1.171875,
+                            "warning": 1.40625
+                        }
+                    }
+                }
+            },
+            "organic": {
+                "formulaId": "2",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 11.25,
+                        "max": 14.4
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.66666666666667
+                    },
+                    "so4": {
+                        "value": 1.75,
+                        "max": 2.8
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 0.75,
+                        "max": 1.4
+                    },
+                    "k": {
+                        "value": 4.25,
+                        "max": 5.95
+                    },
+                    "ca": {
+                        "value": 3.75,
+                        "max": 5.25
+                    },
+                    "mg": {
+                        "value": 1.75,
+                        "max": 2.8
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 16.40625,
+                            "ok": 24.609375
+                        },
+                        "normal": {
+                            "value": 35
+                        },
+                        "max": {
+                            "ok": 41.015625,
+                            "warning": 49.21875
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 16.40625,
+                            "ok": 24.609375
+                        },
+                        "normal": {
+                            "value": 35
+                        },
+                        "max": {
+                            "ok": 41.015625,
+                            "warning": 49.21875
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 3.28125,
+                            "ok": 4.921875
+                        },
+                        "normal": {
+                            "value": 7
+                        },
+                        "max": {
+                            "ok": 8.203125,
+                            "warning": 9.84375
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 1.640625,
+                            "ok": 2.4609375
+                        },
+                        "normal": {
+                            "value": 3.5
+                        },
+                        "max": {
+                            "ok": 4.1015625,
+                            "warning": 4.921875
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.515625,
+                            "ok": 0.7734375
+                        },
+                        "normal": {
+                            "value": 1.1
+                        },
+                        "max": {
+                            "ok": 1.340625,
+                            "warning": 1.546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.46875,
+                            "ok": 0.703125
+                        },
+                        "normal": {
+                            "value": 1
+                        },
+                        "max": {
+                            "ok": 1.171875,
+                            "warning": 1.40625
+                        }
+                    }
+                }
+            }
+        }
+
+        ,
+
+        "stages": [{
+                "id": "61",
+                "name": "Filling of mats",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0.15,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": -0.35,
+                        "k": -2.5,
+                        "ca": 0.75,
+                        "mg": 0.75
+                    },
+                    "traceElements": {
+                        "fe": 5,
+                        "b": 10,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "62",
+                "name": "First 3 months (vegetative)",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0.1,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0.1,
+                        "k": -1,
+                        "ca": 0.5,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 10,
+                        "b": 10,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "63",
+                "name": "Standard",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0,
+                        "k": 0,
+                        "ca": 0,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "64",
+                "name": "Flowering",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 1,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0,
+                        "k": 1,
+                        "ca": 0,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "name": "Strawberry",
+        "solutions": {
+            "hydro": {
+                "formulaId": "5",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 12,
+                        "max": 16.8
+                    },
+                    "h2po4": {
+                        "value": 1,
+                        "max": 1.5
+                    },
+                    "so4": {
+                        "value": 1.5,
+                        "max": 2
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 1,
+                        "max": 1.2
+                    },
+                    "k": {
+                        "value": 4.8,
+                        "max": 8
+                    },
+                    "ca": {
+                        "value": 3.6,
+                        "max": 4
+                    },
+                    "mg": {
+                        "value": 1.5,
+                        "max": 1.6
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 14.0625,
+                            "ok": 21.09375
+                        },
+                        "normal": {
+                            "value": 30
+                        },
+                        "max": {
+                            "ok": 35.15625,
+                            "warning": 42.1875
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 3.28125,
+                            "ok": 4.921875
+                        },
+                        "normal": {
+                            "value": 7
+                        },
+                        "max": {
+                            "ok": 8.203125,
+                            "warning": 9.84375
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.3515625,
+                            "ok": 0.52734375
+                        },
+                        "normal": {
+                            "value": 0.75
+                        },
+                        "max": {
+                            "ok": 0.9140625,
+                            "warning": 1.0546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            },
+            "organic": {
+                "formulaId": "5",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 11.75,
+                        "max": 16.8
+                    },
+                    "h2po4": {
+                        "value": 1,
+                        "max": 1.5
+                    },
+                    "so4": {
+                        "value": 1.5,
+                        "max": 2
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 0.75,
+                        "max": 1.2
+                    },
+                    "k": {
+                        "value": 4.5,
+                        "max": 8
+                    },
+                    "ca": {
+                        "value": 3.75,
+                        "max": 4
+                    },
+                    "mg": {
+                        "value": 1.5,
+                        "max": 1.6
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 14.0625,
+                            "ok": 21.09375
+                        },
+                        "normal": {
+                            "value": 30
+                        },
+                        "max": {
+                            "ok": 35.15625,
+                            "warning": 42.1875
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 3.28125,
+                            "ok": 4.921875
+                        },
+                        "normal": {
+                            "value": 7
+                        },
+                        "max": {
+                            "ok": 8.203125,
+                            "warning": 9.84375
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.3515625,
+                            "ok": 0.52734375
+                        },
+                        "normal": {
+                            "value": 0.75
+                        },
+                        "max": {
+                            "ok": 0.9140625,
+                            "warning": 1.0546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            }
+        },
+        "stages": [{
+                "id": "71",
+                "name": "First 2 months",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0.05,
+                        "h2po4": -0.05,
+                        "so4": 0,
+                        "nh4": 0.2,
+                        "k": -0.6,
+                        "ca": 0.25,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 10,
+                        "b": 10,
+                        "mn": 5,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "72",
+                "name": "Standard",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0,
+                        "k": 0,
+                        "ca": 0,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "73",
+                "name": "Fruiting stage",
+                "corrections": {
+                    "macroElements": {
+                        "no3": -0.14,
+                        "h2po4": 0.1,
+                        "so4": 0,
+                        "nh4": -0.04,
+                        "k": 0.4,
+                        "ca": -0.2,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "id": "8",
+        "name": "Sweet Pepper",
+        "solutions": {
+            "hydro": {
+                "formulaId": "6",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 16,
+                        "max": 23.5294117647059
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.5625
+                    },
+                    "so4": {
+                        "value": 1.75,
+                        "max": 2.625
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 1,
+                        "max": 1.5
+                    },
+                    "k": {
+                        "value": 6.75,
+                        "max": 10.8
+                    },
+                    "ca": {
+                        "value": 5,
+                        "max": 5.88235294117647
+                    },
+                    "mg": {
+                        "value": 1.5,
+                        "max": 2
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 7.03125,
+                            "ok": 10.546875
+                        },
+                        "normal": {
+                            "value": 15
+                        },
+                        "max": {
+                            "ok": 17.578125,
+                            "warning": 21.09375
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 14.0625,
+                            "ok": 21.09375
+                        },
+                        "normal": {
+                            "value": 30
+                        },
+                        "max": {
+                            "ok": 35.15625,
+                            "warning": 42.1875
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.46875,
+                            "ok": 0.703125
+                        },
+                        "normal": {
+                            "value": 1
+                        },
+                        "max": {
+                            "ok": 1.21875,
+                            "warning": 1.40625
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            },
+            "organic": {
+                "formulaId": "6",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 16,
+                        "max": 23.5294117647059
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.5625
+                    },
+                    "so4": {
+                        "value": 1.75,
+                        "max": 2.625
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 1.05,
+                        "max": 1.5
+                    },
+                    "k": {
+                        "value": 6.2,
+                        "max": 9.92
+                    },
+                    "ca": {
+                        "value": 5.25,
+                        "max": 6.17647058823529
+                    },
+                    "mg": {
+                        "value": 1.5,
+                        "max": 2
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 14.0625,
+                            "ok": 21.09375
+                        },
+                        "normal": {
+                            "value": 30
+                        },
+                        "max": {
+                            "ok": 35.15625,
+                            "warning": 42.1875
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 14.0625,
+                            "ok": 21.09375
+                        },
+                        "normal": {
+                            "value": 30
+                        },
+                        "max": {
+                            "ok": 35.15625,
+                            "warning": 42.1875
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.46875,
+                            "ok": 0.703125
+                        },
+                        "normal": {
+                            "value": 1
+                        },
+                        "max": {
+                            "ok": 1.21875,
+                            "warning": 1.40625
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            }
+        },
+        "stages": [{
+                "id": "81",
+                "name": "Filling of mats",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 1.15,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0.15,
+                        "k": -2,
+                        "ca": 1,
+                        "mg": 0.5
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 16,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 16,
+                        "mo": 16
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "82",
+                "name": "First 3 weeks",
+                "corrections": {
+                    "macroElements": {
+                        "no3": -0.15,
+                        "h2po4": 0.25,
+                        "so4": 0,
+                        "nh4": 0.1,
+                        "k": -1,
+                        "ca": 0.5,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 10,
+                        "b": 10,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "83",
+                "name": "Till harvest first fruit",
+                "corrections": {
+                    "macroElements": {
+                        "no3": -0.25,
+                        "h2po4": 0.25,
+                        "so4": 0,
+                        "nh4": 0,
+                        "k": 0,
+                        "ca": 0,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "84",
+                "name": "Heavy fruit load",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0,
+                        "k": 1,
+                        "ca": -0.5,
+                        "mg": 0
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "id": "9",
+        "name": "Tomato",
+        "solutions": {
+            "hydro": {
+                "formulaId": "6",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 17,
+                        "max": 20.695652173913
+                    },
+                    "h2po4": {
+                        "value": 1.5,
+                        "max": 3
+                    },
+                    "so4": {
+                        "value": 3.4,
+                        "max": 5.82352941176471
+                    },
+                    "cl": {
+                        "value": 1,
+                        "max": 1.66666666666667
+                    },
+                    "nh4": {
+                        "value": 1.2,
+                        "max": 1.5
+                    },
+                    "k": {
+                        "value": 9.5,
+                        "max": 11.875
+                    },
+                    "ca": {
+                        "value": 5.4,
+                        "max": 6.48
+                    },
+                    "mg": {
+                        "value": 2.4,
+                        "max": 3.46666666666667
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 7.03125,
+                            "ok": 10.546875
+                        },
+                        "normal": {
+                            "value": 15
+                        },
+                        "max": {
+                            "ok": 17.578125,
+                            "warning": 21.09375
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 14.0625,
+                            "ok": 21.09375
+                        },
+                        "normal": {
+                            "value": 30
+                        },
+                        "max": {
+                            "ok": 35.15625,
+                            "warning": 42.1875
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.3515625,
+                            "ok": 0.52734375
+                        },
+                        "normal": {
+                            "value": 0.75
+                        },
+                        "max": {
+                            "ok": 0.9140625,
+                            "warning": 1.0546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            },
+            "organic": {
+                "formulaId": "6",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 16.8,
+                        "max": 20.4521739130435
+                    },
+                    "h2po4": {
+                        "value": 1.5,
+                        "max": 3
+                    },
+                    "so4": {
+                        "value": 3.4,
+                        "max": 5.82352941176471
+                    },
+                    "cl": {
+                        "value": 1,
+                        "max": 1.66666666666667
+                    },
+                    "nh4": {
+                        "value": 1,
+                        "max": 1.25
+                    },
+                    "k": {
+                        "value": 9.3,
+                        "max": 11.625
+                    },
+                    "ca": {
+                        "value": 5.5,
+                        "max": 6.6
+                    },
+                    "mg": {
+                        "value": 2.4,
+                        "max": 3.46666666666667
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 14.0625,
+                            "ok": 21.09375
+                        },
+                        "normal": {
+                            "value": 30
+                        },
+                        "max": {
+                            "ok": 35.15625,
+                            "warning": 42.1875
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 14.0625,
+                            "ok": 21.09375
+                        },
+                        "normal": {
+                            "value": 30
+                        },
+                        "max": {
+                            "ok": 35.15625,
+                            "warning": 42.1875
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.3515625,
+                            "ok": 0.52734375
+                        },
+                        "normal": {
+                            "value": 0.75
+                        },
+                        "max": {
+                            "ok": 0.9140625,
+                            "warning": 1.0546875
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            }
+        },
+        "stages": [{
+                "id": "91",
+                "name": "Filling of mats",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 0.3,
+                        "h2po4": -0.5,
+                        "so4": 0.25,
+                        "nh4": -0.9,
+                        "k": -3.8,
+                        "ca": 1.5,
+                        "mg": 1
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 10,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "92",
+                "name": "Start till flowering 3th cluster",
+                "corrections": {
+                    "macroElements": {
+                        "no3": 1.1,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": 0.1,
+                        "k": -1,
+                        "ca": 0.5,
+                        "mg": 0.5
+                    },
+                    "traceElements": {
+                        "fe": 10,
+                        "b": 10,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "93",
+                "name": "Flowering 3th to 5th cluster",
+                "corrections": {
+                    "macroElements": {
+                        "no3": -0.025,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": -0.025,
+                        "k": 0.5,
+                        "ca": -0.125,
+                        "mg": -0.125
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "94",
+                "name": "Flowering 5th to 10th cluster",
+                "corrections": {
+                    "macroElements": {
+                        "no3": -0.125,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": -0.125,
+                        "k": 1.75,
+                        "ca": -0.625,
+                        "mg": -0.25
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            },
+            {
+                "id": "95",
+                "name": "Till end harvest",
+                "corrections": {
+                    "macroElements": {
+                        "no3": -0.025,
+                        "h2po4": 0,
+                        "so4": 0,
+                        "nh4": -0.025,
+                        "k": 0.5,
+                        "ca": -0.125,
+                        "mg": -0.125
+                    },
+                    "traceElements": {
+                        "fe": 0,
+                        "b": 0,
+                        "mn": 0,
+                        "zn": 0,
+                        "cu": 0,
+                        "mo": 0
+                    }
+                },
+                "ph": [5.6, 6.2],
+                "alerts": {
+                    "ec": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "na": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "cl": {
+                        "high": "Sufficient flushing with water necessary.",
+                        "tooHigh": "Not suitable for greenhouse cultivation.",
+                        "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                    },
+                    "so4": {
+                        "high": "Be careful with spraying on leaves.",
+                        "tooHigh": "",
+                        "veryHigh": ""
+                    },
+                    "ph": {
+                        "tooLow": "Increase pH."
+                    },
+                    "fe": {
+                        "tooHigh": "Install a sandfilter."
+                    },
+                    "b": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "zn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "mn": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    },
+                    "cu": {
+                        "tooHigh": "Water not suitable for standard NPK use."
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Young Plants",
+        "solutions": {
+            "hydro": {
+                "formulaId": "6",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 16.75,
+                        "max": 24
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.25
+                    },
+                    "so4": {
+                        "value": 2.5,
+                        "max": 4
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 1.25,
+                        "max": 1.25
+                    },
+                    "k": {
+                        "value": 6.75,
+                        "max": 9
+                    },
+                    "ca": {
+                        "value": 4.5,
+                        "max": 5.5
+                    },
+                    "mg": {
+                        "value": 3,
+                        "max": 5
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 11.71875,
+                            "ok": 17.578125
+                        },
+                        "normal": {
+                            "value": 25
+                        },
+                        "max": {
+                            "ok": 29.296875,
+                            "warning": 35.15625
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 16.40625,
+                            "ok": 24.609375
+                        },
+                        "normal": {
+                            "value": 35
+                        },
+                        "max": {
+                            "ok": 41.015625,
+                            "warning": 49.21875
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.46875,
+                            "ok": 0.703125
+                        },
+                        "normal": {
+                            "value": 1
+                        },
+                        "max": {
+                            "ok": 1.21875,
+                            "warning": 1.40625
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            },
+            "organic": {
+                "formulaId": "6",
+                "substrateId": 0,
+                "macroElements": {
+                    "no3": {
+                        "value": 16.75,
+                        "max": 24
+                    },
+                    "h2po4": {
+                        "value": 1.25,
+                        "max": 1.25
+                    },
+                    "so4": {
+                        "value": 2.5,
+                        "max": 4
+                    },
+                    "cl": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "nh4": {
+                        "value": 1.25,
+                        "max": 1.25
+                    },
+                    "k": {
+                        "value": 6.75,
+                        "max": 9
+                    },
+                    "ca": {
+                        "value": 4.5,
+                        "max": 5.5
+                    },
+                    "mg": {
+                        "value": 3,
+                        "max": 5
+                    }
+                },
+                "traceElements": {
+                    "fe": {
+                        "min": {
+                            "warning": 11.71875,
+                            "ok": 17.578125
+                        },
+                        "normal": {
+                            "value": 25
+                        },
+                        "max": {
+                            "ok": 29.296875,
+                            "warning": 35.15625
+                        }
+                    },
+                    "b": {
+                        "min": {
+                            "warning": 16.40625,
+                            "ok": 24.609375
+                        },
+                        "normal": {
+                            "value": 35
+                        },
+                        "max": {
+                            "ok": 41.015625,
+                            "warning": 49.21875
+                        }
+                    },
+                    "mn": {
+                        "min": {
+                            "warning": 4.6875,
+                            "ok": 7.03125
+                        },
+                        "normal": {
+                            "value": 10
+                        },
+                        "max": {
+                            "ok": 11.71875,
+                            "warning": 14.0625
+                        }
+                    },
+                    "zn": {
+                        "min": {
+                            "warning": 2.34375,
+                            "ok": 3.515625
+                        },
+                        "normal": {
+                            "value": 5
+                        },
+                        "max": {
+                            "ok": 5.859375,
+                            "warning": 7.03125
+                        }
+                    },
+                    "cu": {
+                        "min": {
+                            "warning": 0.46875,
+                            "ok": 0.703125
+                        },
+                        "normal": {
+                            "value": 1
+                        },
+                        "max": {
+                            "ok": 1.21875,
+                            "warning": 1.40625
+                        }
+                    },
+                    "mo": {
+                        "min": {
+                            "warning": 0.234375,
+                            "ok": 0.3515625
+                        },
+                        "normal": {
+                            "value": 0.5
+                        },
+                        "max": {
+                            "ok": 0.5859375,
+                            "warning": 0.703125
+                        }
+                    }
+                }
+            }
+        },
+        "stages": [{
+            "id": "101",
+            "name": "Standard",
+            "corrections": {
+                "macroElements": {
+                    "no3": 0,
+                    "h2po4": 0,
+                    "so4": 0,
+                    "nh4": 0,
+                    "k": 0,
+                    "ca": 0,
+                    "mg": 0
+                },
+                "traceElements": {
+                    "fe": 0,
+                    "b": 0,
+                    "mn": 0,
+                    "zn": 0,
+                    "cu": 0,
+                    "mo": 0
+                }
+            },
+            "ph": [5.6, 6.2],
+            "alerts": {
+                "ec": {
+                    "high": "Sufficient flushing with water necessary.",
+                    "tooHigh": "Not suitable for greenhouse cultivation.",
+                    "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                },
+                "na": {
+                    "high": "Sufficient flushing with water necessary.",
+                    "tooHigh": "Not suitable for greenhouse cultivation.",
+                    "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                },
+                "cl": {
+                    "high": "Sufficient flushing with water necessary.",
+                    "tooHigh": "Not suitable for greenhouse cultivation.",
+                    "veryHigh": "Only suitable for soil-grown non-salt sensitive crops."
+                },
+                "so4": {
+                    "high": "Be careful with spraying on leaves.",
+                    "tooHigh": "",
+                    "veryHigh": ""
+                },
+                "ph": {
+                    "tooLow": "Increase pH."
+                },
+                "fe": {
+                    "tooHigh": "Install a sandfilter."
+                },
+                "b": {
+                    "tooHigh": "Water not suitable for standard NPK use."
+                },
+                "zn": {
+                    "tooHigh": "Water not suitable for standard NPK use."
+                },
+                "mn": {
+                    "tooHigh": "Water not suitable for standard NPK use."
+                },
+                "cu": {
+                    "tooHigh": "Water not suitable for standard NPK use."
+                }
+            }
+        }]
+    }
+ ]

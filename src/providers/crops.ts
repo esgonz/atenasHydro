@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
 import { Crop } from '../models/crop';
-import { CropStage } from '../models/cropStage';
-import { CropSolution } from '../models/cropSolution';
+import { CropStage } from '../models/cropstage';
+import { CropSolution } from '../models/cropsolution';
 @Injectable()
 export class CropsProvider {
   /*
@@ -103,8 +103,9 @@ export class CropsProvider {
           //this.instance = data;
           var arrayNewCrops = [];
           
-          for (var i = data.length - 1; i >= 0; i--) {
-            arrayNewCrops.push(new Crop (data[i].id, data[i].name, data[i].solutions, data[i].stages));
+          for (var i = 0; i < data.length ; i++) {
+            let auxCrop = new Crop (data[i].id, data[i].name, data[i].solutions, data[i].stages);
+            arrayNewCrops.push(auxCrop);
           }
           this.instance = arrayNewCrops;
           this.setDictionary();
@@ -129,8 +130,8 @@ export class CropsProvider {
    */
   setDictionary (){
     console.log("cropProvider", "setDictionary");
-    for (var i = this.instance.length - 1; i >= 0; i--) {
-      this.cropsDict[this.instance[i].id] = new Crop (this.instance[i].id, this.instance[i].name, this.instance[i].solutions, this.instance[i].stages);
+    for (var i = 0; i <  this.instance.length ; i++) {
+      this.cropsDict[this.instance[i].id] = this.instance[i];
     }
   }
 
@@ -141,8 +142,8 @@ export class CropsProvider {
   getAllCrops(){
     console.log("cropProvider", "getAllCrops");
     var arrayNewCrops = [];
-    for (var i = this.instance.length - 1; i >= 0; i--) {
-      arrayNewCrops.push(new Crop (this.instance[i].id, this.instance[i].name, this.instance[i].solutions, this.instance[i].stages));
+    for (var i = 0; i <  this.instance.length ; i++) {
+      arrayNewCrops.push(this.instance[i])
     }
     
     return arrayNewCrops;

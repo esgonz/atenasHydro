@@ -18,4 +18,4 @@ export const MainResultPage = TabsResultPage;
 export const TabResultBasic 	= ResultBasic;
 export const TabResultWater 	= ResultWaterAnalysis;
 export const TabResultSolution 	= ResultSolution;
-export const tabResultScheme 	= ResultScheme;
+export const TabResultScheme 	= ResultScheme;

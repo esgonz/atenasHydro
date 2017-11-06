@@ -18,7 +18,9 @@ import { NewCropSelect } from '../pages/new-crop-select/new-crop-select';
 import { TabsResultPage } from '../pages/tabs-results/tabs-results';
 import { ResultBasic } from '../pages/result-basic/result-basic';
 import { ResultWaterAnalysis } from '../pages/result-water-analysis/result-water-analysis';
-
+import { ResultSolution } from '../pages/result-solution/result-solution';
+import { ResultScheme } from '../pages/result-scheme/result-scheme';
+ResultScheme
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/settings';
@@ -63,6 +65,8 @@ export function provideSettings(storage: Storage) {
     NewWaterAnalysis,    
     ResultBasic,
     ResultWaterAnalysis,
+    ResultSolution,
+    ResultScheme,
     TabsResultPage,
   ],
   imports: [
@@ -87,6 +91,8 @@ export function provideSettings(storage: Storage) {
     NewWaterAnalysis,   
     ResultBasic,
     ResultWaterAnalysis,
+    ResultSolution,
+    ResultScheme,
     TabsResultPage
   
   ],

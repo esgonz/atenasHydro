@@ -13,6 +13,7 @@ import { NewCropSelect } from '../pages/new-crop-select/new-crop-select';
 
 import { ResultWaterAnalysis } from '../pages/result-water-analysis/result-water-analysis';
 import { ResultBasic } from '../pages/result-basic/result-basic';
+import { ResultSolution } from '../pages/result-solution/result-solution';
 import { TabsResultPage } from '../pages/tabs-results/tabs-results';
 
 /*imports providersa y usefuls classs*/

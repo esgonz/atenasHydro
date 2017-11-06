@@ -49,10 +49,4 @@ export class CropStage {
 
   poblateTable(){
   }
-
-
-
-
-
-
 }

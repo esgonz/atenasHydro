@@ -13,7 +13,7 @@ export class ResultWaterAnalysis {
   constructor(public navCtrl: NavController, 
 		public programProvider : ProgramProvider, public formulasProvider : FormulasProvider ){
    		
-   		programProvider.setCalculationsValues(formulasProvider);
+   		
    		
   }
 }

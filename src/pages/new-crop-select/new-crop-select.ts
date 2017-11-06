@@ -7,8 +7,8 @@ import { ProgramProvider } from '../../providers/programs';
 import { PagesProvider } from '../../providers/pages';
 
 import { Crop } from '../../models/crop';
-import { CropStage } from '../../models/cropStage';
-import { CropSolution } from '../../models/cropSolution';
+import { CropStage } from '../../models/cropstage';
+import { CropSolution } from '../../models/cropsolution';
 /**
 * The Welcome Page is a splash page that quickly describes the app,
 * and then directs the user to create an account or log in.
@@ -98,6 +98,7 @@ export class NewCropSelect implements OnInit{
             this.data.cropObj = this.selectedCrop;
             this.data.stageId = this.selectedStageId;
             this.updateProgramInformation();
+            
             var pageAnalysis = { title: 'Input Data Table', component: NewAnalysisInformation,  iconClass: 'iconinput'  };
             this.pagesProvider.add(pageAnalysis);
             this.pagesProvider.add({ title: 'Add Water Analysis', component: NewWaterAnalysis, iconClass: 'iconwatter'   });

@@ -161,10 +161,14 @@ import { PagesProvider } from '../../providers/pages';
  		},
  	};
 
+    targetEC = 0;
+
  	constructor(public navCtrl: NavController, 
                 public programProvider : ProgramProvider,
                 private pagesProvider: PagesProvider) { 
-         this.data = programProvider.getInstance().analysisInformation;
+        this.data = programProvider.getInstance().analysisInformation;
+        this.targetEC = programProvider.getInstance().setBaseValues();
+        
 
         if (this.data.acidSource.id!="") {
             this.acidChoise = this.data.acidSource.id;            

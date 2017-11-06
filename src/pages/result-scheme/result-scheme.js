@@ -7,28 +7,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
-import { Api } from './api';
-var Items = (function () {
-    function Items(http, api) {
-        this.http = http;
-        this.api = api;
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { ProgramProvider } from '../../providers/programs';
+var ResultScheme = /** @class */ (function () {
+    function ResultScheme(navCtrl, programProvider) {
+        this.navCtrl = navCtrl;
+        this.programProvider = programProvider;
     }
-    Items.prototype.query = function (params) {
-        return this.api.get('/items', params)
-            .map(function (resp) { return resp.json(); });
+    ResultScheme.prototype.ngOnInit = function () {
     };
-    Items.prototype.add = function (item) {
-    };
-    Items.prototype.delete = function (item) {
-    };
-    return Items;
+    ResultScheme = __decorate([
+        Component({
+            selector: 'tab-result-scheme',
+            templateUrl: 'result-of-fertigation-scheme.html'
+        }),
+        __metadata("design:paramtypes", [NavController,
+            ProgramProvider])
+    ], ResultScheme);
+    return ResultScheme;
 }());
-Items = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [Http, Api])
-], Items);
-export { Items };
-//# sourceMappingURL=items.js.map
+export { ResultScheme };
+//# sourceMappingURL=result-scheme.js.map

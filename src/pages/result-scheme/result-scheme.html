@@ -24,46 +24,28 @@
 <ion-content scroll="false">
   <ion-grid>
     <ion-row justify-content-start>
-      <!-- primera columna / contenido izquierdo-->
-      <!--<ion-col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 class="menu-lateral-movil backgroundSecondary" showWhen="landscape" hideWhen="portrait">
-        <div class="menuLateralList">
-          <button ion-button full clear color="black" class="buttonmenu" id="select-crop"><span class="icongrow"></span>Select crop and growth stage</button>
-			
-          <button ion-button full clear color="black" class="buttonmenu" id="data-inp"><span class="iconinput"></span>Input data</button>
-			
-          <button ion-button full clear color="black" class="buttonmenu" id="ferti-prog"><span class="iconprogramme"></span>Fertigation programme</button>
-			
-        <div>
-          <button ion-button full clear color="black" id="add-water" class="buttonmenu2"><span class="icongrower"></span>Grower info</button>
-			
-          <button ion-button full clear color="black" id="add-water" class="buttonmenu2"><span class="iconwaterresult"></span>Result of water analysis</button>
-			
-          <button ion-button full clear color="black" id="add-water" class="buttonmenu2"><span class="iconfertisol"></span>Result of fertigation solution</button>
-			
-          <button ion-button full clear color="black" id="add-water" class="buttonmenu2"><span class="iconfertische"></span>Result of fertigation scheme</button>
-		</div>
-		  </div>
-        </ion-col>-->
+
         <!-- segunda columna -->
         <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12>
             <!--<ion-row>
               <h6>Water analysis data &amp; molar calculation</h6>
             </ion-row>-->
+
+
+           
+           
+
+
+
           <ion-row class="backtablegrey">
               <ion-col>
                 Fertigation scheme A - Tank
               </ion-col>
           </ion-row>
-          <ion-row class="backtable">
+          <ion-row class="backtable" *ngFor="let product of programProvider.getDataSchemeResult().a" >
               <ion-col>
-                Ultrasol&reg; Calcium (15.5% N - 26% CaO)
-                <h5>63.1 kg</h5>
-              </ion-col>
-          </ion-row>
-          <ion-row class="backtablecolor">
-              <ion-col>
-                Calcium chloride anhydrous (solid)
-                <h5>2.8 kg</h5>
+                {{product.name}}
+                <h5>{{product.value}} {{product.unit}}</h5>
               </ion-col>
           </ion-row>
 
@@ -72,16 +54,11 @@
                 Fertigation scheme B - Tank
               </ion-col>
           </ion-row>
-          <ion-row class="backtable">
+          
+          <ion-row class="backtable" *ngFor="let product of programProvider.getDataSchemeResult().b" >
               <ion-col>
-                Ultrasol&reg; Flower Hydroponica
-                <h5>76.5 kg</h5>
-              </ion-col>
-          </ion-row>
-          <ion-row class="backtablecolor">
-              <ion-col>
-                Ultrasol&reg; Magsul 16%
-                <h5>19.4 kg</h5>
+                {{product.name}}
+                <h5>{{product.value}} {{product.unit}}</h5>
               </ion-col>
           </ion-row>
 
@@ -90,36 +67,12 @@
                 See remarks
               </ion-col>
           </ion-row>
-          <ion-row class="backtablered">
+          <ion-row class="backtablered" *ngFor="let alert of programProvider.getDataSchemeResult().alerts" >
               <ion-col>
-                Fe- content is very high! Risk for Fe-toxicity exists. The use Ultrasol® Crop for the selected crop and conditions is not recommended.
+               {{alert}}
               </ion-col>
           </ion-row>
-          <ion-row class="backtablered">
-              <ion-col>
-                B- content is very high! Risk for B-toxicity exists. The use Ultrasol® Crop for the selected crop and conditions is not recommended.
-              </ion-col>
-          </ion-row>
-          <ion-row class="backtablered">
-              <ion-col>
-                Mn- content is very high! Risk for Mn-toxicity exists. The use Ultrasol® Crop for the selected crop and conditions is not recommended.
-              </ion-col>
-          </ion-row>
-          <ion-row class="backtablered">
-              <ion-col>
-                Zn- content is very high! Risk for Zn-toxicity exists. The use Ultrasol® Crop for the selected crop and conditions is not recommended.
-              </ion-col>
-          </ion-row>
-          <ion-row class="backtablered">
-              <ion-col>
-                Cu- content is very high! Risk for Cu-toxicity exists. The use Ultrasol® Crop for the selected crop and conditions is not recommended.
-              </ion-col>
-          </ion-row>
-          <ion-row class="backtablered">
-              <ion-col>
-                Mo- content is very high! Risk for Mo-toxicity exists. The use Ultrasol® Crop for the selected crop and conditions is not recommended.
-              </ion-col>
-          </ion-row>
+
           
         </ion-col>
         
