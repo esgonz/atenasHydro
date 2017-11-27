@@ -11,31 +11,56 @@ export class PagesProvider {
   pages: any [] = [];
   
   activePage : any;
+
+  rootPage : any;
   constructor() {
   }
 
   add(page: any) {
+    console.log("PagesProvider- add")
   	var exists = false;
-  	if (this.pages.length >0 ) {
-  		for (var i = this.pages.length - 1; i >= 0; i--) {
+
+    // si existen + paginas
+  	if (this.pages.length > 0 ) {
+  		console.log("pages.length > 0: "+ this.pages.length)
+      //verificar que la pagina no exista
+      for (var i = this.pages.length - 1; i >= 0; i--) {
   			if (this.pages[i].title == page.title) {
+          console.log("pages exits: ", this.pages[i])
   				exists = true;
   			}
   		}
+      //si no existe
   		if (!exists) {
+        console.log("new page: ", page)
   			this.pages.push(page);
   		}
 
   	}else{
+      //si no existe
+      console.log("pages.length < 0")
+      console.log("new page: ", page)
   		this.pages.push(page);
   	}
     
   }
 
+  setRootPage(page : any){
+    console.log("PagesProvider- setRootPage")
+    console.log("root page: ", page)
+    this.rootPage = page;
+  }
   delete(page: any) {
     this.pages.reduce(page);
   }
 
+  clearList(){
+    console.log("PagesProvider- clearList")
+    
+    //this.pages.length = 0;
+    this.pages = [];
+    this.add(this.rootPage);
+  }
   getInstance(){
   	return this.pages;
   }

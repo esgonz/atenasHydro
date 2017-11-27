@@ -1,26 +1,32 @@
 import { Injectable } from '@angular/core';
+import { Platform } from 'ionic-angular';
 import { Http } from '@angular/http';
 
 import { Program } from '../models/program';
     import { MacroElements } from '../models/macroelements';
     import { TraceElements } from '../models/traceelements';
+    
 
 
 @Injectable()
-export class ProgramProvider {
+export class TempProgramProvider {
 
-    public program;
-    constructor(private http: Http) {
+    public program: Program;
+    public onlyView: boolean;
+    constructor(
+        private http: Http, public platform : Platform) {
 
+        this.onlyView =  false;
     }
 
 
     init (){
+        this.onlyView =  false;
         this.program = new Program(null);
     }
 
     getInstance(){
-        console.log("ProgramProvider", this.program );
+        console.log( "TempProgramProvider", this.program );
         return this.program;
     }
 
@@ -31,14 +37,15 @@ export class ProgramProvider {
     getDataBasicResult (){
         var data = {
             basic:{
-                name :""
+                name :"",
+                date: ""
             },
             cropSelected:{
                 crop: "",
                 stage:""
             },
             analysis:{
-                ECValue: "",
+                ECValue: 0,
                 recommendedPh: "",
                 sizeTank: 0,
                 dilutionFactor: 0,
@@ -55,6 +62,7 @@ export class ProgramProvider {
         }
 
         data.basic.name                 = this.program.basicInformation.name;
+        data.basic.date                 = this.program.basicInformation.date;
         data.cropSelected.crop          = this.program.cropInformation.cropObj.name;
         data.cropSelected.stage         = stageCrop;
         data.analysis.ECValue           = this.program.analysisInformation.ECValue;
@@ -107,8 +115,8 @@ export class ProgramProvider {
             data.b      = waData.b[unit];
             data.mo     = waData.mo[unit];
             data.hco3   = waData.hco3[unit];
-            data.ph     = waData.ph.value;
-            data.ec     = waData.ec.value;
+            data.ph     = waData.ph.value.toString();
+            data.ec     = waData.ec.value.toString();
 
 
             if (unit == "mgl") {
@@ -149,56 +157,56 @@ export class ProgramProvider {
 
             let nnh4 = {
                 name: "N-NH<sub>4</sub>",
-                mmoll : parseFloat(soData.macroElements.nh4).toFixed(2),
+                mmoll : soData.macroElements.nh4.toFixed(2),
                 mgl : (soData.macroElements.nh4 * 14.007).toFixed(1)
             }
             controlSolution.nnh4 = nnh4;
 
             let nno3 = {
                 name: "N-NO<sub>3</sub>",
-                mmoll : parseFloat(soData.macroElements.no3).toFixed(2),
+                mmoll : soData.macroElements.no3.toFixed(2),
                 mgl : (soData.macroElements.no3 * 14.007).toFixed(1)
             }
             controlSolution.nno3 = nno3;
 
             let p = {
                 name: "P",
-                mmoll : parseFloat(soData.macroElements.h2po4).toFixed(2),
+                mmoll : soData.macroElements.h2po4.toFixed(2),
                 mgl : (soData.macroElements.h2po4 * 30.974).toFixed(1)
             }
             controlSolution.p = p;
 
             let k = {
                 name: "N-NO<sub>3</sub>",
-                mmoll : parseFloat(soData.macroElements.k).toFixed(2),
+                mmoll : soData.macroElements.k.toFixed(2),
                 mgl : (soData.macroElements.k * 39.098).toFixed(1)
             }
             controlSolution.k = k;
             
             let ca = {
                 name: "Ca",
-                mmoll : parseFloat(soData.macroElements.ca).toFixed(2),
+                mmoll : soData.macroElements.ca.toFixed(2),
                 mgl : (soData.macroElements.ca * 40.08).toFixed(1)
             }
             controlSolution.ca = ca;
             
             let mg = {
                 name: "Mg",
-                mmoll : parseFloat(soData.macroElements.mg).toFixed(2),
+                mmoll : soData.macroElements.mg.toFixed(2),
                 mgl : (soData.macroElements.mg * 24.305).toFixed(1)
             }
             controlSolution.mg = mg;
             
             let cl = {
                 name: "Cl",
-                mmoll :parseFloat( soData.macroElements.cl).toFixed(2),
+                mmoll :soData.macroElements.cl.toFixed(2),
                 mgl : (soData.macroElements.cl * 35.5).toFixed(1)
             }
             controlSolution.cl = cl;
            
             let sso4 = {
                 name: "S-SO<sub>4</sub>",
-                mmoll : parseFloat(soData.macroElements.so4).toFixed(2),
+                mmoll : soData.macroElements.so4.toFixed(2),
                 mgl : (soData.macroElements.so4 * 32.06).toFixed(1)
             }
             controlSolution.sso4 = sso4;
@@ -299,8 +307,33 @@ export class ProgramProvider {
             }
             return data;
     }
+    
     setCalculationsValues (formulasProvider){
+        console.log("setCalculationsValues");
         this.program.setCalculationsValues(formulasProvider);
+    }
+
+
+    setOnlyView(flag){
+        console.log("setOnlyView");
+        this.onlyView = flag;
+    }
+
+    saveInDB( programsProvider){
+        console.log("saveInDB");
+        
+       if(!this.platform.is('core')) {
+          if(!this.onlyView) {
+            console.log("not only view")
+            this.program.createProgramInDB( programsProvider );
+            
+          }else{
+                console.log("only view. not save in DB");
+          }
+       }else{
+          console.log("cant save in the DB from browser"); 
+       }
+        
     }
 
     load() {
@@ -319,4 +352,8 @@ export class ProgramProvider {
             });
         });*/    
     }
+
+    
+
+
 }

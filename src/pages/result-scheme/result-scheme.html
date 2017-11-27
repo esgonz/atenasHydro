@@ -26,7 +26,7 @@
     <ion-row justify-content-start>
 
         <!-- segunda columna -->
-        <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12>
+        <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 class="content-result">
             <!--<ion-row>
               <h6>Water analysis data &amp; molar calculation</h6>
             </ion-row>-->
@@ -42,7 +42,7 @@
                 Fertigation scheme A - Tank
               </ion-col>
           </ion-row>
-          <ion-row class="backtable" *ngFor="let product of programProvider.getDataSchemeResult().a" >
+          <ion-row class="backtable" *ngFor="let product of tempProgramProvider.getDataSchemeResult().a" >
               <ion-col>
                 {{product.name}}
                 <h5>{{product.value}} {{product.unit}}</h5>
@@ -55,7 +55,7 @@
               </ion-col>
           </ion-row>
           
-          <ion-row class="backtable" *ngFor="let product of programProvider.getDataSchemeResult().b" >
+          <ion-row class="backtable" *ngFor="let product of tempProgramProvider.getDataSchemeResult().b" >
               <ion-col>
                 {{product.name}}
                 <h5>{{product.value}} {{product.unit}}</h5>
@@ -67,7 +67,7 @@
                 See remarks
               </ion-col>
           </ion-row>
-          <ion-row class="backtablered" *ngFor="let alert of programProvider.getDataSchemeResult().alerts" >
+          <ion-row class="backtablered" *ngFor="let alert of tempProgramProvider.getDataSchemeResult().alerts" >
               <ion-col>
                {{alert}}
               </ion-col>

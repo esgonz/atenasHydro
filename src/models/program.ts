@@ -5,6 +5,7 @@ import { MacroElements } from '../models/macroelements';
 import { TraceElements } from '../models/traceelements';
 import { CropSolution } from '../models/cropsolution';
 import { FormulasProvider } from '../providers/formulas';
+import { ProgramsProvider } from '../providers/programs/programs';
 /**
 * A generic model that our Master-Detail pages list, create, and delete.
 *
@@ -22,6 +23,8 @@ POR MODIFICAR !!!!!!!!!
 */
 export class Program {
   id = "";
+  uuid = "";
+  
   basicInformation = {
     name   : "",
     company  : "",
@@ -29,39 +32,42 @@ export class Program {
     date   : "",
     email   : ""
   };
+  
   cropInformation = {
     cropObj: null,
     stageId: null,
   };
+  
   analysisInformation = {
-    ECValue:     1.5,
-    sizeTank:     1000,
-    dilutionFactor:   100,
-    substrate:     "",
-    acidSource:    {
-      id:    "",
-      name:    "",
-      concentration:  0.0,
-      density:   null
-    },
-    calciumChlorideSource: {
-      id:    "",
-      name:   "",
-      concentration:  0.0,
-      density:   null
-    },
-    calciumNitrateSource: {
-      id:    "",
-      name:   "",
-      concentration:  null,
-      density:   null
-    },
-    ironChelateSource:    {
-      id:    "",
-      name:   "",
-      concentration:  0.0
-    }
+     ECValue:       1.5,
+     sizeTank:       1000,
+     dilutionFactor:   100,
+     substrate:       "organic",
+     acidSource:       {
+       id:       "",
+       name:       "",
+       concentration:   0.0,
+       density:     0.0
+     },
+     calciumChlorideSource:  {
+       id:       "liquid",
+       name:      "Calcium Chloride (35 % Liquid)",
+       concentration:   35,
+       density:     1.33
+     },
+     calciumNitrateSource: {
+       id:       "",
+       name:      "",
+       concentration:   0,
+       density:     0
+     },
+     ironChelateSource:    {
+       id:       "",
+       name:      "",
+       concentration:   0
+     }
   };
+  
   waterAnalysisInformation = {
     unit: "mgl",
     balance: 0.00,
@@ -171,6 +177,7 @@ export class Program {
   }
 
   formula : Formula = null;
+  
   standardSolution: CropSolution = null;
 
   baseAdaptation =  {
@@ -670,15 +677,23 @@ export class Program {
   */
   setECfactor (no3, h2po4, so4, cl){
     console.log("setECfactor");
-
+    console.log("no3",no3);
+    console.log("h2po4", h2po4);
+    console.log("so4", so4);
+    console.log("cl", cl);
     let wantedEC  = this.analysisInformation.ECValue;
-    let standardEC  = (0.1 * (no3 +h2po4 + (so4 * 2)+ cl)).toFixed(1);
-    let ECfactor  = wantedEC / parseFloat(standardEC);
-
+    let standardEC  = Math.round(    (    0.1 * (  no3 + h2po4 + ( so4 * 2 ) + cl  )   ) *10    ) / 10;
+    console.log("standardEC", standardEC);
+    let ECfactor  = wantedEC / standardEC;
+    console.log("wantedEC "+ wantedEC + "/ standardEC "+ standardEC);
+    console.log("this.standardEC", ECfactor);
 
     this.ECValues.wantedEC   = wantedEC;
-    this.ECValues.standardEC = parseFloat(standardEC);
+
+    this.ECValues.standardEC =standardEC;
+    console.log("this.standardEC", this.ECValues.standardEC);
     this.ECValues.ECfactor   = parseFloat(ECfactor.toFixed(5));
+    console.log("this.ECfactor", this.ECValues.ECfactor);
 
     console.log("EC VALUES", this.ECValues);
   }
@@ -924,7 +939,7 @@ export class Program {
   setStandardMacrosSolution (){
     console.log("setStandardMacrosSolution");
     //search the solution standard indicate in the crop data
-    let targetSolution : CropSolution;
+    let targetSolution = new CropSolution({})
 
     //if organic substrate it is selected, search organic solution,
     // else, search hydro solution.
@@ -934,13 +949,25 @@ export class Program {
 
       console.log("Program", "Organic solution");
       console.log("solution Organic", this.cropInformation.cropObj.solutions.organic);
-      targetSolution     = this.cropInformation.cropObj.solutions.organic;
+      //targetSolution     = Object.assign(this.cropInformation.cropObj.solutions.organic);
+      targetSolution.macroElements = this.cropInformation.cropObj.solutions.organic.macroElements;
+      targetSolution.traceElements = this.cropInformation.cropObj.solutions.organic.traceElements;
+      targetSolution.formulaId     = this.cropInformation.cropObj.solutions.organic.formulaId;
+      targetSolution.id            = this.cropInformation.cropObj.solutions.organic.id;
+      targetSolution.substrateId   = this.cropInformation.cropObj.solutions.organic.substrateId;
+      targetSolution.initValues();
 
 
     }else{
       console.log("Program", "hydro solution");
       console.log("solution Hydro", this.cropInformation.cropObj.solutions.hydro);
-      targetSolution = this.cropInformation.cropObj.solutions.hydro;
+      //targetSolution = Object.assign(this.cropInformation.cropObj.solutions.hydro);
+      targetSolution.macroElements = this.cropInformation.cropObj.solutions.hydro.macroElements;
+      targetSolution.traceElements = this.cropInformation.cropObj.solutions.hydro.traceElements;
+      targetSolution.formulaId     = this.cropInformation.cropObj.solutions.hydro.formulaId;
+      targetSolution.id            = this.cropInformation.cropObj.solutions.hydro.id;
+      targetSolution.substrateId   = this.cropInformation.cropObj.solutions.hydro.substrateId;
+      targetSolution.initValues();
     }
 
 
@@ -953,7 +980,7 @@ export class Program {
   setStandardTracesSolution (){
     console.log("setStandardTracesSolution");
     //search the solution standard indicate in the crop data
-    let targetSolution : CropSolution;
+    let targetSolution = new CropSolution({})
 
     //if organic substrate it is selected, search organic solution,
     // else, search hydro solution.
@@ -963,27 +990,43 @@ export class Program {
 
       console.log("Program", "Organic solution");
       console.log("solution Organic", this.cropInformation.cropObj.solutions.organic);
-      targetSolution     = this.cropInformation.cropObj.solutions.organic;
+      //targetSolution  = Object.assign(this.cropInformation.cropObj.solutions.organic);
+      targetSolution.macroElements = this.cropInformation.cropObj.solutions.organic.macroElements;
+      targetSolution.traceElements = this.cropInformation.cropObj.solutions.organic.traceElements;
+      targetSolution.formulaId     = this.cropInformation.cropObj.solutions.organic.formulaId;
+      targetSolution.id            = this.cropInformation.cropObj.solutions.organic.id;
+      targetSolution.substrateId   = this.cropInformation.cropObj.solutions.organic.substrateId;
+      targetSolution.initValues();
 
 
     }else{
       console.log("Program", "hydro solution");
       console.log("solution Hydro", this.cropInformation.cropObj.solutions.hydro);
-      targetSolution = this.cropInformation.cropObj.solutions.hydro;
+      //targetSolution = Object.assign(this.cropInformation.cropObj.solutions.hydro);
+      targetSolution.macroElements = this.cropInformation.cropObj.solutions.hydro.macroElements;
+      targetSolution.traceElements = this.cropInformation.cropObj.solutions.hydro.traceElements;
+      targetSolution.formulaId     = this.cropInformation.cropObj.solutions.hydro.formulaId;
+      targetSolution.id            = this.cropInformation.cropObj.solutions.hydro.id;
+      targetSolution.substrateId   = this.cropInformation.cropObj.solutions.hydro.substrateId;
+      targetSolution.initValues();
     }
 
 
 
     console.log("baseAdaptation traces", this.baseAdaptation.traceElements);
+    console.log("TARGET SOLUTION", targetSolution);
     for ( let element in targetSolution.traceElements) {
-      console.log("element", element);
+      /*console.log("element", element);
       console.log("baseAdaptation", this.baseAdaptation.traceElements[element]);
       console.log("ECfactor", this.ECValues.ECfactor);
-      console.log("targetSolution", targetSolution);
-      targetSolution.calculateTracesLimitsValues(element,
-        this.baseAdaptation.traceElements[element], this.ECValues.ECfactor);
+      console.log("targetSolution", targetSolution);*/
+      targetSolution.calculateTracesLimitsValues(
+          element,
+          this.baseAdaptation.traceElements[element], 
+          this.ECValues.ECfactor
+        );
     }//
-    this.standardSolution.traceElements = targetSolution.traceElements;
+    this.standardSolution.traceElements = Object.assign(targetSolution.traceElements);
     console.log("this.standardSolution MICRO", this.standardSolution);
   }
 
@@ -1428,11 +1471,20 @@ export class Program {
   setControlActualTraceSolution (){
 
     console.log("setControlActualTraceSolution");
-    this.controlSolution.actualSolution.traceElements.fe =
+    /*this.controlSolution.actualSolution.traceElements.fe =
     this.NPKScheme.npk.traceElements.fe +
     this.waterAnalysisInformation.fe.umoll +
     0 +
-    this.NPKScheme.controlTraceElements.traceElements.fe;
+    this.NPKScheme.controlTraceElements.traceElements.fe;*/
+
+    this.controlSolution.actualSolution.traceElements.fe =
+    this.NPKScheme.npk.traceElements.fe +
+    this.waterAnalysisInformation.fe.umoll +
+    0; //0 its the fertilizerspecs(active*fe) data that not exits for fe
+
+
+
+
 
     this.controlSolution.actualSolution.traceElements.b =
     this.NPKScheme.npk.traceElements.b +
@@ -1591,7 +1643,7 @@ export class Program {
         this.NPKScheme.ultrasolCalcium.macroElements.ca,
         this.fertilizerSpecs.macroElements.ultrasolCalcium.value);
     }
-
+3
     if(this.NPKScheme.ultrasolCalcium.macroElements.ca >= 0 && this.fertilizerSpecs.macroElements.liquidCa.value >0) {
       console.log("NPKScheme ultrasolCalcium > 0 specs ultrasolCalcium > 0 " );
 
@@ -1601,19 +1653,26 @@ export class Program {
         this.fertilizerSpecs.macroElements.liquidCa.value);
     }
 
+    //calcium chloride liquid
     if(this.NPKScheme.calciumCholide35.macroElements.ca > 0 &&
-      this.fertilizerSpecs.macroElements.calciumCholideSolid.value == 0) {
+      this.analysisInformation.calciumChlorideSource.id == 'liquid') {
+      console.log("CHL its liquid, CalciumChloride > 0 chl: ", this.fertilizerSpecs.macroElements.calciumChloride.value);
+      aTank.calciumChloride.name = "Calcium chloride " + 
+                                  this.analysisInformation.calciumChlorideSource.name + 
+                                  " ("+ this.analysisInformation.calciumChlorideSource.concentration +
+                                  " % )" ;
       aTank.calciumChloride.value = this.calculateCaChlorideATank(
-        this.NPKScheme.calciumCholide35.macroElements.ca,
+        this.NPKScheme.calciumCholide35.macroElements.cl,
         this.fertilizerSpecs.macroElements.calciumChloride.value);
     }
 
     if(this.NPKScheme.calciumCholide35.macroElements.ca > 0 &&
-      this.fertilizerSpecs.macroElements.calciumCholideSolid.value != 0 ) {
-
-      aTank.calciumCholideSolid.name = this.analysisInformation.calciumChlorideSource.name;
-    aTank.calciumCholideSolid.value = this.calculateSolidCaChlorideATank(
-      this.NPKScheme.calciumCholide35.macroElements.ca,
+      this.analysisInformation.calciumChlorideSource.id != 'liquid' ) {
+      console.log("CHL its solid, CalciumChloride > 0 chl: ", this.fertilizerSpecs.macroElements.calciumCholideSolid.value);
+      aTank.calciumCholideSolid.name =this.analysisInformation.calciumChlorideSource.name + 
+                                  " " + this.analysisInformation.calciumChlorideSource.concentration;
+      aTank.calciumCholideSolid.value = this.calculateSolidCaChlorideATank(
+      this.NPKScheme.calciumCholide35.macroElements.cl,
       this.fertilizerSpecs.macroElements.calciumCholideSolid.value);
     }
 
@@ -1979,21 +2038,24 @@ export class Program {
 
 
 
-    //if solid calcium
-    console.log("Ca chloride: ",this.analysisInformation.calciumChlorideSource.id);
+    //if liquid calcium or none
+    console.log("Ca chloride: ",this.analysisInformation.calciumChlorideSource);
 
-    if(this.analysisInformation.calciumChlorideSource.id != "liquid") {
-      console.log("SOLID CACHL: ",this.analysisInformation.calciumChlorideSource.id+ " " +
-        this.analysisInformation.calciumChlorideSource.concentration);
-      fertilizerScheme.calciumCholideSolid.value = this.calculateSolidCaChlorideSpecs(
-        this.analysisInformation.calciumChlorideSource.concentration);
-    }else{
+    if(this.analysisInformation.calciumChlorideSource.id == "liquid" || 
+      this.analysisInformation.calciumChlorideSource.id == "") {
 
       console.log("LIQUID CACHL: ",this.analysisInformation.calciumChlorideSource.id);
       fertilizerScheme.calciumChloride.value = this.calculateCaChlorideSpecs(
         this.analysisInformation.calciumChlorideSource.concentration,
         this.analysisInformation.calciumChlorideSource.density);
 
+
+      
+    }else{
+      console.log("SOLID CACHL: ",this.analysisInformation.calciumChlorideSource.id+ " " +
+        this.analysisInformation.calciumChlorideSource.concentration);
+        fertilizerScheme.calciumCholideSolid.value = this.calculateSolidCaChlorideSpecs(
+        this.analysisInformation.calciumChlorideSource.concentration);      
     }
 
 
@@ -2032,7 +2094,7 @@ export class Program {
 
   /*get the stage crop by ID*/
   getStageByID(id){
-    //console.log("getStageByID");
+    console.log("getStageByID");
     if (this.cropInformation.cropObj != null) {
       let cropScope = this.cropInformation.cropObj;
       for (let i = 0; i < cropScope.stages.length; i++) {
@@ -2040,12 +2102,12 @@ export class Program {
         let cropScopeId = cropScope.stages[i].id;
         //if match
         if (cropScopeId == id.toString()){
-          //console.log("Stage ID: " + cropScopeId);
+          console.log("Stage ID: " + cropScopeId);
           return cropScope.stages[i];
         }
       }
     }else{
-      console.log("Crop Null");
+      console.log("getStageByID - Crop Null");
       return null;
     }
   }
@@ -2312,8 +2374,12 @@ export class Program {
 
   /*calculate Calcium Chloride specs*/
   calculateCaChlorideSpecs(caChlorideConcentration, caChlorideDensity){
+    console.log("calculateCaChlorideSpecs");
+    console.log("caChlorideDensity: ",caChlorideDensity);
+    console.log("caChlorideConcentration: ",caChlorideConcentration);
+    console.log(" multiply: ",(caChlorideDensity * caChlorideConcentration ));
     let value = ( ( ( (caChlorideDensity * caChlorideConcentration ) * 0.639) / 35.5 ) * 10 );
-
+    console.log("value: ", value);
     return value;
   }
   /*calculate Solid Calcium Chloride specs*/
@@ -2381,12 +2447,19 @@ export class Program {
 
   /*calculate Calcium Chloride to A TANK*/
   calculateCaChlorideATank(calcCaChlorideValue, specsCaChlorideValue){
+    console.log("calculateCaChlorideATank");
+
+    console.log("calcCaChlorideValue: ", calcCaChlorideValue);
+    console.log("specsCaChlorideValue: ", specsCaChlorideValue);
+
+
     let value = ((((calcCaChlorideValue /
       specsCaChlorideValue) *
     this.analysisInformation.sizeTank) *
     this.analysisInformation.dilutionFactor) /
     1000);
 
+    console.log("value: ", value);
     return value;
   }
 
@@ -2543,5 +2616,100 @@ export class Program {
 
 
   
+
+
+  createProgramInDB(programsProvider: ProgramsProvider){
+    console.log("createProgramInDB");
+
+    let data =     {
+      id             : this.id,
+      basicInformation     : this.basicInformation,
+      cropInformation     : this.cropInformation,
+      analysisInformation   : this.analysisInformation,
+      waterAnalysisInformation : this.waterAnalysisInformation
+    };
+    
+    var stageCropObj = this.getStageByID(this.cropInformation.stageId);
+    var stageCrop = "";
+    if (stageCrop != null) {
+        stageCrop = stageCropObj.name;
+    }
+
+
+    let program =  {
+        uuid :     this.uuid,
+        farmer:    this.basicInformation.name,
+        crop:      this.cropInformation.cropObj.name,
+        stage:     stageCrop,
+        date:      this.basicInformation.date,
+        status:    1,
+        data:      JSON.stringify(data)
+    }
+
+
+
+  
+
+
+    console.log("program to create:" , program);
+    programsProvider.create(program)
+        .then(response => {
+          console.log("program insert in the db");
+          console.log(program);
+          
+        })
+        .catch( error => {
+            console.log("error insert in the db");
+          console.error( error );
+        })
+  }
+
+  updateProgramInDB(programsProvider: ProgramsProvider){
+    console.log("createProgramInDB");
+
+    let data =     {
+      id             : this.id,
+      basicInformation     : this.basicInformation,
+      cropInformation     : this.cropInformation,
+      analysisInformation   : this.analysisInformation,
+      waterAnalysisInformation : this.waterAnalysisInformation
+    };
+    
+    var stageCropObj = this.getStageByID(this.cropInformation.stageId);
+    var stageCrop = "";
+    if (stageCrop != null) {
+        stageCrop = stageCropObj.name;
+    }
+
+
+    let program =  {
+        id:        this.id,
+        uuid :     this.uuid,
+        farmer:    this.basicInformation.name,
+        crop:      this.cropInformation.cropObj.name,
+        stage:     stageCrop,
+        date:      this.basicInformation.date,
+        status:    1,
+        data:      JSON.stringify(data)
+    }
+
+
+
+  
+
+
+    console.log("program to update:" , program);
+    programsProvider.update(program)
+        .then(response => {
+          console.log("program update in the db");
+          console.log(program);
+          
+        })
+        .catch( error => {
+            console.log("error update in the db");
+          console.error( error );
+        })
+  }
+
 
 }

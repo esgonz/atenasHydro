@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NewCropSelect } from '../../pages/new-crop-select/new-crop-select';
-import { ProgramProvider } from '../../providers/programs';
+import { TempProgramProvider } from '../../providers/temp-program';
 import { PagesProvider } from '../../providers/pages';
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -30,9 +30,9 @@ import { PagesProvider } from '../../providers/pages';
 	 	email 		: "" 		
  	}
  	validate = false;
- 	constructor(public navCtrl: NavController, public programProvider : ProgramProvider,
+ 	constructor(public navCtrl: NavController, public tempProgramProvider : TempProgramProvider,
  		private pagesProvider: PagesProvider) { 
- 		this.data = programProvider.getInstance().basicInformation;
+ 		this.data = tempProgramProvider.getInstance().basicInformation;
  		if (this.data.date == "" ) {
  			this.data.date =  new Date(Date.now()).toISOString();
  		}
@@ -154,7 +154,7 @@ import { PagesProvider } from '../../providers/pages';
 
 	updateProgramInformation (){
 		console.log("updateProgramInformation");
-		this.programProvider.getInstance().basicInformation = this.data;
+		this.tempProgramProvider.getInstance().basicInformation = this.data;
 	}
 
  }

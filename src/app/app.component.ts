@@ -10,7 +10,7 @@ import { NewAnalysisInformation } from '../pages/new-analysis-information/new-an
 import { NewWaterAnalysis } from '../pages/new-water-analysis/new-water-analysis';
 import { NewBasicInformation } from '../pages/new-basic-information/new-basic-information';
 import { NewCropSelect } from '../pages/new-crop-select/new-crop-select';
-
+import { PreviousList} from '../pages/previous-list/previous-list';
 import { ResultWaterAnalysis } from '../pages/result-water-analysis/result-water-analysis';
 import { ResultBasic } from '../pages/result-basic/result-basic';
 import { ResultSolution } from '../pages/result-solution/result-solution';
@@ -20,14 +20,15 @@ import { TabsResultPage } from '../pages/tabs-results/tabs-results';
 import { Settings } from '../providers/providers';
 import { TranslateService } from '@ngx-translate/core';
 import { CropsProvider } from '../providers/crops';
-import { ProgramProvider } from '../providers/programs';
+import { TempProgramProvider } from '../providers/temp-program';
 import { FormulasProvider } from '../providers/formulas';
 import { PagesProvider } from '../providers/pages';
+import { ProgramsProvider } from '../providers/programs/programs';
 @Component({
   templateUrl:'app.html'
 })
 export class MyApp {
-  rootPage = NewBasicInformation;
+  rootPage = PreviousList;
 
   @ViewChild(Nav) nav: Nav;
 
@@ -40,35 +41,73 @@ export class MyApp {
   ]*/
   pages: any[] = [];
 
-  constructor(private translate: TranslateService, private platform: Platform, settings: Settings, 
-            private config: Config, private splashScreen: SplashScreen, private programProvider: ProgramProvider, 
-            private pagesProvider: PagesProvider, private cropsProvider: CropsProvider, 
-            private formulasProvider: FormulasProvider) {
+  constructor(
+      private translate: TranslateService, 
+      private platform: Platform, settings: Settings, 
+      private config: Config, 
+      private splashScreen: SplashScreen, 
+      private tempProgramProvider: TempProgramProvider, 
+      private pagesProvider: PagesProvider, 
+      private cropsProvider: CropsProvider, 
+      private formulasProvider: FormulasProvider,
+      public sqlite: SQLite,
+      public programsProvider: ProgramsProvider
+  ) {
     this.initTranslate();
-    this.initProgramProvider();
+    this.initTempProgramProvider();
     this.initPagesProvider();
     this.initCropsProvider();
     this.initFormulasProvider();
+    this.initApp();
+  }
+
+  initApp(){
+    console.log("initApp");
+    console.log("Create DB");
+    
+    this.sqlite.create({
+      name: 'sqmhydrocalq.db',
+      location: 'default' // the location field is required
+    })
+    .then((db: SQLiteObject) => {
+      console.log("create db ok");
+      this.programsProvider.setDatabase(db);
+      return this.programsProvider.createTable().then(
+        () => console.log('Executed createTable SQL')
+      )
+      .catch(e => console.log(e));
+    })
+    .then(() =>{
+      console.log("create set nav root ok");
+      this.splashScreen.hide();
+      this.nav.setRoot(this.rootPage);
+    })
+    .catch(error =>{
+      console.log("create db error");
+      console.error(error);
+    });
   }
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+      console.log("ionViewDidLoad platform ready");      
       this.splashScreen.hide();
       this.nav.setRoot(this.rootPage);
     });
   }
 
   initPagesProvider(){
-    var initPage = { title: 'Add new recommendation', component: NewBasicInformation, iconClass: 'icongrower' };
+    var initPage = { title: 'Previous Recommendations', component: this.rootPage, iconClass: 'icongrower' };
     this.pagesProvider.add(initPage);
     this.pagesProvider.setActivePage(initPage);
-    this.pages = this.pagesProvider.getInstance();
+    this.pagesProvider.setRootPage(initPage);
+    //this.pages = this.pagesProvider.getInstance();
   }
-  initProgramProvider(){
-    console.log("initProgramProvider");
-    this.programProvider.init();
+  initTempProgramProvider(){
+    console.log("initTempProgramProvider");
+    this.tempProgramProvider.init();
   }
 
   initCropsProvider(){
@@ -101,6 +140,9 @@ export class MyApp {
     this.translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
       this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
     });
+
+    
+
   }
 
   openPage(page) {
@@ -111,4 +153,6 @@ export class MyApp {
     this.pagesProvider.setActivePage(page);    
     this.nav.push(page.component);
   }
+
+
 }

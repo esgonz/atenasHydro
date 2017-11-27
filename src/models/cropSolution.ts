@@ -230,7 +230,6 @@
 
 
    calculateNo3Value(nh4, k, ca, mg, so4, h2po4, cl){
-     console.log("calculateNo3Value") 
 
      console.log("nh4",nh4) 
      console.log("k",k) 
@@ -247,14 +246,13 @@
        ( so4 *2 )   -
        h2po4        -
        cl).toFixed(10); 
-     console.log("valueNo3",valueNo3)
 
      this.macroElements.no3.value = parseFloat(valueNo3);
    }
 
 
    calculateMaxNo3(formulaId, no3Value){
-     console.log("calculateMaxNo3") 
+
      let value = 0;
 
 
@@ -319,7 +317,7 @@
      this.macroElements.no3.max = value;
    }
    calculateMaxH2po4(formulaId, h2po4Value){
-     console.log("calculateMaxH2po4")
+
      let value = 0;
 
 
@@ -384,7 +382,7 @@
      this.macroElements.h2po4.max = value;
    }
    calculateMaxSo4(formulaId, so4Value){
-     console.log("calculateMaxSo4")
+
      let value = 0;
 
 
@@ -449,7 +447,7 @@
      this.macroElements.so4.max = value;
    }
    calculateMaxCl(formulaId, clValue){
-     console.log("calculateMaxCl")
+
      let value = 0;
 
 
@@ -475,7 +473,7 @@
      this.macroElements.cl.max = value;
    }
    calculateMaxNh4(formulaId, nh4Value){
-     console.log("calculateMaxNh4")
+
      let value = 0;
 
 
@@ -541,7 +539,7 @@
    }
 
    calculateMaxK(formulaId, kValue){
-     console.log("calculateMaxK")
+
      let value = 0;
 
 
@@ -607,7 +605,7 @@
    }
 
    calculateMaxCa(formulaId, caValue){
-     console.log("calculateMaxCa")
+
      let value = 0;
 
 
@@ -672,7 +670,7 @@
      this.macroElements.ca.max = value;
    }
    calculateMaxMg(formulaId, mgValue){
-     console.log("calculateMaxMg")
+
      let value = 0;
 
 
@@ -736,9 +734,6 @@
 
    calculateTracesLimitsValues(element, elementCropCorrection, ECFactor){
      console.log("calculateTracesLimitsValues")  
-     console.log("element:",element) 
-     console.log("elementCropCorrection",elementCropCorrection) 
-     console.log("ECFactor",ECFactor) 
      
      let minWarning     = ( this.traceElements[element].normal.value + elementCropCorrection) * 
      ( 1 - this.tracesConcentrationLimits[element].min.warning / 100) * ECFactor;
@@ -764,19 +759,5 @@
 
      console.log( element , this.traceElements[element]);
    }
-
-   
-
-
-   createTable(){
-   }
-
-   poblateTable(){
-   }
-
-
-
-
-
 
  }

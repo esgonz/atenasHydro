@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { CropsProvider } from '../../providers/crops';
 import { NewWaterAnalysis } from '../../pages/new-water-analysis/new-water-analysis';
 import { NewAnalysisInformation } from '../../pages/new-analysis-information/new-analysis-information';
-import { ProgramProvider } from '../../providers/programs';
+import { TempProgramProvider } from '../../providers/temp-program';
 import { PagesProvider } from '../../providers/pages';
 
 import { Crop } from '../../models/crop';
@@ -35,8 +35,8 @@ export class NewCropSelect implements OnInit{
      };
 
     constructor(public navCtrl: NavController , public CropsProvider: CropsProvider, 
-                public programProvider : ProgramProvider, private pagesProvider: PagesProvider) { 
-        this.data = programProvider.getInstance().cropInformation;
+                public tempProgramProvider : TempProgramProvider, private pagesProvider: PagesProvider) { 
+        this.data = tempProgramProvider.getInstance().cropInformation;
         
         if (this.data.cropObj !== null) {
            console.log("crop from program: ", this.data.cropObj );
@@ -112,6 +112,6 @@ export class NewCropSelect implements OnInit{
 
     updateProgramInformation (){
         console.log("updateProgramInformation");
-        this.programProvider.getInstance().cropInformation = this.data;
+        this.tempProgramProvider.getInstance().cropInformation = this.data;
     }
 }

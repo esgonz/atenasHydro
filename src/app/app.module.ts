@@ -13,25 +13,28 @@ import { NewAnalysisInformation } from '../pages/new-analysis-information/new-an
 import { NewWaterAnalysis } from '../pages/new-water-analysis/new-water-analysis';
 import { NewBasicInformation } from '../pages/new-basic-information/new-basic-information';
 import { NewCropSelect } from '../pages/new-crop-select/new-crop-select';
-
+import { PreviousList} from '../pages/previous-list/previous-list';
 /*Import tab page*/
 import { TabsResultPage } from '../pages/tabs-results/tabs-results';
 import { ResultBasic } from '../pages/result-basic/result-basic';
 import { ResultWaterAnalysis } from '../pages/result-water-analysis/result-water-analysis';
 import { ResultSolution } from '../pages/result-solution/result-solution';
 import { ResultScheme } from '../pages/result-scheme/result-scheme';
-ResultScheme
+
+
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/settings';
 import { User } from '../providers/user';
 import { FormulasProvider } from '../providers/formulas';
 import { CropsProvider} from '../providers/crops';
-import { ProgramProvider } from '../providers/programs';
+import { TempProgramProvider } from '../providers/temp-program';
 import { PagesProvider } from '../providers/pages';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TasksServiceProvider } from '../providers/tasks-service/tasks-service';
+import { ProgramsProvider } from '../providers/programs/programs';
 
 
 
@@ -68,6 +71,7 @@ export function provideSettings(storage: Storage) {
     ResultSolution,
     ResultScheme,
     TabsResultPage,
+    PreviousList
   ],
   imports: [
     BrowserModule,
@@ -93,7 +97,9 @@ export function provideSettings(storage: Storage) {
     ResultWaterAnalysis,
     ResultSolution,
     ResultScheme,
-    TabsResultPage
+    TabsResultPage,
+    PreviousList
+    
   
   ],
   providers: [
@@ -102,11 +108,13 @@ export function provideSettings(storage: Storage) {
     SQLite,
     FormulasProvider,
     CropsProvider,
-    ProgramProvider,
+    TempProgramProvider,
     PagesProvider,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    TasksServiceProvider,
+    ProgramsProvider,
   ]
 })
 export class AppModule { }

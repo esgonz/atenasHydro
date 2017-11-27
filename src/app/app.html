@@ -12,7 +12,7 @@
     <ion-content class="outer-content lateralMenu">
 
       <ion-list >
-        <button ion-item [class.activeHighlight]="pagesProvider.checkActivePage(p)" class="laterMenuPageItem" (click)="openPage(p)" *ngFor="let p of pages">
+        <button ion-item [class.activeHighlight]="pagesProvider.checkActivePage(p)" class="laterMenuPageItem" (click)="openPage(p)" *ngFor="let p of pagesProvider.getInstance()">
           <span class="{{p.iconClass}}"></span> {{p.title}}
         </button>
       </ion-list>

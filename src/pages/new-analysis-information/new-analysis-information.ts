@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TabsResultPage } from '../../pages/tabs-results/tabs-results';
 import { NewWaterAnalysis } from '../new-water-analysis/new-water-analysis';
-import { ProgramProvider } from '../../providers/programs';
+import { TempProgramProvider } from '../../providers/temp-program';
 import { PagesProvider } from '../../providers/pages';
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -19,8 +19,8 @@ import { PagesProvider } from '../../providers/pages';
  	{
  		id: 			"x",
  		name: 			"Nitric Acid - X%",
- 		concentration: 		null,
- 		density: 		 	null
+ 		concentration: 		0,
+ 		density: 		 	0
  	},
  	{
  		id: 			"38",
@@ -64,25 +64,29 @@ import { PagesProvider } from '../../providers/pages';
  		id: 					"liquid",
  		name: 					"liquid",
  		concentration: 	35,
- 		density: 		 		1.33
+ 		density: 		 		1.33,
+        label:                  "CaCl2"
  	},
  	{
  		id: 					"anhydrous",
  		name: 					"Calcium chloride anhydrous (solid)",
  		concentration: 	63.9,
- 		density: 		 		"N.A."
+ 		density: 		 		"N.A.",
+        label:                  "Cl"
  	},
  	{
  		id: 					"dihydrate",
  		name: 					"Calcium chloride dihydrate (solid)",
  		concentration: 	48.3,
- 		density: 		 		"N.A."
+ 		density: 		 		"N.A.",
+        label:                  "Cl"
  	}
  	];
  	calciumChlorideChoise = "";
  	calciumChlorideSuggestion = {
  		concentration: 	"",
- 		density: 		""
+ 		density: 		"",
+        label: "Cl"
  	};
  	calciumNitrates =[
  	{
@@ -135,52 +139,65 @@ import { PagesProvider } from '../../providers/pages';
  		ECValue: 			1.5,
  		sizeTank: 			1000,
  		dilutionFactor: 	100,
- 		substrate: 			"",
+ 		substrate: 			"organic",
  		acidSource: 			{
  			id: 			"",
  			name: 			"",
  			concentration: 	0.0,
- 			density: 		null
+ 			density: 		0.0
  		},
  		calciumChlorideSource:	{
  			id: 			"",
  			name:			"",
  			concentration: 	0.0,
- 			density: 		null
+ 			density: 		0.0
  		},
  		calciumNitrateSource: {
  			id: 			"",
  			name:			"",
- 			concentration: 	null,
- 			density: 		null
+ 			concentration: 	0,
+ 			density: 		0
  		},
  		ironChelateSource:    {
  			id: 			"",
  			name:			"",
- 			concentration: 	0.0
- 		},
+ 			concentration: 	0
+ 		}
  	};
 
     targetEC = 0;
 
  	constructor(public navCtrl: NavController, 
-                public programProvider : ProgramProvider,
+                public tempProgramProvider : TempProgramProvider,
                 private pagesProvider: PagesProvider) { 
-        this.data = programProvider.getInstance().analysisInformation;
-        this.targetEC = programProvider.getInstance().setBaseValues();
+        this.data = tempProgramProvider.getInstance().analysisInformation;
         
+        this.tempProgramProvider.getInstance().setBaseValues();
+        this.targetEC = this.tempProgramProvider.getInstance().ECValues.standardEC;
+        console.log("targetEC",this.targetEC);
+        console.log("temp program",this.tempProgramProvider.getInstance());
+        console.log(this.data.substrate);
+        this.data.ECValue = this.targetEC;
 
         if (this.data.acidSource.id!="") {
-            this.acidChoise = this.data.acidSource.id;            
+            console.log("acidSource !=''");
+            this.acidChoise = this.data.acidSource.id;
+            console.log(">> acidChoise: " + this.acidChoise);            
         }
         if (this.data.calciumChlorideSource.id!="") {
-            this.calciumChlorideChoise = this.data.calciumChlorideSource.id;            
+            console.log("calciumChlorideSource !=''");
+            this.calciumChlorideChoise = this.data.calciumChlorideSource.id;
+             console.log(">> calciumChlorideChoise: " + this.calciumChlorideChoise);             
         }
         if (this.data.calciumNitrateSource.id!="") {
-            this.calciumNitrateChoise = this.data.calciumNitrateSource.id;            
+            console.log("calciumNitrateSource !=''");
+            this.calciumNitrateChoise = this.data.calciumNitrateSource.id;
+             console.log(">> calciumNitrateChoise: " + this.calciumNitrateChoise);             
         }
         if (this.data.ironChelateSource.id!="") {
-            this.ironChelateChoise = this.data.ironChelateSource.id;            
+            console.log("ironChelateSource !=''");
+            this.ironChelateChoise = this.data.ironChelateSource.id;
+             console.log(">> ironChelateChoise: " + this.ironChelateChoise);             
         }
          
          
@@ -193,7 +210,13 @@ import { PagesProvider } from '../../providers/pages';
 
  	changeSubstrate(){
  		console.log("changeSubstrate");
- 		console.log(this.data.substrate);
+ 		this.tempProgramProvider.getInstance().setBaseValues();
+        this.targetEC = this.tempProgramProvider.getInstance().ECValues.standardEC;
+        console.log("targetEC",this.targetEC);
+        console.log("temp program",this.tempProgramProvider.getInstance());
+        console.log(this.data.substrate);
+
+
  	}
  	changeAcid(){
  		console.log("acidChoise: " + this.acidChoise);
@@ -220,15 +243,17 @@ import { PagesProvider } from '../../providers/pages';
  		console.log("calciumChlorideChoise: " + this.calciumChlorideChoise);
  		this.calciumChlorideSuggestion.concentration = "";
  		this.calciumChlorideSuggestion.density 	     = "";
-
+        this.calciumChlorideSuggestion.label          = "";
  		for (var i = 0; i< this.calciumChlorides.length; i++) {
  			console.log("acid ID: " + this.calciumChlorides[i].id);
+            //copy object calciumChloride compare with the id of calcium chloride selected
  			if (this.calciumChlorides[i].id == this.calciumChlorideChoise.toString()){
  				console.log("true");
  				this.data.calciumChlorideSource = this.calciumChlorides[i];
  				console.log(this.data.calciumChlorideSource);
  				this.calciumChlorideSuggestion.concentration = this.calciumChlorides[i].concentration.toString();
  				this.calciumChlorideSuggestion.density 	     = this.calciumChlorides[i].density.toString();
+                 this.calciumChlorideSuggestion.label         = this.calciumChlorides[i].label;
  				return;
  			}
  		}
@@ -242,7 +267,7 @@ import { PagesProvider } from '../../providers/pages';
  			if (this.calciumNitrates[i].id == this.calciumNitrateChoise.toString()){
  				console.log("true");
  				this.data.calciumNitrateSource = this.calciumNitrates[i];
- 				console.log(this.data.calciumChlorideSource);
+ 				console.log(this.data.calciumNitrateSource);
  				this.calciumNitrateSuggestion.concentration = this.calciumNitrates[i].concentration.toString();
  				this.calciumNitrateSuggestion.density = this.calciumNitrates[i].density.toString();
  				return;
@@ -268,7 +293,7 @@ import { PagesProvider } from '../../providers/pages';
 
  	updateProgramInformation (){
         console.log("updateProgramInformation");
-        this.programProvider.getInstance().analysisInformation = this.data;
+        this.tempProgramProvider.getInstance().analysisInformation = this.data;
     }
 
      addWaterAnalysis() {

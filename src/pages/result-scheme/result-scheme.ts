@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 
-import { ProgramProvider } from '../../providers/programs';
+import { TempProgramProvider } from '../../providers/temp-program';
 
 @Component({
   selector: 'tab-result-scheme',
@@ -12,9 +12,9 @@ export class ResultScheme {
 
 	bg = 0;
   constructor( public navCtrl: NavController, 
-    public programProvider : ProgramProvider) { 
+    public tempProgramProvider : TempProgramProvider) { 
     	
-    	programProvider.getDataSchemeResult();
+    	tempProgramProvider.getDataSchemeResult();
   }
 
   ngOnInit(){

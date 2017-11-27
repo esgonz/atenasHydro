@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TabsResultPage } from '../../pages/tabs-results/tabs-results';
 import { NewAnalysisInformation } from '../new-analysis-information/new-analysis-information';
-import { ProgramProvider } from '../../providers/programs';
+import { TempProgramProvider } from '../../providers/temp-program';
 import { PagesProvider } from '../../providers/pages';
 /**
  * The Welcome Page is a splash page that quickly describes the app,
@@ -30,24 +30,24 @@ import { PagesProvider } from '../../providers/pages';
  		id:			"mmoll"
  	};
  	inputs = {
- 		nnh4: 		0.00,
- 		nno3: 		0.00,
- 		p: 			0.00,
- 		k: 			0.00,
- 		ca: 		0.00,
- 		mg: 		0.00,
- 		na: 		0.00,
- 		cl: 		0.00,
- 		sso4: 		0.00,
- 		fe: 		0.00,
- 		mn: 		0.00,
- 		zn: 		0.00,
- 		cu: 		0.00,
- 		b: 			0.00,
- 		mo: 		0.00,
- 		hco3: 		0.00,
- 		ph: 		0.00,
- 		ec: 		0.00
+ 		nnh4: 		"",
+ 		nno3: 		"",
+ 		p: 			"",
+ 		k: 			"",
+ 		ca: 		"",
+ 		mg: 		"",
+ 		na: 		"",
+ 		cl: 		"",
+ 		sso4: 		"",
+ 		fe: 		"",
+ 		mn: 		"",
+ 		zn: 		"",
+ 		cu: 		"",
+ 		b: 			"",
+ 		mo: 		"",
+ 		hco3: 		"",
+ 		ph: 		"",
+ 		ec: 		"",
  	}
 
  	inputsEquivalUnits = {
@@ -194,16 +194,16 @@ import { PagesProvider } from '../../providers/pages';
         }
  	}
  	constructor(public navCtrl: NavController, 
-                public programProvider : ProgramProvider,
+                public tempProgramProvider : TempProgramProvider,
                 private pagesProvider: PagesProvider) { 
-         this.data = programProvider.getInstance().waterAnalysisInformation;
+         this.data = tempProgramProvider.getInstance().waterAnalysisInformation;
          for (let f in this.data) {
          	for (let j in this.inputs) {
          		if (f == j) {
          			if (this.data.unit =="mgl") {
-         				this.inputs[j]= this.data[f].mgl;
+         				this.inputs[j]= this.avoidZeroValues(this.data[f].mgl);
          			}else{
-         				this.inputs[j]= this.data[f].mmoll;
+         				this.inputs[j]= this.avoidZeroValues(this.data[f].mmoll);
          			}
          			
          		}
@@ -215,6 +215,14 @@ import { PagesProvider } from '../../providers/pages';
 
 
 
+    avoidZeroValues( value){
+        if(value == 0) {
+            return "";
+        }
+        else{
+            return value;
+        }
+    }
 
  	changeEquivalents(){
  		console.log("changeEquivalents");
@@ -250,14 +258,20 @@ import { PagesProvider } from '../../providers/pages';
 
  	changeNnh4(){
  		console.log("changeNnh4");
+        let nnh4 ;
+        if(this.inputs.nnh4 != "") {
+            nnh4 = parseFloat(this.inputs.nnh4);
+        }else{
+            nnh4 = 0.00;
+        }
  		
- 		if (this.inputs.nnh4 != 0) {
+ 		if (nnh4 != 0 ) {
  			if (this.data.unit == "mgl") {
- 				this.data.nnh4.mgl 		= Number(this.inputs.nnh4 );
- 				this.data.nnh4.mmoll 	= Number(((this.inputs.nnh4 )/14).toFixed(10));
+ 				this.data.nnh4.mgl 		= Number( nnh4 );
+ 				this.data.nnh4.mmoll 	= Number(((nnh4 )/14).toFixed(10));
  			}else{
- 				this.data.nnh4.mgl 		= Number(((this.inputs.nnh4 )*14).toFixed(10)); 
- 				this.data.nnh4.mmoll 	= Number(this.inputs.nnh4 );
+ 				this.data.nnh4.mgl 		= Number(((nnh4 )*14).toFixed(10)); 
+ 				this.data.nnh4.mmoll 	= Number(nnh4 );
  			}
  			
  			
@@ -271,12 +285,19 @@ import { PagesProvider } from '../../providers/pages';
  	changeNno3(){
  		console.log("changeNno3");
  		
- 		if (this.inputs.nno3 != 0) {
+        let nno3 ;
+        if(this.inputs.nno3 != "") {
+            nno3 = parseFloat(this.inputs.nno3);
+        }else{
+            nno3 = 0.00;
+        }
+
+ 		if (nno3 != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.nno3.mgl 		= Number(this.inputs.nno3 );
- 				this.data.nno3.mmoll 	= Number(((this.inputs.nno3 )/14).toFixed(10));
+ 				this.data.nno3.mgl 		= Number(nno3 );
+ 				this.data.nno3.mmoll 	= Number(((nno3 )/14).toFixed(10));
  			}else{
- 				this.data.nno3.mgl 		= Number(((this.inputs.nno3 )*14).toFixed(10)); 
+ 				this.data.nno3.mgl 		= Number(((nno3 )*14).toFixed(10)); 
  				this.data.nno3.mmoll 	= Number(this.inputs.nno3 );
  			}
  		}else{
@@ -288,14 +309,20 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeP(){
  		console.log("changeP");
- 		
- 		if (this.inputs.p != 0) {
+ 		let p ;
+        if(this.inputs.p != "") {
+            p = parseFloat(this.inputs.p);
+        }else{
+            p = 0.00;
+        }
+
+ 		if (p != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.p.mgl 	= Number(this.inputs.p );
- 				this.data.p.mmoll 	= Number(((this.inputs.p )/30.97).toFixed(10));
+ 				this.data.p.mgl 	= Number(p );
+ 				this.data.p.mmoll 	= Number(((p )/30.97).toFixed(10));
  			}else{
- 				this.data.p.mgl 	= Number(((this.inputs.p )*30.97).toFixed(10)); 
- 				this.data.p.mmoll 	= Number(this.inputs.p );
+ 				this.data.p.mgl 	= Number(((p )*30.97).toFixed(10)); 
+ 				this.data.p.mmoll 	= Number(p );
  			}
  		}else{
  			this.data.p.mgl 		= 0.000;
@@ -306,13 +333,19 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeK(){
  		console.log("changeK");
- 		if (this.inputs.k != 0) {
+        let k ;
+        if(this.inputs.k != "") {
+            k = parseFloat(this.inputs.k);
+        }else{
+            k = 0.00;
+        }
+ 		if (k != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.k.mgl 	= Number(this.inputs.k );
- 				this.data.k.mmoll 	= Number(((this.inputs.k )/39.098).toFixed(10));
+ 				this.data.k.mgl 	= Number(k );
+ 				this.data.k.mmoll 	= Number(((k )/39.098).toFixed(10));
  			}else{
- 				this.data.k.mgl 	= Number(((this.inputs.k )*39.098).toFixed(10)); 
- 				this.data.k.mmoll 	= Number(this.inputs.k) ;
+ 				this.data.k.mgl 	= Number(((k )*39.098).toFixed(10)); 
+ 				this.data.k.mmoll 	= Number(k) ;
  			}
  		}else{
  			this.data.k.mgl 	= 0.000;
@@ -323,14 +356,19 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeCa(){
  		console.log("changeCa");
- 		
- 		if (this.inputs.ca != 0) {
+ 		let ca ;
+        if(this.inputs.ca != "") {
+            ca = parseFloat(this.inputs.ca);
+        }else{
+            ca = 0.00;
+        }
+ 		if (ca != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.ca.mgl 	= Number(this.inputs.ca );
- 				this.data.ca.mmoll 	= Number(((this.inputs.ca )/40.08).toFixed(10));
+ 				this.data.ca.mgl 	= Number(ca );
+ 				this.data.ca.mmoll 	= Number(((ca )/40.08).toFixed(10));
  			}else{
- 				this.data.ca.mgl 	= Number(((this.inputs.ca )*40.08).toFixed(10)); 
- 				this.data.ca.mmoll 	= Number(this.inputs.ca );
+ 				this.data.ca.mgl 	= Number(((ca )*40.08).toFixed(10)); 
+ 				this.data.ca.mmoll 	= Number(ca );
  			}
  		}else{
  			this.data.ca.mgl 		= 0.000;
@@ -341,14 +379,19 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeMg(){
  		console.log("changeMg");
- 		
- 		if (this.inputs.mg != 0) {
+ 		let mg ;
+        if(this.inputs.mg != "") {
+            mg = parseFloat(this.inputs.mg);
+        }else{
+            mg = 0.00;
+        }
+ 		if (mg != 0) {
  			if (this.data.unit == "mgl") {
- 				this.data.mg.mgl 	= Number(this.inputs.mg );
- 				this.data.mg.mmoll 	= Number(((this.inputs.mg )/24.305).toFixed(10));
+ 				this.data.mg.mgl 	= Number(mg );
+ 				this.data.mg.mmoll 	= Number(((mg )/24.305).toFixed(10));
  			}else{
- 				this.data.mg.mgl 	= Number(((this.inputs.mg )*24.305).toFixed(10)); 
- 				this.data.mg.mmoll 	= Number(this.inputs.mg );
+ 				this.data.mg.mgl 	= Number(((mg )*24.305).toFixed(10)); 
+ 				this.data.mg.mmoll 	= Number(mg );
  			}
  		}else{
  			this.data.mg.mgl 		= 0.000;
@@ -359,19 +402,26 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeNa(){
  		console.log("changeNa");
- 		if (this.inputs.na != 0) {
+
+        let na ;
+        if(this.inputs.na != "") {
+            na = parseFloat(this.inputs.na);
+        }else{
+            na = 0.00;
+        }
+ 		if (na != 0) {
  			
  			if (this.data.unit == "mgl") {
- 				this.data.na.mgl 	= Number(this.inputs.na );
- 				this.data.na.mmoll 	= Number(((this.inputs.na )/22.99).toFixed(10));
+ 				this.data.na.mgl 	= Number(na );
+ 				this.data.na.mmoll 	= Number(((na )/22.99).toFixed(10));
  			}else{
- 				this.data.na.mgl 	= Number(((this.inputs.na )*22.99).toFixed(10)); 
- 				this.data.na.mmoll 	= Number(this.inputs.na );
+ 				this.data.na.mgl 	= Number(((na )*22.99).toFixed(10)); 
+ 				this.data.na.mmoll 	= Number(na );
  			}
 
              this.updateProgramInformation();
-             this.programProvider.getInstance().verifyNaValue();
-             this.inputsAlerts.na = this.programProvider.getInstance().waterAnalysisInformation.na.alert;
+             this.tempProgramProvider.getInstance().verifyNaValue();
+             this.inputsAlerts.na = this.tempProgramProvider.getInstance().waterAnalysisInformation.na.alert;
 
  		}else{
  			this.data.na.mgl 	= 0.000;
@@ -382,20 +432,28 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeCl(){
  		console.log("changeCl");
- 		if (this.inputs.cl != 0) {
+
+         let cl ;
+        if(this.inputs.cl != "") {
+            cl = parseFloat(this.inputs.cl);
+        }else{
+            cl = 0.00;
+        }
+
+ 		if (cl != 0) {
  			
  			if (this.data.unit == "mgl") {
- 				this.data.cl.mgl 	= Number(this.inputs.cl );
- 				this.data.cl.mmoll 	= Number(((this.inputs.cl )/35.453).toFixed(10));
+ 				this.data.cl.mgl 	= Number(cl );
+ 				this.data.cl.mmoll 	= Number(((cl )/35.453).toFixed(10));
  			}else{
- 				this.data.cl.mgl 	= Number(((this.inputs.cl )*35.453).toFixed(10)); 
- 				this.data.cl.mmoll 	= Number(this.inputs.cl );
+ 				this.data.cl.mgl 	= Number(((cl )*35.453).toFixed(10)); 
+ 				this.data.cl.mmoll 	= Number(cl );
  			}
 
  			this.updateProgramInformation();
-            this.programProvider.getInstance().verifyClValue();
+            this.tempProgramProvider.getInstance().verifyClValue();
            
-            this.inputsAlerts.cl = this.programProvider.getInstance().waterAnalysisInformation.cl.alert;
+            this.inputsAlerts.cl = this.tempProgramProvider.getInstance().waterAnalysisInformation.cl.alert;
 
  		}else{
  			this.data.cl.mgl 	= 0.000;
@@ -406,21 +464,30 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeSso4(){
  		console.log("changeSso4");
- 		if (this.inputs.sso4 != 0) {
+
+        let sso4 ;
+        if(this.inputs.sso4 != "") {
+            sso4 = parseFloat(this.inputs.sso4);
+        }else{
+            sso4 = 0.00;
+        }
+
+
+ 		if (sso4 != 0) {
  			if (this.data.unit == "mgl") {
 
- 				this.data.sso4.mgl 		= Number(this.inputs.sso4 );
- 				this.data.sso4.mmoll 	= Number(((this.inputs.sso4 )/ 32.06).toFixed(10));
+ 				this.data.sso4.mgl 		= Number(sso4 );
+ 				this.data.sso4.mmoll 	= Number(((sso4 )/ 32.06).toFixed(10));
 
  			}else{
 
- 				this.data.sso4.mgl 		= Number(((this.inputs.sso4 )* 32.06).toFixed(10)); 
- 				this.data.sso4.mmoll 	= Number(this.inputs.sso4 );
+ 				this.data.sso4.mgl 		= Number(((sso4 )* 32.06).toFixed(10)); 
+ 				this.data.sso4.mmoll 	= Number(sso4 );
  			}
  			
  			this.updateProgramInformation();
-            this.programProvider.getInstance().verifySso4Value();
-            this.inputsAlerts.sso4 = this.programProvider.getInstance().waterAnalysisInformation.sso4.alert;
+            this.tempProgramProvider.getInstance().verifySso4Value();
+            this.inputsAlerts.sso4 = this.tempProgramProvider.getInstance().waterAnalysisInformation.sso4.alert;
 
  		}else{
  			this.data.sso4.mgl 		= 0.000;
@@ -431,21 +498,31 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeFe(){
  		console.log("changeFe");
- 		if (this.inputs.fe != 0) {
+
+
+        let fe ;
+        if(this.inputs.fe != "") {
+            fe = parseFloat(this.inputs.fe);
+        }else{
+            fe = 0.00;
+        }
+
+
+ 		if (fe != 0) {
 
 
  			if (this.data.unit == "mgl") {
- 				this.data.fe.mgl 		= this.inputs.fe;
+ 				this.data.fe.mgl 		= fe;
  				this.data.fe.umoll 	= Number(((this.data.fe.mgl *1000)/55.85).toFixed(10));
  				this.data.fe.mmoll 	= Number(((this.data.fe.mgl *1000)/55.85).toFixed(10));
  			}else{
- 				this.data.fe.mmoll 	= Number(this.inputs.fe);
+ 				this.data.fe.mmoll 	= Number(fe);
  				this.data.fe.umoll 	= Number(this.data.fe.mmoll);
  			}
 
  			this.updateProgramInformation();
-            this.programProvider.getInstance().verifyFeValue();
-            this.inputsAlerts.fe = this.programProvider.getInstance().waterAnalysisInformation.fe.alert;
+            this.tempProgramProvider.getInstance().verifyFeValue();
+            this.inputsAlerts.fe = this.tempProgramProvider.getInstance().waterAnalysisInformation.fe.alert;
 
  		}else{
  			this.data.fe.mgl 	= 0.000;
@@ -457,21 +534,30 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeMn(){
  		console.log("changeMn");
- 		if (this.inputs.mn != 0) {
+
+        let mn ;
+        if(this.inputs.mn != "") {
+            mn = parseFloat(this.inputs.mn);
+        }else{
+            mn = 0.00;
+        }
+
+
+ 		if (mn != 0) {
 
 
  			if (this.data.unit == "mgl") {
- 				this.data.mn.mgl 		= this.inputs.mn;
+ 				this.data.mn.mgl 		= mn;
  				this.data.mn.umoll 	= Number(((this.data.mn.mgl *1000)/54.94).toFixed(10));
  				this.data.mn.mmoll 	= Number(((this.data.mn.mgl *1000)/54.94).toFixed(10));
  			}else{
- 				this.data.mn.mmoll 	= Number(this.inputs.mn);
+ 				this.data.mn.mmoll 	= Number(mn);
  				this.data.mn.umoll 	= Number(this.data.mn.mmoll);
  			}
 
  			this.updateProgramInformation();
-            this.programProvider.getInstance().verifyMnValue();
-            this.inputsAlerts.mn = this.programProvider.getInstance().waterAnalysisInformation.mn.alert;
+            this.tempProgramProvider.getInstance().verifyMnValue();
+            this.inputsAlerts.mn = this.tempProgramProvider.getInstance().waterAnalysisInformation.mn.alert;
 
  		}else{
  			this.data.mn.mgl 	= 0.000;
@@ -483,21 +569,31 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeZn(){
  		console.log("changeZn");
- 		if (this.inputs.zn != 0) {
+
+
+        let zn ;
+        if(this.inputs.zn != "") {
+            zn = parseFloat(this.inputs.zn);
+        }else{
+            zn = 0.00;
+        }
+
+
+ 		if (zn != 0) {
 
  			if (this.data.unit == "mgl") {
- 				this.data.zn.mgl 		= Number(this.inputs.zn);
+ 				this.data.zn.mgl 		= Number(zn);
  				this.data.zn.umoll 	= Number(((this.data.zn.mgl *1000)/65.39).toFixed(10));
  				this.data.zn.mmoll 	= Number(((this.data.zn.mgl *1000)/65.39).toFixed(10));
  			}else{
- 				this.data.zn.mmoll 	= Number(this.inputs.zn);
+ 				this.data.zn.mmoll 	= Number(zn);
  				this.data.zn.umoll 	= Number(this.data.zn.mmoll);
  			}
 
 
  			this.updateProgramInformation();
-            this.programProvider.getInstance().verifyZnValue();
-            this.inputsAlerts.zn = this.programProvider.getInstance().waterAnalysisInformation.zn.alert;
+            this.tempProgramProvider.getInstance().verifyZnValue();
+            this.inputsAlerts.zn = this.tempProgramProvider.getInstance().waterAnalysisInformation.zn.alert;
 
  		}else{
  			this.data.zn.mgl 	= 0.000;
@@ -510,21 +606,28 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeCu(){
  		console.log("changeCu");
- 		if (this.inputs.cu != 0) {
+
+        let cu ;
+        if(this.inputs.cu != "") {
+            cu = parseFloat(this.inputs.cu);
+        }else{
+            cu = 0.00;
+        }
+ 		if (cu != 0) {
 
  			if (this.data.unit == "mgl") {
- 				this.data.cu.mgl 		= Number(this.inputs.cu);
+ 				this.data.cu.mgl 		= Number(cu);
  				this.data.cu.umoll 	= Number(((this.data.cu.mgl *1000)/63.55).toFixed(10));
  				this.data.cu.mmoll 	= Number(((this.data.cu.mgl *1000)/63.55).toFixed(10));
  			}else{
- 				this.data.cu.mmoll 	= Number(this.inputs.cu);
+ 				this.data.cu.mmoll 	= Number(cu);
  				this.data.cu.umoll 	= Number(this.data.cu.mmoll);
  			}
 
  			
  			this.updateProgramInformation();
-            this.programProvider.getInstance().verifyCuValue();
-            this.inputsAlerts.cu = this.programProvider.getInstance().waterAnalysisInformation.cu.alert;
+            this.tempProgramProvider.getInstance().verifyCuValue();
+            this.inputsAlerts.cu = this.tempProgramProvider.getInstance().waterAnalysisInformation.cu.alert;
 
  		}else{
  			this.data.cu.mgl 	= 0.000;
@@ -536,22 +639,30 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeB(){
  		console.log("changeB");
- 		if (this.inputs.b != 0) {
+
+
+        let b ;
+        if(this.inputs.nno3 != "") {
+            b = parseFloat(this.inputs.b);
+        }else{
+            b = 0.00;
+        }
+ 		if (b != 0) {
 
 
  			if (this.data.unit == "mgl") {
- 				this.data.b.mgl 		= Number(this.inputs.b);
+ 				this.data.b.mgl 		= Number(b);
  				this.data.b.umoll 	= Number(((this.data.b.mgl *1000)/10.81).toFixed(10));
  				this.data.b.mmoll 	= Number(((this.data.b.mgl *1000)/10.81).toFixed(10));
  			}else{
- 				this.data.b.mmoll 	= Number(this.inputs.b);
+ 				this.data.b.mmoll 	= Number(b);
  				this.data.b.umoll 	= Number(this.data.b.mmoll);
  			}
 
 
  			this.updateProgramInformation();
-            this.programProvider.getInstance().verifyBValue();
-            this.inputsAlerts.b = this.programProvider.getInstance().waterAnalysisInformation.b.alert;
+            this.tempProgramProvider.getInstance().verifyBValue();
+            this.inputsAlerts.b = this.tempProgramProvider.getInstance().waterAnalysisInformation.b.alert;
 
  		}else{
  			this.data.b.mgl 	= 0.000;
@@ -563,14 +674,21 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeMo(){
  		console.log("changeMo");
- 		if (this.inputs.mo != 0) {
+
+        let mo ;
+        if(this.inputs.mo != "") {
+            mo = parseFloat(this.inputs.mo);
+        }else{
+            mo = 0.00;
+        }
+ 		if (mo != 0) {
 
  			if (this.data.unit == "mgl") {
- 				this.data.mo.mgl 		= Number(this.inputs.mo);
+ 				this.data.mo.mgl 		= Number(mo);
  				this.data.mo.umoll 	= Number(((this.data.mo.mgl *1000)/95.94).toFixed(10));
  				this.data.mo.mmoll 	= Number(((this.data.mo.mgl *1000)/95.94).toFixed(10));
  			}else{
- 				this.data.mo.mmoll 	= Number(this.inputs.mo);
+ 				this.data.mo.mmoll 	= Number(mo);
  				this.data.mo.umoll 	= Number(this.data.mo.mmoll);
  			}
 
@@ -584,12 +702,20 @@ import { PagesProvider } from '../../providers/pages';
  	};
  	changeHco3(){
  		console.log("changeHco3");
- 		if (this.inputs.hco3 != 0) {
+
+
+         let hco3 ;
+        if(this.inputs.hco3 != "") {
+            hco3 = parseFloat(this.inputs.hco3);
+        }else{
+            hco3 = 0.00;
+        }
+ 		if (hco3 != 0) {
  			if (this.data.unit == "mgl") {
  				this.data.hco3.mgl 		= Number(this.inputs.hco3 );
- 				this.data.hco3.mmoll 	= Number(((this.inputs.hco3 )/ 61.02).toFixed(10));
+ 				this.data.hco3.mmoll 	= Number(((hco3 )/ 61.02).toFixed(10));
  			}else{
- 				this.data.hco3.mgl 		= Number(((this.inputs.hco3 )* 61.02).toFixed(10)); 
+ 				this.data.hco3.mgl 		= Number(((hco3 )* 61.02).toFixed(10)); 
  				this.data.hco3.mmoll 	= Number(this.inputs.hco3 );
  			}
  		}else{
@@ -603,24 +729,43 @@ import { PagesProvider } from '../../providers/pages';
  	};
 
  	changePh(){
- 		if (this.inputs.ph!= 0) {
- 			this.data.ph.value = Number(this.inputs.ph);
+
+
+        let ph ;
+        if(this.inputs.ph != "") {
+            ph = parseFloat(this.inputs.ph);
+        }else{
+            ph = 0.00;
+        }
+
+
+ 		if (ph!= 0) {
+ 			this.data.ph.value = Number(ph);
  			
             this.updateProgramInformation();
-            this.programProvider.getInstance().verifyPhValue();
-            this.inputsAlerts.ph = this.programProvider.getInstance().waterAnalysisInformation.ph.alert;
+            this.tempProgramProvider.getInstance().verifyPhValue();
+            this.inputsAlerts.ph = this.tempProgramProvider.getInstance().waterAnalysisInformation.ph.alert;
  			
  			
  		}
  	}
 
  	changeEc(){
- 		if (this.inputs.ec!= 0) {
+
+        let ec ;
+        if(this.inputs.ec != "") {
+            ec = parseFloat(this.inputs.ec);
+        }else{
+            ec = 0.00;
+        }
+
+
+ 		if (ec!= 0) {
  			this.data.ec.value = Number(this.inputs.ec);
  			
  			this.updateProgramInformation();
-            this.programProvider.getInstance().verifyECValue();
-            this.inputsAlerts.ec = this.programProvider.getInstance().waterAnalysisInformation.ec.alert;
+            this.tempProgramProvider.getInstance().verifyECValue();
+            this.inputsAlerts.ec = this.tempProgramProvider.getInstance().waterAnalysisInformation.ec.alert;
 
  		}
  	}
@@ -653,7 +798,7 @@ import { PagesProvider } from '../../providers/pages';
 
  	updateProgramInformation (){
         console.log("updateProgramInformation");
-        this.programProvider.getInstance().waterAnalysisInformation = this.data;
+        this.tempProgramProvider.getInstance().waterAnalysisInformation = this.data;
     }
 
     goToFertigationProgram(){
@@ -667,7 +812,7 @@ import { PagesProvider } from '../../providers/pages';
 
     goToInputData() {
         console.log("goToFertigationProgram");
-        this.navCtrl.pop(NewAnalysisInformation);
+        //this.navCtrl.pop(NewAnalysisInformation);
     }
 
  }
