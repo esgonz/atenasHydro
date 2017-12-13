@@ -2652,6 +2652,19 @@ export class Program {
 
 
     console.log("program to create:" , program);
+    /*programsProvider.saveProgramAPI(program).then((result : any) => {
+        console.log(result);
+        if(result.status == 200) {
+           console.log("todo ok, actualizando status");
+        }else{
+          console.log("algun error en los datos");
+        }
+    }, (err) => {
+      console.log("no update. error conexion");
+      console.log(err);
+    });*/
+
+
     programsProvider.create(program)
         .then(response => {
           console.log("program insert in the db");
@@ -2660,6 +2673,7 @@ export class Program {
         })
         .catch( error => {
             console.log("error insert in the db");
+            console.log(program);
           console.error( error );
         })
   }

@@ -249,7 +249,13 @@ import { PagesProvider } from '../../providers/pages';
             //copy object calciumChloride compare with the id of calcium chloride selected
  			if (this.calciumChlorides[i].id == this.calciumChlorideChoise.toString()){
  				console.log("true");
- 				this.data.calciumChlorideSource = this.calciumChlorides[i];
+ 				
+                 this.data.calciumChlorideSource.id = this.calciumChlorides[i].id;
+                 this.data.calciumChlorideSource.name = this.calciumChlorides[i].name;
+                 this.data.calciumChlorideSource.density = parseFloat(this.calciumChlorides[i].density.toString());
+                 this.data.calciumChlorideSource.concentration = this.calciumChlorides[i].concentration;
+
+
  				console.log(this.data.calciumChlorideSource);
  				this.calciumChlorideSuggestion.concentration = this.calciumChlorides[i].concentration.toString();
  				this.calciumChlorideSuggestion.density 	     = this.calciumChlorides[i].density.toString();
@@ -266,7 +272,10 @@ import { PagesProvider } from '../../providers/pages';
  			console.log("calcium nitrate ID: " + this.calciumNitrates[i].id);
  			if (this.calciumNitrates[i].id == this.calciumNitrateChoise.toString()){
  				console.log("true");
- 				this.data.calciumNitrateSource = this.calciumNitrates[i];
+ 				this.data.calciumChlorideSource.id = this.calciumChlorides[i].id;
+                 this.data.calciumChlorideSource.name = this.calciumChlorides[i].name;
+                 this.data.calciumChlorideSource.density = parseFloat(this.calciumChlorides[i].density.toString());
+                 this.data.calciumChlorideSource.concentration = this.calciumChlorides[i].concentration;
  				console.log(this.data.calciumNitrateSource);
  				this.calciumNitrateSuggestion.concentration = this.calciumNitrates[i].concentration.toString();
  				this.calciumNitrateSuggestion.density = this.calciumNitrates[i].density.toString();

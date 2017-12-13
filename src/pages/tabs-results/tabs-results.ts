@@ -20,7 +20,7 @@ export class TabsResultPage {
   tabResultWater: any    = TabResultWater;
   tabResultSolution: any = TabResultSolution;
   tabResultScheme: any   = TabResultScheme;
-  tab5Root: any = null;
+  tab5Root: any          = null;
 
   tabResultBasicTitle = " ";
   tabResultWaterTitle = " ";
@@ -48,10 +48,14 @@ export class TabsResultPage {
   saveProgram(){
     console.log("saveProgram");
     this.tempProgramProvider.saveInDB(this.programsProvider);
-    for (var i = 0; i < 100; ++i) {
+    for (var i = 0; i < 5000; ++i) {
       //dummy wait
     }
     console.log("end wait");
+    //this.programsProvider.saveProgramAPI(this.tempProgramProvider.program);
+
+
+   
     this.pagesProvider.clearList();
     this.pagesProvider.setActivePage(this.pagesProvider.rootPage.component);    
     this.navCtrl.push(this.pagesProvider.rootPage.component);

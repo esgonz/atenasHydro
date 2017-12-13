@@ -337,20 +337,24 @@ export class TempProgramProvider {
     }
 
     load() {
-        /*if (this.data) {
-        console.log("data exits, return promise");
-        return Promise.resolve(this.data);
-        }
+        /*
+        
+            if (this.data) {
+            console.log("data exits, return promise");
+            return Promise.resolve(this.data);
+            }
 
-        return new Promise(resolve => {
-            this.http.get('../assets/data/crops.json')
-            .map(res => res.json())
-            .subscribe(data => {
-                console.log("data subscribe, resolve");
-                this.data = data;
-                resolve(this.data);
+            return new Promise(resolve => {
+                this.http.get('../assets/data/crops.json')
+                .map(res => res.json())
+                .subscribe(data => {
+                    console.log("data subscribe, resolve");
+                    this.data = data;
+                    resolve(this.data);
+                });
             });
-        });*/    
+
+        */    
     }
 
     
