@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 import { TempProgramProvider } from '../../providers/temp-program';
 import { FormulasProvider } from '../../providers/formulas';
+
 @Component({
   selector: 'tab-result-water-analysis',
   templateUrl: 'result-water-analysis.html'
@@ -10,10 +11,15 @@ import { FormulasProvider } from '../../providers/formulas';
 export class ResultWaterAnalysis {
 
 
-  constructor(public navCtrl: NavController, 
-		public tempProgramProvider : TempProgramProvider, public formulasProvider : FormulasProvider ){
+  constructor(
+    public navCtrl: NavController, 
+		public tempProgramProvider : TempProgramProvider, 
+    public formulasProvider : FormulasProvider ){
    		
    		
    		
   }
+
+
+
 }

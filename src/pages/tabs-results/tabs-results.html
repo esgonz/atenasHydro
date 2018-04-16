@@ -1,7 +1,19 @@
 
- <ion-footer no-border *ngIf="!tempProgramProvider.onlyView">
+ <ion-footer no-border >
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <button ion-button block (click)='saveProgram()' color="danger" *ngIf="!tempProgramProvider.onlyView" ><span class="iconaddmore"></span>Save</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button block (click)='showPromptSendEmail()'> <ion-icon name="mail"></ion-icon>&nbsp;Send By Email</button>
+    </ion-col>
 
-  <button ion-button full  (click)='saveProgram()'><span class="iconaddmore"></span>SAVE </button>
+  </ion-row>
+</ion-grid>
+
+  
+  
 </ion-footer>
 <ion-tabs color="dark">
   <ion-tab [root]="tabResultBasic" [tabTitle]="tabResultBasicTitle" tabIcon="customicon"></ion-tab>

@@ -12,8 +12,8 @@
     </ion-title>
 
     <ion-buttons end>
-      <button ion-button icon-only (click)="openModal()">
-        <ion-icon name="md-more"></ion-icon>
+      <button ion-button icon-only (click)="showAlertLogout()">
+          <ion-icon name="log-out"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -28,17 +28,25 @@
 	</ion-searchbar>
 	
 	<div class="margeninterno">
+
+
+
+
+
     <ion-list>
     <ion-item-sliding *ngFor="let item of filterItems">
       <button ion-item (click)="openItem(item)">
 
         <h2>{{item.farmer}}</h2>
         <p>{{item.crop}}</p> <p>{{item.stage}}</p>
+        
         <ion-note item-end>{{getConvertDate(item.date)}}</ion-note>
+
       </button>
 
       <ion-item-options>
-        <button ion-button color="danger">         
+        <button ion-button color="danger"  (click)="deleteItem(item)">
+            <ion-icon name="trash"></ion-icon> delete                   
         </button>
       </ion-item-options>
     </ion-item-sliding>

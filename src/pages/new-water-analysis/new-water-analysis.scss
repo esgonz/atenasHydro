@@ -56,6 +56,24 @@ page-new-water-analysis {
 		color: color($colors,secondary);
 	}
 	
-	.fontSecondary {font-weight:  $fontSecondaryBold;
+	.fontSecondary {
+		font-weight:  $fontSecondaryBold;
 	}
+		ion-col {
+			position: initial;
+		}
+		.ion-col {
+			position: initial;
+		}
+		.ion-col-initial {
+			position: initial;
+		}
+
+	.inputAlert-balance{
+		font-size: 0.9em;
+		color:red;
+		font-weight: 600;
+	}
+
+
 }

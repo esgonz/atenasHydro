@@ -6,29 +6,30 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 /*Import pages*/
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { NewAnalysisInformation } from '../pages/new-analysis-information/new-analysis-information';
-import { NewWaterAnalysis } from '../pages/new-water-analysis/new-water-analysis';
-import { NewBasicInformation } from '../pages/new-basic-information/new-basic-information';
-import { NewCropSelect } from '../pages/new-crop-select/new-crop-select';
-import { PreviousList} from '../pages/previous-list/previous-list';
-import { ResultWaterAnalysis } from '../pages/result-water-analysis/result-water-analysis';
-import { ResultBasic } from '../pages/result-basic/result-basic';
-import { ResultSolution } from '../pages/result-solution/result-solution';
-import { TabsResultPage } from '../pages/tabs-results/tabs-results';
 
+import { NewWaterAnalysis } from '../pages/new-water-analysis/new-water-analysis';
+
+
+import { PreviousList} from '../pages/previous-list/previous-list';
+
+
+import { LoginPage } from '../pages/login/login';
+import { Disclaimer } from '../pages/disclaimer/disclaimer'
 /*imports providersa y usefuls classs*/
-import { Settings } from '../providers/providers';
 import { TranslateService } from '@ngx-translate/core';
 import { CropsProvider } from '../providers/crops';
 import { TempProgramProvider } from '../providers/temp-program';
 import { FormulasProvider } from '../providers/formulas';
 import { PagesProvider } from '../providers/pages';
 import { ProgramsProvider } from '../providers/programs/programs';
+import { LoginProvider } from '../providers/login';
+import { DisclaimerProvider } from '../providers/disclaimer';
+import { SplitPaneProvider } from '../providers/splitPane';
 @Component({
   templateUrl:'app.html'
 })
 export class MyApp {
-  rootPage = PreviousList;
+  rootPage = Disclaimer;
 
   @ViewChild(Nav) nav: Nav;
 
@@ -43,7 +44,7 @@ export class MyApp {
 
   constructor(
       private translate: TranslateService, 
-      private platform: Platform, settings: Settings, 
+      private platform: Platform, 
       private config: Config, 
       private splashScreen: SplashScreen, 
       private tempProgramProvider: TempProgramProvider, 
@@ -51,41 +52,92 @@ export class MyApp {
       private cropsProvider: CropsProvider, 
       private formulasProvider: FormulasProvider,
       public sqlite: SQLite,
-      public programsProvider: ProgramsProvider
+      public programsProvider: ProgramsProvider,
+      public loginProvider: LoginProvider, 
+      public discProvider : DisclaimerProvider,
+      public splitPaneProvider : SplitPaneProvider
   ) {
-    this.initTranslate();
-    this.initTempProgramProvider();
-    this.initPagesProvider();
-    this.initCropsProvider();
-    this.initFormulasProvider();
-    this.initApp();
+    this.splashScreen.show();
+    this.initApp()
+
+      .then((db: SQLiteObject) => {
+        console.log("create db ok");
+        this.programsProvider.setDatabase(db);
+        return this.programsProvider.createTable().then(
+          () => console.log('Executed createTable SQL')
+        )
+        .catch(e => console.log(e));
+      })
+      .then(() =>{
+        console.log("create set nav root ok");
+        
+      })
+      .catch(error =>{
+        console.log("create db error");
+        console.error(error);
+      });
+      
+      this.initDisclaimer()
+          .then((value : any) => {
+            console.log("get disclaimer return value");
+            if(value) {
+              console.log("initDisclaimer - disclaimer true");
+              this.initLogin()
+                .then((value : any) => {
+                  console.log("get login return value");
+
+                  this.loginProvider.login = value;
+
+                  console.log("*login obj: ",this.loginProvider.login);   
+                  if(this.loginProvider.login.status) {
+                    console.log("initLogin - login true");
+                    this.splashScreen.hide();
+                    var initPage = { title: 'Previous Recommendations', component: PreviousList, iconClass: 'icongrower' };
+                    this.setInitPageMenu(initPage);
+                    this.nav.setRoot(initPage.component);
+
+
+                  }else{
+                    this.splashScreen.hide();
+                     console.log("initLogin - login false");                      
+                     this.nav.setRoot(LoginPage);
+                  }
+                })
+                .catch((error : any)=> {
+                  this.splashScreen.hide();
+                  console.log("error constructor login. not get login");
+                });         
+            }else{
+              this.splashScreen.hide();
+               console.log("initLogin - disclaimer false");            
+               this.nav.setRoot(Disclaimer); 
+            }
+          })
+          .catch((error : any)=> {
+            console.log("error constructor Disclaimer. not get disclaimer");
+          });
+      
+          
+
+          this.initTranslate();
+          this.initTempProgramProvider();
+          this.initPagesProvider();
+          this.initCropsProvider();
+          this.initFormulasProvider();
+          
+    
+    
   }
 
   initApp(){
     console.log("initApp");
     console.log("Create DB");
     
-    this.sqlite.create({
+    return this.sqlite.create({
       name: 'sqmhydrocalq.db',
       location: 'default' // the location field is required
     })
-    .then((db: SQLiteObject) => {
-      console.log("create db ok");
-      this.programsProvider.setDatabase(db);
-      return this.programsProvider.createTable().then(
-        () => console.log('Executed createTable SQL')
-      )
-      .catch(e => console.log(e));
-    })
-    .then(() =>{
-      console.log("create set nav root ok");
-      this.splashScreen.hide();
-      this.nav.setRoot(this.rootPage);
-    })
-    .catch(error =>{
-      console.log("create db error");
-      console.error(error);
-    });
+    
   }
 
   ionViewDidLoad() {
@@ -93,17 +145,36 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       console.log("ionViewDidLoad platform ready");      
-      this.splashScreen.hide();
-      this.nav.setRoot(this.rootPage);
+      //this.splashScreen.hide();
+      //this.nav.setRoot(this.rootPage);
     });
   }
 
   initPagesProvider(){
-    var initPage = { title: 'Previous Recommendations', component: this.rootPage, iconClass: 'icongrower' };
-    this.pagesProvider.add(initPage);
-    this.pagesProvider.setActivePage(initPage);
-    this.pagesProvider.setRootPage(initPage);
+    //var initPage = { title: 'Previous Recommendations', component: this.rootPage, iconClass: 'icongrower' };
+    //this.pagesProvider.add(initPage);
+    //this.pagesProvider.setActivePage(initPage);
+    //this.pagesProvider.setRootPage(initPage);
     //this.pages = this.pagesProvider.getInstance();
+    //
+    //set login page
+    var loginPage = { title: 'Login', component: LoginPage, iconClass: '' };
+            this.pagesProvider.setLoginPage(loginPage);
+  }
+
+  initDisclaimer(){
+    console.log("initDisclaimer");
+
+    return this.discProvider.getDisclaimer()   
+
+
+  }
+  initLogin(){
+    console.log("initLogin");
+
+    return this.loginProvider.getLogin()   
+
+
   }
   initTempProgramProvider(){
     console.log("initTempProgramProvider");
@@ -144,7 +215,7 @@ export class MyApp {
     
 
   }
-
+  
   openPage(page) {
     // Reset the content nav to have just this page
     
@@ -154,5 +225,14 @@ export class MyApp {
     this.nav.push(page.component);
   }
 
+  setInitPageMenu(initPage){
+      console.log("setInitPageMenu")
+           
+            this.pagesProvider.add(initPage);
+            this.pagesProvider.setActivePage(initPage);
+            this.pagesProvider.setRootPage(initPage);
+
+    this.nav.setRoot(initPage.component);
+  }
 
 }

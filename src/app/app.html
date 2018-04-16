@@ -1,7 +1,7 @@
+<!--<ion-split-pane [when]="splitPaneProvider.shouldShow">-->
 <ion-split-pane>
-
   <!-- logged out menu -->
-  <ion-menu id="loggedOutMenu" [content]="content">
+  <ion-menu id="loggedOutMenu" [content]="content" >
 
     <ion-header>
       <ion-toolbar color="dark">
@@ -12,100 +12,20 @@
     <ion-content class="outer-content lateralMenu">
 
       <ion-list >
-        <button ion-item [class.activeHighlight]="pagesProvider.checkActivePage(p)" class="laterMenuPageItem" (click)="openPage(p)" *ngFor="let p of pagesProvider.getInstance()">
-          <span class="{{p.iconClass}}"></span> {{p.title}}
-        </button>
+          <button ion-item [class.activeHighlight]="pagesProvider.checkActivePage(p)" class="laterMenuPageItem" (click)="openPage(p)" *ngFor="let p of pagesProvider.getInstance()">
+              <span class="{{p.iconClass}}"></span> {{p.title}}
+          </button>
       </ion-list>
     </ion-content>
-
+    
   </ion-menu>
 
-  <!-- logged in menu -->
-  <ion-menu id="loggedInMenu" [content]="content">
-
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content class="outer-content">
-
-      <ion-list>
-        <ion-list-header>
-          Navigate
-        </ion-list-header>
-        <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
-          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
-          {{p.title}}
-        </button>
-      </ion-list>
-
-      <ion-list>
-        <ion-list-header>
-          Account
-        </ion-list-header>
-        <button ion-item menuClose *ngFor="let p of loggedInPages" (click)="openPage(p)">
-          <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
-          {{p.title}}
-        </button>
-      </ion-list>
-
-      <ion-list>
-        <ion-list-header>
-          Tutorial
-        </ion-list-header>
-        <button ion-item menuClose (click)="openTutorial()">
-          <ion-icon item-start name="hammer"></ion-icon>
-          Show Tutorial
-        </button>
-      </ion-list>
-
-    </ion-content>
-
-  </ion-menu>
 
   <!-- main navigation -->
-  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main name="app"></ion-nav>
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main name="app">
+     
+  </ion-nav>
 
 </ion-split-pane>
 
-<!-- <ion-nav id="nav" [root]="rootPage" #nav swipeBackEnabled="true"></ion-nav>
-<ion-split-pane>
-<ion-menu [content]="nav">
-
-  <ion-header class="menudesplegable">
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content class="menudesplegable">
-    <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)" class="menudesplegable">
-        {{p.title}}
-      </button>
-    </ion-list>
-  </ion-content>
-
-</ion-menu>
-</ion-split-pane>-->
-<!--
-<ion-menu [content]="content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content>
-      <ion-list>
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          {{p.title}}
-        </button>
-      </ion-list>
-    </ion-content>
-
-  </ion-menu>
-  <ion-nav #content [root]="rootPage"></ion-nav>-->
 

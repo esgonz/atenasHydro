@@ -5,7 +5,6 @@ import { NewWaterAnalysis } from '../../pages/new-water-analysis/new-water-analy
 import { NewAnalysisInformation } from '../../pages/new-analysis-information/new-analysis-information';
 import { TempProgramProvider } from '../../providers/temp-program';
 import { PagesProvider } from '../../providers/pages';
-
 import { Crop } from '../../models/crop';
 import { CropStage } from '../../models/cropstage';
 import { CropSolution } from '../../models/cropsolution';
@@ -16,102 +15,108 @@ import { CropSolution } from '../../models/cropsolution';
 * we recommend not using the Welcome page.
 */
 @Component({
-    selector: 'page-new-crop-select',
-    templateUrl: 'new-crop-select.html'
+ selector: 'page-new-crop-select',
+ templateUrl: 'new-crop-select.html'
 })
 export class NewCropSelect implements OnInit{
-    selectedCropId  = "-1";
-    selectedCrop    = {
-        stages : []
-    };
-    selectedStageId  = "-1";
-    selectedStage    = {
-        stages : []
-    };
+ selectedCropId  = "-1";
+ selectedCrop    = {
+  stages : []
+ };
+ selectedStageId  = "-1";
+ selectedStage    = {
+  stages : []
+ };
 
-    data = {
-        cropObj: null,
-        stageId: null,
-     };
+ data = {
+  cropObj: null,
+  stageId: null,
+ };
 
-    constructor(public navCtrl: NavController , public CropsProvider: CropsProvider, 
-                public tempProgramProvider : TempProgramProvider, private pagesProvider: PagesProvider) { 
-        this.data = tempProgramProvider.getInstance().cropInformation;
-        
-        if (this.data.cropObj !== null) {
-           console.log("crop from program: ", this.data.cropObj );
-           this.selectedCropId    = this.data.cropObj.id;
-           this.selectedCrop      = this.data.cropObj;
-           this.selectedStageId   = this.data.stageId;
-        }
-        
-        /*
-        this.CropsService.load().then(function (data){
-            console.log ("CropsService data:", data);
+ constructor(
+  public navCtrl: NavController , 
+  public CropsProvider: CropsProvider, 
+  public tempProgramProvider : TempProgramProvider, 
+  private pagesProvider: PagesProvider) { 
+  this.data = tempProgramProvider.getInstance().cropInformation;
 
-        });
-        */
-         
-    }
-    ngOnInit(){
-        //called after the constructor and called  after the first ngOnChanges()
+  if (this.data.cropObj !== null) {
+   console.log("crop from program: ", this.data.cropObj );
+   this.selectedCropId    = this.data.cropObj.id;
+   this.selectedCrop      = this.data.cropObj;
+   this.selectedStageId   = this.data.stageId;
+  }
 
-        
-    }
+ /*
+ this.CropsService.load().then(function (data){
+ console.log ("CropsService data:", data);
 
-    selectCrop(){
-        console.log ("selectedcrop", this.selectedCropId.toString());
-        
-        //search the crop by the id value selected in the select input
-        this.selectedCrop = this.CropsProvider.getCropById(this.selectedCropId.toString());
+ });
+ */
+
+ }
+ ngOnInit(){
+ //called after the constructor and called  after the first ngOnChanges()
 
 
-       /*console.log("true crop");
+ }
 
-                this.selectedCrop = new Crop(this.CropsService.data[i]);
-                console.log("selectedCrop: ",this.selectedCrop);  */
-    }
+ selectCrop(){
+  console.log ("selectedcrop", this.selectedCropId.toString());
 
-    selectStage(){
-        console.log ("select Stage", this.selectedStageId);
-        //search the stage of the crop by the id value selected in the select input
-        for (var i = 0; i< this.selectedCrop.stages.length; i++) {
-            console.log("Stage ID: " + this.selectedCrop.stages[i].id);
-            
-            //if match
-            if (this.selectedCrop.stages[i].id == this.selectedStageId.toString()){
-                console.log("true stage");
-                this.selectedStage = this.selectedCrop.stages[i]
-                console.log("selectedStage: ", this.selectedStage);        
-                this.inputData();
-            }
-        }
+ //search the crop by the id value selected in the select input
+ this.selectedCrop = this.CropsProvider.getCropById(this.selectedCropId.toString());
 
 
-    }
+ /*console.log("true crop");
 
-    inputData(){
-        if (this.selectedCrop != null && this.selectedStage != null)
-        {  
-            console.log("selectedCrop",  this.selectedCrop);
-            console.log("selectedStage", this.selectedStage);
-            this.data.cropObj = this.selectedCrop;
-            this.data.stageId = this.selectedStageId;
-            this.updateProgramInformation();
-            
-            var pageAnalysis = { title: 'Input Data Table', component: NewAnalysisInformation,  iconClass: 'iconinput'  };
-            this.pagesProvider.add(pageAnalysis);
-            this.pagesProvider.add({ title: 'Add Water Analysis', component: NewWaterAnalysis, iconClass: 'iconwatter'   });
-            this.pagesProvider.setActivePage(pageAnalysis);  
-            this.navCtrl.push(NewAnalysisInformation);
-        }
-        else{
-            alert ("Before continue, please select a valid option.");
-        }    
-    }
+ this.selectedCrop = new Crop(this.CropsService.data[i]);
+ console.log("selectedCrop: ",this.selectedCrop);  */
+ }
 
-    updateProgramInformation (){
-        console.log("updateProgramInformation");
-        this.tempProgramProvider.getInstance().cropInformation = this.data;
-    }
+ selectStage(){
+  console.log ("select Stage", this.selectedStageId);
+ //search the stage of the crop by the id value selected in the select input
+ for (var i = 0; i< this.selectedCrop.stages.length; i++) {
+  console.log("Stage ID: " + this.selectedCrop.stages[i].id);
+
+ //if match
+ if (this.selectedCrop.stages[i].id == this.selectedStageId.toString()){
+  console.log("true stage");
+  this.selectedStage = this.selectedCrop.stages[i]
+  console.log("selectedStage: ", this.selectedStage);        
+  this.inputData();
+ }
+ }
+
+
+ }
+
+ inputData(){
+  if (this.selectedCrop != null && this.selectedStage != null)
+  {  
+   console.log("selectedCrop",  this.selectedCrop);
+   console.log("selectedStage", this.selectedStage);
+   this.data.cropObj = this.selectedCrop;
+   this.data.stageId = this.selectedStageId;
+   this.updateProgramInformation();
+
+   var pageAnalysis = { title: 'Input Data Table', component: NewAnalysisInformation,  iconClass: 'iconinput'  };
+   this.pagesProvider.add(pageAnalysis);
+   this.pagesProvider.add({ title: 'Add Water Analysis', component: NewWaterAnalysis, iconClass: 'iconwatter'   });
+   this.pagesProvider.setActivePage(pageAnalysis);  
+   this.navCtrl.push(NewAnalysisInformation);
+  }
+  else{
+   alert ("Before continue, please select a valid option.");
+  }    
+ }
+
+ updateProgramInformation (){
+  console.log("updateProgramInformation");
+  this.tempProgramProvider.getInstance().cropInformation = this.data;
+  this.tempProgramProvider.getInstance().changeCrop(this.data.cropObj,this.data.stageId);
+ }
+
+
 }

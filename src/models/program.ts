@@ -7,7 +7,7 @@ import { CropSolution } from '../models/cropsolution';
 import { FormulasProvider } from '../providers/formulas';
 import { ProgramsProvider } from '../providers/programs/programs';
 /**
-* A generic model that our Master-Detail pages list, create, and delete.
+* A generic model that our Master-Detail pages list, create, and delete.f
 *
 * Change "Item" to the noun your app will use. For example, a "Contact," or a
 * "Customer," or a "Animal," or something like that.
@@ -22,15 +22,16 @@ POR MODIFICAR !!!!!!!!!
 
 */
 export class Program {
-  id = "";
+  id   = "";
   uuid = "";
   
+  stageObject = null;
   basicInformation = {
-    name   : "",
-    company  : "",
-    sectorId  : "",
-    date   : "",
-    email   : ""
+    name   :      "",
+    company  :    "",
+    sectorId  :   "",
+    date   :      "",
+    email   :     ""
   };
   
   cropInformation = {
@@ -72,48 +73,71 @@ export class Program {
     unit: "mgl",
     balance: 0.00,
     nnh4: {
+      unit: "mmoll",
       mgl:  0.00,
-      mmoll:  0.00
+      mmoll:  0.00,
+      status: "normal",
+      alert: ""
     },
     nno3: {
+      unit: "mmoll",
       mgl:  0.00,
-      mmoll:  0.00
+      mmoll:  0.00,
+      status: "normal",
+      alert: ""
     },
     p: {
+      unit: "mmoll",
       mgl:  0.00,
-      mmoll:  0.00
+      mmoll:  0.00,
+      status: "normal",
+      alert: ""
     },
     k: {
+      unit: "mmoll",
       mgl:  0.00,
-      mmoll:  0.00
+      mmoll:  0.00,
+      status: "normal",
+      alert: ""
     },
     ca: {
+      unit: "mmoll",
       mgl:  0.00,
-      mmoll:  0.00
+      mmoll:  0.00,
+      status: "normal",
+      alert: ""
     },
     mg: {
+      unit: "mmoll",
       mgl:  0.00,
-      mmoll:  0.00
+      mmoll:  0.00,
+      status: "normal",
+      alert: ""
     },
     na: {
+      unit: "mmoll",
       mgl:  0.00,
       mmoll:  0.00,
       status: "normal",
       alert: ""
     },
     cl: {
+      unit: "mmoll",
       mgl:  0.00,
       mmoll:  0.00,
       status: "normal",
       alert: ""
     },
     sso4: {
+      unit: "mmoll",
       mgl:  0.00,
       mmoll:  0.00,
       status: "normal",
       alert: ""
     },
     fe: {
+
+      unit: "umoll",
       mgl:  0.00,
       mmoll:  0.00,
       umoll: 0.00,
@@ -121,6 +145,7 @@ export class Program {
       alert: ""
     },
     mn: {
+      unit: "umoll",
       mgl:  0.00,
       mmoll:  0.00,
       umoll: 0.00,
@@ -128,6 +153,7 @@ export class Program {
       alert: ""
     },
     zn: {
+      unit: "umoll",
       mgl:  0.00,
       mmoll:  0.00,
       umoll: 0.00,
@@ -135,6 +161,7 @@ export class Program {
       alert: ""
     },
     cu: {
+      unit: "umoll",
       mgl:  0.00,
       mmoll:  0.00,
       umoll: 0.00,
@@ -142,6 +169,7 @@ export class Program {
       alert: ""
     },
     b: {
+      unit: "umoll",
       mgl:  0.00,
       mmoll:  0.00,
       umoll: 0.00,
@@ -149,14 +177,17 @@ export class Program {
       alert: ""
     },
     mo: {
+      unit: "umoll",
       mgl:  0.00,
       mmoll:  0.00,
       umoll: 0.00
     },
     hco3: {
+      unit: "mmoll",
       mgl:  0.00,
-      mmoll:  0.00
-
+      mmoll:  0.00,
+      status: "normal",
+      alert: ""
     },
     ph: {
       value: 0.00,
@@ -192,24 +223,24 @@ export class Program {
 
   NPKScheme = {
     formula : {
-      macroElements : new MacroElements({}),
-      traceElements: new TraceElements({})
+      macroElements : new  MacroElements({}),
+      traceElements: new   TraceElements({})
     },
     required: {
-      macroElements : new MacroElements({}),
-      traceElements: new TraceElements({})
+      macroElements : new  MacroElements({}),
+      traceElements: new   TraceElements({})
     },
     calciumCholide35: {
-      macroElements : new MacroElements({}),
-      traceElements: new TraceElements({})
+      macroElements : new  MacroElements({}),
+      traceElements: new   TraceElements({})
     },
     ultrasolCalcium: {
-      macroElements : new MacroElements({}),
-      traceElements: new TraceElements({})
+      macroElements : new  MacroElements({}),
+      traceElements: new   TraceElements({})
     },
     ultrasolCalmag: {
-      macroElements : new MacroElements({}),
-      traceElements: new TraceElements({})
+      macroElements : new  MacroElements({}),
+      traceElements: new   TraceElements({})
     },
     ultrasolKPlus: {
       macroElements : new MacroElements({}),
@@ -264,37 +295,66 @@ export class Program {
     b: null
   }
 
+  formatSolution ={
+            nnh4: null,
+            nno3: null,
+            p:    null,
+            k:    null,
+            ca:   null,
+            mg:   null,
+            cl:   null,
+            sso4: null,
+            fe:   null,
+            mn:   null,
+            zn:   null,
+            cu:   null,
+            b:    null,
+            mo:   null
+        };
 
 
+  formatScheme = {};
   constructor( fields: any) {
     // Quick and dirty extend/assign fields to this model
     for (let f in fields) {
       this[f] = fields[f];
     }
+
   }
 
+  cropSelected = {
+    cropObj: null,
+    stageObj: null
+  }
 
+  changeCrop( cropObj: any, stageId: any){
+    console.log("verifyECValue");
+    this.cropInformation.cropObj   = cropObj;
+    this.cropInformation.stageId   = stageId;
+    this.cropSelected.cropObj      = cropObj;
+    this.cropSelected.stageObj     = this.getStageByID(this.cropInformation.stageId);
+
+  }
   /*Verify levels of EC*/
   verifyECValue(){
     console.log("verifyECValue");
-    let thisStage =this.getStageByID(this.cropInformation.stageId);
 
     if (this.waterAnalysisInformation.ec.value > 1.5) {
       console.log("Too high");
       this.waterAnalysisInformation.ec.status = "tooHigh";
       this.waterAnalysisInformation.ec.alert  = "Too High. " +
-      thisStage.alerts.ec.tooHigh; ;
+      this.cropSelected.stageObj.alerts.ec.tooHigh; ;
     }
     else if (this.waterAnalysisInformation.ec.value > 1) {
       console.log("very high");
       this.waterAnalysisInformation.ec.status = "VeryHigh";
       this.waterAnalysisInformation.ec.alert  = "Very High. " +
-      thisStage.alerts.ec.veryHigh;
+      this.cropSelected.stageObj.alerts.ec.veryHigh;
     }
     else if (this.waterAnalysisInformation.ec.value > 0.5) {
       console.log("high");
       this.waterAnalysisInformation.ec.alert = "High. " +
-      thisStage.alerts.ec.veryHigh;
+      this.cropSelected.stageObj.alerts.ec.veryHigh;
     }else{
       console.log("normal");
       this.waterAnalysisInformation.ec.status = "normal";
@@ -305,24 +365,24 @@ export class Program {
   /*Verify levels of Na*/
   verifyNaValue(){
     console.log("verifyNaValue");
-    let thisStage =this.getStageByID(this.cropInformation.stageId);
+
     if (this.waterAnalysisInformation.na.mmoll > 4.5) {
       console.log("Too high");
       this.waterAnalysisInformation.na.status = "tooHigh";
       this.waterAnalysisInformation.na.alert  = "Too High. " +
-      thisStage.alerts.na.tooHigh;
+      this.cropSelected.stageObj.alerts.na.tooHigh;
 
     }else if (this.waterAnalysisInformation.na.mmoll > 3) {
       console.log("very high");
       this.waterAnalysisInformation.na.status = "veryHigh";
       this.waterAnalysisInformation.na.alert  = "Very High. " +
-      thisStage.alerts.na.veryHigh;
+      this.cropSelected.stageObj.alerts.na.veryHigh;
     }
     else if (this.waterAnalysisInformation.na.mmoll > 1.5) {
       console.log("high");
       this.waterAnalysisInformation.na.status = "High";
       this.waterAnalysisInformation.na.alert  = "High alert. " +
-      thisStage.alerts.na.high;
+      this.cropSelected.stageObj.alerts.na.high;
     }
     else{
       console.log("normal");
@@ -334,20 +394,20 @@ export class Program {
   /*Verify levels of Cl*/
   verifyClValue(){
     console.log("verifyClValue");
-    let thisStage =this.getStageByID(this.cropInformation.stageId);
+
     if (this.waterAnalysisInformation.cl.mmoll > 4.5) {
       //to high
       console.log("Too high");
       this.waterAnalysisInformation.cl.status = "tooHigh";
       this.waterAnalysisInformation.cl.alert  = "Too High. " +
-      thisStage.alerts.cl.tooHigh;
+      this.cropSelected.stageObj.alerts.cl.tooHigh;
     }
     else if (this.waterAnalysisInformation.cl.mmoll > 3) {
       //very high
       console.log("very high");
       this.waterAnalysisInformation.cl.status = "veryHigh";
       this.waterAnalysisInformation.cl.alert  = "Very High. " +
-      thisStage.alerts.cl.veryHigh;
+      this.cropSelected.stageObj.alerts.cl.veryHigh;
     }
     else if (this.waterAnalysisInformation.cl.mmoll > 1.5) {
 
@@ -355,7 +415,7 @@ export class Program {
       console.log("high");
       this.waterAnalysisInformation.cl.status = "high";
       this.waterAnalysisInformation.cl.alert  = "High. " +
-      thisStage.alerts.cl.high;
+      this.cropSelected.stageObj.alerts.cl.high;
     }
     else{
       //normal
@@ -368,13 +428,13 @@ export class Program {
   /*Verify levels of SSO4*/
   verifySso4Value(){
     console.log("verifySso4Value");
-    let thisStage =this.getStageByID(this.cropInformation.stageId);
+
     if (this.waterAnalysisInformation.sso4.mmoll > 2) {
       //too high
       console.log("Too high");
       this.waterAnalysisInformation.sso4.status = "tooHigh";
       this.waterAnalysisInformation.sso4.alert  = "Too High. " +
-      thisStage.alerts.so4.tooHigh;
+      this.cropSelected.stageObj.alerts.so4.tooHigh;
     }else{
       //normal
       console.log("normal");
@@ -386,31 +446,40 @@ export class Program {
   /*Verify levels of Ph*/
   verifyPhValue(){
     console.log("verifyPhValue");
-    let thisStage =this.getStageByID(this.cropInformation.stageId);
-    if (this.waterAnalysisInformation.ph.value < 5.5) {
-      //to high
-      console.log("Too high");
-      this.waterAnalysisInformation.ph.status = "tooLow";
-      this.waterAnalysisInformation.ph.alert  = "Too low. " +
-      thisStage.alerts.ph.tooLow;
-    }else {
+
+
+
+    
+
+    if(this.waterAnalysisInformation.ph.value >= 5.5 && this.waterAnalysisInformation.ph.value < 8.5) {
       //normal
       console.log("normal");
       this.waterAnalysisInformation.ph.status = "normal";
       this.waterAnalysisInformation.ph.alert = "OK";
+    }else if (this.waterAnalysisInformation.ph.value < 5.5) {
+      //to low
+      console.log("Too low");
+      this.waterAnalysisInformation.ph.status = "tooLow";
+      this.waterAnalysisInformation.ph.alert  = "Too low. " +
+      this.cropSelected.stageObj.alerts.ph.tooLow;
+    }else {
+      //hight
+      console.log("too High");
+      this.waterAnalysisInformation.ph.status = "tooHigh";
+      this.waterAnalysisInformation.ph.alert  = "Too High. "
     }
   }
 
   /*Verify levels of Fe*/
   verifyFeValue(){
     console.log("verifyFeValue");
-    let thisStage =this.getStageByID(this.cropInformation.stageId);
+
     if (this.waterAnalysisInformation.fe.mmoll > 25) {
       //to high
       console.log("Too high");
       this.waterAnalysisInformation.fe.status = "tooHigh";
       this.waterAnalysisInformation.fe.alert  = "Too High. " +
-      thisStage.alerts.fe.tooHigh;
+      this.cropSelected.stageObj.alerts.fe.tooHigh;
     }else {
       //normal
       console.log("normal");
@@ -422,12 +491,12 @@ export class Program {
   /*Verify levels of B*/
   verifyBValue(){
     console.log("verifyBValue");
-    let thisStage =this.getStageByID(this.cropInformation.stageId);
+
     if (this.waterAnalysisInformation.b.mmoll > 50) {
       //to high
       console.log("Too high");
       this.waterAnalysisInformation.b.status = "tooHigh";
-      this.waterAnalysisInformation.b.alert  = "Too High. " + thisStage.alerts.b.tooHigh;
+      this.waterAnalysisInformation.b.alert  = "Too High. " + this.cropSelected.stageObj.alerts.b.tooHigh;
     }else{
       //normal
       console.log("normal");
@@ -439,12 +508,12 @@ export class Program {
   /*Verify levels of Zn*/
   verifyZnValue(){
     console.log("verifyZnValue");
-    let thisStage =this.getStageByID(this.cropInformation.stageId);
+
     if (this.waterAnalysisInformation.zn.mmoll > 10) {
       //too high
       console.log("Too high");
       this.waterAnalysisInformation.zn.status = "tooHigh";
-      this.waterAnalysisInformation.zn.alert = "Too High. " + thisStage.alerts.zn.tooHigh;
+      this.waterAnalysisInformation.zn.alert = "Too High. " + this.cropSelected.stageObj.alerts.zn.tooHigh;
     }else{
       //normal
       console.log("normal");
@@ -456,12 +525,12 @@ export class Program {
   /*Verify levels of Mn*/
   verifyMnValue(){
     console.log("verifyMnValue");
-    let thisStage =this.getStageByID(this.cropInformation.stageId);
+  
     if (this.waterAnalysisInformation.mn.mmoll > 10) {
       //too high
       console.log("Too high");
       this.waterAnalysisInformation.mn.status = "tooHigh";
-      this.waterAnalysisInformation.mn.alert = "Too High. " + thisStage.alerts.mn.tooHigh;
+      this.waterAnalysisInformation.mn.alert = "Too High. " + this.cropSelected.stageObj.alerts.mn.tooHigh;
     }else{
       //normal
       console.log("normal");
@@ -473,17 +542,141 @@ export class Program {
   /*Verify levels of Cu*/
   verifyCuValue(){
     console.log("verifyCuValue");
-    let thisStage =this.getStageByID(this.cropInformation.stageId);
+
     if (this.waterAnalysisInformation.cu.mmoll > 3) {
       //too high
       console.log("Too high");
       this.waterAnalysisInformation.cu.status = "tooHigh";
-      this.waterAnalysisInformation.cu.alert = "Too High. " + thisStage.alerts.cu.tooHigh;
+      this.waterAnalysisInformation.cu.alert = "Too High. " + this.cropSelected.stageObj.alerts.cu.tooHigh;
     }else{
       //normal
       console.log("normal");
       this.waterAnalysisInformation.cu.status = "normal";
       this.waterAnalysisInformation.cu.alert = "";
+    }
+  }
+
+
+  /*Verify levels of Nnh4*/
+  verifyNnh4Value(){
+    console.log("verifyNnh4Value");
+
+    if (this.waterAnalysisInformation.nnh4.mmoll > 0.2) {
+      //too high
+      console.log("high");
+      this.waterAnalysisInformation.nnh4.status = "high";
+      this.waterAnalysisInformation.nnh4.alert = "High, check data entry";
+    }else{
+      //normal
+      console.log("normal");
+      this.waterAnalysisInformation.nnh4.status = "normal";
+      this.waterAnalysisInformation.nnh4.alert = "";
+    }
+  }
+
+  /*Verify levels of nno3*/
+  verifyNno3Value(){
+    console.log("verifyNnh4Value");
+
+    if (this.waterAnalysisInformation.nno3.mmoll > 1) {
+      //too high
+      console.log("high");
+      this.waterAnalysisInformation.nno3.status = "high";
+      this.waterAnalysisInformation.nno3.alert = "High, check data entry";
+    }else{
+      //normal
+      console.log("normal");
+      this.waterAnalysisInformation.nno3.status = "normal";
+      this.waterAnalysisInformation.nno3.alert = "";
+    }
+  }
+
+  /*Verify levels of nno3*/
+  verifyPValue(){
+    console.log("verifyNnh4Value");
+
+    if (this.waterAnalysisInformation.p.mmoll > 1) {
+      //too high
+      console.log("high");
+      this.waterAnalysisInformation.p.status = "high";
+      this.waterAnalysisInformation.p.alert = "High, check data entry";
+    }else{
+      //normal
+      console.log("normal");
+      this.waterAnalysisInformation.p.status = "normal";
+      this.waterAnalysisInformation.p.alert = "";
+    }
+  }
+
+   /*Verify levels of nno3*/
+  verifyKValue(){
+    console.log("verifyNnh4Value");
+
+    if (this.waterAnalysisInformation.k.mmoll > 1) {
+      //too high
+      console.log("high");
+      this.waterAnalysisInformation.k.status = "high";
+      this.waterAnalysisInformation.k.alert = "High, check data entry";
+    }else{
+      //normal
+      console.log("normal");
+      this.waterAnalysisInformation.k.status = "normal";
+      this.waterAnalysisInformation.k.alert = "";
+    }
+  }
+
+
+
+   /*Verify levels of nno3*/
+  verifyCaValue(){
+    console.log("verifyNnh4Value");
+
+    if (this.waterAnalysisInformation.ca.mmoll > 5) {
+      //too high
+      console.log("high");
+      this.waterAnalysisInformation.ca.status = "high";
+      this.waterAnalysisInformation.ca.alert = "High, check data entry";
+    }else{
+      //normal
+      console.log("normal");
+      this.waterAnalysisInformation.ca.status = "normal";
+      this.waterAnalysisInformation.ca.alert = "";
+    }
+  }
+
+
+ /*Verify levels of nno3*/
+  verifyMgValue(){
+    console.log("verifyNnh4Value");
+
+    if (this.waterAnalysisInformation.mg.mmoll > 2.5) {
+      //too high
+      console.log("high");
+      this.waterAnalysisInformation.mg.status = "high";
+      this.waterAnalysisInformation.mg.alert = "High, check data entry";
+    }else{
+      //normal
+      console.log("normal");
+      this.waterAnalysisInformation.mg.status = "normal";
+      this.waterAnalysisInformation.mg.alert = "";
+    }
+  }
+
+
+  /*Verify levels of nno3*/
+  verifyHco3Value(){
+    console.log("verifyNnh4Value");
+
+    if (this.waterAnalysisInformation.hco3.mmoll >= 5) {
+      //too high
+      console.log("high");
+      this.waterAnalysisInformation.hco3.status = "high";
+      this.waterAnalysisInformation.hco3.alert = "High, check data entry";
+    }else{
+      //normal
+      console.log("normal");
+      this.waterAnalysisInformation.hco3.status = "normal";
+      this.waterAnalysisInformation.hco3.alert = "";
     }
   }
 
@@ -666,10 +859,14 @@ export class Program {
     this.setControlActualMacroSolution();
     this.setTraceFertilizerSpecifications();
     this.setControlActualTraceSolution();
+    
     this.setControlAlertTraceElements()
     this.setMacroFertilizerSpecifications();
     this.setATank();
     this.setBTank();
+
+    this.setFinalFormatSolutionData();
+    this.setFinalSchemeData();
   }
 
   /*
@@ -709,7 +906,7 @@ export class Program {
     this.baseAdaptation.macroElements = auxStage.corrections.macroElements;
     this.baseAdaptation.macroElements.h3o     = 0;
     this.baseAdaptation.macroElements.cl      = 0;
-    this.baseAdaptation.traceElements     = auxStage.corrections.traceElements;
+    this.baseAdaptation.traceElements         = auxStage.corrections.traceElements;
     console.log("baseAdaptation", auxStage)
   }
 
@@ -1457,8 +1654,8 @@ export class Program {
     for (let element in this.standardSolution.macroElements) {
       console.log("element", element);
       this.controlSolution.actualSolution.macroElements[element] =
-      this.NPKScheme.control.macroElements[element] +
-      this.waterAnalysisInformation[this.getRelationInputKeys(element)].mmoll;
+        this.NPKScheme.control.macroElements[element] +
+        this.waterAnalysisInformation[this.getRelationInputKeys(element)].mmoll;
     }
     this.controlSolution.actualSolution.macroElements.h3o =
     this.waterAnalysisInformation[this.getRelationInputKeys("h3o")].mmoll -
@@ -1471,16 +1668,60 @@ export class Program {
   setControlActualTraceSolution (){
 
     console.log("setControlActualTraceSolution");
-    /*this.controlSolution.actualSolution.traceElements.fe =
-    this.NPKScheme.npk.traceElements.fe +
-    this.waterAnalysisInformation.fe.umoll +
-    0 +
-    this.NPKScheme.controlTraceElements.traceElements.fe;*/
+    
+    /*    
+      this.controlSolution.actualSolution.traceElements.fe =
+      this.NPKScheme.npk.traceElements.fe +
+      this.waterAnalysisInformation.fe.umoll +
+      0 +
+      this.NPKScheme.controlTraceElements.traceElements.fe;
+    */
+
 
     this.controlSolution.actualSolution.traceElements.fe =
-    this.NPKScheme.npk.traceElements.fe +
-    this.waterAnalysisInformation.fe.umoll +
-    0; //0 its the fertilizerspecs(active*fe) data that not exits for fe
+      this.NPKScheme.npk.traceElements.fe +
+      this.waterAnalysisInformation.fe.umoll;
+
+    let additionFe = 0;
+    
+    /*alert("ADD rexene13 ?: "+ this.fertilizerSpecs.traceElements.rexeneFeE13.active)
+    alert("ADD rexeneFeD12 ?: "+ this.fertilizerSpecs.traceElements.rexeneFeD12.active)
+    alert("ADD rexeneFeQ48 ?: "+ this.fertilizerSpecs.traceElements.rexeneFeQ48.active)
+    alert("ADD otherFe ?: "+ this.fertilizerSpecs.traceElements.otherFe.active)
+
+
+    if (this.fertilizerSpecs.traceElements.rexeneFeE13.active > 0){
+       alert("ADD rexene13 ")
+       
+       additionFe = this.fertilizerSpecs.traceElements.rexeneFeE13.value;
+       alert("additionFe: " +  additionFe)     
+
+
+    }else if (this.fertilizerSpecs.traceElements.rexeneFeD12.active > 0){
+       alert("ADD rexeneFeD12 ")
+       
+       additionFe = this.fertilizerSpecs.traceElements.rexeneFeD12.value;
+       alert("additionFe: " +  additionFe)     
+
+    }else if (this.fertilizerSpecs.traceElements.rexeneFeQ48.active > 0){
+       alert("ADD rexeneFeQ48 ")
+      
+       additionFe = this.fertilizerSpecs.traceElements.rexeneFeQ48.value;
+       alert("additionFe: " +  additionFe)     
+
+    }else if (this.fertilizerSpecs.traceElements.otherFe.active > 0){
+       alert("ADD otherFe ")
+         
+       additionFe = this.fertilizerSpecs.traceElements.otherFe.value;
+       alert("additionFe: " +  additionFe)     
+    }
+    
+    alert("normal: " + this.controlSolution.actualSolution.traceElements.fe)
+    alert("additionFe: "+ additionFe)
+    this.controlSolution.actualSolution.traceElements.fe += additionFe;
+    alert("new traceElement: " + this.controlSolution.actualSolution.traceElements.fe)*/
+     
+
 
 
 
@@ -1553,16 +1794,16 @@ export class Program {
       console.log("substrate organic");
       targetSolution = this.cropInformation.cropObj.solutions.organic.traceElements;
     }else{
-      console.log("substrate hydro");
+      console.log("substrate hydro /Inert");
       targetSolution = this.cropInformation.cropObj.solutions.hydro.traceElements;
     }
 
     let actualValue = Number(this.controlSolution.actualSolution.traceElements[element]);
-    console.log("actualValue", actualValue);
-    console.log("targetSolution.min.warning", targetSolution[element].min.warning);
-    console.log("targetSolution.min.ok", targetSolution[element].min.ok);
-    console.log("targetSolution.max.ok", targetSolution[element].max.ok);
-    console.log("targetSolution.max.warning", targetSolution[element].max.warning);
+    console.log("actualValue: " + actualValue);
+    console.log("targetSolution.min.warning: " + targetSolution[element].min.warning);
+    console.log("targetSolution.min.ok: " + targetSolution[element].min.ok);
+    console.log("targetSolution.max.ok: " + targetSolution[element].max.ok);
+    console.log("targetSolution.max.warning: " + targetSolution[element].max.warning);
 
 
     if(actualValue < Number(targetSolution[element].min.warning)) {
@@ -1643,7 +1884,7 @@ export class Program {
         this.NPKScheme.ultrasolCalcium.macroElements.ca,
         this.fertilizerSpecs.macroElements.ultrasolCalcium.value);
     }
-3
+
     if(this.NPKScheme.ultrasolCalcium.macroElements.ca >= 0 && this.fertilizerSpecs.macroElements.liquidCa.value >0) {
       console.log("NPKScheme ultrasolCalcium > 0 specs ultrasolCalcium > 0 " );
 
@@ -1690,10 +1931,28 @@ export class Program {
     }
 
     if(this.NPKScheme.nitricAcid.macroElements.h3o > 0) {
-      aTank.nitricAcid.name += " " + this.analysisInformation.acidSource.name + "%";
-      aTank.nitricAcid.value = this.calculateNitricAcidATank(
+      aTank.nitricAcid.name += " " + this.analysisInformation.acidSource.concentration + "%";
+      /*aTank.nitricAcid.value = this.calculateNitricAcidATank(
+        this.NPKScheme.nitricAcid.macroElements.h3o,
+        this.fertilizerSpecs.macroElements.nitricAcid.value);*/
+
+
+      var nitricAcidVal = this.calculateNitricAcidATank(
         this.NPKScheme.nitricAcid.macroElements.h3o,
         this.fertilizerSpecs.macroElements.nitricAcid.value);
+      
+      console.log("nitricAcidVal:")
+      console.log(nitricAcidVal)
+  
+      if(!isNaN(nitricAcidVal) ) {
+         console.log("nitricAcidVal isNaN");
+        aTank.nitricAcid.value = nitricAcidVal; 
+        
+      }else{
+          console.log("nitricAcidVal notIsNaN");
+          aTank.nitricAcid.value = nitricAcidVal;
+      }
+      
 
     }
 
@@ -1753,13 +2012,28 @@ export class Program {
         name: "Ultrasol® Micro Rexene® FeQ 48",
         value : 0,
         unit: "kg"
+      },
+      otherFe: {
+        name: this.analysisInformation.ironChelateSource.name,
+        value : 0,
+        unit: "kg"
       }
     };
+
+
+
+    let controlAlert = this.setControlAlertTraceElements();
+    console.log ("controlAlert 2:" , controlAlert);
+
+
+
+    console.log("fertilizer trace:", this.fertilizerSpecs.traceElements);
 
     bTank.solution.value = this.calculateSolutionFertilizerBtank(
       this.NPKScheme.formula.macroElements.h2po4,
       this.NPKScheme.required.macroElements.h2po4
       );
+    
     if(this.NPKScheme.ultrasolMagsul.macroElements.mg >0) {
 
       bTank.magsul.value = this.calculateUltrasolMagsulBTank(
@@ -1768,15 +2042,33 @@ export class Program {
         );
     }
 
+    console.log("Boric acid Active:  " + this.fertilizerSpecs.traceElements.boricAcid.active);
+    //boric acid go to B tank even in Ok , - condition
+    /*
+    
+    if(controlAlert.b != "--") {
 
+      console.log("alert b: " + controlAlert.b)
+      this.fertilizerSpecs.traceElements.boricAcid.active = 0;
+    }else{
+      console.log("b --  ")
+    }
+    */
     if(this.fertilizerSpecs.traceElements.boricAcid.active > 0) {
+      console.log("Boric acid Active ")
       bTank.boricAcid.value = this.calculateBoricAcidBTank(
         this.fertilizerSpecs.traceElements.boricAcid.value,
         this.fertilizerSpecs.traceElements.boricAcid.mw,
         this.fertilizerSpecs.traceElements.boricAcid.percent
         );
+    }else{
+      console.log("Boric acid NOT Active ")
     }
 
+    if(controlAlert.zn != "--") {
+      console.log("alert zn: " + controlAlert.zn)
+      this.fertilizerSpecs.traceElements.rexeneZn15.active = 0;
+    }
 
     if(this.fertilizerSpecs.traceElements.rexeneZn15.active > 0) {
       bTank.rexeneZn15.value = this.calculateUltrasolRexeneZn15BTank(
@@ -1785,12 +2077,23 @@ export class Program {
         this.fertilizerSpecs.traceElements.rexeneZn15.percent
         );
     }
+
+    if(controlAlert.mn != "--") {
+      console.log("alert mn: " + controlAlert.mn)
+      this.fertilizerSpecs.traceElements.rexeneMn13.active = 0;
+    }
+
     if(this.fertilizerSpecs.traceElements.rexeneMn13.active > 0) {
       bTank.rexeneMn13.value = this.calculateUltrasolRexeneMn13BTank(
         this.fertilizerSpecs.traceElements.rexeneMn13.value,
         this.fertilizerSpecs.traceElements.rexeneMn13.mw,
         this.fertilizerSpecs.traceElements.rexeneMn13.percent
         );
+    }
+
+    if(controlAlert.cu != "--") {
+      console.log("alert cu: " + controlAlert.cu)
+      this.fertilizerSpecs.traceElements.rexeneCu15.active = 0;
     }
     if(this.fertilizerSpecs.traceElements.rexeneCu15.active > 0) {
 
@@ -1800,6 +2103,12 @@ export class Program {
         this.fertilizerSpecs.traceElements.rexeneCu15.percent
         );
     }
+
+    if(controlAlert.mo != "--") {
+      console.log("alert mo: " + controlAlert.mo)
+      this.fertilizerSpecs.traceElements.naMoO4.active = 0;
+    }
+
     if(this.fertilizerSpecs.traceElements.naMoO4.active > 0) {
 
       bTank.naMoO4.value = this.calculateUltrasolNaMoO4BTank(
@@ -1808,29 +2117,74 @@ export class Program {
         this.fertilizerSpecs.traceElements.naMoO4.percent
         );
     }
-    if(this.fertilizerSpecs.traceElements.rexeneFeE13.active > 0) {
 
+
+    if(controlAlert.fe != "--") {
+      console.log("alert fe: " + controlAlert.fe)
+      this.fertilizerSpecs.traceElements.rexeneFeE13.active = 0; 
+      this.fertilizerSpecs.traceElements.rexeneFeD12.active = 0;
+      this.fertilizerSpecs.traceElements.rexeneFeQ48.active = 0;
+      this.fertilizerSpecs.traceElements.otherFe.active     = 0;
+    }
+
+
+    if(this.fertilizerSpecs.traceElements.rexeneFeE13.active > 0) {
       bTank.rexeneFeE13.value = this.calculateUltrasolRexeneFeE13BTank(
         this.fertilizerSpecs.traceElements.rexeneFeE13.value,
         this.fertilizerSpecs.traceElements.rexeneFeE13.mw,
         this.fertilizerSpecs.traceElements.rexeneFeE13.percent
         );
+
+      //alert("ADD rexene13 ?: "+ this.fertilizerSpecs.traceElements.rexeneFeE13.active)
+      //alert("normal: " + this.controlSolution.actualSolution.traceElements.fe)
+      //alert("additionFe: "+ this.fertilizerSpecs.traceElements.rexeneFeE13.value)
+      this.controlSolution.actualSolution.traceElements.fe += this.fertilizerSpecs.traceElements.rexeneFeE13.value;
+      //alert("new traceElement: " + this.controlSolution.actualSolution.traceElements.fe)
+
+
     }
     if(this.fertilizerSpecs.traceElements.rexeneFeD12.active > 0) {
-
       bTank.rexeneFeD12.value = this.calculateUltrasolRexeneFeD12BTank(
         this.fertilizerSpecs.traceElements.rexeneFeD12.value,
         this.fertilizerSpecs.traceElements.rexeneFeD12.mw,
         this.fertilizerSpecs.traceElements.rexeneFeD12.percent
         );
+
+       //alert("ADD rexeneFeD12 ?: "+ this.fertilizerSpecs.traceElements.rexeneFeD12.active)
+      //alert("normal: " + this.controlSolution.actualSolution.traceElements.fe)
+      //alert("additionFe: "+ this.fertilizerSpecs.traceElements.rexeneFeD12.value)
+      this.controlSolution.actualSolution.traceElements.fe += this.fertilizerSpecs.traceElements.rexeneFeD12.value;
+      //alert("new traceElement: " + this.controlSolution.actualSolution.traceElements.fe)
     }
     if(this.fertilizerSpecs.traceElements.rexeneFeQ48.active > 0) {
-
       bTank.rexeneFeQ48.value = this.calculateUltrasolRexeneFeQ48BTank(
         this.fertilizerSpecs.traceElements.rexeneFeQ48.value,
         this.fertilizerSpecs.traceElements.rexeneFeQ48.mw,
         this.fertilizerSpecs.traceElements.rexeneFeQ48.percent
         );
+
+       //alert("ADD rexeneFeQ48 ?: "+ this.fertilizerSpecs.traceElements.rexeneFeQ48.active)
+      //alert("normal: " + this.controlSolution.actualSolution.traceElements.fe)
+      //alert("additionFe: "+ this.fertilizerSpecs.traceElements.rexeneFeQ48.value)
+      this.controlSolution.actualSolution.traceElements.fe += this.fertilizerSpecs.traceElements.rexeneFeQ48.value;
+      //alert("new traceElement: " + this.controlSolution.actualSolution.traceElements.fe)
+    }
+
+    if(this.fertilizerSpecs.traceElements.otherFe.active > 0) {
+
+
+      bTank.otherFe.value = this.calculateOtherFeBTank(
+        this.fertilizerSpecs.traceElements.otherFe.value,
+        this.fertilizerSpecs.traceElements.otherFe.mw,
+        this.fertilizerSpecs.traceElements.otherFe.percent
+        );
+
+       //alert("ADD otherFe ?: "+ this.fertilizerSpecs.traceElements.otherFe.active)
+      //alert("normal: " + this.controlSolution.actualSolution.traceElements.fe)
+      //alert("additionFe: "+ this.fertilizerSpecs.traceElements.otherFe.value)
+      this.controlSolution.actualSolution.traceElements.fe += this.fertilizerSpecs.traceElements.otherFe.value;
+      //alert("new traceElement: " + this.controlSolution.actualSolution.traceElements.fe)
+
     }
 
     console.log("BTANK", bTank);
@@ -1888,6 +2242,12 @@ export class Program {
         percent: 6,
         mw: 55.85,
         value: 0
+      },
+       otherFe: {
+        active : 0,
+        percent: 0,
+        mw: 55.85,
+        value: 0
       }
 
     }
@@ -1915,18 +2275,25 @@ export class Program {
     scheme.rexeneFeE13.value = 0;
     scheme.rexeneFeD12.value = 0;
     scheme.rexeneFeQ48.value = 0;
+    scheme.otherFe.value = 0;
 
+    //control TraceElement Fe > 0
     if(this.NPKScheme.controlTraceElements.traceElements.fe > 0){
+      console.log ("setting Fe Rexenes. controlTrace > 0 : " + 
+        this.NPKScheme.controlTraceElements.traceElements.fe);
 
       let restFe =
-      this.NPKScheme.controlTraceElements.traceElements.fe -
-      this.NPKScheme.required.traceElements.fe;
-
+       this.NPKScheme.required.traceElements.fe -
+       this.NPKScheme.controlTraceElements.traceElements.fe;
+      console.log ("restFe : " + restFe);
+      
       let restRequiredFe =
       this.NPKScheme.required.traceElements.fe -
-      this.NPKScheme.required.traceElements.fe;
-
-      if(restFe < (restRequiredFe * 0.25)) {
+      (this.NPKScheme.required.traceElements.fe * 0.25);
+      console.log ("restRequiredFe : " + restRequiredFe);
+      if(restFe < restRequiredFe) {
+        console.log ("restFe < restRequiredFe");
+        
         scheme.rexeneFeE13.value =
         this.NPKScheme.controlTraceElements.traceElements.fe;
 
@@ -1935,7 +2302,16 @@ export class Program {
 
         scheme.rexeneFeQ48.value =
         this.NPKScheme.controlTraceElements.traceElements.fe;
+
+        scheme.otherFe.value =
+        this.NPKScheme.controlTraceElements.traceElements.fe;
       }
+    }else{
+      console.log ("restFe > restRequiredFe");
+      scheme.rexeneFeE13.value = 0;
+      scheme.rexeneFeD12.value = 0;
+      scheme.rexeneFeQ48.value = 0;
+      scheme.otherFe.value = 0;
     }
 
     //active boricAcid
@@ -1963,26 +2339,41 @@ export class Program {
       scheme.naMoO4.active = 1;
     }
     //active rexeneFeE13
-    if(this.analysisInformation.ironChelateSource.id == "fee13") {
-      if(this.NPKScheme.control.traceElements.fe >1) {
-        scheme.rexeneFeE13.active = 1;
+    //
+
+      if(this.analysisInformation.ironChelateSource.id == "fee13") {
+         console.log("setTraceFertilizerSpecifications- ironchelate fee13")
+        if(this.NPKScheme.controlTraceElements.traceElements.fe >1) {
+          scheme.rexeneFeE13.active = 1;
+        }
       }
 
-    }
-
-    //active rexeneFeD12
-    if(this.analysisInformation.ironChelateSource.id == "fed12") {
-      if(this.NPKScheme.control.traceElements.fe >1) {
-        scheme.rexeneFeD12.active = 1;
+      //active rexeneFeD12
+      if(this.analysisInformation.ironChelateSource.id == "fed12") {
+         console.log("setTraceFertilizerSpecifications- ironchelate fed12")
+        if(this.NPKScheme.controlTraceElements.traceElements.fe >1) {
+          scheme.rexeneFeD12.active = 1;
+        }
       }
-    }
 
-    //active rexeneFeQ48
-    if(this.analysisInformation.ironChelateSource.id == "feq48") {
-      if(this.NPKScheme.control.traceElements.fe >1) {
-        scheme.rexeneFeQ48.active = 1;
+      //active rexeneFeQ48
+      if(this.analysisInformation.ironChelateSource.id == "feq48") {
+         console.log("setTraceFertilizerSpecifications- ironchelate feq48")
+        if(this.NPKScheme.controlTraceElements.traceElements.fe >1) {
+          scheme.rexeneFeQ48.active = 1;
+        }
       }
-    }
+
+      //active other Iron chelate Source
+      if(this.analysisInformation.ironChelateSource.id == "-1") {
+        console.log("setTraceFertilizerSpecifications- ironchelate OTHER")
+        if(this.NPKScheme.controlTraceElements.traceElements.fe >1) {
+          scheme.otherFe.active     = 1;
+          scheme.otherFe.percent   = this.analysisInformation.ironChelateSource.concentration;
+          console.log("setTrace-  OTHER: "+ scheme.otherFe.percent)
+        }
+      }
+    
 
     console.log("setTraceFertilizerSpecifications", scheme);
 
@@ -2125,8 +2516,8 @@ export class Program {
     console.log("getAlertTraceElements");
     let alerts = {
       fe:{
-        "--"     :    "Fe-content is very low! Addition of extra Ultrasol™ Micro Rexene® Fe is suggested above.",
-        "-"      :    "Fe-content is low! Addition of extra Ultrasol™ Micro Rexene® Fe is suggested above.",
+        "--"     :    "Fe-content is very low! Addition of extra PRODUCTNAME is suggested above.",
+        "-"      :    "Fe-content is low! In case of Fe-deficiency symptoms add to the B-tank PRODUCTQTY PRODUCTNAME ",
         "OK"     :    "",
         "+"      :    "Fe-content is high!",
         "++"     :    "Fe-content is very high! Risk for Fe-toxicity exists. The use of Ultrasol™ Crop for the selected crop and conditions is not recommended."
@@ -2134,7 +2525,7 @@ export class Program {
 
       b:{
         "--"     :    "B-content is very low! Addition of extra Boric Acid is necessary.",
-        "-"     :    "B-content is low! In case of B-deficiency symptoms add extra Boric Acid.",
+        "-"     :    "B-content is low! In case of B-deficiency symptoms add to the B-tank PRODUCTQTY Boric Acid.",
         "OK"     :     "",
         "+"     :    "B-content is high!",
         "++"     :    "B-content is very high! Risk for B-toxicity exists. The use of Ultrasol™ Crop for the selected crop and conditions is not recommended."
@@ -2143,7 +2534,7 @@ export class Program {
 
       mn:{
         "--"      :   "Mn-content is very low! Addition of extra Ultrasol™ Micro Rexene® Mn13 is necessary.",
-        "-"     :    "Mn-content is low! In case of Mn-deficiency symptoms add extra Ultrasol™ Micro Rexene® Mn13.",
+        "-"     :    "Mn-content is low! In case of Mn-deficiency symptoms add to the B-tank PRODUCTQTY Ultrasol™ Micro Rexene® Mn13.",
         "OK"     :     "",
         "+"      :   "Mn-content is high!",
         "++"      :   "Mn-content is very high! Risk for Mn-toxicity exists. The use of Ultrasol™ Crop for the selected crop and conditions is not recommended."
@@ -2151,7 +2542,7 @@ export class Program {
 
       zn:{
         "--"     :    "Zn-content is very low! Addition of extra Ultrasol™ Micro Rexene® Zn15 is necessary.",
-        "-"     :    "Zn-content is low! In case of Zn-deficiency symptoms add extra Ultrasol™ Micro Rexene® Zn15.",
+        "-"     :    "Zn-content is low! In case of Zn-deficiency symptoms add to the B-tank PRODUCTQTY Ultrasol™ Micro Rexene® Zn15.",
         "OK"     :     "",
         "+"      :   "Zn-content is high!",
         "++"      :   "Zn-content is very high! Risk for Zn-toxicity exists. The use of Ultrasol™ Crop for the selected crop and conditions is not recommended."
@@ -2159,7 +2550,7 @@ export class Program {
 
       cu:{
         "--"      :   "Cu-content is very low! Addition of extra Ultrasol™ Micro Rexene® Cu15 is necessary.",
-        "-"      :   "Cu-content is low! In case of Cu-deficiency symptoms add extra Ultrasol™ Micro Rexene® Cu15.",
+        "-"      :   "Cu-content is low! In case of Cu-deficiency symptoms add to the B-tank PRODUCTQTY Ultrasol™ Micro Rexene® Cu15.",
         "OK"      :    "",
         "+"      :   "Cu-content is high!",
         "++"      :   "Cu-content is very high! Risk for Cu-toxicity exists. The use of Ultrasol™ Crop for the selected crop and conditions is not recommended."
@@ -2167,7 +2558,7 @@ export class Program {
 
       mo:{
         "--"      :   "Mo-content is very low! Addition of extra NaMoO4 is necessary.",
-        "-"      :   "Mo-content is low! In case of Mo-deficiency symptoms add extra NaMoO4.",
+        "-"      :   "Mo-content is low! In case of Mo-deficiency symptoms add to the B-tank PRODUCTQTY NaMoO4.",
         "OK"      :    "",
         "+"       :  "Mo-content is high!",
         "++"      :   "Mo-content is very high! Risk for Mo-toxicity exists. The use of Ultrasol™ Crop for the selected crop and conditions is not recommended."
@@ -2190,7 +2581,7 @@ export class Program {
   }
 
   /*get all aditional traceelements*/
-  getAllAditionalTraceElements(){
+  getAllAditionalTraceElements(controlAlerts){
     let elements = {
       fe:{ value : 0},
       b: { value : 0},
@@ -2199,13 +2590,69 @@ export class Program {
       cu:{ value : 0},
       mo:{ value : 0}
     };
-    elements.fe.value = this.getAditionalTraceElements(
-      this.fertilizerSpecs.traceElements.rexeneFeE13.percent,
-      this.fertilizerSpecs.traceElements.rexeneFeE13.mw,
-      this.fertilizerSpecs.traceElements.rexeneFeE13.value,
-      this.analysisInformation.sizeTank,
-      this.analysisInformation.dilutionFactor
+
+    if(controlAlerts.fe =="-") {
+
+      let fee13 = this.getAditionalTraceElements(       
+        this.fertilizerSpecs.traceElements.rexeneFeE13.percent,
+        this.fertilizerSpecs.traceElements.rexeneFeE13.mw,
+        this.fertilizerSpecs.traceElements.rexeneFeE13.value,
+        this.analysisInformation.sizeTank,
+        this.analysisInformation.dilutionFactor
       );
+
+
+
+      let fed12 = this.getAditionalTraceElements(
+
+        this.fertilizerSpecs.traceElements.rexeneFeD12.percent,
+        this.fertilizerSpecs.traceElements.rexeneFeD12.mw,
+        this.fertilizerSpecs.traceElements.rexeneFeD12.value,
+        this.analysisInformation.sizeTank,
+        this.analysisInformation.dilutionFactor
+      );
+
+      let feq48 = this.getAditionalTraceElements(
+        this.fertilizerSpecs.traceElements.rexeneFeQ48.percent,
+        this.fertilizerSpecs.traceElements.rexeneFeQ48.mw,
+        this.fertilizerSpecs.traceElements.rexeneFeQ48.value,
+        this.analysisInformation.sizeTank,
+        this.analysisInformation.dilutionFactor
+      );
+
+      let otherFe = this.getAditionalTraceElements(
+        this.fertilizerSpecs.traceElements.otherFe.percent,
+        this.fertilizerSpecs.traceElements.otherFe.mw,
+        this.fertilizerSpecs.traceElements.otherFe.value,
+        this.analysisInformation.sizeTank,
+        this.analysisInformation.dilutionFactor
+      );
+
+      if(this.analysisInformation.ironChelateSource.id == 'fee13') {
+        console.log("getAllAditionalTraceElements -fee13 SELECTED: "+ fee13);
+        elements.fe.value = fee13;
+      }else if(this.analysisInformation.ironChelateSource.id == 'fed12') {
+        console.log("getAllAditionalTraceElements -fed12 SELECTED: "+ fed12);
+        elements.fe.value = fed12;
+      }else if(this.analysisInformation.ironChelateSource.id == 'feq48') {
+        console.log("getAllAditionalTraceElements -feq48 SELECTED: "+ feq48);
+        elements.fe.value = feq48;
+      }else if(this.analysisInformation.ironChelateSource.id == '-1') {
+        console.log("getAllAditionalTraceElements -OTHER SELECTED: "+ otherFe);
+        elements.fe.value = otherFe;
+      }
+
+      /*elements.fe.value = this.getAditionalTraceElements(
+        this.fertilizerSpecs.traceElements.rexeneFeE13.percent,
+        this.fertilizerSpecs.traceElements.rexeneFeE13.mw,
+        this.fertilizerSpecs.traceElements.rexeneFeE13.value,
+        this.analysisInformation.sizeTank,
+        this.analysisInformation.dilutionFactor
+      );*/
+
+
+    }
+    if(controlAlerts.b =="-") {
     elements.b.value = this.getAditionalTraceElements(
       this.fertilizerSpecs.traceElements.boricAcid.percent,
       this.fertilizerSpecs.traceElements.boricAcid.mw,
@@ -2213,6 +2660,8 @@ export class Program {
       this.analysisInformation.sizeTank,
       this.analysisInformation.dilutionFactor
       );
+    }
+    if(controlAlerts.mn =="-") {
     elements.mn.value = this.getAditionalTraceElements(
       this.fertilizerSpecs.traceElements.rexeneMn13.percent,
       this.fertilizerSpecs.traceElements.rexeneMn13.mw,
@@ -2220,7 +2669,8 @@ export class Program {
       this.analysisInformation.sizeTank,
       this.analysisInformation.dilutionFactor
       );
-
+    }
+    if(controlAlerts.zn =="-") {
     elements.zn.value = this.getAditionalTraceElements(
       this.fertilizerSpecs.traceElements.rexeneZn15.percent,
       this.fertilizerSpecs.traceElements.rexeneZn15.mw,
@@ -2228,7 +2678,8 @@ export class Program {
       this.analysisInformation.sizeTank,
       this.analysisInformation.dilutionFactor
       );
-
+    }
+    if(controlAlerts.cu =="-") {
     elements.cu.value = this.getAditionalTraceElements(
       this.fertilizerSpecs.traceElements.rexeneCu15.percent,
       this.fertilizerSpecs.traceElements.rexeneCu15.mw,
@@ -2236,7 +2687,8 @@ export class Program {
       this.analysisInformation.sizeTank,
       this.analysisInformation.dilutionFactor
       );
-
+    }
+    if(controlAlerts.mo =="-") {
     elements.mo.value = this.getAditionalTraceElements(
       this.fertilizerSpecs.traceElements.naMoO4.percent,
       this.fertilizerSpecs.traceElements.naMoO4.mw,
@@ -2244,7 +2696,7 @@ export class Program {
       this.analysisInformation.sizeTank,
       this.analysisInformation.dilutionFactor
       );
-
+    }
     return elements;
 
   }
@@ -2253,19 +2705,44 @@ export class Program {
     console.log("getAllAlertsTraceElements");
     let alertArr = [];
     let controlAlerts = this.setControlAlertTraceElements();
-    let aditionalTrace = this.getAllAditionalTraceElements();
+    let aditionalTrace = this.getAllAditionalTraceElements(controlAlerts);
     for (let element in controlAlerts) {
+      
       let elementAlert = this.getAlertTraceByElements(element, controlAlerts[element]);
-      let elementAdition = aditionalTrace[element].value;
-      console.log("elementAdition", elementAdition);
+      let elementAdition = aditionalTrace[element].value; 
 
-      if(elementAlert !="") {
-        if(elementAdition > 0) {
-          elementAlert += " " + Number(elementAdition).toFixed(2) + "kg";
-          console.log("elementAlert", elementAlert);
-        }
-        alertArr.push(elementAlert);
-      }
+      console.log("elementAdition:", elementAdition);     
+      console.log("element: ",element);
+      console.log("alert status: ",controlAlerts[element]);
+      
+      if(elementAlert != "") {
+        let finalAlert = elementAlert;
+        //if(elementAdition > 0) {
+          
+         let finalQty = Number(elementAdition).toFixed(3) + " kg";
+         let prefinalAlert = elementAlert.replace("PRODUCTNAME", this.analysisInformation.ironChelateSource.name);
+            console.log("prefinalalert: ",prefinalAlert);
+
+
+             prefinalAlert = prefinalAlert.replace("PRODUCTQTY", finalQty);
+             console.log("prefinalalert: ",prefinalAlert);
+             finalAlert = prefinalAlert;
+          
+          //finalAlert += " Add " + Number(elementAdition).toFixed(3) + "kg to B-tank.";
+          console.log("elementAlert: ", finalAlert);
+        //}
+
+          if(controlAlerts[element] != '--') {
+            console.log(element +" not in tank add to remarks: " + controlAlerts[element]);
+            alertArr.push(finalAlert);
+          }
+          else{
+            console.log(element +"  -- add to TANK");
+            //not add alert
+          }        
+        
+      }    
+      
     }
     console.log("alertArr",alertArr)
     return alertArr;
@@ -2367,8 +2844,9 @@ export class Program {
 
   /*calculate Liquid Calcium specs*/
   calculateLiquidCaSpecs(caConcentration, caDensity){
+    console.log("calculateLiquidCaSpecs");
     let value = (26.5 / 40.1 * 10 / 1.39 / 0.265 * caConcentration * caDensity) /100;
-
+     console.log("value", value);
     return value;
   }
 
@@ -2530,11 +3008,17 @@ export class Program {
 
   /*calculate Boric Acid B TANK*/
   calculateBoricAcidBTank(specsAcidBoricValue, specsAcidBoricMw,specsAcidBoricConcentration){
+    console.log("calculateBoricAcidBTank");
+    console.log("specsAcidBoricValue: "+ specsAcidBoricValue);
+    console.log("specsAcidBoricMw: "+ specsAcidBoricMw );
+    console.log("specsAcidBoricConcentration: "+ specsAcidBoricConcentration);
     let value = specsAcidBoricMw *
     specsAcidBoricValue *
     this.analysisInformation.sizeTank *
     this.analysisInformation.dilutionFactor /
     (10000000 * specsAcidBoricConcentration);
+    console.log("value: "+ value);
+
     return value;
   }
 
@@ -2562,11 +3046,26 @@ export class Program {
 
   /*calculate Ultrasol Rexene FeQ48 B TANK*/
   calculateUltrasolRexeneFeQ48BTank(specsFeQ48Value, specsFeQ48Mw,specsFeQ48Concentration){
+    
+
+
     let value = specsFeQ48Mw *
     specsFeQ48Value *
     this.analysisInformation.sizeTank *
     this.analysisInformation.dilutionFactor /
     (10000000 * specsFeQ48Concentration);
+
+    return value;
+  }
+  /*calculate Ultrasol Rexene FeQ48 B TANK*/
+  calculateOtherFeBTank(specsFeValue, specsFeMw,specsFeConcentration){
+
+    let value = specsFeMw *
+    specsFeValue *
+    this.analysisInformation.sizeTank *
+    this.analysisInformation.dilutionFactor /
+    (10000000 * specsFeConcentration);
+
 
     return value;
   }
@@ -2615,18 +3114,243 @@ export class Program {
   }
 
 
-  
+  setFinalFormatSolutionData (){
+    var soData  = this.controlSolution.actualSolution;
+           
+
+            let nnh4 = {
+                name: "N-NH<sub>4</sub>",
+                mmoll : soData.macroElements.nh4.toFixed(2),
+                mgl : (soData.macroElements.nh4 * 14.007).toFixed(1)
+            }
+            this.formatSolution.nnh4 = nnh4;
+
+            let nno3 = {
+                name: "N-NO<sub>3</sub>",
+                mmoll : soData.macroElements.no3.toFixed(2),
+                mgl : (soData.macroElements.no3 * 14.007).toFixed(1)
+            }
+            this.formatSolution.nno3 = nno3;
+
+            let p = {
+                name: "P",
+                mmoll : soData.macroElements.h2po4.toFixed(2),
+                mgl : (soData.macroElements.h2po4 * 30.974).toFixed(1)
+            }
+            this.formatSolution.p = p;
+
+            let k = {
+                name: "N-NO<sub>3</sub>",
+                mmoll : soData.macroElements.k.toFixed(2),
+                mgl : (soData.macroElements.k * 39.098).toFixed(1)
+            }
+            this.formatSolution.k = k;
+            
+            let ca = {
+                name: "Ca",
+                mmoll : soData.macroElements.ca.toFixed(2),
+                mgl : (soData.macroElements.ca * 40.08).toFixed(1)
+            }
+            this.formatSolution.ca = ca;
+            
+            let mg = {
+                name: "Mg",
+                mmoll : soData.macroElements.mg.toFixed(2),
+                mgl : (soData.macroElements.mg * 24.305).toFixed(1)
+            }
+            this.formatSolution.mg = mg;
+            
+            let cl = {
+                name: "Cl",
+                mmoll :soData.macroElements.cl.toFixed(2),
+                mgl : (soData.macroElements.cl * 35.5).toFixed(1)
+            }
+            this.formatSolution.cl = cl;
+           
+            let sso4 = {
+                name: "S-SO<sub>4</sub>",
+                mmoll : soData.macroElements.so4.toFixed(2),
+                mgl : (soData.macroElements.so4 * 32.06).toFixed(1)
+            }
+            this.formatSolution.sso4 = sso4;
+            
+            let fe = {
+                name: "Fe",
+                mmoll : (soData.traceElements.fe / 1000).toFixed(4),
+                mgl : (soData.traceElements.fe * 55.847 / 1000).toFixed(3)
+            }
+            this.formatSolution.fe = fe;
+            
+            let mn = {
+                name: "Mn",
+                mmoll : (soData.traceElements.mn / 1000).toFixed(4),
+                mgl : (soData.traceElements.mn * 54.938 / 1000).toFixed(3)
+            }
+            this.formatSolution.mn = mn;
+            
+            let zn = {
+                name: "Zn",
+                mmoll : (soData.traceElements.zn / 1000).toFixed(4),
+                mgl : (soData.traceElements.zn * 65.39 / 1000).toFixed(3)
+            }
+           this.formatSolution.zn = zn;
+            
+            let cu = {
+                name: "Cu",
+                mmoll : (soData.traceElements.cu / 1000).toFixed(4),
+                mgl : (soData.traceElements.cu * 63.546 / 1000).toFixed(3)
+            }
+            this.formatSolution.cu = cu;
+            
+            let b = {
+                name: "B",
+                mmoll : (soData.traceElements.b / 1000).toFixed(4),
+                mgl : (soData.traceElements.b * 10.81 / 1000).toFixed(3)
+            }
+            this.formatSolution.b = b;
+            
+            let mo = {
+                name: "Mo",
+                mmoll : (soData.traceElements.mo / 1000).toFixed(4),
+                mgl : (soData.traceElements.mo * 95.94 / 1000).toFixed(3)
+            }
+            this.formatSolution.mo = mo;          
+           
+  }
+
+  setFinalSchemeData (){
+    console.log("setFinalSchemeData");
+        var aTank = [];
+        var bTank = [];
+
+            
+            var tanksData  = this.tanks;
+            console.log("tanksData", tanksData);
+            for (let product in tanksData.a) {
+                
+                if(tanksData.a[product].value >0) {
+                    let auxProduct = {
+                        name : tanksData.a[product].name,
+                        value: parseFloat(tanksData.a[product].value).toFixed(1),
+                        unit: tanksData.a[product].unit
+                    }
+
+
+                    aTank.push(auxProduct);
+                }
+                
+            }
+
+            for (let product in tanksData.b) {
+                
+                if(tanksData.b[product].value > 0 && !isNaN(tanksData.b[product].value)) {
+                    
+                    let value = "" ; 
+                    if(tanksData.b[product].name.toLowerCase().includes("micro")) {
+                      value = parseFloat(tanksData.b[product].value).toFixed(2);
+
+                    }else if(tanksData.b[product].name.toLowerCase().includes("boric")){
+                       value = parseFloat(tanksData.b[product].value).toFixed(3);
+
+                    }else{
+                      value = parseFloat(tanksData.b[product].value).toFixed(1);
+                      
+                    }
+                    let auxProduct = {
+                        name : tanksData.b[product].name,
+                        value: value,
+                        unit: tanksData.b[product].unit
+                    }
+
+
+                    bTank.push(auxProduct);
+                }
+            }
+               
+
+            console.log("aTank",aTank);
+            console.log("bTank",bTank);
+
+            var alerts = this.getAllAlertsTraceElements();
+            let data = {
+                a : aTank,
+                b : bTank,
+                alerts : alerts
+            }
+            this.formatScheme = data;
+  }
 
 
   createProgramInDB(programsProvider: ProgramsProvider){
     console.log("createProgramInDB");
 
     let data =     {
-      id             : this.id,
-      basicInformation     : this.basicInformation,
-      cropInformation     : this.cropInformation,
-      analysisInformation   : this.analysisInformation,
-      waterAnalysisInformation : this.waterAnalysisInformation
+      id :                        this.id,
+      basicInformation :          this.basicInformation,
+      cropInformation :           this.cropInformation,
+      analysisInformation :       this.analysisInformation,
+      waterAnalysisInformation :  this.waterAnalysisInformation,
+      formatSolution:             this.formatSolution,
+      formatScheme:               this.formatScheme
+    };
+    
+    var stageCropObj = this.getStageByID(this.cropInformation.stageId);
+    var stageCrop = "";
+    if (stageCrop != null) {
+        stageCrop = stageCropObj.name;
+    }
+
+
+    let program =  {
+        uuid :     this.uuid,
+        farmer:    this.basicInformation.name,
+        crop:      this.cropInformation.cropObj.name,
+        stage:     stageCrop,
+        date:      this.basicInformation.date,
+        status:    1,
+        data:      JSON.stringify(data)
+    }
+
+
+    console.log("program to create:" , program);
+
+    programsProvider.create(program)
+        .then(response => {
+          console.log("program insert in the db");
+          console.log(program);
+          
+        })
+        .catch( error => {
+            console.log("ERROR insert in the db");
+            console.log(program);
+          console.error( error );
+        })
+
+        
+    /*programsProvider.saveProgramAPI(program).then((result : any) => {
+        console.log(result);
+        if(result.status == 200) {
+           console.log("todo ok, actualizando status");
+        }else{
+          console.log("algun error en los datos");
+        }
+    }, (err) => {
+      console.log("no update. error conexion");
+      console.log(err);
+    });*/
+  }
+
+  sendProgramByEmail(programsProvider: ProgramsProvider, toEmails : String){
+    console.log("sendProgramByEmail");
+
+    let data =     {
+      id :                        this.id,
+      basicInformation :          this.basicInformation,
+      cropInformation :           this.cropInformation,
+      analysisInformation :       this.analysisInformation,
+      waterAnalysisInformation :  this.waterAnalysisInformation,
+      formatSolution:             this.formatSolution,
+      formatScheme:               this.formatScheme
     };
     
     var stageCropObj = this.getStageByID(this.cropInformation.stageId);
@@ -2651,8 +3375,11 @@ export class Program {
   
 
 
-    console.log("program to create:" , program);
-    /*programsProvider.saveProgramAPI(program).then((result : any) => {
+    console.log("program to send:" , program);
+
+
+
+    programsProvider.sendProgramByEmailAPI(program, toEmails).then((result : any) => {
         console.log(result);
         if(result.status == 200) {
            console.log("todo ok, actualizando status");
@@ -2662,31 +3389,20 @@ export class Program {
     }, (err) => {
       console.log("no update. error conexion");
       console.log(err);
-    });*/
-
-
-    programsProvider.create(program)
-        .then(response => {
-          console.log("program insert in the db");
-          console.log(program);
-          
-        })
-        .catch( error => {
-            console.log("error insert in the db");
-            console.log(program);
-          console.error( error );
-        })
+    });
   }
 
   updateProgramInDB(programsProvider: ProgramsProvider){
-    console.log("createProgramInDB");
+    console.log("updateProgramInDB");
 
     let data =     {
-      id             : this.id,
-      basicInformation     : this.basicInformation,
-      cropInformation     : this.cropInformation,
-      analysisInformation   : this.analysisInformation,
-      waterAnalysisInformation : this.waterAnalysisInformation
+      id :                        this.id,
+      basicInformation :          this.basicInformation,
+      cropInformation :           this.cropInformation,
+      analysisInformation :       this.analysisInformation,
+      waterAnalysisInformation :  this.waterAnalysisInformation,
+      formatSolution:             this.formatSolution,
+      formatScheme:               this.formatScheme
     };
     
     var stageCropObj = this.getStageByID(this.cropInformation.stageId);

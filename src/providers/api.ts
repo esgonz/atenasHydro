@@ -7,12 +7,18 @@ import 'rxjs/add/operator/map';
  */
 @Injectable()
 export class Api {
-  url: string = 'https://example.com/api/v1';
-
+  //url: string = 'https://example.com/api/v1';
+  // set URL for API
+   //BASE_URL = 'http://localhost:3000/api/auth/';  // URL to web api
+   public BASE_URL = 'http://34.216.101.233:3000/api/';  // URL to web api
+   //public BASE_URL = 'http://localhost:3000/api/';
+   public APP_ID = '8abbcd8e';
+   public API_KEY = 'CFKG9920CF200174MGKDHCCLDQQ';
+   public TOKEN = 'AC773BA55F7B57B629C5454AB1299';
   constructor(public http: Http) {
   }
 
-  get(endpoint: string, params?: any, options?: RequestOptions) {
+  /*get(endpoint: string, params?: any, options?: RequestOptions) {
     if (!options) {
       options = new RequestOptions();
     }
@@ -45,5 +51,5 @@ export class Api {
 
   patch(endpoint: string, body: any, options?: RequestOptions) {
     return this.http.put(this.url + '/' + endpoint, body, options);
-  }
+  }*/
 }

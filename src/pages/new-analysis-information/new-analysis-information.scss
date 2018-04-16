@@ -42,4 +42,14 @@ page-new-analysis-information {
 	.fontSecondary{
 		font-weight:  $fontSecondaryBold;
 	}
+
+		ion-col {
+			position: initial;
+		}
+		.ion-col {
+			position: initial;
+		}
+		.ion-col-initial {
+			position: initial;
+		}
 }

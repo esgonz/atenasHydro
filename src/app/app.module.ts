@@ -14,6 +14,8 @@ import { NewWaterAnalysis } from '../pages/new-water-analysis/new-water-analysis
 import { NewBasicInformation } from '../pages/new-basic-information/new-basic-information';
 import { NewCropSelect } from '../pages/new-crop-select/new-crop-select';
 import { PreviousList} from '../pages/previous-list/previous-list';
+import { LoginPage } from '../pages/login/login';
+import { Disclaimer } from '../pages/disclaimer/disclaimer';
 /*Import tab page*/
 import { TabsResultPage } from '../pages/tabs-results/tabs-results';
 import { ResultBasic } from '../pages/result-basic/result-basic';
@@ -23,17 +25,16 @@ import { ResultScheme } from '../pages/result-scheme/result-scheme';
 
 
 import { Api } from '../providers/api';
-import { Items } from '../mocks/providers/items';
-import { Settings } from '../providers/settings';
-import { User } from '../providers/user';
+
 import { FormulasProvider } from '../providers/formulas';
 import { CropsProvider} from '../providers/crops';
 import { TempProgramProvider } from '../providers/temp-program';
 import { PagesProvider } from '../providers/pages';
-
+import { LoginProvider } from '../providers/login';
+import { DisclaimerProvider } from '../providers/disclaimer';
+import { SplitPaneProvider } from '../providers/splitPane';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TasksServiceProvider } from '../providers/tasks-service/tasks-service';
 import { ProgramsProvider } from '../providers/programs/programs';
 
 
@@ -51,12 +52,12 @@ export function provideSettings(storage: Storage) {
    * You can add new settings options at any time. Once the settings are saved,
    * these values will not overwrite the saved values (this can be done manually if desired).
    */
-  return new Settings(storage, {
+  /*return new Settings(storage, {
     option1: true,
     option2: 'Ionitron J. Framework',
     option3: '3',
     option4: 'Hello'
-  });
+  });*/
 }
 
 @NgModule({
@@ -71,7 +72,9 @@ export function provideSettings(storage: Storage) {
     ResultSolution,
     ResultScheme,
     TabsResultPage,
-    PreviousList
+    PreviousList,
+    LoginPage, 
+    Disclaimer
   ],
   imports: [
     BrowserModule,
@@ -98,7 +101,9 @@ export function provideSettings(storage: Storage) {
     ResultSolution,
     ResultScheme,
     TabsResultPage,
-    PreviousList
+    PreviousList,
+    LoginPage,
+     Disclaimer
     
   
   ],
@@ -110,10 +115,11 @@ export function provideSettings(storage: Storage) {
     CropsProvider,
     TempProgramProvider,
     PagesProvider,
-    { provide: Settings, useFactory: provideSettings, deps: [Storage] },
+    LoginProvider,
+    DisclaimerProvider,
+    SplitPaneProvider,
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    TasksServiceProvider,
     ProgramsProvider,
   ]
 })

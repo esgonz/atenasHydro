@@ -31,4 +31,13 @@ page-new-basic-information {
 	.backgroundTerceary{
 		background-color: $background-terceary-color;
 	}
+		ion-col {
+			position: initial;
+		}
+		.ion-col {
+			position: initial;
+		}
+		.ion-col-initial {
+			position: initial;
+		}
 }

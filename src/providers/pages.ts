@@ -13,6 +13,7 @@ export class PagesProvider {
   activePage : any;
 
   rootPage : any;
+  loginPage : any;
   constructor() {
   }
 
@@ -50,6 +51,8 @@ export class PagesProvider {
     console.log("root page: ", page)
     this.rootPage = page;
   }
+
+
   delete(page: any) {
     this.pages.reduce(page);
   }
@@ -61,6 +64,7 @@ export class PagesProvider {
     this.pages = [];
     this.add(this.rootPage);
   }
+  
   getInstance(){
   	return this.pages;
   }
@@ -68,6 +72,19 @@ export class PagesProvider {
   setActivePage(page){
   	this.activePage = page;
   };
+
+  setLoginPage(page){
+    console.log("PagesProvider- setLoginPage")
+    this.loginPage = page;
+  };
+
+  clearAll(){
+    console.log("PagesProvider- clearList")
+    
+    //this.pages.length = 0;
+    this.pages = [];
+  }
+
 
   checkActivePage(page){
   	return page == this.activePage;

@@ -4,6 +4,7 @@ import { TabsResultPage } from '../../pages/tabs-results/tabs-results';
 import { NewWaterAnalysis } from '../new-water-analysis/new-water-analysis';
 import { TempProgramProvider } from '../../providers/temp-program';
 import { PagesProvider } from '../../providers/pages';
+
 /**
  * The Welcome Page is a splash page that quickly describes the app,
  * and then directs the user to create an account or log in.
@@ -15,28 +16,29 @@ import { PagesProvider } from '../../providers/pages';
  	templateUrl: 'new-analysis-information.html'
  })
  export class NewAnalysisInformation {
- 	acids =[
+    
+     acids =[
  	{
  		id: 			"x",
- 		name: 			"Nitric Acid - X%",
+ 		name: 			"Nitric Acid - X",
  		concentration: 		0,
  		density: 		 	0
  	},
  	{
  		id: 			"38",
- 		name: 			"Nitric Acid - 38%",
+ 		name: 			"Nitric Acid - 38",
  		concentration: 		38,
  		density: 		 	1.235
  	},
  	{
  		id: 			"53",
- 		name: 			"Nitric Acid - 53%",
+ 		name: 			"Nitric Acid - 53",
  		concentration: 		53,
  		density: 		 	1.33
  	},
  	{
  		id: 			"60",
- 		name: 			"Nitric Acid - 60%",
+ 		name: 			"Nitric Acid - 60",
  		concentration: 		60,
  		density: 		 	1.363
  	}
@@ -88,6 +90,7 @@ import { PagesProvider } from '../../providers/pages';
  		density: 		"",
         label: "Cl"
  	};
+    calciumChlorideDensityInput = true;
  	calciumNitrates =[
  	{
  		id: 				"ultrasolcalcium",
@@ -107,6 +110,7 @@ import { PagesProvider } from '../../providers/pages';
  		concentration: 	"",
  		density: 		""
  	};
+    calciumNitrateInputs = true;
  	ironChelates =[
  	{
  		id: 				"fee13",
@@ -259,7 +263,15 @@ import { PagesProvider } from '../../providers/pages';
  				console.log(this.data.calciumChlorideSource);
  				this.calciumChlorideSuggestion.concentration = this.calciumChlorides[i].concentration.toString();
  				this.calciumChlorideSuggestion.density 	     = this.calciumChlorides[i].density.toString();
-                 this.calciumChlorideSuggestion.label         = this.calciumChlorides[i].label;
+                this.calciumChlorideSuggestion.label         = this.calciumChlorides[i].label;
+
+                if(this.data.calciumChlorideSource.id !="liquid") {
+                   this.calciumChlorideDensityInput = false;
+
+                }
+                else{
+                    this.calciumChlorideDensityInput = true;
+                }
  				return;
  			}
  		}
@@ -272,13 +284,24 @@ import { PagesProvider } from '../../providers/pages';
  			console.log("calcium nitrate ID: " + this.calciumNitrates[i].id);
  			if (this.calciumNitrates[i].id == this.calciumNitrateChoise.toString()){
  				console.log("true");
- 				this.data.calciumChlorideSource.id = this.calciumChlorides[i].id;
-                 this.data.calciumChlorideSource.name = this.calciumChlorides[i].name;
-                 this.data.calciumChlorideSource.density = parseFloat(this.calciumChlorides[i].density.toString());
-                 this.data.calciumChlorideSource.concentration = this.calciumChlorides[i].concentration;
- 				console.log(this.data.calciumNitrateSource);
- 				this.calciumNitrateSuggestion.concentration = this.calciumNitrates[i].concentration.toString();
- 				this.calciumNitrateSuggestion.density = this.calciumNitrates[i].density.toString();
+ 				this.data.calciumNitrateSource.id = this.calciumNitrates[i].id;
+                this.data.calciumNitrateSource.name = this.calciumNitrates[i].name;
+                this.data.calciumNitrateSource.density = parseFloat(this.calciumNitrates[i].density.toString());
+                
+                if(this.data.calciumNitrateSource.id !="ultrasolcalcium") {
+                  this.calciumNitrateInputs = true;
+                  this.data.calciumNitrateSource.concentration = parseFloat( this.calciumNitrates[i].concentration.toString());
+                }else{
+                  this.calciumNitrateInputs = false;
+                  this.data.calciumNitrateSource.concentration = 0;
+                  
+                }              
+ 				
+
+                console.log(this.data.calciumNitrateSource);
+ 				
+                this.calciumNitrateSuggestion.concentration = this.calciumNitrates[i].concentration.toString();
+ 				this.calciumNitrateSuggestion.density       = this.calciumNitrates[i].density.toString();
  				return;
  			}
  		}
@@ -297,7 +320,7 @@ import { PagesProvider } from '../../providers/pages';
  				return;
  			}
  		}
- 		this.updateProgramInformation();
+ 		this.updateProgramInformation();//
  	}
 
  	updateProgramInformation (){
@@ -313,11 +336,13 @@ import { PagesProvider } from '../../providers/pages';
 
     goToFertigationProgram(){
     	this.updateProgramInformation();
-        var resultPage = { title: 'Fertigation Programe.', component: TabsResultPage, iconClass: 'iconprogramme'   };
+        var resultPage = { title: 'Fertigation Programme', component: TabsResultPage, iconClass: 'iconprogramme'   };
         this.pagesProvider.add(resultPage);
         this.pagesProvider.setActivePage(resultPage); 
         this.navCtrl.push(resultPage.component);
     }
+
+    
 
 
  }

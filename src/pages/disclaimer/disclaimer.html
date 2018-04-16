@@ -10,12 +10,6 @@
     <ion-title>
       Disclaimer
     </ion-title>
-
-    <ion-buttons end>
-      <button ion-button icon-only (click)="openModal()">
-        <ion-icon name="md-more"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header> 
 
@@ -24,13 +18,13 @@
 <ion-content scroll="false">
     <ion-grid>
       <ion-row justify-content-start>
-        <ion-col col-12 col-sm>
+        <ion-col class="col-12 col-sm-12 col-md-12">
 			<div class="margeninterno">
 				<h4>Disclaimer</h4>
 				<p class="textodisclaimer">This recommendation is only to be used as a general guideline. The recommended quantities are only valid for the mentioned crop, growth stage, EC and water analysis. This recommendation is given to the best of our knowledge and belief. However, as the use of this fertigation scheme is beyond our control and involves elements of risk, it is given without any waranties, express or implied, of fitness for use or purpose and on the express condition that we shall not be liable for any accident, injury, or damage consequential or other, damage to crops a.s.o. occurring while or after following this recommendation.</p>
 			<ion-row>
-				<ion-col col-12 col-sm><button ion-button full small round>CANCEL</button></ion-col>
-				<ion-col col-12 col-sm><button ion-button full small round>CONTINUE</button></ion-col>
+				<ion-col class="col-12 col-sm-12 col-md-12"><button ion-button full small round>CANCEL</button></ion-col>
+				<ion-col class="col-12 col-sm-12 col-md-12"><button ion-button full small round (click)="login()">CONTINUE</button></ion-col>
 			</ion-row>
 			</div>
         </ion-col>

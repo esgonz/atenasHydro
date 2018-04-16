@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { NewCropSelect } from '../../pages/new-crop-select/new-crop-select';
 import { TempProgramProvider } from '../../providers/temp-program';
 import { PagesProvider } from '../../providers/pages';
+import { SplitPaneProvider } from '../../providers/splitPane';
+
 /**
  * The Welcome Page is a splash page that quickly describes the app,
  * and then directs the user to create an account or log in.
@@ -30,8 +32,14 @@ import { PagesProvider } from '../../providers/pages';
 	 	email 		: "" 		
  	}
  	validate = false;
- 	constructor(public navCtrl: NavController, public tempProgramProvider : TempProgramProvider,
- 		private pagesProvider: PagesProvider) { 
+ 	constructor(
+ 		public navCtrl: NavController, 
+ 		public tempProgramProvider : TempProgramProvider,
+ 		private pagesProvider: PagesProvider,
+ 		public splitPaneProvider: SplitPaneProvider) { 
+
+
+ 		splitPaneProvider.setShow(true);
  		this.data = tempProgramProvider.getInstance().basicInformation;
  		if (this.data.date == "" ) {
  			this.data.date =  new Date(Date.now()).toISOString();
@@ -156,5 +164,7 @@ import { PagesProvider } from '../../providers/pages';
 		console.log("updateProgramInformation");
 		this.tempProgramProvider.getInstance().basicInformation = this.data;
 	}
+
+
 
  }

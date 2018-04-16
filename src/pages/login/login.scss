@@ -1,2 +1,71 @@
 page-login {
+	.splash-bg {
+		position: relative;
+		background: url('../assets/img/splash-background.png') no-repeat;
+		background-size: cover;       
+		width: 90%;
+		height: 747px;
+		z-index: 1;
+	}
+	
+	@keyframes animatedBackground {
+		from { background-position: 0 0; }
+		to { background-position: 100% 0; }
+	}
+	
+	.splash-info {
+		position: relative;
+		z-index: 2;
+		margin-top: 20px;
+		text-align: center;
+	}
+	
+	.splash-logo {
+		margin: auto;
+		background: url('../assets/img/appicon.png') no-repeat transparent;
+		background-size: 100%;
+		width: 140px;
+		height: 140px;
+	}
+	
+	.splash-intro {
+		font-size: 18px;
+		font-weight: bold;
+		max-width: 80%;
+		margin: 60px auto;
+	}
+	
+	button.login {
+		margin-top: 25px;
+		background-color: white;
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+		color: #333;
+		
+		&.activated {
+			background-color: rgb(220, 220, 220);
+		}
+	}
+	
+		.splash-bg2{
+			background: url(../assets/img/splash-background-movil-2.jpg);
+			height: 300px;
+			background-repeat:no-repeat;
+			background-size:contain;
+			background-position:center 100%;
+			display: block;
+			width: 100%;
+		}
+
+
+		ion-col {
+			position: initial;
+		}
+		.ion-col {
+			position: initial;
+		}
+		.ion-col-initial {
+			position: initial;
+		}
+		
+
 }
